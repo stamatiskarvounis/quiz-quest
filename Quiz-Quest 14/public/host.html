@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Quest — Host</title>
+<script src="/socket.io/socket.io.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<style>
+  :root{ --bg:#0b0f1a; --panel:#15203b; --panel2:#0e1730; --gold:#ffd23f; --gold-d:#a87a1c; --cream:#f4f1de; --ink:#0b0f1a;
+    --fire:#ff4d2e; --water:#1ea7ff; --leaf:#38c93f; --earth:#f0a93a; }
+  *{box-sizing:border-box; image-rendering:pixelated;}
+  body{margin:0; font-family:'VT323',monospace; font-size:20px; color:var(--cream);
+       background:repeating-linear-gradient(0deg,#0b0f1a,#0b0f1a 38px,#0c1120 38px,#0c1120 40px),#0b0f1a;}
+  .pixel{font-family:'Press Start 2P',monospace;}
+  .wrap{display:flex; gap:20px; padding:20px; min-height:100vh;}
+  .left{flex:1; max-width:540px;} .right{flex:1.2;}
+  h1{font-size:20px; line-height:1.6; margin:0 0 6px; color:var(--gold); text-shadow:3px 3px 0 #000;}
+  .sub{opacity:.85; margin-bottom:16px;}
+  .card{background:var(--panel); padding:18px; margin-bottom:16px; border:4px solid var(--gold); box-shadow:0 0 0 4px var(--ink),8px 8px 0 rgba(0,0,0,.6);}
+  .pin{font-size:40px; text-align:center; color:var(--gold); text-shadow:3px 3px 0 #000; letter-spacing:6px;}
+  .pinlabel{font-size:11px; text-align:center; letter-spacing:2px;}
+  .joinurl{text-align:center; margin-top:10px; font-size:22px;}
+  #qr{display:block; margin:14px auto 0; background:#fff; padding:8px; border:4px solid var(--ink);}
+  .players{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
+  .chip{padding:4px 10px 4px 4px; font-size:18px; border:3px solid #000; display:flex; align-items:center; gap:6px; color:#000; font-weight:bold;}
+  .chip svg{display:block;}
+  button{font-family:'Press Start 2P',monospace; cursor:pointer; color:var(--ink);}
+  .btn-primary{background:var(--gold); font-size:16px; padding:16px; width:100%; border:4px solid var(--ink); box-shadow:0 6px 0 var(--gold-d); margin-top:4px;}
+  .btn-primary:active{transform:translateY(4px); box-shadow:0 2px 0 var(--gold-d);}
+  .btn-primary:disabled{opacity:.4; cursor:not-allowed;}
+  #track{border:4px solid var(--gold); box-shadow:0 0 0 4px var(--ink); line-height:0; background:#2b6ea0; aspect-ratio:1900/985; width:100%;}
+  #track svg, #mapBig svg{display:block; width:100%; height:100%;}
+  .qbox{font-size:30px; line-height:1.2; margin-bottom:14px;}
+  .opts{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .opt{padding:14px; font-size:24px; color:#fff; position:relative; border:4px solid #000; box-shadow:5px 5px 0 rgba(0,0,0,.5); display:flex; gap:12px; align-items:center;}
+  .opt .txt{text-shadow:1px 1px 0 rgba(0,0,0,.6);}
+  .opt .bar{position:absolute; left:0; bottom:0; height:6px; background:rgba(255,255,255,.8);}
+  .opt.correct{outline:5px solid var(--gold); outline-offset:2px;}
+  .o0{background:var(--fire);} .o1{background:var(--water);} .o2{background:var(--leaf);} .o3{background:var(--earth);}
+  .timer{font-family:'Press Start 2P',monospace; font-size:34px; text-align:center; color:var(--gold); text-shadow:3px 3px 0 #000; margin:6px 0;}
+  .meta{display:flex; justify-content:space-between; font-size:11px; margin-bottom:8px; color:var(--gold);}
+  .res-row{display:flex; align-items:center; gap:10px; padding:6px 10px; background:var(--panel2); border:3px solid #000; margin-bottom:6px; font-size:20px;}
+  .res-row .nm{flex:1;} .res-row .mv{font-size:18px; opacity:.9;}
+  .hidden{display:none;}
+  .winner{text-align:center;}
+  .winner h2{font-family:'Press Start 2P',monospace; font-size:22px; color:var(--gold); line-height:1.6; text-shadow:3px 3px 0 #000;}
+  #mapphase{position:fixed; inset:0; background:#9cc7e0; line-height:0;}
+  #mapBig{width:100%; height:100%; background:#9cc7e0; line-height:0;}
+  #mapBig svg{display:block; width:100%; height:100%;}
+  #nextWrap{position:absolute; right:26px; bottom:24px; z-index:5;}
+  #nextBtn{width:auto; padding:16px 26px; font-size:16px;}
+  /* celebration */
+  #celebrate{position:fixed; inset:0; z-index:60; overflow:hidden;
+             background:radial-gradient(circle at 50% 25%, #3a3f72, #0b0f1a 70%);}
+  #celebrate:not(.hidden){display:flex; align-items:center; justify-content:center;}
+  .cel-inner{text-align:center; width:100%; max-width:920px; padding:20px; position:relative; z-index:2;}
+  .cel-title{font-family:'Press Start 2P',monospace; font-size:32px; color:var(--gold); text-shadow:4px 4px 0 #000; margin-bottom:30px; line-height:1.5;}
+  .podium{display:flex; align-items:flex-end; justify-content:center; gap:24px;}
+  .pod{display:flex; flex-direction:column; align-items:center;}
+  .pod .crown{font-size:42px; line-height:1; margin-bottom:2px;}
+  .pod-name{font-size:26px; margin:6px 0 8px; color:var(--cream); max-width:210px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .pod-bar{font-family:'Press Start 2P',monospace; font-size:15px; color:#000; padding:14px 22px; border:4px solid var(--ink); box-shadow:0 6px 0 rgba(0,0,0,.45); display:flex; align-items:flex-start; justify-content:center;}
+  .pod1 .pod-bar{background:#ffd23f; height:120px;}
+  .pod2 .pod-bar{background:#cfd4dc; height:82px;}
+  .pod3 .pod-bar{background:#e0a35a; height:56px;}
+  .cel-standings{margin-top:24px; display:inline-flex; flex-direction:column; gap:6px; max-height:30vh; overflow:auto;}
+  .confetti{position:absolute; top:-24px; width:10px; height:15px; opacity:.92; z-index:1; animation:fall linear infinite;}
+  @keyframes fall{ to{ transform:translateY(112vh) rotate(620deg); } }
+</style>
+</head>
+<body>
+<div class="wrap" id="mainwrap">
+  <div class="left">
+    <h1 class="pixel">QUIZ QUEST</h1>
+    <div class="sub" id="title">Host screen</div>
+    <div id="lobby">
+      <div class="card">
+        <div class="pinlabel pixel">GAME PIN</div>
+        <div class="pin pixel" id="pin">----</div>
+        <div class="joinurl">Join at <b id="joinurl">…</b></div>
+        <img id="qr" width="160" height="160" alt="QR">
+      </div>
+      <div class="card">
+        <b class="pixel" style="font-size:12px;color:var(--gold)">HEROES (<span id="pcount">0</span>/20)</b>
+        <div class="players" id="players"></div>
+      </div>
+      <button class="btn-primary" id="startBtn" disabled>START QUEST</button>
+    </div>
+    <div id="play" class="hidden">
+      <div class="card">
+        <div class="meta pixel"><span id="qnum"></span><span id="answered"></span></div>
+        <div class="qbox" id="qtext"></div>
+        <div class="timer" id="timer"></div>
+        <div class="opts" id="opts"></div>
+      </div>
+      <button class="btn-primary" id="showBtn">SHOW RESULTS</button>
+    </div>
+    <div id="over" class="hidden card winner">
+      <div class="bighero" id="winnerHero"></div>
+      <h2 id="winnerName"></h2>
+      <div id="standings"></div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="card">
+      <b class="pixel" style="font-size:12px;color:var(--gold)">THE QUEST MAP</b>
+      <div id="track" style="margin-top:10px;"></div>
+    </div>
+  </div>
+</div>
+
+<div id="mapphase" class="hidden">
+  <div id="mapBig"></div>
+  <div id="nextWrap"><button class="btn-primary hidden" id="nextBtn">NEXT QUESTION</button></div>
+</div>
+
+<div id="celebrate" class="hidden">
+  <div class="cel-inner">
+    <div class="cel-title">🏆 WINNER! 🏆</div>
+    <div class="podium">
+      <div class="pod pod2"><div class="pod-hero" id="p2hero"></div><div class="pod-name" id="p2name"></div><div class="pod-bar">2nd</div></div>
+      <div class="pod pod1"><div class="crown">👑</div><div class="pod-hero" id="p1hero"></div><div class="pod-name" id="p1name"></div><div class="pod-bar">1st</div></div>
+      <div class="pod pod3"><div class="pod-hero" id="p3hero"></div><div class="pod-name" id="p3name"></div><div class="pod-bar">3rd</div></div>
+    </div>
+    <div class="cel-standings" id="celStandings"></div>
+    <button class="btn-primary" id="newGameBtn" style="max-width:340px;margin:22px auto 0;">NEW GAME</button>
+  </div>
+</div>
+
+<script src="/mapdata.js"></script>
+<script src="/board.js"></script>
+<script>
+const socket = io();
+let PIN=null, timerInt=null, state='lobby', lastOptions=[], lastResults=null;
+
+socket.emit('createRoom');
+socket.on('roomCreated', d => {
+  PIN=d.pin;
+  document.getElementById('pin').textContent=d.pin;
+  document.getElementById('title').textContent=d.title+' · first hero to the dragon wins!';
+  const base=location.origin;
+  document.getElementById('joinurl').textContent=base.replace(/^https?:\/\//,'');
+  document.getElementById('qr').src='https://api.qrserver.com/v1/create-qr-code/?size=160x160&data='+encodeURIComponent(base+'/?pin='+d.pin);
+  renderBoardAnimated('track', [], {layout:'host'});
+});
+
+socket.on('board', d => {
+  if(d.animate){
+    show('mapphase');
+    document.getElementById('nextBtn').classList.add('hidden');
+    renderBoardAnimated('mapBig', d.players, {animate:true, onDone:()=>{
+      document.getElementById('nextBtn').classList.remove('hidden');
+    }});
+    populatePhase();
+  } else {
+    renderBoardAnimated('track', d.players, {});
+  }
+});
+
+socket.on('lobbyUpdate', d => {
+  const box=document.getElementById('players'); box.innerHTML='';
+  d.players.forEach(p=>{ const c=document.createElement('div'); c.className='chip'; c.style.background=p.color;
+    c.innerHTML=avatarSVG(p.hero,22)+'<span>'+p.name+'</span>'; box.appendChild(c); });
+  document.getElementById('pcount').textContent=d.players.length;
+  document.getElementById('startBtn').disabled=d.players.length<1;
+});
+
+document.getElementById('startBtn').onclick=()=>socket.emit('nextQuestion',{pin:PIN});
+document.getElementById('showBtn').onclick=()=>socket.emit('endQuestion',{pin:PIN});
+document.getElementById('nextBtn').onclick=()=>{ document.getElementById('nextBtn').classList.add('hidden'); socket.emit('nextQuestion',{pin:PIN}); };
+
+socket.on('showQuestion', d => {
+  state='question'; show('play'); lastOptions=d.options;
+  document.getElementById('qnum').textContent='QUESTION '+(d.index+1);
+  document.getElementById('answered').textContent='0 ANSWERED';
+  document.getElementById('qtext').textContent=d.q;
+  const opts=document.getElementById('opts'); opts.innerHTML='';
+  d.options.forEach((o,i)=>{ const el=document.createElement('div'); el.className='opt o'+i;
+    el.innerHTML='<span class="el">'+iconSVG(ELEMS[i],34)+'</span><span class="txt">'+o+'</span>'; opts.appendChild(el); });
+  startTimer(d.time);
+});
+socket.on('answerCount', d => { document.getElementById('answered').textContent=d.answered+'/'+d.total+' ANSWERED'; });
+socket.on('questionResults', d => { state='results'; stopTimer(); lastResults=d; });
+
+function populatePhase(){
+  if(!lastResults) return;
+  const ci=lastResults.correctIndex;
+  const title='Correct: '+(lastOptions[ci]!=null?lastOptions[ci]:'');
+  const rows=lastResults.results.map(r=>({
+    color:r.color,
+    text: r.name+'  '+(r.correct ? ('+'+r.moved+(r.reachedGoal?' GOAL!':'')) : 'wrong')
+  }));
+  drawOverlay('mapBig', {title:title, rows:rows});
+}
+
+function setPod(prefix, p, big){
+  const h=document.getElementById(prefix+'hero'), n=document.getElementById(prefix+'name');
+  if(!p){ h.innerHTML=''; n.textContent=''; return; }
+  h.innerHTML=avatarSVG(p.hero, big?104:68); n.textContent=p.name;
+}
+function fireConfetti(){
+  const c=document.getElementById('celebrate');
+  c.querySelectorAll('.confetti').forEach(x=>x.remove());
+  const cols=['#ff4d2e','#1ea7ff','#38c93f','#f0a93a','#ffd23f','#9c4dff','#ff5fa2'];
+  for(let i=0;i<60;i++){ const d=document.createElement('div'); d.className='confetti';
+    d.style.left=(Math.random()*100)+'%'; d.style.background=cols[i%cols.length];
+    d.style.animationDelay=(Math.random()*2.5)+'s'; d.style.animationDuration=(2.4+Math.random()*2.2)+'s';
+    c.appendChild(d); }
+}
+socket.on('gameOver', d => {
+  stopTimer(); show('celebrate');
+  const st=d.standings||[];
+  setPod('p1', st[0], true); setPod('p2', st[1], false); setPod('p3', st[2], false);
+  document.querySelector('.pod2').style.visibility = st[1]?'visible':'hidden';
+  document.querySelector('.pod3').style.visibility = st[2]?'visible':'hidden';
+  const cs=document.getElementById('celStandings'); cs.innerHTML='';
+  st.forEach((p,i)=>{ if(i<3) return; const row=document.createElement('div'); row.className='res-row';
+    const where = p.position>=60 ? 'reached the dragon!' : 'block '+p.position;
+    row.innerHTML='<b>'+(i+1)+'.</b>'+avatarSVG(p.hero,20)+'<span class="nm">'+p.name+'</span><span class="mv">'+where+'</span>';
+    cs.appendChild(row); });
+  fireConfetti();
+});
+document.getElementById('newGameBtn').onclick=()=>location.reload();
+
+function show(id){
+  const full = (id==='mapphase'||id==='celebrate');
+  document.getElementById('mainwrap').style.display = full?'none':'flex';
+  document.getElementById('mapphase').classList.toggle('hidden', id!=='mapphase');
+  document.getElementById('celebrate').classList.toggle('hidden', id!=='celebrate');
+  ['lobby','play','over'].forEach(x=>document.getElementById(x).classList.toggle('hidden', x!==id));
+}
+function startTimer(ms){ stopTimer(); let end=Date.now()+ms; const t=document.getElementById('timer');
+  const tick=()=>{ const s=Math.max(0,Math.ceil((end-Date.now())/1000)); t.textContent=s;
+    if(s<=0){ stopTimer(); if(state==='question') socket.emit('endQuestion',{pin:PIN}); } };
+  tick(); timerInt=setInterval(tick,250); }
+function stopTimer(){ if(timerInt){clearInterval(timerInt); timerInt=null;} }
+socket.on('hostLeft', ()=>{});
+</script>
+</body>
+</html>
