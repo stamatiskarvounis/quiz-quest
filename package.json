@@ -1,0 +1,13 @@
+{
+  "name": "quiz-snakes-ladders",
+  "version": "1.0.0",
+  "description": "A live multiplayer Kahoot-style quiz played on a Snakes & Ladders board. Host on one screen, players join from their phones. Fastest correct answer moves the most squares.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  }
+}

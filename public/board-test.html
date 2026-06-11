@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Quest — Board Test</title>
+<style>
+  body{background:#0b0f1a;color:#f4f1de;font-family:monospace;margin:0;padding:12px;}
+  h3{color:#ffd23f;margin:16px 0 6px;}
+  button{margin:0 6px 8px 0;padding:10px 14px;font-family:monospace;font-size:14px;cursor:pointer;
+         background:#ffd23f;border:3px solid #000;font-weight:bold;}
+  #big{width:100%;height:68vh;border:3px solid #ffd23f;}
+  #small{width:380px;aspect-ratio:1900/985;border:3px solid #ffd23f;margin-top:10px;}
+  .note{opacity:.7;font-size:13px;margin-bottom:8px;}
+  #avatars img{margin-right:6px;background:#15203b;border:2px solid #444;}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.2/pixi.min.js"></script>
+</head>
+<body>
+<div class="note">Debug page — no server game needed. Open via http://localhost:3000/board-test.html</div>
+<div>
+  <button onclick="reset()">RESET</button>
+  <button onclick="move(1)">SMALL MOVE</button>
+  <button onclick="move(5)">BIG MOVE (5)</button>
+  <button onclick="nearCastle()">NEAR CASTLE</button>
+  <button onclick="solo()">SOLO HERO</button>
+</div>
+<div id="big"></div>
+<h3>Small board (lobby/phone size)</h3>
+<div id="small"></div>
+<h3>DOM avatars (chips/podium)</h3>
+<div id="avatars"></div>
+
+<script src="/mapdata.js"></script>
+<script src="/board.js"></script>
+<script>
+const RACES=Object.keys(RACE);
+const COLS=['#ff4d2e','#1ea7ff','#38c93f','#f0a93a','#ffd23f','#9c4dff','#ff5fa2','#7fffd4'];
+let players=[];
+function mk(){ players=RACES.map((r,i)=>({hero:r,name:RACE[r].name,color:COLS[i],position:1+i,from:1+i})); }
+function draw(animate){
+  renderBoardAnimated('big',players,{animate:animate,onDone:()=>console.log('anim done')});
+  renderBoardAnimated('small',players,{});
+  drawOverlay('big',{title:'Correct: Test answer',rows:players.map(p=>({color:p.color,text:p.name+'  +3'}))});
+}
+function reset(){ mk(); draw(false); }
+function move(maxExtra){ players.forEach(p=>{ p.from=p.position;
+  p.position=Math.min(60,p.position+1+Math.floor(Math.random()*maxExtra)); }); draw(true); }
+function nearCastle(){ players.forEach((p,i)=>{ p.from=50+i; p.position=Math.min(60,55+i); }); draw(true); }
+function solo(){ players=[{hero:'knight',name:'Sir Test',color:'#ffd23f',position:9,from:1}]; draw(true); }
+document.getElementById('avatars').innerHTML=RACES.map(r=>avatarSVG(r,44)+' ').join('');
+reset();
+</script>
+</body>
+</html>

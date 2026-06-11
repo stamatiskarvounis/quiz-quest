@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Quest — Host</title>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.2/pixi.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<style>
+  :root{ --bg:#0b0f1a; --panel:#15203b; --panel2:#0e1730; --gold:#ffd23f; --gold-d:#a87a1c; --cream:#f4f1de; --ink:#0b0f1a;
+    --fire:#ff4d2e; --water:#1ea7ff; --leaf:#38c93f; --earth:#f0a93a; }
+  *{box-sizing:border-box; image-rendering:pixelated;}
+  body{margin:0; font-family:'VT323',monospace; font-size:20px; color:var(--cream);
+       background:repeating-linear-gradient(0deg,#0b0f1a,#0b0f1a 38px,#0c1120 38px,#0c1120 40px),#0b0f1a;}
+  .pixel{font-family:'Press Start 2P',monospace;}
+  .wrap{display:flex; gap:20px; padding:20px; min-height:100vh;}
+  .left{flex:1; max-width:540px;} .right{flex:1.2;}
+  h1{font-size:20px; line-height:1.6; margin:0 0 6px; color:var(--gold); text-shadow:3px 3px 0 #000;}
+  .sub{opacity:.85; margin-bottom:16px;}
+  .card{background:var(--panel); padding:18px; margin-bottom:16px; border:4px solid var(--gold); box-shadow:0 0 0 4px var(--ink),8px 8px 0 rgba(0,0,0,.6);}
+  .pin{font-size:40px; text-align:center; color:var(--gold); text-shadow:3px 3px 0 #000; letter-spacing:6px;}
+  .pinlabel{font-size:11px; text-align:center; letter-spacing:2px;}
+  .joinurl{text-align:center; margin-top:10px; font-size:22px;}
+  #qr{display:block; margin:14px auto 0; background:#fff; padding:8px; border:4px solid var(--ink);}
+  .players{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
+  .chip{padding:4px 10px 4px 4px; font-size:18px; border:3px solid #000; display:flex; align-items:center; gap:6px; color:#000; font-weight:bold;}
+  .chip svg{display:block;}
+  .cats{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
+  .cat{padding:7px 12px; font-size:18px; border:3px solid #000; cursor:pointer; user-select:none;
+       background:#0e1730; color:var(--cream); opacity:.55; box-shadow:3px 3px 0 rgba(0,0,0,.5);}
+  .cat.on{background:var(--gold); color:#000; opacity:1;}
+  .cat .cnt{font-size:14px; opacity:.75; margin-left:4px;}
+  .catnote{font-size:16px; opacity:.75; margin-top:8px;}
+  button{font-family:'Press Start 2P',monospace; cursor:pointer; color:var(--ink);}
+  .btn-primary{background:var(--gold); font-size:16px; padding:16px; width:100%; border:4px solid var(--ink); box-shadow:0 6px 0 var(--gold-d); margin-top:4px;}
+  .btn-primary:active{transform:translateY(4px); box-shadow:0 2px 0 var(--gold-d);}
+  .btn-primary:disabled{opacity:.4; cursor:not-allowed;}
+  #track{border:4px solid var(--gold); box-shadow:0 0 0 4px var(--ink); line-height:0; background:#2b6ea0; aspect-ratio:1900/985; width:100%;}
+  #track svg, #mapBig svg{display:block; width:100%; height:100%;}
+  .qbox{font-size:30px; line-height:1.2; margin-bottom:14px;}
+  .opts{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .opt{padding:14px; font-size:24px; color:#fff; position:relative; border:4px solid #000; box-shadow:5px 5px 0 rgba(0,0,0,.5); display:flex; gap:12px; align-items:center;}
+  .opt .txt{text-shadow:1px 1px 0 rgba(0,0,0,.6);}
+  .opt .bar{position:absolute; left:0; bottom:0; height:6px; background:rgba(255,255,255,.8);}
+  .opt.correct{outline:5px solid var(--gold); outline-offset:2px;}
+  .o0{background:var(--fire);} .o1{background:var(--water);} .o2{background:var(--leaf);} .o3{background:var(--earth);}
+  .timer{font-family:'Press Start 2P',monospace; font-size:34px; text-align:center; color:var(--gold); text-shadow:3px 3px 0 #000; margin:6px 0;}
+  .meta{display:flex; justify-content:space-between; font-size:11px; margin-bottom:8px; color:var(--gold);}
+  .res-row{display:flex; align-items:center; gap:10px; padding:6px 10px; background:var(--panel2); border:3px solid #000; margin-bottom:6px; font-size:20px;}
+  .res-row .nm{flex:1;} .res-row .mv{font-size:18px; opacity:.9;}
+  .hidden{display:none !important;}
+  .winner{text-align:center;}
+  .winner h2{font-family:'Press Start 2P',monospace; font-size:22px; color:var(--gold); line-height:1.6; text-shadow:3px 3px 0 #000;}
+  #mapphase{position:fixed; inset:0; background:#9cc7e0; line-height:0;}
+  #mapBig{width:100%; height:100%; background:#9cc7e0; line-height:0;}
+  #mapBig svg{display:block; width:100%; height:100%;}
+  #nextWrap{position:absolute; right:26px; bottom:24px; z-index:5;}
+  #nextBtn{width:auto; padding:16px 26px; font-size:16px;}
+  /* celebration */
+  #celebrate{position:fixed; inset:0; z-index:60; overflow:hidden; display:flex; align-items:center; justify-content:center;
+             background:radial-gradient(circle at 50% 25%, #3a3f72, #0b0f1a 70%);}
+  .cel-inner{text-align:center; width:100%; max-width:920px; padding:20px; position:relative; z-index:2;}
+  .cel-title{font-family:'Press Start 2P',monospace; font-size:32px; color:var(--gold); text-shadow:4px 4px 0 #000; margin-bottom:30px; line-height:1.5;}
+  .podium{display:flex; align-items:flex-end; justify-content:center; gap:24px;}
+  .pod{display:flex; flex-direction:column; align-items:center;}
+  .pod .crown{font-size:42px; line-height:1; margin-bottom:2px;}
+  .pod-name{font-size:26px; margin:6px 0 8px; color:var(--cream); max-width:210px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .pod-bar{font-family:'Press Start 2P',monospace; font-size:15px; color:#000; padding:14px 22px; border:4px solid var(--ink); box-shadow:0 6px 0 rgba(0,0,0,.45); display:flex; align-items:flex-start; justify-content:center;}
+  .pod1 .pod-bar{background:#ffd23f; height:120px;}
+  .pod2 .pod-bar{background:#cfd4dc; height:82px;}
+  .pod3 .pod-bar{background:#e0a35a; height:56px;}
+  .cel-standings{margin-top:24px; display:inline-flex; flex-direction:column; gap:6px; max-height:30vh; overflow:auto;}
+  .confetti{position:absolute; top:-24px; width:10px; height:15px; opacity:.92; z-index:1; animation:fall linear infinite;}
+  @keyframes fall{ to{ transform:translateY(112vh) rotate(620deg); } }
+  /* winner beer scene */
+  .beer-scene{position:relative; width:240px; height:150px; margin:0 auto 10px;}
+  #cheersAvatar{width:124px; height:124px; image-rendering:pixelated; position:absolute; left:10px; top:8px;
+                animation:sway 2.2s ease-in-out infinite; filter:drop-shadow(4px 6px 0 rgba(0,0,0,.45));}
+  .mug{position:absolute; right:14px; bottom:4px; width:92px; height:104px; transform-origin:30% 90%;
+       animation:clink 1.7s ease-in-out infinite; filter:drop-shadow(4px 6px 0 rgba(0,0,0,.45));}
+  .mug svg{width:100%; height:100%;}
+  @keyframes clink{0%,100%{transform:rotate(4deg)} 50%{transform:rotate(-22deg) translate(-14px,-10px)}}
+  @keyframes sway{0%,100%{transform:rotate(-3deg)} 50%{transform:rotate(4deg)}}
+  .bub{position:absolute; width:7px; height:7px; border-radius:50%; background:#fffbe8; opacity:0; animation:bub 1.9s ease-in infinite;}
+  @keyframes bub{0%{opacity:0; transform:translateY(0) scale(.6);} 20%{opacity:.95;} 100%{opacity:0; transform:translateY(-58px) scale(1.25);}}
+  .cheers-text{font-size:26px; color:var(--cream); margin-bottom:14px; text-shadow:2px 2px 0 #000;}
+  #sndBtn{position:fixed; top:12px; right:14px; z-index:99; font-size:14px; padding:10px 12px;
+          background:var(--gold); border:3px solid var(--ink); box-shadow:0 4px 0 var(--gold-d); cursor:pointer;}
+</style>
+</head>
+<body>
+<div class="wrap" id="mainwrap">
+  <div class="left">
+    <h1 class="pixel">QUIZ QUEST</h1>
+    <div class="sub" id="title">Host screen</div>
+    <div id="lobby">
+      <div class="card">
+        <div class="pinlabel pixel">GAME PIN</div>
+        <div class="pin pixel" id="pin">----</div>
+        <div class="joinurl">Join at <b id="joinurl">…</b></div>
+        <img id="qr" width="160" height="160" alt="QR">
+      </div>
+      <div class="card">
+        <b class="pixel" style="font-size:12px;color:var(--gold)">CATEGORIES</b>
+        <div class="cats" id="cats"></div>
+        <div class="catnote">Tap to toggle — questions come only from the selected categories.</div>
+      </div>
+      <div class="card">
+        <b class="pixel" style="font-size:12px;color:var(--gold)">HEROES (<span id="pcount">0</span>/20)</b>
+        <div class="players" id="players"></div>
+      </div>
+      <button class="btn-primary" id="startBtn" disabled>START QUEST</button>
+    </div>
+    <div id="play" class="hidden">
+      <div class="card">
+        <div class="meta pixel"><span id="qnum"></span><span id="answered"></span></div>
+        <div class="qbox" id="qtext"></div>
+        <div class="timer" id="timer"></div>
+        <div class="opts" id="opts"></div>
+      </div>
+      <button class="btn-primary" id="showBtn">SHOW RESULTS</button>
+    </div>
+    <div id="over" class="hidden card winner">
+      <div class="bighero" id="winnerHero"></div>
+      <h2 id="winnerName"></h2>
+      <div id="standings"></div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="card">
+      <b class="pixel" style="font-size:12px;color:var(--gold)">THE QUEST MAP</b>
+      <div id="track" style="margin-top:10px;"></div>
+    </div>
+  </div>
+</div>
+
+<div id="mapphase" class="hidden">
+  <div id="mapBig"></div>
+  <div id="nextWrap"><button class="btn-primary hidden" id="nextBtn">NEXT QUESTION</button></div>
+</div>
+
+<button id="sndBtn" class="pixel">🔊 SOUND</button>
+
+<div id="celebrate" class="hidden">
+  <div class="cel-inner">
+    <div class="cel-title">🏆 WINNER! 🏆</div>
+    <div class="beer-scene">
+      <img id="cheersAvatar" alt="">
+      <div class="mug">
+        <svg viewBox="0 0 32 36" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="8" width="20" height="26" fill="#2a1a08"/>
+          <rect x="5" y="9" width="18" height="24" fill="#f0a93a"/>
+          <rect x="5" y="9" width="18" height="5" fill="#ffd23f"/>
+          <rect x="7" y="11" width="3" height="20" fill="#ffe9a8" opacity="0.75"/>
+          <rect x="18" y="11" width="2" height="20" fill="#c77f1f"/>
+          <rect x="23" y="12" width="3" height="3" fill="#2a1a08"/><rect x="23" y="25" width="3" height="3" fill="#2a1a08"/>
+          <rect x="26" y="12" width="3" height="16" fill="#2a1a08"/>
+          <rect x="27" y="14" width="1" height="12" fill="#e8e2d0"/>
+          <rect x="2" y="3" width="6" height="6" fill="#fffbe8"/><rect x="7" y="1" width="7" height="7" fill="#fffbe8"/>
+          <rect x="13" y="2" width="6" height="6" fill="#fffbe8"/><rect x="18" y="4" width="6" height="5" fill="#fffbe8"/>
+          <rect x="1" y="6" width="3" height="3" fill="#fffbe8"/><rect x="24" y="6" width="3" height="3" fill="#fffbe8"/>
+        </svg>
+        <span class="bub" style="left:18%; bottom:75%; animation-delay:0s;"></span>
+        <span class="bub" style="left:48%; bottom:80%; animation-delay:.6s;"></span>
+        <span class="bub" style="left:33%; bottom:78%; animation-delay:1.2s;"></span>
+      </div>
+    </div>
+    <div class="cheers-text" id="cheersText"></div>
+    <div class="podium">
+      <div class="pod pod2"><div class="pod-hero" id="p2hero"></div><div class="pod-name" id="p2name"></div><div class="pod-bar">2nd</div></div>
+      <div class="pod pod1"><div class="crown">👑</div><div class="pod-hero" id="p1hero"></div><div class="pod-name" id="p1name"></div><div class="pod-bar">1st</div></div>
+      <div class="pod pod3"><div class="pod-hero" id="p3hero"></div><div class="pod-name" id="p3name"></div><div class="pod-bar">3rd</div></div>
+    </div>
+    <div class="cel-standings" id="celStandings"></div>
+    <button class="btn-primary" id="newGameBtn" style="max-width:340px;margin:22px auto 0;">NEW GAME</button>
+  </div>
+</div>
+
+<script src="/mapdata.js"></script>
+<script src="/board.js"></script>
+<script>
+const socket = io();
+let PIN=null, timerInt=null, state='lobby', lastOptions=[], lastResults=null;
+let CATS=[], selCats=new Set(), playerCount=0;
+
+/* ================= sound engine (WebAudio, no files) ================= */
+let AC=null, soundOn=true, musicTimer=null, musicMode=null;
+function ac(){ if(!AC) AC=new (window.AudioContext||window.webkitAudioContext)();
+  if(AC.state==='suspended') AC.resume(); return AC; }
+function tone(f,dur,type,vol,when,glideTo){
+  if(!soundOn||!AC) return;
+  const t=AC.currentTime+(when||0);
+  const o=AC.createOscillator(), g=AC.createGain();
+  o.type=type||'square'; o.frequency.setValueAtTime(f,t);
+  if(glideTo) o.frequency.exponentialRampToValueAtTime(glideTo,t+dur);
+  g.gain.setValueAtTime(0.0001,t);
+  g.gain.exponentialRampToValueAtTime(vol||0.12,t+0.012);
+  g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+  o.connect(g); g.connect(AC.destination);
+  o.start(t); o.stop(t+dur+0.05);
+}
+/* board.js calls this for every hop + arrival */
+window.QQSFX=function(n){
+  if(!soundOn||!AC) return;
+  if(n==='step') tone(300+Math.random()*120,0.09,'square',0.05,0,560+Math.random()*160); /* jump blip */
+  else if(n==='land'){ tone(170,0.16,'triangle',0.18,0,70); tone(85,0.14,'sine',0.14,0.02,50); } /* landing thump */
+};
+function castleFanfare(){ [523,659,784,1047].forEach((f,i)=>tone(f,0.16,'square',0.13,i*0.1)); }
+function victoryJingle(){ [523,659,784,1047,784,1318].forEach((f,i)=>tone(f,0.2,'square',0.15,i*0.14));
+  tone(131,1.4,'triangle',0.1,0); tone(196,1.4,'triangle',0.08,0.42); }
+function whoosh(){ tone(160,0.4,'sawtooth',0.05,0,640); }
+const TUNES={
+  lobby:{bpm:112, bass:[131,131,98,98,110,110,87,98],
+         lead:[523,659,784,659,392,523,659,523,440,554,659,554,349,440,523,440]},
+  celebrate:{bpm:138, bass:[131,165,196,165],
+         lead:[784,988,1175,988,1047,1318,1047,784]}
+};
+function music(mode){
+  musicMode=mode;
+  if(musicTimer){ clearInterval(musicTimer); musicTimer=null; }
+  if(!mode||!soundOn||!AC) return;
+  const s=TUNES[mode]; let i=0; const beat=60/s.bpm/2;
+  musicTimer=setInterval(()=>{
+    if(!soundOn) return;
+    if(i%2===0) tone(s.bass[(i>>1)%s.bass.length],beat*1.8,'triangle',0.06);
+    tone(s.lead[i%s.lead.length],beat*0.9,'square',0.04);
+    i++;
+  }, beat*1000);
+}
+/* browsers block audio until a user gesture — arm on first click/tap */
+document.addEventListener('pointerdown',()=>{ ac();
+  if(soundOn&&!musicTimer&&state==='lobby') music('lobby'); });
+document.getElementById('sndBtn').onclick=(e)=>{
+  e.stopPropagation(); soundOn=!soundOn;
+  document.getElementById('sndBtn').textContent=soundOn?'🔊 SOUND':'🔇 MUTED';
+  if(!soundOn) music(null);
+  else { ac(); music(state==='lobby'?'lobby':(document.getElementById('celebrate').classList.contains('hidden')?null:'celebrate')); }
+};
+
+socket.emit('createRoom');
+socket.on('roomCreated', d => {
+  PIN=d.pin;
+  document.getElementById('pin').textContent=d.pin;
+  document.getElementById('title').textContent=d.title+' · first hero to the castle wins!';
+  const base=location.origin;
+  document.getElementById('joinurl').textContent=base.replace(/^https?:\/\//,'');
+  document.getElementById('qr').src='https://api.qrserver.com/v1/create-qr-code/?size=160x160&data='+encodeURIComponent(base+'/?pin='+d.pin);
+  CATS=d.categories||[];
+  selCats=new Set(CATS.map(c=>c.key));
+  renderCats();
+  renderBoardAnimated('track', [], {layout:'host'});
+});
+
+function renderCats(){
+  const box=document.getElementById('cats'); box.innerHTML='';
+  CATS.forEach(c=>{
+    const el=document.createElement('div');
+    el.className='cat'+(selCats.has(c.key)?' on':'');
+    el.innerHTML=c.emoji+' '+c.name+'<span class="cnt">('+c.count+')</span>';
+    el.onclick=()=>{
+      if(selCats.has(c.key)){ if(selCats.size>1) selCats.delete(c.key); } // keep at least one
+      else selCats.add(c.key);
+      socket.emit('setCategories',{pin:PIN, cats:[...selCats]});
+      renderCats(); updateStart();
+    };
+    box.appendChild(el);
+  });
+}
+function updateStart(){
+  document.getElementById('startBtn').disabled = playerCount<1 || selCats.size<1;
+}
+
+socket.on('board', d => {
+  if(d.animate){
+    show('mapphase');
+    whoosh();
+    document.getElementById('nextBtn').classList.add('hidden');
+    renderBoardAnimated('mapBig', d.players, {animate:true, onDone:()=>{
+      document.getElementById('nextBtn').classList.remove('hidden');
+    }});
+    populatePhase();
+  } else {
+    renderBoardAnimated('track', d.players, {});
+  }
+});
+
+socket.on('lobbyUpdate', d => {
+  const box=document.getElementById('players'); box.innerHTML='';
+  d.players.forEach(p=>{ const c=document.createElement('div'); c.className='chip'; c.style.background=p.color;
+    c.innerHTML=avatarSVG(p.hero,22)+'<span>'+p.name+'</span>'; box.appendChild(c); });
+  document.getElementById('pcount').textContent=d.players.length;
+  playerCount=d.players.length;
+  updateStart();
+});
+
+document.getElementById('startBtn').onclick=()=>{ music(null); tone(660,0.12,'square',0.12); tone(880,0.14,'square',0.12,0.12); socket.emit('nextQuestion',{pin:PIN}); };
+document.getElementById('showBtn').onclick=()=>socket.emit('endQuestion',{pin:PIN});
+document.getElementById('nextBtn').onclick=()=>{ document.getElementById('nextBtn').classList.add('hidden'); socket.emit('nextQuestion',{pin:PIN}); };
+
+socket.on('showQuestion', d => {
+  state='question'; show('play'); lastOptions=d.options;
+  document.getElementById('qnum').textContent='QUESTION '+(d.index+1)+(d.cat?'  ·  '+d.cat.toUpperCase():'');
+  document.getElementById('answered').textContent='0 ANSWERED';
+  document.getElementById('qtext').textContent=d.q;
+  const opts=document.getElementById('opts'); opts.innerHTML='';
+  d.options.forEach((o,i)=>{ const el=document.createElement('div'); el.className='opt o'+i;
+    el.innerHTML='<span class="el">'+iconSVG(ELEMS[i],34)+'</span><span class="txt">'+o+'</span>'; opts.appendChild(el); });
+  startTimer(d.time);
+});
+socket.on('answerCount', d => { document.getElementById('answered').textContent=d.answered+'/'+d.total+' ANSWERED'; });
+socket.on('questionResults', d => { state='results'; stopTimer(); lastResults=d; });
+
+function populatePhase(){
+  if(!lastResults) return;
+  const ci=lastResults.correctIndex;
+  const title='Correct: '+(lastOptions[ci]!=null?lastOptions[ci]:'');
+  if(lastResults.results.some(r=>r.finishRank && r.correct && r.moved>0)) setTimeout(castleFanfare, 900);
+  const medals=['🥇','🥈','🥉'];
+  const rows=lastResults.results.map(r=>({
+    color:r.color,
+    text: r.name+'  '+(r.finishRank ? ((medals[r.finishRank-1]||'🏰')+' #'+r.finishRank)
+                      : (r.correct ? ('+'+r.moved) : 'wrong'))
+  }));
+  drawOverlay('mapBig', {title:title, rows:rows});
+}
+
+function setPod(prefix, p, big){
+  const h=document.getElementById(prefix+'hero'), n=document.getElementById(prefix+'name');
+  if(!p){ h.innerHTML=''; n.textContent=''; return; }
+  h.innerHTML=avatarSVG(p.hero, big?104:68); n.textContent=p.name;
+}
+function fireConfetti(){
+  const c=document.getElementById('celebrate');
+  c.querySelectorAll('.confetti').forEach(x=>x.remove());
+  const cols=['#ff4d2e','#1ea7ff','#38c93f','#f0a93a','#ffd23f','#9c4dff','#ff5fa2'];
+  for(let i=0;i<60;i++){ const d=document.createElement('div'); d.className='confetti';
+    d.style.left=(Math.random()*100)+'%'; d.style.background=cols[i%cols.length];
+    d.style.animationDelay=(Math.random()*2.5)+'s'; d.style.animationDuration=(2.4+Math.random()*2.2)+'s';
+    c.appendChild(d); }
+}
+socket.on('gameOver', d => {
+  stopTimer(); show('celebrate');
+  victoryJingle(); setTimeout(()=>music('celebrate'), 1400);
+  if(d.winner){
+    document.getElementById('cheersAvatar').src=avatarURL(d.winner.hero);
+    document.getElementById('cheersText').textContent=d.winner.name+' celebrates with a giant mug of beer! 🍻';
+  }
+  const st=d.standings||[];
+  setPod('p1', st[0], true); setPod('p2', st[1], false); setPod('p3', st[2], false);
+  document.querySelector('.pod2').style.visibility = st[1]?'visible':'hidden';
+  document.querySelector('.pod3').style.visibility = st[2]?'visible':'hidden';
+  const cs=document.getElementById('celStandings'); cs.innerHTML='';
+  st.forEach((p,i)=>{ if(i<3) return; const row=document.createElement('div'); row.className='res-row';
+    const where = p.finishRank ? 'reached the castle!' : 'tile '+p.position;
+    row.innerHTML='<b>'+(i+1)+'.</b>'+avatarSVG(p.hero,20)+'<span class="nm">'+p.name+'</span><span class="mv">'+where+'</span>';
+    cs.appendChild(row); });
+  fireConfetti();
+});
+document.getElementById('newGameBtn').onclick=()=>location.reload();
+
+function show(id){
+  const full = (id==='mapphase'||id==='celebrate');
+  document.getElementById('mainwrap').style.display = full?'none':'flex';
+  document.getElementById('mapphase').classList.toggle('hidden', id!=='mapphase');
+  document.getElementById('celebrate').classList.toggle('hidden', id!=='celebrate');
+  ['lobby','play','over'].forEach(x=>document.getElementById(x).classList.toggle('hidden', x!==id));
+}
+function startTimer(ms){ stopTimer(); let end=Date.now()+ms; const t=document.getElementById('timer');
+  const tick=()=>{ const s=Math.max(0,Math.ceil((end-Date.now())/1000)); t.textContent=s;
+    if(s<=0){ stopTimer(); if(state==='question') socket.emit('endQuestion',{pin:PIN}); } };
+  tick(); timerInt=setInterval(tick,250); }
+function stopTimer(){ if(timerInt){clearInterval(timerInt); timerInt=null;} }
+socket.on('hostLeft', ()=>{});
+</script>
+</body>
+</html>

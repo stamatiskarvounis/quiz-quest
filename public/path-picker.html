@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Path Picker</title>
+<style>
+  body{margin:0;font-family:system-ui,sans-serif;background:#1a2238;color:#fff;}
+  #bar{position:fixed;top:0;left:0;right:0;background:#0e1730;padding:8px 12px;display:flex;gap:10px;align-items:center;z-index:5;flex-wrap:wrap;}
+  button{font-size:14px;padding:8px 14px;border:none;border-radius:6px;background:#ffd23f;color:#111;font-weight:700;cursor:pointer;}
+  button.alt{background:#3a4660;color:#fff;}
+  #wrap{margin-top:52px;position:relative;display:inline-block;}
+  #map{display:block;max-width:100%;height:auto;cursor:crosshair;}
+  #ov{position:absolute;left:0;top:0;pointer-events:none;}
+  #out{position:fixed;bottom:0;left:0;right:0;height:90px;background:#0e1730;color:#9fe;border:0;font-family:monospace;font-size:12px;padding:8px;}
+  #count{color:#ffd23f;font-weight:700;}
+</style>
+</head>
+<body>
+<div id="bar">
+  <b style="color:#ffd23f">Path Picker</b>
+  <span>Click along the road from START to the dragon, in order.</span>
+  <button class="alt" id="undo">Undo</button>
+  <button class="alt" id="clear">Clear</button>
+  <button id="copy">Copy points</button>
+  <span id="count">0 points</span>
+</div>
+<div id="wrap">
+  <img id="map" src="/map_bg.jpg" alt="map">
+  <canvas id="ov"></canvas>
+</div>
+<textarea id="out" readonly>[]</textarea>
+<script>
+const img=document.getElementById('map'), ov=document.getElementById('ov'), ctx=ov.getContext('2d');
+const out=document.getElementById('out'), count=document.getElementById('count');
+let pts=[];
+function fit(){ ov.width=img.clientWidth; ov.height=img.clientHeight; draw(); }
+img.onload=fit; addEventListener('resize',fit); if(img.complete) fit();
+img.addEventListener('click',e=>{
+  const r=img.getBoundingClientRect();
+  const nx=(e.clientX-r.left)/r.width, ny=(e.clientY-r.top)/r.height;
+  pts.push([+nx.toFixed(4), +ny.toFixed(4)]); draw();
+});
+document.getElementById('undo').onclick=()=>{pts.pop();draw();};
+document.getElementById('clear').onclick=()=>{pts=[];draw();};
+document.getElementById('copy').onclick=()=>{ out.select(); document.execCommand('copy'); document.getElementById('copy').textContent='Copied!'; setTimeout(()=>document.getElementById('copy').textContent='Copy points',1200); };
+function draw(){
+  ctx.clearRect(0,0,ov.width,ov.height);
+  ctx.strokeStyle='#ff2fd0'; ctx.lineWidth=3; ctx.beginPath();
+  pts.forEach((p,i)=>{ const x=p[0]*ov.width, y=p[1]*ov.height; if(i===0)ctx.moveTo(x,y); else ctx.lineTo(x,y); });
+  ctx.stroke();
+  pts.forEach((p,i)=>{ const x=p[0]*ov.width, y=p[1]*ov.height;
+    ctx.fillStyle=i===0?'#39ff64':(i===pts.length-1?'#ff5050':'#ffd23f');
+    ctx.beginPath(); ctx.arc(x,y,6,0,7); ctx.fill(); ctx.strokeStyle='#000'; ctx.lineWidth=1.5; ctx.stroke(); });
+  out.value=JSON.stringify(pts);
+  count.textContent=pts.length+' points';
+}
+</script>
+</body>
+</html>
