@@ -2,105 +2,1195 @@
   "name": "Geography & Landmarks",
   "emoji": "🌍",
   "questions": [
-    {"q":"Which is the only continent without an active volcano?","options":["Europe","Australia","Africa","South America"],"correct":1},
-    {"q":"The capital of Australia is…","options":["Sydney","Melbourne","Canberra","Perth"],"correct":2},
-    {"q":"The capital of Canada is…","options":["Toronto","Vancouver","Montreal","Ottawa"],"correct":3},
-    {"q":"The capital of Turkey is…","options":["Istanbul","Ankara","Izmir","Antalya"],"correct":1},
-    {"q":"The capital of Brazil is…","options":["Rio de Janeiro","São Paulo","Brasília","Salvador"],"correct":2},
-    {"q":"Which is the longest river in the world (by most measurements)?","options":["Amazon","Nile","Yangtze","Mississippi"],"correct":1},
-    {"q":"Which river carries the most water by far?","options":["Nile","Amazon","Congo","Ganges"],"correct":1},
-    {"q":"The Sahara is the largest hot desert. The largest desert overall is…","options":["Gobi","Arabian","Antarctica","Atacama"],"correct":2},
-    {"q":"Mount Everest sits on the border of Nepal and…","options":["India","China (Tibet)","Bhutan","Pakistan"],"correct":1},
-    {"q":"Which country has the most islands in the world?","options":["Indonesia","Philippines","Sweden","Japan"],"correct":2},
-    {"q":"Which country spans the most time zones?","options":["Russia","USA","China","France"],"correct":3},
-    {"q":"Which city is split between two continents?","options":["Cairo","Istanbul","Moscow","Dubai"],"correct":1},
-    {"q":"The Great Barrier Reef lies off the coast of…","options":["Brazil","Australia","Indonesia","Mexico"],"correct":1},
-    {"q":"Machu Picchu was built by which civilization?","options":["Aztec","Maya","Inca","Olmec"],"correct":2},
-    {"q":"The Eiffel Tower was originally built as…","options":["A radio mast","A World's Fair entrance","A military lookout","A lighthouse"],"correct":1},
-    {"q":"Which country has a flag that is not rectangular?","options":["Bhutan","Nepal","Mongolia","Laos"],"correct":1},
-    {"q":"Which is the smallest country in the world?","options":["Monaco","Vatican City","San Marino","Liechtenstein"],"correct":1},
-    {"q":"Which is the largest country by area?","options":["Canada","China","USA","Russia"],"correct":3},
-    {"q":"Which two countries share the longest land border?","options":["Russia & China","USA & Canada","Chile & Argentina","India & China"],"correct":1},
-    {"q":"The Northern Lights are best seen from…","options":["Near the equator","Near the poles","High deserts","Mid-ocean"],"correct":1},
-    {"q":"Venice is famous for its…","options":["Canals","Cliffs","Hot springs","Caves"],"correct":0},
-    {"q":"The Colosseum is located in…","options":["Athens","Rome","Naples","Milan"],"correct":1},
-    {"q":"Which country is home to the Taj Mahal?","options":["Pakistan","India","Bangladesh","Iran"],"correct":1},
-    {"q":"The Taj Mahal was built as a…","options":["Palace","Fort","Tomb","Temple"],"correct":2},
-    {"q":"Christ the Redeemer overlooks which city?","options":["Buenos Aires","Rio de Janeiro","Lima","São Paulo"],"correct":1},
-    {"q":"Which African country was never colonized?","options":["Ghana","Kenya","Ethiopia","Nigeria"],"correct":2},
-    {"q":"The Dead Sea's surface is the lowest land point on Earth. It borders Israel and…","options":["Egypt","Jordan","Lebanon","Syria"],"correct":1},
-    {"q":"You can't sink easily in the Dead Sea because of its…","options":["Warm water","High salt content","Strong currents","Shallow depth"],"correct":1},
-    {"q":"Which country has the most natural lakes?","options":["Finland","Canada","Russia","Sweden"],"correct":1},
-    {"q":"The Maldives is famous for being the world's…","options":["Lowest-lying country","Smallest country","Hottest country","Newest country"],"correct":0},
-    {"q":"Which ocean is the largest?","options":["Atlantic","Indian","Pacific","Arctic"],"correct":2},
-    {"q":"The Mariana Trench, Earth's deepest point, is in which ocean?","options":["Atlantic","Pacific","Indian","Southern"],"correct":1},
-    {"q":"Which country is both in Europe and Asia?","options":["Greece","Turkey","Bulgaria","Romania"],"correct":1},
-    {"q":"Mount Kilimanjaro is in which country?","options":["Kenya","Tanzania","Uganda","Ethiopia"],"correct":1},
-    {"q":"The Great Wall of China was mainly built to…","options":["Mark a trade route","Keep out invaders","Stop floods","Honor emperors"],"correct":1},
-    {"q":"Which city has the most bridges in the world?","options":["Venice","Amsterdam","Hamburg","Stockholm"],"correct":2},
-    {"q":"Petra, the rock-carved city, is in…","options":["Egypt","Jordan","Morocco","Saudi Arabia"],"correct":1},
-    {"q":"Angkor Wat, the world's largest religious monument, is in…","options":["Thailand","Cambodia","Vietnam","Myanmar"],"correct":1},
-    {"q":"The Acropolis crowns which city?","options":["Rome","Athens","Istanbul","Alexandria"],"correct":1},
-    {"q":"Which country's capital is La Paz — the world's highest capital city?","options":["Peru","Bolivia","Ecuador","Chile"],"correct":1},
-    {"q":"Iceland sits on the boundary of two…","options":["Climate zones","Tectonic plates","Ocean currents","Time zones"],"correct":1},
-    {"q":"Which European capital is built on 14 islands?","options":["Copenhagen","Helsinki","Stockholm","Oslo"],"correct":2},
-    {"q":"The Sagrada Família, still under construction since 1882, is in…","options":["Madrid","Barcelona","Lisbon","Seville"],"correct":1},
-    {"q":"Which desert is the driest place on Earth?","options":["Sahara","Atacama","Gobi","Kalahari"],"correct":1},
-    {"q":"Which country is nicknamed the 'Land of the Rising Sun'?","options":["China","Japan","South Korea","Thailand"],"correct":1},
-    {"q":"Which country is called the 'Land of Fire and Ice'?","options":["Norway","Iceland","Greenland","Finland"],"correct":1},
-    {"q":"Greenland is an autonomous territory of…","options":["Norway","Denmark","Canada","Iceland"],"correct":1},
-    {"q":"Which African river plunges over Victoria Falls?","options":["Nile","Congo","Zambezi","Niger"],"correct":2},
-    {"q":"Uluru (Ayers Rock) is sacred to the indigenous people of…","options":["New Zealand","Australia","Fiji","Papua New Guinea"],"correct":1},
-    {"q":"Which country has no rivers at all?","options":["Saudi Arabia","Mongolia","Chad","Oman"],"correct":0},
-    {"q":"Which two South American countries are landlocked?","options":["Bolivia & Paraguay","Peru & Ecuador","Uruguay & Chile","Colombia & Venezuela"],"correct":0},
-    {"q":"The Panama Canal connects the Atlantic with which ocean?","options":["Indian","Pacific","Arctic","Southern"],"correct":1},
-    {"q":"The Suez Canal is located in…","options":["Saudi Arabia","Egypt","Israel","Jordan"],"correct":1},
-    {"q":"Which mountain range separates Europe from Asia?","options":["Alps","Urals","Caucasus","Carpathians"],"correct":1},
-    {"q":"The Andes run along which side of South America?","options":["East","West","North","South"],"correct":1},
-    {"q":"Which is the only sea without any coastline?","options":["Caspian Sea","Sargasso Sea","Coral Sea","Tasman Sea"],"correct":1},
-    {"q":"Mount Fuji is the highest peak of…","options":["South Korea","Japan","Taiwan","China"],"correct":1},
-    {"q":"Which city is known as the 'City of a Hundred Spires'?","options":["Vienna","Prague","Budapest","Krakow"],"correct":1},
-    {"q":"The Atacama Desert is so dry that NASA tests…","options":["Spacesuits","Mars rovers","Rockets","Telescopes"],"correct":1},
-    {"q":"Which country owns the most of the Amazon rainforest?","options":["Peru","Colombia","Brazil","Venezuela"],"correct":2},
-    {"q":"Santorini's famous white-and-blue villages sit on the rim of a…","options":["Canyon","Volcano caldera","Coral reef","Glacier"],"correct":1},
-    {"q":"Which is the world's highest waterfall?","options":["Niagara Falls","Angel Falls","Victoria Falls","Iguazu Falls"],"correct":1},
-    {"q":"Angel Falls is located in…","options":["Brazil","Venezuela","Colombia","Guyana"],"correct":1},
-    {"q":"The Moai statues stand on which remote island?","options":["Easter Island","Fiji","Tahiti","Galápagos"],"correct":0},
-    {"q":"Easter Island belongs to which country?","options":["Peru","Chile","Ecuador","France"],"correct":1},
-    {"q":"Which country has three capital cities?","options":["Switzerland","South Africa","Nigeria","Malaysia"],"correct":1},
-    {"q":"Which Asian city-state is both a city and a country?","options":["Hong Kong","Singapore","Macau","Dubai"],"correct":1},
-    {"q":"The ancient city of Timbuktu is in which modern country?","options":["Egypt","Mali","Morocco","Sudan"],"correct":1},
-    {"q":"Which strait separates Spain from Morocco?","options":["Bosporus","Gibraltar","Dover","Hormuz"],"correct":1},
-    {"q":"Which country has the longest coastline in the world?","options":["Russia","Australia","Canada","Indonesia"],"correct":2},
-    {"q":"Lake Baikal in Siberia is the world's…","options":["Largest lake by area","Deepest lake","Saltiest lake","Highest lake"],"correct":1},
-    {"q":"Which capital city sits on two continents' tectonic plates, drifting apart?","options":["Reykjavik","Wellington","Tokyo","Manila"],"correct":0},
-    {"q":"The Serengeti's great migration involves millions of…","options":["Elephants","Wildebeest and zebras","Lions","Flamingos"],"correct":1},
-    {"q":"Which European country is divided into cantons?","options":["Austria","Switzerland","Belgium","Netherlands"],"correct":1},
-    {"q":"Which is the most visited city in the world (by international tourists)?","options":["Paris","Bangkok","London","Dubai"],"correct":1},
-    {"q":"Which country's shape is often compared to a boot?","options":["Chile","Italy","Portugal","Norway"],"correct":1},
-    {"q":"Which is the only country that borders both the Atlantic and the Mediterranean... and Africa by land?","options":["Spain","Morocco","France","Egypt"],"correct":0},
-    {"q":"Vatican City is entirely surrounded by which city?","options":["Florence","Rome","Naples","Venice"],"correct":1},
-    {"q":"Which Nordic country is famously home to fjords?","options":["Sweden","Norway","Denmark","Finland"],"correct":1},
-    {"q":"Which country has the most UNESCO World Heritage sites?","options":["China","Italy","France","Spain"],"correct":1},
-    {"q":"The Brandenburg Gate stands in…","options":["Vienna","Berlin","Munich","Hamburg"],"correct":1},
-    {"q":"Which city's metro is the deepest in the world?","options":["Moscow","Pyongyang","London","Tokyo"],"correct":1},
-    {"q":"Which is the world's largest island (not counting Australia)?","options":["Borneo","Madagascar","Greenland","New Guinea"],"correct":2},
-    {"q":"Madagascar lies off the coast of which continent?","options":["Asia","Africa","Australia","South America"],"correct":1},
-    {"q":"Which country is closest to the North Pole?","options":["Iceland","Greenland (Denmark)","Norway","Canada"],"correct":1},
-    {"q":"Which two countries share Iguazu Falls?","options":["Brazil & Argentina","Peru & Bolivia","Chile & Argentina","Brazil & Paraguay"],"correct":0},
-    {"q":"The Burj Khalifa, the world's tallest building, stands in…","options":["Abu Dhabi","Doha","Dubai","Riyadh"],"correct":2},
-    {"q":"Which country gifted the Statue of Liberty to the USA?","options":["UK","France","Spain","Italy"],"correct":1},
-    {"q":"Which sea is so salty it's actually a lake?","options":["Red Sea","Dead Sea","Black Sea","Caspian Sea"],"correct":1},
-    {"q":"Which African country has the largest population?","options":["Egypt","Ethiopia","Nigeria","South Africa"],"correct":2},
-    {"q":"Which country's people live across roughly 17,000 islands?","options":["Philippines","Indonesia","Japan","Greece"],"correct":1},
-    {"q":"Which canal city is slowly sinking into its lagoon?","options":["Amsterdam","Venice","Bruges","Bangkok"],"correct":1},
-    {"q":"Which mountain is taller than Everest when measured from its underwater base?","options":["K2","Mauna Kea","Denali","Mont Blanc"],"correct":1},
-    {"q":"The Bosporus strait runs through which city?","options":["Athens","Istanbul","Izmir","Alexandria"],"correct":1},
-    {"q":"Which country has a town called 'Hell' that regularly freezes over?","options":["Norway","Iceland","Canada","Finland"],"correct":0},
-    {"q":"Which continent has the most countries?","options":["Asia","Africa","Europe","South America"],"correct":1},
-    {"q":"Point Nemo, the most remote spot on Earth, is so isolated that the nearest humans are often…","options":["On ships","On the ISS in space","In Antarctica","On islands"],"correct":1},
-    {"q":"Which two countries are doubly landlocked (surrounded only by landlocked countries)?","options":["Liechtenstein & Uzbekistan","Switzerland & Austria","Nepal & Bhutan","Paraguay & Bolivia"],"correct":0},
-    {"q":"What's unusual about the border town of Baarle, between Belgium and the Netherlands?","options":["It has no roads","Borders cut through houses","It moves yearly","It's underground"],"correct":1},
-    {"q":"Mount Etna, Europe's most active volcano, is on which island?","options":["Sardinia","Sicily","Crete","Corsica"],"correct":1}
+    {
+      "q": "Which country has the most natural lakes in the world?",
+      "options": [
+        "Russia",
+        "Canada",
+        "Finland",
+        "United States"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Mount Kilimanjaro lies in which country?",
+      "options": [
+        "Kenya",
+        "Tanzania",
+        "Uganda",
+        "Ethiopia"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which is the only country that borders both the Atlantic and the Indian Oceans and lies entirely in the Southern Hemisphere... South Africa borders both; which capital is its judicial one?",
+      "options": [
+        "Pretoria",
+        "Bloemfontein",
+        "Cape Town",
+        "Johannesburg"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Atacama, the driest non-polar desert on Earth, is mainly in which country?",
+      "options": [
+        "Peru",
+        "Chile",
+        "Bolivia",
+        "Argentina"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which European capital sits on two continents?",
+      "options": [
+        "Athens",
+        "Istanbul (not a capital)",
+        "Moscow",
+        "Istanbul is in Turkey but Ankara is the capital"
+      ],
+      "correct": 3
+    },
+    {
+      "q": "What is the capital of Australia?",
+      "options": [
+        "Sydney",
+        "Melbourne",
+        "Canberra",
+        "Perth"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which country is the only one to border 14 others, tying the record?",
+      "options": [
+        "Russia",
+        "China",
+        "Both Russia and China border 14",
+        "Brazil"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Lake Baikal, the world's deepest lake, is located in which country?",
+      "options": [
+        "Mongolia",
+        "Russia",
+        "Kazakhstan",
+        "China"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which African country was formerly known as Abyssinia?",
+      "options": [
+        "Sudan",
+        "Ethiopia",
+        "Eritrea",
+        "Somalia"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Strait of Malacca, a key shipping lane, lies between Malaysia and which island?",
+      "options": [
+        "Java",
+        "Sumatra",
+        "Borneo",
+        "Sulawesi"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of Canada?",
+      "options": [
+        "Toronto",
+        "Vancouver",
+        "Ottawa",
+        "Montreal"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which country has the longest coastline in the world?",
+      "options": [
+        "Russia",
+        "Canada",
+        "Indonesia",
+        "Australia"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The ancient city of Petra is located in which modern country?",
+      "options": [
+        "Egypt",
+        "Jordan",
+        "Lebanon",
+        "Syria"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which is the largest landlocked country in the world?",
+      "options": [
+        "Mongolia",
+        "Kazakhstan",
+        "Chad",
+        "Bolivia"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the smallest country in the world by area?",
+      "options": [
+        "Monaco",
+        "Nauru",
+        "Vatican City",
+        "San Marino"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "The Danube River flows through how many countries (the most of any river)?",
+      "options": [
+        "Four",
+        "Six",
+        "Ten",
+        "Fourteen"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which capital city is the highest in the world by elevation?",
+      "options": [
+        "Quito",
+        "La Paz",
+        "Bogotá",
+        "Thimphu"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country lies on both sides of the Equator and contains the most Amazon rainforest after Brazil?",
+      "options": [
+        "Peru",
+        "Colombia",
+        "Ecuador",
+        "Venezuela"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What separates the continents of Europe and Asia in Russia?",
+      "options": [
+        "The Caucasus only",
+        "The Ural Mountains",
+        "The Volga River",
+        "The Bosphorus only"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which sea is shrinking dramatically and was once one of the largest lakes on Earth?",
+      "options": [
+        "Caspian Sea",
+        "Aral Sea",
+        "Dead Sea",
+        "Black Sea"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of New Zealand?",
+      "options": [
+        "Auckland",
+        "Wellington",
+        "Christchurch",
+        "Hamilton"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country contains the geographic point furthest from any ocean (the 'pole of inaccessibility')?",
+      "options": [
+        "Mongolia",
+        "China",
+        "Kazakhstan",
+        "Russia"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Sahara Desert is roughly comparable in size to which country/continent?",
+      "options": [
+        "Australia",
+        "The United States",
+        "India",
+        "Brazil"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which two countries share the longest international border?",
+      "options": [
+        "USA and Canada",
+        "Russia and Kazakhstan",
+        "Chile and Argentina",
+        "China and Mongolia"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the capital of Brazil?",
+      "options": [
+        "Rio de Janeiro",
+        "São Paulo",
+        "Brasília",
+        "Salvador"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Mount Everest sits on the border between Nepal and which other country/region?",
+      "options": [
+        "India",
+        "China (Tibet)",
+        "Bhutan",
+        "Pakistan"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country has no rivers at all?",
+      "options": [
+        "Libya",
+        "Saudi Arabia",
+        "Qatar",
+        "All of these have very few or none; Saudi Arabia has none"
+      ],
+      "correct": 3
+    },
+    {
+      "q": "The Mariana Trench, Earth's deepest point, is in which ocean?",
+      "options": [
+        "Atlantic",
+        "Indian",
+        "Pacific",
+        "Southern"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which European country is divided into regions including Flanders and Wallonia?",
+      "options": [
+        "Netherlands",
+        "Belgium",
+        "Switzerland",
+        "Luxembourg"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of Morocco?",
+      "options": [
+        "Casablanca",
+        "Marrakesh",
+        "Rabat",
+        "Fez"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which country is home to the ancient city of Timbuktu?",
+      "options": [
+        "Niger",
+        "Mali",
+        "Mauritania",
+        "Chad"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Galápagos Islands, key to Darwin's theory, belong to which country?",
+      "options": [
+        "Chile",
+        "Ecuador",
+        "Peru",
+        "Colombia"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which is the longest river in Asia?",
+      "options": [
+        "Mekong",
+        "Yangtze",
+        "Yellow River",
+        "Ganges"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of Kazakhstan?",
+      "options": [
+        "Almaty",
+        "Astana",
+        "Shymkent",
+        "Karaganda"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which mountain range separates France and Spain?",
+      "options": [
+        "The Alps",
+        "The Pyrenees",
+        "The Apennines",
+        "The Carpathians"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Bosphorus Strait connects the Black Sea to which body of water?",
+      "options": [
+        "Aegean Sea",
+        "Sea of Marmara",
+        "Mediterranean Sea",
+        "Caspian Sea"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country has the most time zones, counting its overseas territories?",
+      "options": [
+        "Russia",
+        "France",
+        "United States",
+        "United Kingdom"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of Vietnam?",
+      "options": [
+        "Ho Chi Minh City",
+        "Hanoi",
+        "Da Nang",
+        "Hue"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Angel Falls, the world's tallest waterfall, is in which country?",
+      "options": [
+        "Brazil",
+        "Venezuela",
+        "Guyana",
+        "Colombia"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which is the only US state that borders just one other state?",
+      "options": [
+        "Maine",
+        "Florida",
+        "Rhode Island",
+        "Alaska"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "The Iberian Peninsula consists mainly of which two countries?",
+      "options": [
+        "Spain and Portugal",
+        "Italy and Greece",
+        "France and Spain",
+        "Portugal and Morocco"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the capital of Norway?",
+      "options": [
+        "Bergen",
+        "Oslo",
+        "Stavanger",
+        "Trondheim"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country is completely surrounded by South Africa?",
+      "options": [
+        "Eswatini",
+        "Lesotho",
+        "Botswana",
+        "Zimbabwe"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Nile is generally considered the longest river; into which sea does it empty?",
+      "options": [
+        "Red Sea",
+        "Mediterranean Sea",
+        "Arabian Sea",
+        "Black Sea"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country's flag is the only non-quadrilateral national flag?",
+      "options": [
+        "Bhutan",
+        "Nepal",
+        "Sri Lanka",
+        "Switzerland"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of Argentina?",
+      "options": [
+        "Córdoba",
+        "Buenos Aires",
+        "Rosario",
+        "Mendoza"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which strait separates Africa and Europe at its narrowest?",
+      "options": [
+        "Strait of Gibraltar",
+        "Strait of Hormuz",
+        "Bering Strait",
+        "Strait of Dover"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Greenland is an autonomous territory of which country?",
+      "options": [
+        "Norway",
+        "Denmark",
+        "Iceland",
+        "Canada"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which is the flattest country on Earth, with its highest point under 8 metres?",
+      "options": [
+        "Netherlands",
+        "Maldives",
+        "Denmark",
+        "Tuvalu"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of Egypt?",
+      "options": [
+        "Alexandria",
+        "Cairo",
+        "Giza",
+        "Luxor"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Caspian Sea borders five countries; which is NOT one of them?",
+      "options": [
+        "Iran",
+        "Russia",
+        "Kazakhstan",
+        "Uzbekistan"
+      ],
+      "correct": 3
+    },
+    {
+      "q": "Which European capital was historically split by a wall until 1989?",
+      "options": [
+        "Vienna",
+        "Berlin",
+        "Prague",
+        "Budapest"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of South Korea?",
+      "options": [
+        "Busan",
+        "Seoul",
+        "Incheon",
+        "Daegu"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country is made up of more than 17,000 islands?",
+      "options": [
+        "Philippines",
+        "Indonesia",
+        "Japan",
+        "Maldives"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Matterhorn straddles the border of Switzerland and which country?",
+      "options": [
+        "France",
+        "Italy",
+        "Austria",
+        "Germany"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which line of latitude passes through the most countries?",
+      "options": [
+        "The Equator",
+        "Tropic of Cancer",
+        "Tropic of Capricorn",
+        "Arctic Circle"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the capital of Portugal?",
+      "options": [
+        "Porto",
+        "Lisbon",
+        "Coimbra",
+        "Faro"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which African country has three capital cities?",
+      "options": [
+        "Nigeria",
+        "South Africa",
+        "Kenya",
+        "Egypt"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Panama Canal connects the Pacific to which ocean?",
+      "options": [
+        "Indian",
+        "Atlantic",
+        "Arctic",
+        "Southern"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which is the second-largest country in the world by area?",
+      "options": [
+        "China",
+        "Canada",
+        "United States",
+        "Brazil"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of Iceland?",
+      "options": [
+        "Akureyri",
+        "Reykjavík",
+        "Keflavík",
+        "Hafnarfjörður"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which sea has the highest salt content, allowing easy floating?",
+      "options": [
+        "Red Sea",
+        "Dead Sea",
+        "Caspian Sea",
+        "Mediterranean Sea"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The city of Istanbul was previously known by which name?",
+      "options": [
+        "Constantinople",
+        "Byzantium",
+        "Both Byzantium and Constantinople",
+        "Smyrna"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which country's territory is closest to the North Pole?",
+      "options": [
+        "Russia",
+        "Canada",
+        "Denmark (Greenland)",
+        "Norway"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "What is the capital of Switzerland?",
+      "options": [
+        "Zurich",
+        "Geneva",
+        "Bern",
+        "Basel"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "The Great Rift Valley runs mainly through which continent?",
+      "options": [
+        "Asia",
+        "Africa",
+        "South America",
+        "Australia"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country uses the most official languages, with 11 recognised?",
+      "options": [
+        "India",
+        "South Africa",
+        "Switzerland",
+        "Bolivia"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of Sweden?",
+      "options": [
+        "Gothenburg",
+        "Stockholm",
+        "Malmö",
+        "Uppsala"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Ring of Fire, a zone of volcanoes and quakes, surrounds which ocean?",
+      "options": [
+        "Atlantic",
+        "Pacific",
+        "Indian",
+        "Arctic"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which is the largest island in the Mediterranean Sea?",
+      "options": [
+        "Cyprus",
+        "Sardinia",
+        "Sicily",
+        "Corsica"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "What is the capital of Ireland?",
+      "options": [
+        "Cork",
+        "Dublin",
+        "Galway",
+        "Limerick"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country's name means 'silver' in Latin, after a river of the same theme?",
+      "options": [
+        "Argentina",
+        "Chile",
+        "Bolivia",
+        "Uruguay"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "The Khyber Pass connects Pakistan with which country?",
+      "options": [
+        "India",
+        "Afghanistan",
+        "Iran",
+        "Tajikistan"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of Finland?",
+      "options": [
+        "Tampere",
+        "Helsinki",
+        "Turku",
+        "Espoo"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which is the only sea on Earth with no land coastline, bounded by ocean currents?",
+      "options": [
+        "Sargasso Sea",
+        "Coral Sea",
+        "Tasman Sea",
+        "Sea of Japan"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Victoria Falls lies on the border of Zambia and which country?",
+      "options": [
+        "Botswana",
+        "Zimbabwe",
+        "Mozambique",
+        "Namibia"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of Thailand?",
+      "options": [
+        "Chiang Mai",
+        "Bangkok",
+        "Phuket",
+        "Pattaya"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country spans the most longitude, stretching across 11 time zones?",
+      "options": [
+        "Canada",
+        "Russia",
+        "United States",
+        "China"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Strait of Hormuz, vital for oil, lies between Iran and which country?",
+      "options": [
+        "Iraq",
+        "Oman/UAE",
+        "Saudi Arabia",
+        "Qatar"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of Poland?",
+      "options": [
+        "Kraków",
+        "Warsaw",
+        "Gdańsk",
+        "Wrocław"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which is the largest country entirely within Europe?",
+      "options": [
+        "France",
+        "Ukraine",
+        "Spain",
+        "Germany"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Mount Fuji, an active volcano, is the highest peak in which country?",
+      "options": [
+        "China",
+        "Japan",
+        "South Korea",
+        "Taiwan"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of Peru?",
+      "options": [
+        "Cusco",
+        "Lima",
+        "Arequipa",
+        "Trujillo"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which European country is the only one to have a coastline on both the Mediterranean and the Atlantic and contains the Algarve?",
+      "options": [
+        "Spain",
+        "Portugal",
+        "France",
+        "Italy"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Gobi Desert spans Mongolia and which other country?",
+      "options": [
+        "China",
+        "Russia",
+        "Kazakhstan",
+        "India"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the capital of the Netherlands (constitutionally)?",
+      "options": [
+        "The Hague",
+        "Amsterdam",
+        "Rotterdam",
+        "Utrecht"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country has the most pyramids in the world?",
+      "options": [
+        "Egypt",
+        "Sudan",
+        "Mexico",
+        "Peru"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Drake Passage separates South America from which landmass?",
+      "options": [
+        "Africa",
+        "Antarctica",
+        "Australia",
+        "New Zealand"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of Chile?",
+      "options": [
+        "Valparaíso",
+        "Santiago",
+        "Concepción",
+        "Antofagasta"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which is the most populous country in Africa?",
+      "options": [
+        "Egypt",
+        "Nigeria",
+        "Ethiopia",
+        "DR Congo"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Suez Canal links the Mediterranean to which sea?",
+      "options": [
+        "Red Sea",
+        "Black Sea",
+        "Arabian Sea",
+        "Caspian Sea"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the capital of Hungary?",
+      "options": [
+        "Debrecen",
+        "Budapest",
+        "Szeged",
+        "Pécs"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country contains the southernmost capital city in the world?",
+      "options": [
+        "Chile",
+        "New Zealand",
+        "Australia",
+        "Argentina"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The K2 mountain, second-highest on Earth, lies on the border of Pakistan and which country?",
+      "options": [
+        "India",
+        "China",
+        "Afghanistan",
+        "Nepal"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of Colombia?",
+      "options": [
+        "Medellín",
+        "Bogotá",
+        "Cali",
+        "Cartagena"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which is the largest of the Great Lakes of North America by surface area?",
+      "options": [
+        "Lake Michigan",
+        "Lake Superior",
+        "Lake Huron",
+        "Lake Erie"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The country of Bhutan measures its progress with which unusual index?",
+      "options": [
+        "Gross National Happiness",
+        "Green Wealth Index",
+        "Mountain Index",
+        "Forest Score"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the capital of Indonesia (the long-standing one)?",
+      "options": [
+        "Surabaya",
+        "Jakarta",
+        "Bandung",
+        "Medan"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which river is the longest in South America?",
+      "options": [
+        "Paraná",
+        "Amazon",
+        "Orinoco",
+        "São Francisco"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Lake Titicaca, the highest navigable lake, straddles Peru and which country?",
+      "options": [
+        "Chile",
+        "Bolivia",
+        "Ecuador",
+        "Argentina"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of Austria?",
+      "options": [
+        "Salzburg",
+        "Vienna",
+        "Graz",
+        "Innsbruck"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country, despite its name, has no part of it in the tropics... 'Equatorial Guinea' actually lies on which line region?",
+      "options": [
+        "Entirely north of the equator",
+        "Entirely south",
+        "On the equator exactly",
+        "Far from the equator"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "The fjords are a famous feature of which country's coastline?",
+      "options": [
+        "Sweden",
+        "Norway",
+        "Denmark",
+        "Finland"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of the Czech Republic?",
+      "options": [
+        "Brno",
+        "Prague",
+        "Ostrava",
+        "Plzeň"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which is the only country to be located on every hemisphere (N, S, E, W)?",
+      "options": [
+        "Indonesia",
+        "Kiribati",
+        "Brazil",
+        "Ecuador"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Sahel is a transitional zone between the Sahara and what to its south?",
+      "options": [
+        "Rainforest",
+        "Savanna grassland",
+        "Ocean",
+        "Mountains"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of Greece?",
+      "options": [
+        "Thessaloniki",
+        "Athens",
+        "Patras",
+        "Heraklion"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which is the highest mountain entirely within Europe (debated, in the Caucasus)?",
+      "options": [
+        "Mont Blanc",
+        "Mount Elbrus",
+        "Matterhorn",
+        "Zugspitze"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The country of Turkey controls which strategic strait alongside the Bosphorus?",
+      "options": [
+        "Dardanelles",
+        "Strait of Otranto",
+        "Strait of Messina",
+        "Kerch Strait"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the capital of Denmark?",
+      "options": [
+        "Aarhus",
+        "Copenhagen",
+        "Odense",
+        "Aalborg"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which African river is the second-longest and forms a huge inland delta in Mali?",
+      "options": [
+        "Congo",
+        "Niger",
+        "Zambezi",
+        "Senegal"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Wakhan Corridor is a thin strip of land belonging to which country?",
+      "options": [
+        "Tajikistan",
+        "Afghanistan",
+        "Pakistan",
+        "China"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of Ukraine?",
+      "options": [
+        "Lviv",
+        "Kyiv",
+        "Odesa",
+        "Kharkiv"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which European country has the most volcanoes and sits on a mid-ocean ridge?",
+      "options": [
+        "Italy",
+        "Iceland",
+        "Greece",
+        "Spain"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The continent of Africa is crossed by the Equator and which other major line?",
+      "options": [
+        "Only the Equator",
+        "The Prime Meridian",
+        "The Tropic of Capricorn only",
+        "Both Prime Meridian and Tropic of Cancer/Capricorn"
+      ],
+      "correct": 3
+    },
+    {
+      "q": "What is the capital of Saudi Arabia?",
+      "options": [
+        "Jeddah",
+        "Riyadh",
+        "Mecca",
+        "Medina"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which is the only landlocked country in Southeast Asia?",
+      "options": [
+        "Cambodia",
+        "Laos",
+        "Myanmar",
+        "Vietnam"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Ural and Caspian are sometimes used to mark the boundary of Europe and which continent?",
+      "options": [
+        "Africa",
+        "Asia",
+        "Antarctica",
+        "Oceania"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the capital of Cuba?",
+      "options": [
+        "Santiago de Cuba",
+        "Havana",
+        "Camagüey",
+        "Holguín"
+      ],
+      "correct": 1
+    }
   ]
 }

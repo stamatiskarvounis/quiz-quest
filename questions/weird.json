@@ -2,105 +2,1145 @@
   "name": "Weird Facts & Records",
   "emoji": "🤯",
   "questions": [
-    {"q":"In Switzerland it's illegal to own just one…","options":["Goldfish","Guinea pig","Cat","Parrot"],"correct":1},
-    {"q":"Bananas are slightly…","options":["Magnetic","Radioactive","Acidic enough to burn","Alcoholic"],"correct":1},
-    {"q":"The Eiffel Tower grows taller in summer because…","options":["It's adjusted yearly","Metal expands in heat","Tourists climb it","It floats slightly"],"correct":1},
-    {"q":"How much taller can the Eiffel Tower get on a hot day?","options":["1.5 mm","15 cm","1.5 m","15 m"],"correct":1},
-    {"q":"Oxford University is older than the…","options":["Roman Empire","Aztec Empire","Great Wall","Pyramids"],"correct":1},
-    {"q":"It rains diamonds on which planets?","options":["Mars and Venus","Neptune and Uranus","Jupiter only","Mercury"],"correct":1},
-    {"q":"A day on Venus is longer than its…","options":["Night","Year","Week","Summer"],"correct":1},
-    {"q":"Scotland's national animal is the…","options":["Lion","Unicorn","Stag","Eagle"],"correct":1},
-    {"q":"In Japan, there's an island overrun by friendly…","options":["Penguins","Rabbits","Goats","Turtles"],"correct":1},
-    {"q":"Wombat poop is shaped like…","options":["Spheres","Cubes","Pyramids","Stars"],"correct":1},
-    {"q":"Hot water can freeze faster than cold water — this is called…","options":["The Kelvin effect","The Mpemba effect","Reverse freezing","Thermal flip"],"correct":1},
-    {"q":"Which country has a navy but no sea? (Hint: it's landlocked)","options":["Mongolia","Bolivia","Switzerland","Paraguay... trick: several do!"],"correct":3},
-    {"q":"The unicorn is officially Scotland's national animal. Wales has a ___ on its flag.","options":["Lion","Dragon","Eagle","Bull"],"correct":1},
-    {"q":"The shortest commercial flight in the world (Scotland) lasts about…","options":["90 seconds","10 minutes","25 minutes","45 minutes"],"correct":0},
-    {"q":"There are more possible chess games than…","options":["Stars in our galaxy","Atoms in the observable universe","Grains of sand on Earth","All of these"],"correct":3},
-    {"q":"Which everyday object hosts more bacteria than a toilet seat?","options":["Phone screen","Kitchen sponge","Keyboard","All of these"],"correct":3},
-    {"q":"Sloths can hold their breath longer than dolphins — up to…","options":["5 minutes","40 minutes","2 hours","10 minutes"],"correct":1},
-    {"q":"The inventor of the Pringles can had his ashes…","options":["Scattered at sea","Buried in a Pringles can","Launched to space","Made into chips... no"],"correct":1},
-    {"q":"In space, astronauts grow…","options":["Heavier","Taller","Shorter","Hairier"],"correct":1},
-    {"q":"The Moon has moonquakes.","options":["True","False","Only during eclipses","Only on the dark side"],"correct":0},
-    {"q":"Which country once had a 'War of the Bucket'?","options":["France","Italy","Spain","Austria"],"correct":1},
-    {"q":"The Great Emu War of 1932 was fought (and lost) by…","options":["New Zealand","Australia","South Africa","Argentina"],"correct":1},
-    {"q":"Who won the Great Emu War?","options":["The army","The emus","It was a draw","Nobody fought"],"correct":1},
-    {"q":"Cleopatra lived closer in time to the first Pizza Hut than to the…","options":["Roman Forum","Building of the Great Pyramid","First Olympics","Parthenon"],"correct":1},
-    {"q":"A bolt of lightning is hotter than…","options":["Lava","The surface of the Sun","A rocket engine","All of these"],"correct":3},
-    {"q":"Honey found in ancient Egyptian tombs was…","options":["Rotten","Still edible","Turned to stone","Poisonous"],"correct":1},
-    {"q":"The world's quietest room is so silent you can hear your own…","options":["Heartbeat","Blood flowing","Bones creak","All of these"],"correct":3},
-    {"q":"What's illegal to feed to pigeons in Venice?","options":["Bread... actually feeding them at all","Only popcorn","Only at night","Nothing"],"correct":0},
-    {"q":"In Germany, it's illegal for your car to…","options":["Be dirty","Run out of fuel on the autobahn","Have stickers","Honk in cities"],"correct":1},
-    {"q":"The longest place name in the world (85 letters) is a hill in…","options":["Wales","New Zealand","Iceland","Thailand"],"correct":1},
-    {"q":"The world's largest snowflake on record was about as wide as a…","options":["Coin","Frisbee","Car","Pizza"],"correct":1},
-    {"q":"Which animal is legally required to have a passport to travel in the EU... including for competitions?","options":["Dogs","Horses","Falcons","All of these"],"correct":1},
-    {"q":"A jiffy is an actual unit of…","options":["Weight","Time","Distance","Temperature"],"correct":1},
-    {"q":"How long is a 'jiffy' in physics?","options":["1 second","About 1/100 of a second... it varies by field","Exactly 1 minute","1 day"],"correct":1},
-    {"q":"The dot over the letters 'i' and 'j' is called a…","options":["Dottle","Tittle","Jot","Pip"],"correct":1},
-    {"q":"A group of pandas is officially called an…","options":["Embarrassment","Awkward","Cuddle","Embrace"],"correct":0},
-    {"q":"What was the first item ever sold on eBay?","options":["A book","A broken laser pointer","A guitar","A watch"],"correct":1},
-    {"q":"The first thing ever bought online (1994) was reportedly a…","options":["Book","Pizza","CD by Sting","T-shirt"],"correct":2},
-    {"q":"The world's most expensive coffee passes through a…","options":["Volcano","Civet cat","Gold filter","Diamond grinder"],"correct":1},
-    {"q":"In South Korea, your age used to be counted from…","options":["Birth","One at birth","Conception... sort of, you're 1 at birth","School entry"],"correct":1},
-    {"q":"Which country has more pyramids than Egypt?","options":["Mexico","Sudan","Peru","China"],"correct":1},
-    {"q":"The Olympic gold medal is mostly made of…","options":["Gold","Silver","Bronze","Steel"],"correct":1},
-    {"q":"How much pure gold is in an Olympic 'gold' medal?","options":["100%","About 1%","50%","25%"],"correct":1},
-    {"q":"What can't you do while holding your nose?","options":["Whistle","Hum","Snore","Cough"],"correct":1},
-    {"q":"Your nose can remember about how many scents?","options":["1,000","50,000... actually ~1 trillion","A million exactly","500"],"correct":1},
-    {"q":"Which body part never stops 'growing' (by sagging and cartilage)?","options":["Hands","Ears and nose","Feet","Skull"],"correct":1},
-    {"q":"Humans share about 60% of their DNA with…","options":["Cats","Bananas","Goldfish","Chickens"],"correct":1},
-    {"q":"The average cumulus cloud weighs about as much as…","options":["A car","100 elephants","A feather","A house"],"correct":1},
-    {"q":"It's impossible to fold any paper in half more than ___ times (roughly).","options":["5","7-12","20","50"],"correct":1},
-    {"q":"The Mona Lisa has no…","options":["Ears","Eyebrows","Necklace","Background"],"correct":1},
-    {"q":"Which planet spins on its side?","options":["Neptune","Uranus","Saturn","Mercury"],"correct":1},
-    {"q":"There's a basketball court inside the…","options":["Eiffel Tower","US Supreme Court building","Buckingham Palace","Kremlin"],"correct":1},
-    {"q":"The Guinness World Records book itself holds a record as the most…","options":["Translated book","Stolen library book","Printed book","Banned book"],"correct":1},
-    {"q":"The hashtag symbol's proper name is…","options":["Hashtag","Octothorpe","Pound-star","Gridlet"],"correct":1},
-    {"q":"What was Google originally called?","options":["SearchIt","BackRub","WebCrawler","Googol"],"correct":1},
-    {"q":"The first alarm clock could only ring at…","options":["Noon","4 a.m.","Sunrise","6 a.m."],"correct":1},
-    {"q":"The world's deepest postbox (for divers) is in…","options":["Australia","Japan","Maldives","Norway"],"correct":1},
-    {"q":"In Finland, speeding fines are based on…","options":["Car value","Your income","Engine size","Age"],"correct":1},
-    {"q":"Which animal can be 'arrested' in Switzerland for being noisy after 10pm? (joke!) Actually: Swiss law protects social animals from…","options":["Loud music","Loneliness","Cold floors","Small cages only"],"correct":1},
-    {"q":"The Twitter bird's official name was…","options":["Tweety","Larry","Blue","Chirpy"],"correct":1},
-    {"q":"A 'moonbow' is a rainbow made by…","options":["Two moons","Moonlight","Meteor dust","Auroras"],"correct":1},
-    {"q":"Sea cucumbers defend themselves by…","options":["Ink clouds","Ejecting their internal organs","Electric shocks","Playing dead"],"correct":1},
-    {"q":"The shortest scheduled flight (Westray to Papa Westray) can be faster than…","options":["Boiling an egg","A TV ad break","Tying your shoes... ok, ~90 sec","All of these"],"correct":3},
-    {"q":"Bubble wrap was originally invented as…","options":["Packaging","Wallpaper","Insulation","A raincoat"],"correct":1},
-    {"q":"Play-Doh started life as a…","options":["Toy","Wallpaper cleaner","Baking dough","Medical putty"],"correct":1},
-    {"q":"The microwave oven was inspired by a melted…","options":["Ice cream","Chocolate bar","Cheese sandwich","Candle"],"correct":1},
-    {"q":"Coca-Cola was originally sold as a…","options":["Cleaning fluid","Medicine","Cooking sauce","Perfume"],"correct":1},
-    {"q":"The shortest English sentence that's grammatically complete is…","options":["'I am.'","'Go.'","'Yes.'","'No.'"],"correct":1},
-    {"q":"Which language has the most words for snow... is actually debated, but which people famously have many?","options":["The Inuit","The Sami","Both, and it's complicated","Icelanders"],"correct":2},
-    {"q":"'OK' is one of the world's most recognized words. It likely began as…","options":["A telegraph code","A joke abbreviation in a newspaper","A military term","A ship's signal"],"correct":1},
-    {"q":"The longest hiccuping fit lasted…","options":["68 days","68 weeks","68 months","68 years"],"correct":3},
-    {"q":"The longest time someone has stayed awake (recorded) is about…","options":["3 days","11 days","30 days","7 days"],"correct":1},
-    {"q":"The world record for most Big Macs eaten in a lifetime is over…","options":["3,000","34,000","340","340,000"],"correct":1},
-    {"q":"The fastest 100m sprint by a human is just under…","options":["9.6 seconds","10.5 seconds","8.9 seconds","9.9 seconds"],"correct":0},
-    {"q":"The world's largest pizza was bigger than a…","options":["Car","Basketball court","Tennis court","Swimming pool"],"correct":1},
-    {"q":"France was still executing by guillotine when which movie premiered?","options":["Jaws","Star Wars","The Godfather","All of these"],"correct":3},
-    {"q":"Nintendo was founded in which year?","options":["1889","1949","1969","1979"],"correct":0},
-    {"q":"What did Nintendo originally sell?","options":["Toys","Playing cards","Radios","Rice"],"correct":1},
-    {"q":"Sweden has a national ___ number anyone can call to talk to a random Swede. (It did in 2016!)","options":["Phone","Fax","Postcode","Email"],"correct":0},
-    {"q":"There are more fake flamingos in the world than real ones.","options":["True","False","Equal numbers","Nobody counted"],"correct":0},
-    {"q":"The national animal of North Korea is a mythical winged…","options":["Dragon","Horse (Chollima)","Tiger","Phoenix"],"correct":1},
-    {"q":"In Canada, Santa Claus has his own official…","options":["Passport","Postal code (H0H 0H0)","Airline","Police escort"],"correct":1},
-    {"q":"A blue whale's tongue can weigh as much as an…","options":["Apple crate","Elephant","Car tire","Anchor"],"correct":1},
-    {"q":"What's the only letter that doesn't appear in any US state name?","options":["Z","Q","X","J"],"correct":1},
-    {"q":"Astronauts' footprints on the Moon will last…","options":["A few years","Millions of years","One lunar day","Until the next mission"],"correct":1},
-    {"q":"The temperature record for hottest place on Earth belongs to…","options":["Sahara Desert","Death Valley","Australia's outback","Kuwait"],"correct":1},
-    {"q":"Antarctica is technically the world's largest…","options":["Island","Desert","Glacier","Country"],"correct":1},
-    {"q":"Russia and the USA are how far apart at their closest point?","options":["About 4 km","About 400 km","About 40 km","About 1,000 km"],"correct":0},
-    {"q":"The world's deepest hole, drilled in Russia, reached about…","options":["1.2 km","12 km","120 km","40 km"],"correct":1},
-    {"q":"The smell of fresh rain on dry soil has a name:","options":["Ozonia","Petrichor","Humuscent","Terrafresh"],"correct":1},
-    {"q":"Which fruit was once so valuable people rented it for parties?","options":["Mango","Pineapple","Pomegranate","Dragon fruit"],"correct":1},
-    {"q":"Ketchup was sold in the 1830s as…","options":["Paint","Medicine","Glue","Shampoo"],"correct":1},
-    {"q":"What does the 'M' in M&M's stand for? (One of them!)","options":["Marvelous","Mars","Melting","Milk"],"correct":1},
-    {"q":"The croissant emoji... wait. Which emoji was added after a campaign by Finland? (national symbol!)","options":["Snowman","Sauna person","Reindeer","Ice swimmer"],"correct":1},
-    {"q":"Which planet could theoretically float in water (if you had a big enough tub)?","options":["Mars","Saturn","Jupiter","Venus"],"correct":1},
-    {"q":"A 'butt' is a real historical unit for measuring…","options":["Beer","Wine","Grain","Wool"],"correct":1},
-    {"q":"A 'buttload' of wine is roughly…","options":["50 litres","475 litres","4,750 litres","5 litres"],"correct":1},
-    {"q":"Some cats are allergic to…","options":["Dogs","Humans","Mice","Wool"],"correct":1},
-    {"q":"The voice of Mickey Mouse and the voice of Minnie Mouse (original actors) were…","options":["Siblings","Married to each other","Father and daughter","The same person"],"correct":1},
-    {"q":"In Japan, watermelons are sometimes grown in which shape (mostly for show)?","options":["Pyramids","Cubes","Hearts... and cubes!","Stars"],"correct":2}
+    {
+      "q": "The shortest war in history lasted roughly how long (Anglo-Zanzibar War, 1896)?",
+      "options": [
+        "About 38 minutes",
+        "About 3 hours",
+        "About 1 day",
+        "About 1 week"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which everyday food, found in Egyptian tombs, is still edible after 3,000 years?",
+      "options": [
+        "Bread",
+        "Honey",
+        "Wine",
+        "Olive oil"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the only letter that does not appear in any US state name?",
+      "options": [
+        "Q",
+        "Z",
+        "X",
+        "J"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "A 'jiffy' is an actual unit of time. Roughly how long is it (in physics)?",
+      "options": [
+        "One second",
+        "About 1/100 of a second",
+        "About 1/300 of a second or less",
+        "One minute"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which country has a national animal that is a mythical creature (the unicorn)?",
+      "options": [
+        "Wales",
+        "Scotland",
+        "Ireland",
+        "Bhutan"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The collective noun for a group of flamingos is a what?",
+      "options": [
+        "Flamboyance",
+        "Glow",
+        "Blush",
+        "Stand"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Bananas are radioactive due to which element they contain?",
+      "options": [
+        "Uranium",
+        "Potassium-40",
+        "Radium",
+        "Carbon-14"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the dot over a lowercase 'i' or 'j' called?",
+      "options": [
+        "Tittle",
+        "Pip",
+        "Serif",
+        "Cedilla"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which planet in our solar system spins so slowly that its day is longer than its year?",
+      "options": [
+        "Mercury",
+        "Venus",
+        "Mars",
+        "Neptune"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Octopuses have how many hearts?",
+      "options": [
+        "One",
+        "Two",
+        "Three",
+        "Eight"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "The fear of long words is ironically named what?",
+      "options": [
+        "Logophobia",
+        "Hippopotomonstrosesquippedaliophobia",
+        "Verbophobia",
+        "Sesquiphobia"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which animal's milk is naturally pink?",
+      "options": [
+        "Whale",
+        "Hippopotamus",
+        "Walrus",
+        "Manatee"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Honey's near-eternal shelf life is due to its low water content and what property?",
+      "options": [
+        "High acidity and low moisture",
+        "High sugar only",
+        "Antibiotics",
+        "Cold storage"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "How many times can a standard sheet of paper realistically be folded in half by hand?",
+      "options": [
+        "About 7",
+        "About 12",
+        "About 20",
+        "Unlimited"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which country is home to the longest place name in the world (an 85-letter hill)?",
+      "options": [
+        "Wales",
+        "New Zealand",
+        "Iceland",
+        "Thailand"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "A group of crows is a 'murder'; what is a group of owls called?",
+      "options": [
+        "A parliament",
+        "A wisdom",
+        "A stare",
+        "A coven"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What colour is a polar bear's skin (beneath its fur)?",
+      "options": [
+        "White",
+        "Pink",
+        "Black",
+        "Grey"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which is the only mammal that cannot jump?",
+      "options": [
+        "Elephant",
+        "Sloth",
+        "Hippo",
+        "Rhino"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Roughly what percentage of its DNA does a human share with a banana?",
+      "options": [
+        "About 1%",
+        "About 25%",
+        "About 60%",
+        "About 95%"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "The Eiffel Tower can grow taller in summer due to what?",
+      "options": [
+        "Wind",
+        "Thermal expansion of the metal",
+        "New paint",
+        "Tourist weight"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which sea creature has blue blood because of a copper-based pigment?",
+      "options": [
+        "Octopus",
+        "Jellyfish",
+        "Starfish",
+        "Eel"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the term for words spelled the same backwards and forwards?",
+      "options": [
+        "Anagrams",
+        "Palindromes",
+        "Homophones",
+        "Acronyms"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country has no mosquitoes due to its cold climate?",
+      "options": [
+        "Iceland",
+        "Norway",
+        "Finland",
+        "Canada"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "A single bolt of lightning is roughly how many times hotter than the Sun's surface?",
+      "options": [
+        "Equal",
+        "About 2 times",
+        "About 5 times",
+        "About 50 times"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which animal has rectangular pupils?",
+      "options": [
+        "Cat",
+        "Goat",
+        "Owl",
+        "Horse"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the only food that never spoils, also used as a wound dressing in ancient times?",
+      "options": [
+        "Salt",
+        "Honey",
+        "Rice",
+        "Sugar"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The world's largest living organism is a fungus in Oregon. It spreads across roughly how much area?",
+      "options": [
+        "A football field",
+        "A few hectares",
+        "Over 9 square kilometres",
+        "The whole state"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "How many noses does a slug have?",
+      "options": [
+        "One",
+        "Two",
+        "Four",
+        "None"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which is the only number in English whose letters are in alphabetical order?",
+      "options": [
+        "Five",
+        "Forty",
+        "One",
+        "Eight"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Wombat droppings are unusual because they are what shape?",
+      "options": [
+        "Spherical",
+        "Cubic",
+        "Flat",
+        "Star-shaped"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the fear of the number 13 called?",
+      "options": [
+        "Triskaidekaphobia",
+        "Tridecaphobia",
+        "Decaphobia",
+        "Numerophobia"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "The Earth's rotation is gradually doing what, lengthening our days very slowly?",
+      "options": [
+        "Speeding up",
+        "Slowing down",
+        "Reversing",
+        "Staying exactly constant"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which gas, when inhaled, makes your voice deeper (opposite of helium)?",
+      "options": [
+        "Hydrogen",
+        "Sulfur hexafluoride",
+        "Oxygen",
+        "Nitrogen"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "A group of pugs is collectively called a what?",
+      "options": [
+        "A grumble",
+        "A wrinkle",
+        "A snort",
+        "A bundle"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "How long can a snail sleep in one stretch under the right conditions?",
+      "options": [
+        "A few hours",
+        "One day",
+        "Up to 3 years",
+        "One month"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which fruit has its seeds on the outside?",
+      "options": [
+        "Kiwi",
+        "Strawberry",
+        "Fig",
+        "Pomegranate"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What was the original colour of Coca-Cola before it was tinted brown?",
+      "options": [
+        "Clear",
+        "Green",
+        "Red",
+        "Yellow"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The tongue print, like a fingerprint, is unique to each what?",
+      "options": [
+        "Cat",
+        "Cow",
+        "Human",
+        "All of these have unique tongue prints"
+      ],
+      "correct": 3
+    },
+    {
+      "q": "Which animal can survive in space for short periods, having been tested in orbit?",
+      "options": [
+        "Ant",
+        "Tardigrade",
+        "Cockroach",
+        "Beetle"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the most common surname in the world?",
+      "options": [
+        "Smith",
+        "Wang",
+        "Garcia",
+        "Kim"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "A 'baker's dozen' equals how many?",
+      "options": [
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which everyday object has a half-life concept applied to it humorously, but is actually permanent—diamonds are made of compressed what?",
+      "options": [
+        "Carbon",
+        "Silicon",
+        "Calcium",
+        "Quartz"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Sharks predate which common Earth feature, having existed before it?",
+      "options": [
+        "Trees",
+        "The Moon",
+        "Mountains",
+        "Oceans"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "How many hearts does an earthworm have (aortic arches functioning as hearts)?",
+      "options": [
+        "One",
+        "Three",
+        "Five",
+        "Ten"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "The 'pistol shrimp' stuns prey using a snapping claw that creates a bubble nearly as hot as what?",
+      "options": [
+        "Boiling water",
+        "The Sun's surface",
+        "A campfire",
+        "An oven"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country drinks the most coffee per capita?",
+      "options": [
+        "Italy",
+        "Finland",
+        "Brazil",
+        "USA"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the fear of spiders called?",
+      "options": [
+        "Entomophobia",
+        "Arachnophobia",
+        "Acrophobia",
+        "Ophidiophobia"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The hottest chilli peppers are measured on which scale?",
+      "options": [
+        "Richter scale",
+        "Scoville scale",
+        "Mohs scale",
+        "Beaufort scale"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which animal is the only one besides humans known to have a unique nose print used for ID?",
+      "options": [
+        "Dog",
+        "Cow",
+        "Both dogs and cows",
+        "Cat"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "What is the most shoplifted food item in the world?",
+      "options": [
+        "Chocolate",
+        "Cheese",
+        "Bread",
+        "Candy"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which planet rains diamonds, according to scientists' models?",
+      "options": [
+        "Mars",
+        "Neptune",
+        "Mercury",
+        "Venus"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "How many bones does a newborn human baby have (more than an adult)?",
+      "options": [
+        "206",
+        "270",
+        "300",
+        "350"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Great Wall of China is often claimed visible from space, but this is actually what?",
+      "options": [
+        "True with the naked eye",
+        "A myth—it is not visible to the naked eye from orbit",
+        "Only visible at night",
+        "Visible only from the Moon"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which insect can lift around 50 times its own body weight?",
+      "options": [
+        "Ant",
+        "Bee",
+        "Beetle (some), and ants are famously strong",
+        "Fly"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "What is a group of jellyfish called?",
+      "options": [
+        "A smack",
+        "A bloom",
+        "Both smack and bloom",
+        "A school"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "The 'immortal' jellyfish can do what when stressed?",
+      "options": [
+        "Split in two",
+        "Revert to its juvenile polyp stage",
+        "Grow forever",
+        "Freeze solid"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which household metal was once considered more valuable than gold, used for fine cutlery?",
+      "options": [
+        "Silver",
+        "Aluminium",
+        "Platinum",
+        "Tin"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "How fast can a sneeze travel out of the body (estimates)?",
+      "options": [
+        "About 16 km/h",
+        "About 50 km/h",
+        "About 160 km/h",
+        "About 500 km/h"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which animal has the longest-known lifespan, with one specimen aged over 500 years?",
+      "options": [
+        "Giant tortoise",
+        "Ocean quahog clam",
+        "Greenland shark",
+        "Koi fish"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term for an irrational fear of clowns?",
+      "options": [
+        "Coulrophobia",
+        "Clourophobia",
+        "Pierrophobia",
+        "Circophobia"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which country has the most time zones including its territories?",
+      "options": [
+        "Russia",
+        "France",
+        "USA",
+        "UK"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The blob of toothpaste on a brush has a name. What is it?",
+      "options": [
+        "A nurdle",
+        "A dollop",
+        "A swirl",
+        "A bead"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which body part is the only one that cannot repair itself once permanently damaged in adults (largely)?",
+      "options": [
+        "Liver",
+        "Teeth (enamel)",
+        "Skin",
+        "Bone"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the loudest animal on Earth relative to its size?",
+      "options": [
+        "Howler monkey",
+        "Pistol shrimp",
+        "A tiny water boatman insect",
+        "Cicada"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which fruit floats in water because about a quarter of its volume is air?",
+      "options": [
+        "Orange",
+        "Apple",
+        "Grape",
+        "Cherry"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the maximum number of US states a single point can touch (the Four Corners)?",
+      "options": [
+        "Two",
+        "Three",
+        "Four",
+        "Five"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which animal sleeps the longest, up to 22 hours a day?",
+      "options": [
+        "Sloth",
+        "Koala",
+        "Brown bat (and koalas)",
+        "Lion"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "The hashtag symbol (#) has a formal name. What is it?",
+      "options": [
+        "Octothorpe",
+        "Asterism",
+        "Pilcrow",
+        "Interrobang"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the only continent without any native species of ant?",
+      "options": [
+        "Australia",
+        "Antarctica",
+        "Greenland",
+        "Iceland"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which planet is the hottest in the solar system, despite not being closest to the Sun?",
+      "options": [
+        "Mercury",
+        "Venus",
+        "Mars",
+        "Jupiter"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "How many muscles does a cat use to control each ear?",
+      "options": [
+        "About 6",
+        "About 12",
+        "About 32",
+        "About 50"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "The combination of a question mark and exclamation mark is called what?",
+      "options": [
+        "Interrobang",
+        "Pilcrow",
+        "Octothorpe",
+        "Asterism"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which mammal has the densest fur of any animal?",
+      "options": [
+        "Polar bear",
+        "Sea otter",
+        "Chinchilla",
+        "Beaver"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term for a word formed from the initials of other words, pronounced as a word?",
+      "options": [
+        "Initialism",
+        "Acronym",
+        "Portmanteau",
+        "Eponym"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "A 'murmuration' describes the swirling flight of which birds?",
+      "options": [
+        "Pigeons",
+        "Starlings",
+        "Crows",
+        "Geese"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country consumes the most chocolate per person?",
+      "options": [
+        "Belgium",
+        "Switzerland",
+        "Germany",
+        "UK"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the rarest naturally occurring blood type?",
+      "options": [
+        "O negative",
+        "AB negative",
+        "B negative",
+        "A negative"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which animal famously cannot stick out its tongue?",
+      "options": [
+        "Crocodile",
+        "Dog",
+        "Cat",
+        "Frog"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "The space between your eyebrows has an anatomical name. What is it?",
+      "options": [
+        "Glabella",
+        "Philtrum",
+        "Septum",
+        "Canthus"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which everyday creature has survived essentially unchanged for over 300 million years?",
+      "options": [
+        "Cockroach",
+        "Dragonfly",
+        "Shark",
+        "All have ancient lineages, but cockroaches are iconic"
+      ],
+      "correct": 3
+    },
+    {
+      "q": "What is the vertical groove between your nose and upper lip called?",
+      "options": [
+        "Glabella",
+        "Philtrum",
+        "Frenulum",
+        "Vermilion"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which planet has the largest moon relative to its own size?",
+      "options": [
+        "Earth",
+        "Pluto (dwarf planet, with Charon)",
+        "Mars",
+        "Jupiter"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "A group of porcupines is called a what?",
+      "options": [
+        "A prickle",
+        "A spike",
+        "A bristle",
+        "A cluster"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the only food eaten by koalas, which is toxic to most animals?",
+      "options": [
+        "Bamboo",
+        "Eucalyptus",
+        "Acacia",
+        "Mistletoe"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which gas makes up the majority of Earth's atmosphere?",
+      "options": [
+        "Oxygen",
+        "Nitrogen",
+        "Carbon dioxide",
+        "Argon"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "How many taste buds does the average human tongue have?",
+      "options": [
+        "About 1,000",
+        "About 2,000-4,000",
+        "About 10,000",
+        "About 100,000"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "What is the medical term for brain freeze from cold foods?",
+      "options": [
+        "Sphenopalatine ganglioneuralgia",
+        "Cephalalgia",
+        "Neuralgia",
+        "Migraine"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which animal can regrow its entire body from a fragment, including some sea stars?",
+      "options": [
+        "Crab",
+        "Starfish",
+        "Lobster",
+        "Sea urchin"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term for fear of confined spaces?",
+      "options": [
+        "Agoraphobia",
+        "Claustrophobia",
+        "Acrophobia",
+        "Nyctophobia"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country has the most pyramids in the world (more than Egypt)?",
+      "options": [
+        "Mexico",
+        "Sudan",
+        "Peru",
+        "Iraq"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The plastic or metal tip at the end of a shoelace is called a what?",
+      "options": [
+        "Aglet",
+        "Ferrule",
+        "Grommet",
+        "Eyelet"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which animal's heart can stop beating for long periods during hibernation?",
+      "options": [
+        "Bear",
+        "Wood frog",
+        "Bat",
+        "Groundhog"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the most common element in the human body by mass?",
+      "options": [
+        "Carbon",
+        "Oxygen",
+        "Hydrogen",
+        "Nitrogen"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "A 'parliament' is a group of owls; what is a group of ravens called?",
+      "options": [
+        "A murder",
+        "An unkindness",
+        "A storytelling",
+        "A shadow"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which is the only big cat that genuinely roars but cannot purr continuously?",
+      "options": [
+        "Lion",
+        "Cheetah",
+        "Cougar",
+        "Snow leopard"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the world's smallest country by area?",
+      "options": [
+        "Monaco",
+        "Vatican City",
+        "Nauru",
+        "San Marino"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "How many hearts does a cuttlefish have, like its octopus relatives?",
+      "options": [
+        "One",
+        "Two",
+        "Three",
+        "Four"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which household spice was once used as currency and sparked exploration?",
+      "options": [
+        "Salt and pepper both have",
+        "Black pepper",
+        "Cinnamon",
+        "Saffron"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the fear of heights called?",
+      "options": [
+        "Agoraphobia",
+        "Acrophobia",
+        "Claustrophobia",
+        "Hydrophobia"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which creature has the most legs of any animal, with up to ~750?",
+      "options": [
+        "Centipede",
+        "Millipede",
+        "Caterpillar",
+        "Spider"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the curved part of a banana bunch correctly called?",
+      "options": [
+        "A hand",
+        "A bunch",
+        "A cluster",
+        "A finger"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which planet could float on water because it is less dense than water?",
+      "options": [
+        "Neptune",
+        "Saturn",
+        "Uranus",
+        "Jupiter"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the world's largest living structure, visible from low orbit?",
+      "options": [
+        "The Great Wall of China",
+        "The Great Barrier Reef",
+        "The Amazon",
+        "The Sahara"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which everyday animal can have a 'group' called a 'business' (when ferrets)?",
+      "options": [
+        "Ferrets",
+        "Otters",
+        "Weasels",
+        "Stoats"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the term for the study of flags?",
+      "options": [
+        "Vexillology",
+        "Cartography",
+        "Heraldry",
+        "Numismatics"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which fruit was historically so prized that pineapples were rented as status symbols?",
+      "options": [
+        "Mango",
+        "Pineapple",
+        "Kiwi",
+        "Pomegranate"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "How long is a 'moment' as a historical unit of time (medieval)?",
+      "options": [
+        "About 90 seconds",
+        "About 5 minutes",
+        "About 1 hour",
+        "Exactly 1 minute"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the loudest possible sound in air before it distorts (a theoretical limit) measured in?",
+      "options": [
+        "About 194 decibels",
+        "About 100 decibels",
+        "About 300 decibels",
+        "About 50 decibels"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which animal famously has fingerprints nearly identical to humans?",
+      "options": [
+        "Gorilla",
+        "Koala",
+        "Chimpanzee",
+        "Orangutan"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the small piece of plastic that keeps a bread bag closed called?",
+      "options": [
+        "A bread clip (or 'occlupanid')",
+        "A toggle",
+        "A tab",
+        "A grommet"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which sea has such high salinity that swimmers float effortlessly?",
+      "options": [
+        "Red Sea",
+        "Dead Sea",
+        "Caspian Sea",
+        "Black Sea"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "How many chambers does a cow's stomach have?",
+      "options": [
+        "One",
+        "Two",
+        "Three",
+        "Four"
+      ],
+      "correct": 3
+    },
+    {
+      "q": "What is the term for an animal active at dawn and dusk?",
+      "options": [
+        "Nocturnal",
+        "Diurnal",
+        "Crepuscular",
+        "Cathemeral"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which is the only metal that is liquid at room temperature?",
+      "options": [
+        "Gallium",
+        "Mercury",
+        "Caesium",
+        "Bromine (a non-metal liquid)"
+      ],
+      "correct": 1
+    }
   ]
 }

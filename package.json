@@ -1,7 +1,7 @@
 {
-  "name": "quiz-snakes-ladders",
-  "version": "1.0.0",
-  "description": "A live multiplayer Kahoot-style quiz played on a Snakes & Ladders board. Host on one screen, players join from their phones. Fastest correct answer moves the most squares.",
+  "name": "quiz-quest",
+  "version": "1.5.0",
+  "description": "Quiz Quest — a live multiplayer trivia hero race. Host on one screen, players join from their phones, and the fastest correct answers race their hero across the board to the castle. First three to the castle win.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"

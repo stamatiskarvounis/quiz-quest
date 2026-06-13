@@ -2,105 +2,1205 @@
   "name": "Movies & Pop Culture",
   "emoji": "🎬",
   "questions": [
-    {"q":"In 'The Matrix', which pill does Neo take?","options":["Blue","Red","Green","Yellow"],"correct":1},
-    {"q":"Which movie features the line 'May the Force be with you'?","options":["Star Trek","Star Wars","Dune","Avatar"],"correct":1},
-    {"q":"What is the name of the wizard school in Harry Potter?","options":["Durmstrang","Hogwarts","Beauxbatons","Ilvermorny"],"correct":1},
-    {"q":"Which country created anime?","options":["China","Japan","South Korea","USA"],"correct":1},
-    {"q":"Hayao Miyazaki co-founded which animation studio?","options":["Toei","Studio Ghibli","Madhouse","Kyoto Animation"],"correct":1},
-    {"q":"'Parasite' (2019) made Oscar history as the first Best Picture winner from…","options":["Japan","South Korea","China","Mexico"],"correct":1},
-    {"q":"Which singer is known as the 'Queen of Pop'?","options":["Beyoncé","Madonna","Lady Gaga","Rihanna"],"correct":1},
-    {"q":"The Beatles came from which city?","options":["London","Manchester","Liverpool","Dublin"],"correct":2},
-    {"q":"Which Swedish group sang 'Dancing Queen'?","options":["Ace of Base","ABBA","Roxette","Europe"],"correct":1},
-    {"q":"ABBA won Eurovision 1974 with which song?","options":["Mamma Mia","Waterloo","SOS","Fernando"],"correct":1},
-    {"q":"'Gangnam Style' was a global hit from which country?","options":["Japan","South Korea","Thailand","China"],"correct":1},
-    {"q":"BTS is a famous band in which genre?","options":["J-pop","K-pop","Mandopop","Britpop"],"correct":1},
-    {"q":"In 'The Lion King', what is Simba's father's name?","options":["Scar","Mufasa","Rafiki","Zazu"],"correct":1},
-    {"q":"Which movie made the song 'Let It Go' famous?","options":["Moana","Frozen","Tangled","Encanto"],"correct":1},
-    {"q":"Pixar's first feature film was…","options":["Finding Nemo","Toy Story","A Bug's Life","Monsters, Inc."],"correct":1},
-    {"q":"In 'Titanic', what does Jack famously shout from the bow?","options":["I'm flying!","I'm the king of the world!","Never let go!","Full speed ahead!"],"correct":1},
-    {"q":"Who directed 'Titanic' and 'Avatar'?","options":["Steven Spielberg","James Cameron","Ridley Scott","Christopher Nolan"],"correct":1},
-    {"q":"The Oscars statuette is officially named…","options":["The Golden Man","The Academy Award of Merit","Mr. Hollywood","The Star"],"correct":1},
-    {"q":"Which movie franchise features a DeLorean time machine?","options":["Men in Black","Back to the Future","Terminator","Doctor Who"],"correct":1},
-    {"q":"In 'Back to the Future', the car must reach what speed to time travel?","options":["66 mph","88 mph","100 mph","120 mph"],"correct":1},
-    {"q":"James Bond's code number is…","options":["006","007","008","009"],"correct":1},
-    {"q":"How does James Bond like his martini?","options":["Stirred, not shaken","Shaken, not stirred","On the rocks","Neat"],"correct":1},
-    {"q":"Which country produces the most films per year?","options":["USA","India","China","Nigeria"],"correct":1},
-    {"q":"Nigeria's booming film industry is nicknamed…","options":["Naijawood","Nollywood","Afrowood","Lagoswood"],"correct":1},
-    {"q":"In 'Squid Game', the deadly first game is…","options":["Tug of war","Red light, green light","Marbles","Glass bridge"],"correct":1},
-    {"q":"'Money Heist' (La Casa de Papel) is a hit series from…","options":["Mexico","Spain","Argentina","Italy"],"correct":1},
-    {"q":"In 'Money Heist', the robbers wear masks of which artist?","options":["Picasso","Dalí","Goya","Velázquez"],"correct":1},
-    {"q":"Which fictional metal is mined in Wakanda in 'Black Panther'?","options":["Adamantium","Vibranium","Unobtanium","Kryptonite"],"correct":1},
-    {"q":"Thor, god of thunder in Marvel films, wields a hammer called…","options":["Gungnir","Mjölnir","Stormbreaker","Gram"],"correct":1},
-    {"q":"Which actor played Iron Man in the Marvel films?","options":["Chris Evans","Robert Downey Jr.","Mark Ruffalo","Chris Hemsworth"],"correct":1},
-    {"q":"'Hakuna Matata' means…","options":["Be brave","No worries","King of lions","Good morning"],"correct":1},
-    {"q":"Which language do the Na'vi speak in 'Avatar'? It was…","options":["Random sounds","Invented by a linguist","Based on Latin","Backwards English"],"correct":1},
-    {"q":"In 'Stranger Things', the parallel dimension is called…","options":["The Other Side","The Upside Down","The Dark World","The Shadowlands"],"correct":1},
-    {"q":"Mario, the most famous video game character, was originally a…","options":["Plumber... actually a carpenter","Doctor","Chef","Race driver"],"correct":0},
-    {"q":"Pikachu belongs to which franchise?","options":["Digimon","Pokémon","Yo-kai Watch","Monster Hunter"],"correct":1},
-    {"q":"Which game features building with blocks in an open world and a 'Creeper'?","options":["Roblox","Minecraft","Terraria","Fortnite"],"correct":1},
-    {"q":"The Legend of Zelda's main hero is named…","options":["Zelda","Link","Ganon","Epona"],"correct":1},
-    {"q":"Which movie won the first ever Best Animated Feature Oscar?","options":["Toy Story","Shrek","Monsters, Inc.","Ice Age"],"correct":1},
-    {"q":"Shrek lives in a…","options":["Castle","Swamp","Cave","Treehouse"],"correct":1},
-    {"q":"In 'Spirited Away', Chihiro works in a…","options":["Restaurant","Bathhouse","Hotel","Train station"],"correct":1},
-    {"q":"Which composer wrote the scores for 'Star Wars', 'Jaws' and 'Harry Potter'?","options":["Hans Zimmer","John Williams","Ennio Morricone","Howard Shore"],"correct":1},
-    {"q":"The 'Game of Thrones' continents are Westeros and…","options":["Essos","Valyria","Dorne","Braavos"],"correct":0},
-    {"q":"In 'Game of Thrones', 'Winter is coming' is the motto of which house?","options":["Lannister","Stark","Targaryen","Baratheon"],"correct":1},
-    {"q":"Which artist painted himself into history with 'Starry Night' — and a famous missing ear?","options":["Monet","Van Gogh","Picasso","Dalí"],"correct":1},
-    {"q":"The Mona Lisa hangs in which museum?","options":["The Prado","The Louvre","The Uffizi","The British Museum"],"correct":1},
-    {"q":"Which pop star is nicknamed 'The King of Pop'?","options":["Elvis Presley","Michael Jackson","Prince","Freddie Mercury"],"correct":1},
-    {"q":"Freddie Mercury was the lead singer of…","options":["The Rolling Stones","Queen","Led Zeppelin","Pink Floyd"],"correct":1},
-    {"q":"Bob Marley made which music genre world-famous?","options":["Ska","Reggae","Calypso","Samba"],"correct":1},
-    {"q":"Bob Marley was from…","options":["Trinidad","Jamaica","Barbados","Cuba"],"correct":1},
-    {"q":"Which dance craze did Brazil give the world?","options":["Tango","Samba","Flamenco","Salsa"],"correct":1},
-    {"q":"The tango originated in…","options":["Spain","Argentina","Mexico","Cuba"],"correct":1},
-    {"q":"Which instrument is Spain's flamenco most associated with?","options":["Violin","Guitar","Accordion","Piano"],"correct":1},
-    {"q":"Which country hosts the Cannes Film Festival?","options":["Italy","France","Monaco","Switzerland"],"correct":1},
-    {"q":"The winner at Cannes receives the…","options":["Golden Bear","Palme d'Or","Golden Lion","Silver Palm"],"correct":1},
-    {"q":"Bollywood is based in which city?","options":["Delhi","Mumbai","Chennai","Kolkata"],"correct":1},
-    {"q":"Which 1994 film tells the story of a slow-witted man who witnesses decades of history?","options":["Rain Man","Forrest Gump","Big","The Truman Show"],"correct":1},
-    {"q":"'Life is like a box of chocolates' is from which film?","options":["Chocolat","Forrest Gump","Sweet Home Alabama","Big Fish"],"correct":1},
-    {"q":"In 'Jurassic Park', dinosaur DNA is extracted from…","options":["Fossils","Mosquitoes in amber","Ice cores","Eggs"],"correct":1},
-    {"q":"Which horror author wrote 'It' and 'The Shining'?","options":["H.P. Lovecraft","Stephen King","Dean Koontz","Edgar Allan Poe"],"correct":1},
-    {"q":"'The Lord of the Rings' films were shot almost entirely in…","options":["Ireland","New Zealand","Iceland","Scotland"],"correct":1},
-    {"q":"In 'The Lord of the Rings', the One Ring must be destroyed in…","options":["Moria","Mount Doom","Isengard","The Misty Mountains"],"correct":1},
-    {"q":"Which creature says 'my precious'?","options":["An orc","Gollum","A hobbit","Smaug"],"correct":1},
-    {"q":"Charlie Chaplin was famous for which film era?","options":["Silent films","Musicals","Westerns","Film noir"],"correct":0},
-    {"q":"Which streaming show about a chess prodigy boosted chess set sales worldwide?","options":["The Crown","The Queen's Gambit","Suits","Billions"],"correct":1},
-    {"q":"Eurovision is a contest of…","options":["Films","Songs","Dances","Inventions"],"correct":1},
-    {"q":"Which country has won Eurovision the most times?","options":["Sweden","Ireland","UK","France"],"correct":0},
-    {"q":"Which Japanese franchise features giant robots vs giant monsters... including Godzilla?","options":["Kaiju films","Mecha anime","Tokusatsu","All of these"],"correct":3},
-    {"q":"Godzilla first appeared in a film from which year?","options":["1934","1954","1974","1964"],"correct":1},
-    {"q":"Which superhero is from the planet Krypton?","options":["Batman","Superman","Thor","Green Lantern"],"correct":1},
-    {"q":"Batman's home city is…","options":["Metropolis","Gotham City","Star City","Central City"],"correct":1},
-    {"q":"Which actor has played Jack Sparrow, Edward Scissorhands and Willy Wonka?","options":["Johnny Depp","Jim Carrey","Brad Pitt","Leonardo DiCaprio"],"correct":0},
-    {"q":"'Despacito' is sung mostly in…","options":["Portuguese","Spanish","Italian","Catalan"],"correct":1},
-    {"q":"Shakira, the 'Queen of Latin Music', is from…","options":["Mexico","Colombia","Spain","Argentina"],"correct":1},
-    {"q":"Which artist painted the melting clocks in 'The Persistence of Memory'?","options":["Picasso","Salvador Dalí","Magritte","Miró"],"correct":1},
-    {"q":"In 'Finding Nemo', what kind of fish is Nemo?","options":["Angelfish","Clownfish","Pufferfish","Goldfish"],"correct":1},
-    {"q":"Which animated film is set in the Colombian mountains with a magical family?","options":["Coco","Encanto","Moana","Luca"],"correct":1},
-    {"q":"'Coco' celebrates which Mexican tradition?","options":["Cinco de Mayo","Día de los Muertos","Las Posadas","Carnaval"],"correct":1},
-    {"q":"Which film won a record-tying 11 Oscars in 2004?","options":["Titanic","The Return of the King","Gladiator","Chicago"],"correct":1},
-    {"q":"Darth Vader's famous line is actually…","options":["'Luke, I am your father'","'No, I am your father'","'I am your father, Luke'","'You are my son'"],"correct":1},
-    {"q":"Which TV show features dragons, ice zombies, and a very pointy throne?","options":["The Witcher","Game of Thrones","Vikings","Merlin"],"correct":1},
-    {"q":"Studio Ghibli's 'Totoro' is a…","options":["Robot","Forest spirit","Cat","Dragon"],"correct":1},
-    {"q":"Which video game character collects gold rings and runs very fast?","options":["Mario","Sonic","Crash","Kirby"],"correct":1},
-    {"q":"Tetris was created in which country?","options":["USA","Soviet Union (Russia)","Japan","Hungary"],"correct":1},
-    {"q":"Pac-Man was designed in which country?","options":["USA","Japan","South Korea","Taiwan"],"correct":1},
-    {"q":"Which social platform made 15-second dance challenges famous?","options":["Vine","TikTok","Snapchat","MySpace"],"correct":1},
-    {"q":"The most-watched sport event scene in cinema, the pod race, is from…","options":["Mad Max","Star Wars: Episode I","Speed Racer","Tron"],"correct":1},
-    {"q":"Which 'Friends' character says 'How you doin'?'","options":["Ross","Joey","Chandler","Gunther"],"correct":1},
-    {"q":"Mr. Bean is famous for saying…","options":["Very little at all","Catchphrases","Long speeches","Puns"],"correct":0},
-    {"q":"Which country gave us Mr. Bean and Monty Python?","options":["Australia","UK","Ireland","Canada"],"correct":1},
-    {"q":"'Amélie' is a beloved film set in…","options":["Lyon","Paris","Nice","Marseille"],"correct":1},
-    {"q":"Which Italian director made 'La Dolce Vita'?","options":["Fellini","Visconti","Antonioni","Pasolini"],"correct":0},
-    {"q":"The 'Spaghetti Westerns' were mostly filmed in…","options":["The USA","Italy and Spain","Mexico","Argentina"],"correct":1},
-    {"q":"Which composer's 'The Good, the Bad and the Ugly' theme is instantly whistled worldwide?","options":["John Williams","Ennio Morricone","Hans Zimmer","Nino Rota"],"correct":1},
-    {"q":"In 'Breaking Bad', Walter White cooks…","options":["Counterfeit money","Crystal meth","Moonshine","Fake medicine"],"correct":1},
-    {"q":"Which fictional country does Black Panther rule?","options":["Zamunda","Wakanda","Genovia","Latveria"],"correct":1},
-    {"q":"'Hasta la vista, baby' is from which film?","options":["Predator","Terminator 2","RoboCop","Total Recall"],"correct":1},
-    {"q":"Which animated yellow creatures speak gibberish and love bananas?","options":["Smurfs","Minions","Lemmings","Rabbids"],"correct":1},
-    {"q":"The 'MCU' stands for…","options":["Movie Cinema Universe","Marvel Cinematic Universe","Multi-Character Universe","Marvel Comics United"],"correct":1},
-    {"q":"Which 1997 film made 'My Heart Will Go On' a global anthem?","options":["The Bodyguard","Titanic","Ghost","Pearl Harbor"],"correct":1},
-    {"q":"Which animation studio's logo shows a boy fishing from a crescent moon?","options":["Pixar","DreamWorks","Illumination","Ghibli"],"correct":1}
+    {
+      "q": "Which film won the first ever Academy Award for Best Picture (1929)?",
+      "options": [
+        "Wings",
+        "Sunrise",
+        "The Jazz Singer",
+        "Metropolis"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Who directed 'Psycho', 'Vertigo' and 'Rear Window'?",
+      "options": [
+        "Stanley Kubrick",
+        "Alfred Hitchcock",
+        "Orson Welles",
+        "Billy Wilder"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In 'The Godfather', what is the name of the Corleone family's eldest son?",
+      "options": [
+        "Michael",
+        "Sonny",
+        "Fredo",
+        "Tom"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which actor has won the most Best Actor Oscars (three), including for 'There Will Be Blood'?",
+      "options": [
+        "Jack Nicholson",
+        "Daniel Day-Lewis",
+        "Marlon Brando",
+        "Tom Hanks"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the highest-grossing film of all time (unadjusted, as of mid-2020s)?",
+      "options": [
+        "Titanic",
+        "Avatar",
+        "Avengers: Endgame",
+        "Star Wars: The Force Awakens"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which director is known for 'Pulp Fiction', 'Kill Bill' and 'Reservoir Dogs'?",
+      "options": [
+        "Martin Scorsese",
+        "Quentin Tarantino",
+        "Guy Ritchie",
+        "Robert Rodriguez"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In 'Blade Runner', what are the artificial humans called?",
+      "options": [
+        "Androids",
+        "Replicants",
+        "Cylons",
+        "Synthetics"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which 1994 film features the line 'Life is like a box of chocolates'?",
+      "options": [
+        "The Shawshank Redemption",
+        "Forrest Gump",
+        "Pulp Fiction",
+        "Four Weddings and a Funeral"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who composed the iconic scores for 'Jaws', 'Star Wars' and 'Indiana Jones'?",
+      "options": [
+        "Hans Zimmer",
+        "John Williams",
+        "Ennio Morricone",
+        "Howard Shore"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which animated studio created 'Spirited Away' and 'My Neighbour Totoro'?",
+      "options": [
+        "Pixar",
+        "Studio Ghibli",
+        "DreamWorks",
+        "Laika"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In 'The Matrix', who offers Neo the red and blue pills?",
+      "options": [
+        "Trinity",
+        "Morpheus",
+        "The Oracle",
+        "Agent Smith"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which film was the first fully computer-animated feature film?",
+      "options": [
+        "Shrek",
+        "Toy Story",
+        "A Bug's Life",
+        "Antz"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who played the lead in 'Lawrence of Arabia' (1962)?",
+      "options": [
+        "Peter O'Toole",
+        "Alec Guinness",
+        "Omar Sharif",
+        "Richard Burton"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "In 'Citizen Kane', what does the dying word 'Rosebud' refer to?",
+      "options": [
+        "A woman",
+        "A childhood sled",
+        "A racehorse",
+        "A garden"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which director made 'Parasite', the first non-English Best Picture winner?",
+      "options": [
+        "Park Chan-wook",
+        "Bong Joon-ho",
+        "Hirokazu Kore-eda",
+        "Wong Kar-wai"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which actor voiced Woody in the 'Toy Story' films?",
+      "options": [
+        "Tim Allen",
+        "Tom Hanks",
+        "Billy Crystal",
+        "Robin Williams"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In 'Star Wars', what is the name of Han Solo's ship?",
+      "options": [
+        "X-wing",
+        "Millennium Falcon",
+        "Slave I",
+        "Razor Crest"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which film features a hotel called the Overlook and the line 'Here's Johnny!'?",
+      "options": [
+        "The Exorcist",
+        "The Shining",
+        "Psycho",
+        "The Silence of the Lambs"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who directed 'Schindler's List', 'Jaws' and 'E.T.'?",
+      "options": [
+        "George Lucas",
+        "Steven Spielberg",
+        "Francis Ford Coppola",
+        "Ridley Scott"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which actress won an Oscar for playing a queen in 'The Queen' (2006)?",
+      "options": [
+        "Judi Dench",
+        "Helen Mirren",
+        "Cate Blanchett",
+        "Meryl Streep"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In 'Jurassic Park', which dinosaur breaks out and chases the heroes at the climax?",
+      "options": [
+        "Velociraptor",
+        "Tyrannosaurus rex",
+        "Both raptors and the T. rex feature",
+        "Dilophosaurus"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which film trilogy is set in Middle-earth?",
+      "options": [
+        "The Chronicles of Narnia",
+        "The Lord of the Rings",
+        "His Dark Materials",
+        "Eragon"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who directed 'Inception', 'Interstellar' and 'The Dark Knight'?",
+      "options": [
+        "Denis Villeneuve",
+        "Christopher Nolan",
+        "Zack Snyder",
+        "Ridley Scott"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In 'Casablanca', what is the name of Rick's nightclub?",
+      "options": [
+        "Rick's Café Américain",
+        "The Blue Parrot",
+        "Club Casablanca",
+        "La Belle Aurore"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which film features the villain Hannibal Lecter and FBI agent Clarice Starling?",
+      "options": [
+        "Se7en",
+        "The Silence of the Lambs",
+        "Zodiac",
+        "Manhunter"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who played the Joker in 'The Dark Knight' (2008), winning a posthumous Oscar?",
+      "options": [
+        "Jack Nicholson",
+        "Heath Ledger",
+        "Joaquin Phoenix",
+        "Jared Leto"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which 1939 film features Dorothy and a journey down the Yellow Brick Road?",
+      "options": [
+        "Gone with the Wind",
+        "The Wizard of Oz",
+        "Snow White",
+        "Pinocchio"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which director is famous for 'spaghetti westerns' like 'The Good, the Bad and the Ugly'?",
+      "options": [
+        "Sam Peckinpah",
+        "Sergio Leone",
+        "John Ford",
+        "Clint Eastwood"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In 'Fight Club', what is the first rule of Fight Club?",
+      "options": [
+        "You do not talk about Fight Club",
+        "Always fight fair",
+        "No shirts, no shoes",
+        "Bring a friend"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which Pixar film features an old man, a boy scout and a house lifted by balloons?",
+      "options": [
+        "Wall-E",
+        "Up",
+        "Coco",
+        "Inside Out"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who directed 'Goodfellas', 'Taxi Driver' and 'The Departed'?",
+      "options": [
+        "Francis Ford Coppola",
+        "Martin Scorsese",
+        "Brian De Palma",
+        "Michael Mann"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which film popularised the line 'You can't handle the truth!'?",
+      "options": [
+        "A Few Good Men",
+        "The Firm",
+        "JFK",
+        "Wall Street"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "In the Harry Potter series, what is the name of Harry's owl?",
+      "options": [
+        "Errol",
+        "Hedwig",
+        "Crookshanks",
+        "Pigwidgeon"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which actor played the title role in 'Forrest Gump' and 'Cast Away'?",
+      "options": [
+        "Tom Cruise",
+        "Tom Hanks",
+        "Kevin Costner",
+        "Harrison Ford"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which 1975 film is often credited as the first summer 'blockbuster'?",
+      "options": [
+        "Star Wars",
+        "Jaws",
+        "The Exorcist",
+        "Rocky"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In 'The Lion King', who kills Mufasa?",
+      "options": [
+        "Shenzi",
+        "Scar",
+        "Banzai",
+        "Zazu"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which director made 'Get Out' and 'Us'?",
+      "options": [
+        "Jordan Peele",
+        "Ari Aster",
+        "Robert Eggers",
+        "M. Night Shyamalan"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the name of the fictional metal in Marvel's Wakanda?",
+      "options": [
+        "Adamantium",
+        "Vibranium",
+        "Carbonadium",
+        "Promethium"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which film features the quote 'I'm gonna make him an offer he can't refuse'?",
+      "options": [
+        "Scarface",
+        "The Godfather",
+        "Goodfellas",
+        "Casino"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who directed 'Apocalypse Now' and 'The Godfather'?",
+      "options": [
+        "Martin Scorsese",
+        "Francis Ford Coppola",
+        "Oliver Stone",
+        "Michael Cimino"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In 'Alien', what is the name of the ship's computer?",
+      "options": [
+        "HAL",
+        "Mother",
+        "Skynet",
+        "Samantha"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which actress has the most Oscar acting nominations in history?",
+      "options": [
+        "Katharine Hepburn",
+        "Meryl Streep",
+        "Bette Davis",
+        "Cate Blanchett"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which film features a character named Tyler Durden?",
+      "options": [
+        "American Psycho",
+        "Fight Club",
+        "Memento",
+        "Se7en"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who directed '2001: A Space Odyssey' and 'A Clockwork Orange'?",
+      "options": [
+        "Stanley Kubrick",
+        "Ridley Scott",
+        "Andrei Tarkovsky",
+        "Terrence Malick"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "In 'Back to the Future', what speed must the DeLorean reach to time travel?",
+      "options": [
+        "66 mph",
+        "77 mph",
+        "88 mph",
+        "99 mph"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which film won 11 Oscars, tying the record, in 2004?",
+      "options": [
+        "Titanic",
+        "The Lord of the Rings: The Return of the King",
+        "Ben-Hur",
+        "La La Land"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who played Travis Bickle in 'Taxi Driver'?",
+      "options": [
+        "Al Pacino",
+        "Robert De Niro",
+        "Harvey Keitel",
+        "Joe Pesci"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which animated film features the emotions Joy, Sadness, Fear, Anger and Disgust?",
+      "options": [
+        "Soul",
+        "Inside Out",
+        "Coco",
+        "Up"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which director is known for 'Whiplash' and 'La La Land'?",
+      "options": [
+        "Damien Chazelle",
+        "Barry Jenkins",
+        "Greta Gerwig",
+        "Wes Anderson"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "In 'The Wizard of Oz', what does the Scarecrow want?",
+      "options": [
+        "A heart",
+        "A brain",
+        "Courage",
+        "A home"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which film series features the character Ethan Hunt?",
+      "options": [
+        "James Bond",
+        "Mission: Impossible",
+        "Jason Bourne",
+        "John Wick"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who directed 'Gladiator', 'Alien' and 'Blade Runner'?",
+      "options": [
+        "James Cameron",
+        "Ridley Scott",
+        "Tony Scott",
+        "Paul Verhoeven"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which 1997 film featured the ship RMS Titanic?",
+      "options": [
+        "Poseidon",
+        "Titanic",
+        "The Perfect Storm",
+        "A Night to Remember"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In 'The Silence of the Lambs', what kind of moth is central to the case?",
+      "options": [
+        "Luna moth",
+        "Death's-head hawkmoth",
+        "Atlas moth",
+        "Gypsy moth"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which actor played James Bond in 'GoldenEye' and 'Casino Royale' respectively—name the Casino Royale Bond?",
+      "options": [
+        "Pierce Brosnan",
+        "Daniel Craig",
+        "Timothy Dalton",
+        "Roger Moore"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which director made 'No Country for Old Men' and 'Fargo'?",
+      "options": [
+        "Paul Thomas Anderson",
+        "The Coen Brothers",
+        "David Fincher",
+        "Denis Villeneuve"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In 'E.T.', what sweet does Elliott use to lure E.T.?",
+      "options": [
+        "M&Ms",
+        "Reese's Pieces",
+        "Skittles",
+        "Smarties"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which film features the dystopian society of Panem and the Hunger Games?",
+      "options": [
+        "Divergent",
+        "The Hunger Games",
+        "Maze Runner",
+        "Ready Player One"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who directed 'Mad Max: Fury Road'?",
+      "options": [
+        "George Miller",
+        "Zack Snyder",
+        "Neill Blomkamp",
+        "Denis Villeneuve"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "In 'Pulp Fiction', what do the characters say is in Marsellus Wallace's briefcase (it's never revealed)?",
+      "options": [
+        "Gold",
+        "It is deliberately left unknown",
+        "Diamonds",
+        "Cash"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which 1960 Hitchcock film featured a shocking shower scene?",
+      "options": [
+        "The Birds",
+        "Psycho",
+        "Vertigo",
+        "Marnie"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who voiced the Genie in Disney's 1992 'Aladdin'?",
+      "options": [
+        "Eddie Murphy",
+        "Robin Williams",
+        "Nathan Lane",
+        "Gilbert Gottfried"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which film features the character Amélie Poulain in Paris?",
+      "options": [
+        "La Vie en Rose",
+        "Amélie",
+        "Midnight in Paris",
+        "Ratatouille"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who directed 'Raging Bull', 'Goodfellas' and 'Casino', all starring Robert De Niro?",
+      "options": [
+        "Brian De Palma",
+        "Martin Scorsese",
+        "Francis Ford Coppola",
+        "Sidney Lumet"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which Marvel film was the first in the Cinematic Universe (2008)?",
+      "options": [
+        "The Incredible Hulk",
+        "Iron Man",
+        "Thor",
+        "Captain America"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In 'The Shawshank Redemption', what does Andy Dufresne use to hide his escape tunnel?",
+      "options": [
+        "A bookshelf",
+        "A poster",
+        "A painting",
+        "A rug"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which director is known for 'The Grand Budapest Hotel' and a symmetrical, pastel style?",
+      "options": [
+        "Wes Anderson",
+        "Tim Burton",
+        "Sofia Coppola",
+        "Spike Jonze"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which 1939 epic is set during the American Civil War and is one of the highest-grossing films ever (adjusted)?",
+      "options": [
+        "Ben-Hur",
+        "Gone with the Wind",
+        "Cleopatra",
+        "Doctor Zhivago"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who played the title role in 'Joker' (2019), winning an Oscar?",
+      "options": [
+        "Jared Leto",
+        "Joaquin Phoenix",
+        "Heath Ledger",
+        "Jack Nicholson"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which film features replicant-hunting 'blade runners' chasing Roy Batty?",
+      "options": [
+        "Total Recall",
+        "Blade Runner",
+        "Minority Report",
+        "Gattaca"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who directed 'Dunkirk', 'Tenet' and 'Oppenheimer'?",
+      "options": [
+        "Christopher Nolan",
+        "Sam Mendes",
+        "Edgar Wright",
+        "Matthew Vaughn"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "In 'Toy Story', what is the name of the space ranger toy?",
+      "options": [
+        "Woody",
+        "Buzz Lightyear",
+        "Rex",
+        "Hamm"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which film won Best Picture and is about a stuttering British king?",
+      "options": [
+        "The Queen",
+        "The King's Speech",
+        "Darkest Hour",
+        "The Iron Lady"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who directed 'Jaws' shark thriller and later 'Jurassic Park'?",
+      "options": [
+        "George Lucas",
+        "Steven Spielberg",
+        "Robert Zemeckis",
+        "James Cameron"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which actor is known for playing Jack Sparrow and Edward Scissorhands?",
+      "options": [
+        "Johnny Depp",
+        "Christian Bale",
+        "Robert Downey Jr.",
+        "Brad Pitt"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "In 'Star Wars: The Empire Strikes Back', what is the famous twist about Darth Vader?",
+      "options": [
+        "He is a clone",
+        "He is Luke's father",
+        "He is a droid",
+        "He is Leia's husband"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which film features a great white shark terrorising Amity Island?",
+      "options": [
+        "Deep Blue Sea",
+        "Jaws",
+        "The Meg",
+        "Open Water"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who directed 'Reservoir Dogs', his feature debut?",
+      "options": [
+        "Robert Rodriguez",
+        "Quentin Tarantino",
+        "Guy Ritchie",
+        "Paul Thomas Anderson"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In 'Monsters, Inc.', what powers the city of Monstropolis at the start?",
+      "options": [
+        "Children's laughter",
+        "Children's screams",
+        "Sunlight",
+        "Electricity"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which animated film features a rat named Remy who dreams of cooking?",
+      "options": [
+        "Flushed Away",
+        "Ratatouille",
+        "Cars",
+        "Bee Movie"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who composed the scores for 'The Lord of the Rings' trilogy?",
+      "options": [
+        "John Williams",
+        "Howard Shore",
+        "Hans Zimmer",
+        "James Horner"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which 1968 film features a sentient computer named HAL 9000?",
+      "options": [
+        "Solaris",
+        "2001: A Space Odyssey",
+        "Silent Running",
+        "Westworld"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which actress played Hermione Granger in the Harry Potter films?",
+      "options": [
+        "Emma Watson",
+        "Emma Stone",
+        "Emma Roberts",
+        "Bonnie Wright"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which film features the quote 'May the Force be with you'?",
+      "options": [
+        "Star Trek",
+        "Star Wars",
+        "Dune",
+        "Guardians of the Galaxy"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who directed 'Memento', told largely in reverse?",
+      "options": [
+        "David Fincher",
+        "Christopher Nolan",
+        "Darren Aronofsky",
+        "Denis Villeneuve"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In 'Frozen', what is the name of Elsa's younger sister?",
+      "options": [
+        "Anna",
+        "Rapunzel",
+        "Merida",
+        "Belle"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which film about boxing won Best Picture in 1976?",
+      "options": [
+        "Raging Bull",
+        "Rocky",
+        "The Champ",
+        "Million Dollar Baby"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who directed 'The Departed', a remake of 'Infernal Affairs'?",
+      "options": [
+        "Martin Scorsese",
+        "Michael Mann",
+        "Ben Affleck",
+        "Clint Eastwood"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "In 'WALL-E', what does the robot WALL-E spend his days doing?",
+      "options": [
+        "Building rockets",
+        "Compacting trash",
+        "Growing plants",
+        "Repairing ships"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which actor portrayed Gandalf in 'The Lord of the Rings'?",
+      "options": [
+        "Christopher Lee",
+        "Ian McKellen",
+        "Patrick Stewart",
+        "Liam Neeson"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which film features the character 'No Country for Old Men' killer with a captive bolt pistol?",
+      "options": [
+        "Anton Chigurh",
+        "Hannibal Lecter",
+        "John Doe",
+        "The Joker"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Who directed 'Avatar' (2009) and 'Titanic'?",
+      "options": [
+        "Peter Jackson",
+        "James Cameron",
+        "Ridley Scott",
+        "George Lucas"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In 'The Princess Bride', what phrase does Inigo Montoya famously repeat?",
+      "options": [
+        "As you wish",
+        "Hello, my name is Inigo Montoya",
+        "Inconceivable",
+        "Have fun storming the castle"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which 1994 film features hitmen Vincent and Jules?",
+      "options": [
+        "Reservoir Dogs",
+        "Pulp Fiction",
+        "Heat",
+        "Jackie Brown"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who directed 'There Will Be Blood' and 'Magnolia'?",
+      "options": [
+        "Paul Thomas Anderson",
+        "Wes Anderson",
+        "David Fincher",
+        "Darren Aronofsky"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which film popularised the 'bullet time' visual effect?",
+      "options": [
+        "The Matrix",
+        "Equilibrium",
+        "Wanted",
+        "Inception"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "In 'Coco', what holiday is central to the story?",
+      "options": [
+        "Christmas",
+        "Día de los Muertos (Day of the Dead)",
+        "Easter",
+        "Halloween"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which actor played Vito Corleone as a young man in 'The Godfather Part II'?",
+      "options": [
+        "Al Pacino",
+        "Robert De Niro",
+        "Marlon Brando",
+        "James Caan"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which film features the spaceship Nostromo?",
+      "options": [
+        "Alien",
+        "Event Horizon",
+        "Sunshine",
+        "Prometheus"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Who directed 'Spirited Away', the Oscar-winning anime?",
+      "options": [
+        "Isao Takahata",
+        "Hayao Miyazaki",
+        "Makoto Shinkai",
+        "Mamoru Hosoda"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In 'The Truman Show', what is unusual about Truman's life?",
+      "options": [
+        "He is a robot",
+        "His life is a televised reality show",
+        "He is dreaming",
+        "He is a clone"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which 2019 Marvel film became (for a time) the highest-grossing film ever?",
+      "options": [
+        "Avengers: Infinity War",
+        "Avengers: Endgame",
+        "Captain Marvel",
+        "Spider-Man: Far From Home"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who directed 'Eternal Sunshine of the Spotless Mind'?",
+      "options": [
+        "Spike Jonze",
+        "Michel Gondry",
+        "Charlie Kaufman",
+        "Wes Anderson"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which film features a young girl named Chihiro in a spirit bathhouse?",
+      "options": [
+        "Princess Mononoke",
+        "Spirited Away",
+        "Ponyo",
+        "Howl's Moving Castle"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which actor delivered the line 'You talkin' to me?' in 'Taxi Driver'?",
+      "options": [
+        "Al Pacino",
+        "Robert De Niro",
+        "Joe Pesci",
+        "Harvey Keitel"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who directed the 'Kill Bill' films?",
+      "options": [
+        "Robert Rodriguez",
+        "Quentin Tarantino",
+        "John Woo",
+        "Zhang Yimou"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In 'Jurassic Park', the dinosaurs' DNA is supplemented with that of which animal?",
+      "options": [
+        "Birds",
+        "Frogs",
+        "Lizards",
+        "Crocodiles"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which film features the line 'Here's looking at you, kid'?",
+      "options": [
+        "Gone with the Wind",
+        "Casablanca",
+        "Citizen Kane",
+        "The Maltese Falcon"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who directed 'Moonlight', the 2016 Best Picture winner?",
+      "options": [
+        "Barry Jenkins",
+        "Jordan Peele",
+        "Ryan Coogler",
+        "Steve McQueen"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "In 'Star Wars', what kind of creature is Yoda's species (officially)?",
+      "options": [
+        "Unknown/unnamed",
+        "Wookiee",
+        "Ewok",
+        "Jawa"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which film features bank robber Neil McCauley and detective Vincent Hanna in a famous diner scene?",
+      "options": [
+        "Heat",
+        "The Usual Suspects",
+        "Collateral",
+        "Ronin"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Who directed 'The Grand Budapest Hotel', 'Moonrise Kingdom' and 'Rushmore'?",
+      "options": [
+        "Wes Anderson",
+        "Sofia Coppola",
+        "Noah Baumbach",
+        "Spike Jonze"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "In 'Finding Nemo', what kind of fish is Dory?",
+      "options": [
+        "Clownfish",
+        "Regal blue tang",
+        "Angelfish",
+        "Goldfish"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which 1991 film features a cyborg assassin played by Robert Patrick made of liquid metal?",
+      "options": [
+        "RoboCop",
+        "Terminator 2: Judgment Day",
+        "Total Recall",
+        "The Matrix"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which director made 'Roma' and 'Gravity'?",
+      "options": [
+        "Guillermo del Toro",
+        "Alfonso Cuarón",
+        "Alejandro Iñárritu",
+        "Pedro Almodóvar"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which film features the Nakatomi Plaza and hero John McClane?",
+      "options": [
+        "Lethal Weapon",
+        "Die Hard",
+        "Speed",
+        "Con Air"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who composed the 'Imperial March' and other 'Star Wars' themes?",
+      "options": [
+        "Hans Zimmer",
+        "John Williams",
+        "Jerry Goldsmith",
+        "Alan Silvestri"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In 'The Dark Knight Rises', who is revealed as the mastermind behind Bane?",
+      "options": [
+        "Talia al Ghul",
+        "Selina Kyle",
+        "Harvey Dent",
+        "Ra's al Ghul"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which film won Best Animated Feature and follows a Mexican boy and his family in the afterlife?",
+      "options": [
+        "The Book of Life",
+        "Coco",
+        "Encanto",
+        "Spirited Away"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who directed 'Saving Private Ryan' with its visceral D-Day opening?",
+      "options": [
+        "Oliver Stone",
+        "Steven Spielberg",
+        "Clint Eastwood",
+        "Mel Gibson"
+      ],
+      "correct": 1
+    }
   ]
 }

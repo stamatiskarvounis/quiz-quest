@@ -24,20 +24,122 @@ const MAX_QUESTIONS = 120;  // safety cap so a stalled game can't run forever
 
 function shuffled(n){ const a=[...Array(n).keys()]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
-// ---- Avatars players can choose (5 colors x male/female; client maps ids to art) ----
-const HEROES = ['m_blue','f_blue','m_red','f_red','m_yellow','f_yellow',
-                'm_purple','f_purple','m_black','f_black'];
+// ---- Special blocks: landing exactly on one arms a modifier for your NEXT question ----
+const TRAP_BACK = 3; // wrong answer on a trap block sends you back this many tiles
+const MODIFIERS = {
+  double:   { good: true,  icon: '🧚', label: 'DOUBLE BLOCKS', desc: 'Correct answer moves you DOUBLE the blocks!' },
+  half:     { good: false, icon: '🧙', label: 'HALF BLOCKS',   desc: 'A correct answer moves only HALF the blocks.' },
+  trap:     { good: false, icon: '🧙', label: 'TRAP',          desc: 'Answer WRONG and you fall BACK ' + TRAP_BACK + ' blocks!' },
+  halftime: { good: false, icon: '🧙', label: 'HALF TIME',     desc: 'Only HALF the time to answer — be quick!' }
+};
+// 8 special tiles per game, in two hand-picked zones:
+//   tiles 10-25 : 2 helps (double) + 2 half-point traps (half)
+//   tiles 35-50 : 2 helps (double) + 2 go-back traps (trap)
+// Tiles are picked at random (unique) within each zone.
+function pickUnique(lo, hi, n) {
+  const pool = []; for (let t = lo; t <= hi; t++) pool.push(t);
+  for (let i = pool.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pool[i], pool[j]] = [pool[j], pool[i]]; }
+  return pool.slice(0, n);
+}
+function genSpecials() {
+  const specials = {};
+  // Zone A (10-25): 2 double + 2 half
+  const zoneA = pickUnique(10, 25, 4);
+  ['double', 'double', 'half', 'half'].forEach((tp, i) => { specials[zoneA[i]] = tp; });
+  // Zone B (35-50): 2 double + 2 trap
+  const zoneB = pickUnique(35, 50, 4);
+  ['double', 'double', 'trap', 'trap'].forEach((tp, i) => { specials[zoneB[i]] = tp; });
+  return specials; // { tileNumber: type }
+}
+function specialsPublic(room) {
+  return Object.entries(room.specials || {}).map(([t, type]) =>
+    ({ tile: +t, type, good: MODIFIERS[type].good, icon: MODIFIERS[type].icon, label: MODIFIERS[type].label, desc: MODIFIERS[type].desc }));
+}
+function modInfo(type) { return type ? Object.assign({ type }, MODIFIERS[type]) : null; }
 
-// ---- Load question categories (questions/*.json) ----
+// ---- Potions -----------------------------------------------------------------
+// Every player starts the game owning one of each potion. Each potion is
+// single-use (consumed when used) and a player may use at most one per round.
+const POTIONS = {
+  shield: { icon: '🛡️', name: 'Shield', desc: 'Block the next bad effect (trap/curse).' },
+  double: { icon: '✨', name: 'Double', desc: 'Double your blocks if you answer correctly.' },
+  fifty:  { icon: '🎯', name: '50/50',  desc: 'Remove two wrong answers next question.' },
+  curse:  { icon: '🌫️', name: 'Curse',  desc: 'Give a rival HALF time on their next question.' }
+};
+const ALL_POTIONS = Object.keys(POTIONS);
+function freshPotions() { const inv = {}; ALL_POTIONS.forEach(k => inv[k] = true); return inv; } // all owned, unused
+function remainingPotions(p) { return ALL_POTIONS.filter(k => p.potions && p.potions[k]); }
+function potionsPublic() {
+  return Object.entries(POTIONS).map(([key, p]) => ({ key, icon: p.icon, name: p.name, desc: p.desc }));
+}
+// effects in force for a player THIS question (block modifier + potions + curse), for display
+function playerEffects(p) {
+  const e = [];
+  if (p.active && MODIFIERS[p.active]) e.push(modInfo(p.active));
+  if (p.potionActive === 'double' && p.active !== 'double') e.push({ type: 'double', icon: '✨', label: 'DOUBLE', desc: 'Double blocks if correct! (potion)', good: true });
+  if (p.potionActive === 'fifty') e.push({ type: 'fifty', icon: '🎯', label: '50/50', desc: 'Two wrong answers removed! (potion)', good: true });
+  if (p.shieldUsed) e.push({ type: 'shield', icon: '🛡️', label: 'SHIELD', desc: 'A bad effect was blocked!', good: true });
+  if (p.cursed) e.push({ type: 'curse', icon: '🌫️', label: 'CURSED', desc: 'Half time — a rival cursed you!', good: false });
+  return e;
+}
+
+// ---- Avatars players can choose: 9 total (5 male designs + 4 female), shown 3x3.
+// Male designs: warrior/pawn/monk. Female design: archer. (client maps ids to art) ----
+const HEROES = [
+  'warrior_blue', 'pawn_red', 'monk_yellow', 'warrior_black', 'pawn_purple', // 5 men
+  'archer_blue', 'archer_red', 'archer_yellow', 'archer_purple'              // 4 women
+];
+
+// ---- Languages players can choose for the questions ----
+// English is the base; other languages overlay translations from questions/i18n/.
+// Any question without a translation falls back to English automatically.
+const LANGS = [
+  { code: 'en', label: 'English' },
+  { code: 'el', label: 'Ελληνικά' },
+  { code: 'vi', label: 'Tiếng Việt' }
+];
+
+// ---- Load question categories (questions/*.json) + translations (questions/i18n/) ----
 const QUESTION_TIME_SEC = 15;
 function loadCategories() {
   const dir = path.join(__dirname, 'questions');
   const cats = {};
   fs.readdirSync(dir).filter(f => f.endsWith('.json')).forEach(f => {
     const d = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
-    cats[f.replace('.json', '')] = { name: d.name, emoji: d.emoji || '', questions: d.questions };
+    cats[f.replace('.json', '')] = { name: d.name, emoji: d.emoji || '', questions: d.questions, tr: {}, nameTr: {} };
   });
+  // overlay translations: questions/i18n/<category>.<lang>.json  (parallel by index)
+  const i18nDir = path.join(dir, 'i18n');
+  if (fs.existsSync(i18nDir)) {
+    fs.readdirSync(i18nDir).filter(f => f.endsWith('.json')).forEach(f => {
+      const m = f.match(/^(.+)\.([a-z]{2})\.json$/);
+      if (!m) return;
+      const key = m[1], lang = m[2];
+      if (!cats[key]) return;
+      try {
+        const d = JSON.parse(fs.readFileSync(path.join(i18nDir, f), 'utf8'));
+        cats[key].tr[lang] = d.questions || [];
+        if (d.name) cats[key].nameTr[lang] = d.name;
+      } catch (e) { console.error('Bad translation file', f, e.message); }
+    });
+  }
   return cats;
+}
+
+// Build the question payload in a given language (falls back to English per-question).
+function localizedPayload(room, lang) {
+  const src = room.currentSrc, perm = room.currentPerm;
+  const c = room.cats[src.catKey];
+  let q = src.q, opts = src.options, catName = c.name;
+  if (lang && lang !== 'en' && c.tr[lang] && c.tr[lang][src.idx]) {
+    const t = c.tr[lang][src.idx];
+    if (t && t.q && Array.isArray(t.options) && t.options.length === 4) { q = t.q; opts = t.options; }
+    if (c.nameTr[lang]) catName = c.nameTr[lang];
+  }
+  return {
+    index: room.qnum - 1, q, options: perm.map(i => opts[i]),
+    time: room.questionTime, cat: (c.emoji + ' ' + catName).trim()
+  };
 }
 
 const rooms = {}; // pin -> room
@@ -81,22 +183,21 @@ function broadcastLobby(pin) {
   broadcastBoard(pin); // phones also get the map
 }
 
-// Faster correct answer = more squares (1..6).
+// Faster correct answer = more squares. A CORRECT answer ALWAYS moves at least 1
+// block, no matter how slow — only wrong/no answer scores 0 (handled in revealResults).
 // Based on a 15-second reference; scales if questionTime changes.
-// Blocks earned by a CORRECT answer, based on how fast (15-second timer).
-// Wrong answer or no answer = 0 blocks (handled in revealResults).
-//   0-3 sec  -> 5 blocks
-//   3-5 sec  -> 4 blocks
-//   5-7 sec  -> 3 blocks
-//   7-9 sec  -> 2 blocks
-//   9-15 sec -> 0 blocks
+//   0-3 sec   -> 5 blocks
+//   3-6 sec   -> 4 blocks
+//   6-9 sec   -> 3 blocks
+//   9-12 sec  -> 2 blocks
+//   12-15 sec -> 1 block
 function squaresForTime(elapsedMs, totalMs) {
   const refSec = (elapsedMs / totalMs) * 15; // seconds on a 15s scale
   if (refSec <= 3) return 5;
-  if (refSec <= 5) return 4;
-  if (refSec <= 7) return 3;
-  if (refSec <= 9) return 2;
-  return 0;
+  if (refSec <= 6) return 4;
+  if (refSec <= 9) return 3;
+  if (refSec <= 12) return 2;
+  return 1;
 }
 
 io.on('connection', (socket) => {
@@ -121,7 +222,8 @@ io.on('connection', (socket) => {
       state: 'lobby',
       answers: {},
       questionStart: 0,
-      pathLength: PATH_LENGTH
+      pathLength: PATH_LENGTH,
+      specials: genSpecials()
     };
     socket.join(pin);
     socket.emit('roomCreated', {
@@ -129,8 +231,10 @@ io.on('connection', (socket) => {
       title: rooms[pin].title,
       categories: Object.entries(cats).map(([key, c]) =>
         ({ key, name: c.name, emoji: c.emoji, count: c.questions.length })),
+      languages: LANGS,
       pathLength: PATH_LENGTH,
-      questionTime: rooms[pin].questionTime
+      questionTime: rooms[pin].questionTime,
+      specials: specialsPublic(rooms[pin])
     });
   });
 
@@ -142,24 +246,91 @@ io.on('connection', (socket) => {
     if (valid.length) room.selected = valid;
   });
 
-  // ---- PLAYER joins (name) ----
-  socket.on('joinRoom', ({ pin, name }) => {
+  // ---- HOST starts a brand-new game with the SAME players & PIN ----
+  // Resets positions/scores/potions, rolls fresh special blocks, and
+  // drops everyone back to the lobby so the host can press START again.
+  socket.on('restartGame', ({ pin }) => {
+    const room = rooms[pin];
+    if (!room || room.hostId !== socket.id) return;
+    room.cats = loadCategories();          // reload questions (picks up any new ones)
+    room.selected = room.selected.filter(k => room.cats[k]);
+    if (!room.selected.length) room.selected = Object.keys(room.cats);
+    room.questions = [];
+    room.order = []; room.orderPos = -1;
+    room.qnum = 0; room.currentQ = null; room.currentSrc = null; room.currentPerm = null;
+    room.state = 'lobby'; room.answers = {}; room.questionStart = 0;
+    room.finishedCount = 0;
+    room.specials = genSpecials();
+    Object.values(room.players).forEach(p => {
+      p.position = 0; p.score = 0; p.finishRank = null;
+      p.pending = null; p.active = null; p.potionActive = null; p.armedPotion = null;
+      p.cursed = false; p.shieldUsed = false; p.hide = null;
+      p.incomingCurse = false; p.usedThisRound = false; p.potions = freshPotions();
+      p.effectiveTotal = room.questionTime;
+    });
+    // tell host + players to return to the lobby with fresh data
+    io.to(room.hostId).emit('gameReset', {
+      specials: specialsPublic(room),
+      categories: Object.entries(room.cats).map(([key, c]) =>
+        ({ key, name: c.name, emoji: c.emoji, count: c.questions.length })),
+      pathLength: room.pathLength
+    });
+    Object.values(room.players).forEach(p =>
+      io.to(p.id).emit('gameReset', {
+        specials: specialsPublic(room), pathLength: room.pathLength,
+        inventory: remainingPotions(p)
+      }));
+    broadcastLobby(pin);
+  });
+
+  // ---- PLAYER joins (name + chosen language) ----
+  socket.on('joinRoom', ({ pin, name, lang }) => {
     const room = rooms[pin];
     if (!room) return socket.emit('joinError', 'Game not found. Check the PIN.');
     if (room.state !== 'lobby') return socket.emit('joinError', 'Game already started.');
     if (Object.keys(room.players).length >= 20) return socket.emit('joinError', 'Game is full (20 players).');
     name = String(name || '').trim().slice(0, 16) || 'Player';
+    const langCode = LANGS.some(l => l.code === lang) ? lang : 'en';
 
     const idx = Object.keys(room.players).length;
     room.players[socket.id] = {
       id: socket.id, name, position: 0, score: 0,
       color: COLORS[idx % COLORS.length],
-      hero: HEROES[idx % HEROES.length], connected: true
+      hero: HEROES[idx % HEROES.length], connected: true, lang: langCode,
+      pending: null, active: null, effectiveTotal: room.questionTime,
+      armedPotion: null, incomingCurse: false, usedThisRound: false, potions: freshPotions()
     };
     socket.join(pin);
     socket.data.pin = pin;
-    socket.emit('joined', { pin, name, id: socket.id, color: room.players[socket.id].color, heroes: HEROES });
+    socket.emit('joined', { pin, name, id: socket.id, color: room.players[socket.id].color, heroes: HEROES,
+      specials: specialsPublic(room), potions: potionsPublic(), inventory: remainingPotions(room.players[socket.id]) });
     broadcastLobby(pin);
+  });
+
+  // ---- PLAYER changes language (lobby only) ----
+  socket.on('setLang', ({ pin, lang }) => {
+    const room = rooms[pin];
+    if (!room || !room.players[socket.id]) return;
+    if (LANGS.some(l => l.code === lang)) room.players[socket.id].lang = lang;
+  });
+
+  // ---- PLAYER uses a potion they own (between questions, one per round) ----
+  socket.on('usePotion', ({ pin, potion, targetId }) => {
+    const room = rooms[pin];
+    if (!room || !room.players[socket.id]) return;
+    if (room.state === 'question') return;          // only between questions
+    const p = room.players[socket.id];
+    if (p.finishRank || p.usedThisRound) return;    // one potion per round
+    if (!POTIONS[potion] || !p.potions[potion]) return; // must still own it (unused)
+    if (potion === 'curse') {
+      const t = room.players[targetId];
+      if (!t || t.id === p.id || t.finishRank) return;
+      p.potions[potion] = false; p.usedThisRound = true; t.incomingCurse = true;
+      socket.emit('potionUsed', { armed: 'curse', targetName: t.name, inventory: remainingPotions(p) });
+    } else {
+      p.potions[potion] = false; p.usedThisRound = true; p.armedPotion = potion;
+      socket.emit('potionUsed', { armed: potion, inventory: remainingPotions(p) });
+    }
   });
 
   // ---- PLAYER picks a hero ----
@@ -180,7 +351,7 @@ io.on('connection', (socket) => {
     // first question: build the pool from the host's selected categories
     if (room.qnum === 0) {
       room.questions = room.selected.flatMap(k =>
-        room.cats[k].questions.map(q => ({ ...q, cat: (room.cats[k].emoji + ' ' + room.cats[k].name).trim() })));
+        room.cats[k].questions.map((q, i) => ({ ...q, catKey: k, idx: i })));
       room.order = shuffled(room.questions.length);
       room.orderPos = -1;
     }
@@ -190,17 +361,54 @@ io.on('connection', (socket) => {
     if (room.orderPos >= room.order.length) { room.order = shuffled(room.questions.length); room.orderPos = 0; }
     room.qnum++;
     const src = room.questions[room.order[room.orderPos]];
-    // shuffle the answer positions every time, so the correct option's slot is random
+    // shuffle the answer positions every time, so the correct option's slot is random.
+    // The same shuffle is applied across every language, so the correct index lines up.
     const perm = shuffled(4);
-    const q = { q: src.q, cat: src.cat, options: perm.map(i => src.options[i]), correct: perm.indexOf(src.correct) };
-    room.currentQ = q;
+    room.currentSrc = src;
+    room.currentPerm = perm;
+    room.currentQ = { correct: perm.indexOf(src.correct), options: perm.map(i => src.options[i]) };
     room.state = 'question';
     room.answers = {};
     room.questionStart = Date.now();
 
-    const payload = { index: room.qnum - 1, q: q.q, options: q.options, time: room.questionTime, cat: q.cat || '' };
-    io.to(room.hostId).emit('showQuestion', payload);
-    Object.keys(room.players).forEach(pid => io.to(pid).emit('answerNow', payload));
+    // arm each player's effects for THIS question: block modifier + potions + curse
+    const cIdx = room.currentQ.correct;
+    Object.values(room.players).forEach(p => {
+      let active = p.pending || null;            // modifier from the block they're standing on
+      let cursed = !!p.incomingCurse, shieldUsed = false;
+      if (p.armedPotion === 'shield') {          // shield cancels a bad block AND a curse
+        if (active && MODIFIERS[active] && !MODIFIERS[active].good) { active = null; shieldUsed = true; }
+        if (cursed) { cursed = false; shieldUsed = true; }
+      }
+      p.active = active;
+      p.potionActive = (p.armedPotion === 'double' || p.armedPotion === 'fifty') ? p.armedPotion : null;
+      p.cursed = cursed;
+      p.shieldUsed = shieldUsed;
+      // 50/50: choose two wrong option indices to hide on this player's phone
+      p.hide = null;
+      if (p.potionActive === 'fifty') {
+        const wrong = [0, 1, 2, 3].filter(i => i !== cIdx);
+        for (let i = wrong.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [wrong[i], wrong[j]] = [wrong[j], wrong[i]]; }
+        p.hide = [wrong[0], wrong[1]];
+      }
+      const half = (active === 'halftime') || cursed;
+      p.effectiveTotal = half ? Math.round(room.questionTime / 2) : room.questionTime;
+      // consume armed items
+      p.pending = null; p.armedPotion = null; p.incomingCurse = false; p.usedThisRound = false;
+    });
+
+    // host screen is the shared projector → always English; lists every player's effects
+    const hostPayload = localizedPayload(room, 'en');
+    hostPayload.modifiers = Object.values(room.players).flatMap(p =>
+      playerEffects(p).map(e => Object.assign({ id: p.id, name: p.name, color: p.color, hero: p.hero }, e)));
+    io.to(room.hostId).emit('showQuestion', hostPayload);
+    Object.values(room.players).forEach(p => {
+      const payload = localizedPayload(room, p.lang || 'en');
+      payload.time = p.effectiveTotal;
+      payload.effects = playerEffects(p);
+      payload.hide = p.hide || null;
+      io.to(p.id).emit('answerNow', payload);
+    });
   });
 
   // ---- PLAYER answers ----
@@ -209,6 +417,9 @@ io.on('connection', (socket) => {
     if (!room || room.state !== 'question' || !room.players[socket.id]) return;
     if (room.answers[socket.id]) return;
     const elapsed = Date.now() - room.questionStart;
+    // half-time players are locked out once their (shorter) clock runs out
+    const cap = (room.players[socket.id].effectiveTotal || room.questionTime) + 400; // small latency grace
+    if (elapsed > cap) return;
     room.answers[socket.id] = { choice, elapsed };
     socket.emit('answerReceived');
     io.to(room.hostId).emit('answerCount', {
@@ -236,55 +447,81 @@ io.on('connection', (socket) => {
     Object.values(room.players).forEach(p => {
       const ans = room.answers[p.id];
       const correct = ans && ans.choice === q.correct;
+      const mod = p.active; // modifier in force for THIS question
       let moved = 0, before = p.position;
       fromMap[p.id] = before;
-      if (correct && !p.finishRank) {
-        moved = squaresForTime(ans.elapsed, room.questionTime);
-        p.position = Math.min(p.position + moved, PATH_LENGTH);
-        p.score += moved * 100;
-        if (p.position >= PATH_LENGTH) newFinishers.push({ p, elapsed: ans.elapsed });
+      if (!p.finishRank) {
+        if (correct) {
+          const base = squaresForTime(ans.elapsed, p.effectiveTotal || room.questionTime);
+          moved = base;
+          if (mod === 'double' || p.potionActive === 'double') moved *= 2;
+          else if (mod === 'half') moved = Math.ceil(moved / 2);
+          p.position = Math.min(p.position + moved, PATH_LENGTH);
+          p.score += moved * 100;
+          if (p.position >= PATH_LENGTH) newFinishers.push({ p, elapsed: ans.elapsed });
+        } else if (mod === 'trap') {
+          // wrong/no answer on a trap block → fall back
+          moved = -Math.min(TRAP_BACK, p.position - 1);
+          p.position = Math.max(1, p.position - TRAP_BACK);
+        }
       }
-      results.push({ p, ans, correct, moved, before });
+      results.push({ p, ans, correct, moved, before, usedMod: mod });
     });
 
     // same-round arrivals at the castle: faster answer takes the higher rank
     newFinishers.sort((a, b) => a.elapsed - b.elapsed)
       .forEach(f => { f.p.finishRank = ++room.finishedCount; });
 
-    const out = results.map(({ p, ans, correct, moved, before }) => {
+    // arm modifiers for the NEXT question: anyone now standing exactly on a special tile
+    Object.values(room.players).forEach(p => {
+      p.pending = (!p.finishRank && room.specials[p.position]) ? room.specials[p.position] : null;
+    });
+
+    const out = results.map(({ p, ans, correct, moved, before, usedMod }) => {
+      // rivals the player could curse (everyone else still racing)
+      const others = Object.values(room.players)
+        .filter(o => o.id !== p.id && !o.finishRank)
+        .map(o => ({ id: o.id, name: o.name, hero: o.hero }));
       io.to(p.id).emit('yourResult', {
         correct, moved, before, after: p.position,
         reachedGoal: !!p.finishRank, finishRank: p.finishRank || null,
-        pathLength: PATH_LENGTH, correctIndex: q.correct, score: p.score
+        pathLength: PATH_LENGTH, correctIndex: q.correct, score: p.score,
+        usedModifier: modInfo(usedMod),     // what affected this answer
+        nextModifier: modInfo(p.pending),   // what awaits next question (landed on a block)
+        others, inventory: remainingPotions(p)   // for the potion screen
       });
       return {
         id: p.id, name: p.name, color: p.color, hero: p.hero,
         choice: ans ? ans.choice : null, correct,
         moved, before, after: p.position,
-        reachedGoal: !!p.finishRank, finishRank: p.finishRank || null, score: p.score
+        reachedGoal: !!p.finishRank, finishRank: p.finishRank || null, score: p.score,
+        nextModifier: modInfo(p.pending)
       };
     });
 
     const dist = q.options.map(() => 0);
     Object.values(room.answers).forEach(a => { if (a.choice != null) dist[a.choice]++; });
 
+    // who just landed on a special block → announce on the host for everyone
+    const landed = out.filter(r => r.nextModifier).map(r =>
+      Object.assign({ id: r.id, name: r.name, color: r.color, hero: r.hero }, r.nextModifier));
+
     io.to(room.hostId).emit('questionResults', {
       correctIndex: q.correct,
       distribution: dist,
       results: out.sort((a, b) => (a.finishRank || 99) - (b.finishRank || 99) || b.after - a.after),
       players: publicPlayers(room),
-      pathLength: PATH_LENGTH
+      pathLength: PATH_LENGTH,
+      landed
     });
     broadcastBoard(pin, fromMap); // animate heroes walking from old to new tile
 
-    // PODIUM RACE: keep playing until all podium spots are decided.
-    // Ends only when (a) all spots are taken, or (b) someone has finished AND at most
-    // one racer remains (that racer takes the next spot by elimination).
+    // The game ends as soon as the first 3 players reach the castle.
+    // (With fewer than 3 players, it ends when everyone has finished.)
     const total = Object.keys(room.players).length;
     const spots = Math.min(3, total);
     const finished = room.finishedCount;
-    const unfinished = total - finished;
-    if (finished >= spots || (finished > 0 && unfinished <= 1)) {
+    if (finished >= spots) {
       // let the final walk animation play out on the host before the celebration
       const maxMoved = Math.max(0, ...out.map(r => r.moved));
       endGame(pin, Math.min(7000, maxMoved * 560 + 2200));
@@ -295,9 +532,11 @@ io.on('connection', (socket) => {
     const room = rooms[pin];
     room.state = 'over';
     const standings = sortedStandings(room);
+    // the loser = last place, only when there's a distinct last player to mock gently
+    const loser = standings.length >= 2 ? standings[standings.length - 1] : null;
     setTimeout(() => {
       if (!rooms[pin]) return; // host left in the meantime
-      io.to(pin).emit('gameOver', { winner: standings[0] || null, standings });
+      io.to(pin).emit('gameOver', { winner: standings[0] || null, loser, standings });
     }, delayMs || 0);
   }
 

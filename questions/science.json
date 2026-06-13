@@ -2,105 +2,1205 @@
   "name": "Science & Space",
   "emoji": "🚀",
   "questions": [
-    {"q":"How many planets are in our solar system?","options":["7","8","9","10"],"correct":1},
-    {"q":"Which planet is known as the Red Planet?","options":["Venus","Mars","Jupiter","Mercury"],"correct":1},
-    {"q":"The largest planet in our solar system is…","options":["Saturn","Jupiter","Neptune","Uranus"],"correct":1},
-    {"q":"Which planet has the famous rings?","options":["Jupiter","Saturn","Uranus... they all have some!","Both Saturn & others"],"correct":3},
-    {"q":"The Sun is a…","options":["Planet","Star","Comet","Galaxy"],"correct":1},
-    {"q":"Light from the Sun takes about how long to reach Earth?","options":["8 seconds","8 minutes","8 hours","8 days"],"correct":1},
-    {"q":"Our galaxy is called…","options":["Andromeda","The Milky Way","Orion","Centaurus"],"correct":1},
-    {"q":"What force keeps us on the ground?","options":["Magnetism","Gravity","Friction","Pressure"],"correct":1},
-    {"q":"Water is made of hydrogen and…","options":["Nitrogen","Oxygen","Carbon","Helium"],"correct":1},
-    {"q":"What is H2O commonly known as?","options":["Salt","Water","Air","Acid"],"correct":1},
-    {"q":"At what temperature does water boil at sea level?","options":["90°C","100°C","110°C","120°C"],"correct":1},
-    {"q":"The human body is roughly what percentage water?","options":["40%","60%","80%","25%"],"correct":1},
-    {"q":"How many bones does an adult human have?","options":["106","206","306","156"],"correct":1},
-    {"q":"Babies are born with MORE bones than adults.","options":["True","False","Same number","Depends"],"correct":0},
-    {"q":"The strongest muscle by weight in the human body is the…","options":["Biceps","Jaw (masseter)","Heart","Tongue"],"correct":1},
-    {"q":"The smallest bone in your body is inside your…","options":["Finger","Ear","Nose","Toe"],"correct":1},
-    {"q":"Which organ produces insulin?","options":["Liver","Pancreas","Kidney","Spleen"],"correct":1},
-    {"q":"What carries oxygen in your blood?","options":["White cells","Red cells","Platelets","Plasma"],"correct":1},
-    {"q":"Your heart beats roughly how many times a day?","options":["10,000","100,000","1 million","50,000"],"correct":1},
-    {"q":"DNA stands for…","options":["Deoxyribonucleic acid","Dinucleic acid","Double nuclear acid","Dextro-nitro acid"],"correct":0},
-    {"q":"Humans share about 98-99% of DNA with…","options":["Dogs","Chimpanzees","Pigs","Mice"],"correct":1},
-    {"q":"What is the speed of light (approx)?","options":["300,000 km/s","30,000 km/s","3,000 km/s","3 million km/s"],"correct":0},
-    {"q":"Nothing can travel faster than…","options":["Sound","Light","Electricity","Neutrinos"],"correct":1},
-    {"q":"Thunder is the sound of…","options":["Clouds colliding","Lightning heating air","Wind shear","Rain impact"],"correct":1},
-    {"q":"You see lightning before hearing thunder because…","options":["Eyes react faster","Light travels faster than sound","Thunder happens later","It's farther away"],"correct":1},
-    {"q":"What is the chemical symbol for gold?","options":["Go","Au","Gd","Ag"],"correct":1},
-    {"q":"Ag is the symbol for…","options":["Aluminium","Silver","Argon","Gold"],"correct":1},
-    {"q":"The most abundant gas in Earth's atmosphere is…","options":["Oxygen","Nitrogen","CO2","Hydrogen"],"correct":1},
-    {"q":"Plants make food using sunlight in a process called…","options":["Respiration","Photosynthesis","Fermentation","Transpiration"],"correct":1},
-    {"q":"Plants release which gas that we breathe?","options":["CO2","Oxygen","Nitrogen","Methane"],"correct":1},
-    {"q":"Which scientist developed the theory of general relativity?","options":["Newton","Einstein","Hawking","Bohr"],"correct":1},
-    {"q":"Einstein won his Nobel Prize for…","options":["Relativity","The photoelectric effect","E=mc²","Black holes"],"correct":1},
-    {"q":"Which scientist was struck by the idea of gravity via a falling apple (so the story goes)?","options":["Galileo","Newton","Kepler","Darwin"],"correct":1},
-    {"q":"Marie Curie won Nobel Prizes in how many different sciences?","options":["1","2","3","None"],"correct":1},
-    {"q":"Marie Curie's notebooks are still…","options":["Lost","Radioactive","Classified","Unreadable"],"correct":1},
-    {"q":"Who proposed evolution by natural selection?","options":["Mendel","Darwin","Lamarck","Wallace... and Darwin!"],"correct":3},
-    {"q":"The Galápagos finches helped inspire…","options":["Newton","Darwin","Einstein","Pasteur"],"correct":1},
-    {"q":"Penicillin was discovered by accident by…","options":["Pasteur","Fleming","Koch","Lister"],"correct":1},
-    {"q":"Which planet is hottest, despite not being closest to the Sun?","options":["Mercury","Venus","Mars","Jupiter"],"correct":1},
-    {"q":"Venus is hottest because of its…","options":["Volcanoes","Thick CO2 atmosphere","Slow spin","Metal core"],"correct":1},
-    {"q":"One day on Mercury lasts about how many Earth days?","options":["1","59","365","10"],"correct":1},
-    {"q":"The Moon causes Earth's…","options":["Seasons","Tides","Wind","Auroras"],"correct":1},
-    {"q":"The Moon is slowly…","options":["Falling toward Earth","Drifting away from Earth","Shrinking to dust","Speeding up"],"correct":1},
-    {"q":"How many moons does Mars have?","options":["None","2","1","4"],"correct":1},
-    {"q":"Which planet has the most moons (it changes, but recent counts)?","options":["Jupiter","Saturn","They keep trading places!","Neptune"],"correct":2},
-    {"q":"A year on which planet lasts 165 Earth years?","options":["Uranus","Neptune","Saturn","Pluto"],"correct":1},
-    {"q":"Pluto was reclassified in 2006 as a…","options":["Comet","Dwarf planet","Asteroid","Moon"],"correct":1},
-    {"q":"The first artificial satellite was…","options":["Explorer 1","Sputnik 1","Vostok 1","Apollo 1"],"correct":1},
-    {"q":"The ISS orbits Earth about every…","options":["24 hours","90 minutes","12 hours","7 days"],"correct":1},
-    {"q":"Astronauts on the ISS see how many sunrises per day?","options":["1","16","8","32"],"correct":1},
-    {"q":"Sound cannot travel through…","options":["Water","A vacuum","Steel","Air"],"correct":1},
-    {"q":"In space, no one can hear you scream because…","options":["It's too cold","There's no air","Helmets block sound","Distances are too big"],"correct":1},
-    {"q":"What protects Earth from harmful solar radiation?","options":["The ozone layer & magnetic field","Clouds","The Moon","Satellites"],"correct":0},
-    {"q":"The aurora (northern lights) is caused by…","options":["Moonlight on ice","Solar particles hitting the atmosphere","Volcanic gases","Reflected city lights"],"correct":1},
-    {"q":"What is the closest star to Earth (after the Sun)?","options":["Sirius","Proxima Centauri","Polaris","Vega"],"correct":1},
-    {"q":"A black hole is formed from a…","options":["Dying small planet","Collapsed massive star","Frozen comet","Empty galaxy"],"correct":1},
-    {"q":"Not even ___ can escape a black hole.","options":["Sound","Light","Heat","Rockets"],"correct":1},
-    {"q":"The Big Bang happened about how long ago?","options":["13.8 million years","13.8 billion years","138 billion years","1.38 billion years"],"correct":1},
-    {"q":"What's the hardest natural substance on Earth?","options":["Titanium","Diamond","Quartz","Obsidian"],"correct":1},
-    {"q":"Diamonds are made of which element?","options":["Silicon","Carbon","Calcium","Iron"],"correct":1},
-    {"q":"Which metal is liquid at room temperature?","options":["Lead","Mercury","Sodium","Tin"],"correct":1},
-    {"q":"What gas do humans exhale more of than they inhale?","options":["Oxygen","Carbon dioxide","Nitrogen","Argon"],"correct":1},
-    {"q":"Which vitamin do you get from sunlight?","options":["A","D","C","B12"],"correct":1},
-    {"q":"Which vitamin is famous in oranges and lemons?","options":["A","C","D","K"],"correct":1},
-    {"q":"Which part of the body has no blood supply and gets oxygen directly from air?","options":["Earlobes","The cornea","Fingernails","Lips"],"correct":1},
-    {"q":"Fingernails grow faster on your…","options":["Left hand","Dominant hand","Both equally","Thumbs"],"correct":1},
-    {"q":"Your stomach gets a new lining every few days because…","options":["Food scratches it","Its acid would digest it","Cells freeze","It expands too much"],"correct":1},
-    {"q":"The human brain uses about what share of your energy?","options":["5%","20%","50%","2%"],"correct":1},
-    {"q":"Goosebumps are a leftover reflex from when humans had…","options":["Tails","More body hair","Scales","Wings"],"correct":1},
-    {"q":"What type of energy does a battery store?","options":["Kinetic","Chemical","Nuclear","Thermal"],"correct":1},
-    {"q":"Solar panels convert sunlight into…","options":["Heat only","Electricity","Hydrogen","Steam"],"correct":1},
-    {"q":"Wind turbines convert wind into…","options":["Heat","Electricity","Pressure","Sound"],"correct":1},
-    {"q":"What does 'WWW' stand for?","options":["World Wide Web","World Web Window","Wide World Web","Web World Wide"],"correct":0},
-    {"q":"The internet and the web are…","options":["The same thing","Different things","Both software","Both cables"],"correct":1},
-    {"q":"Wi-Fi uses ___ to transmit data.","options":["Sound waves","Radio waves","Light beams","Microscopic wires"],"correct":1},
-    {"q":"The first computer 'bug' was literally a…","options":["Virus","Moth","Spider","Coding typo"],"correct":1},
-    {"q":"CPUs are mostly made from which element?","options":["Iron","Silicon","Copper","Aluminium"],"correct":1},
-    {"q":"Which scientist is the father of the periodic table?","options":["Bohr","Mendeleev","Dalton","Lavoisier"],"correct":1},
-    {"q":"What is the most abundant element in the universe?","options":["Oxygen","Hydrogen","Helium","Carbon"],"correct":1},
-    {"q":"Helium makes your voice higher because…","options":["It's cold","Sound travels faster in it","It shrinks vocal cords","It's lighter than air"],"correct":1},
-    {"q":"What's the boiling point of water on Mount Everest?","options":["100°C","About 70°C","About 120°C","About 90°C"],"correct":1},
-    {"q":"Earth's core is about as hot as…","options":["Boiling water","The Sun's surface","Lava only","A campfire"],"correct":1},
-    {"q":"Earthquakes are measured on the…","options":["Beaufort scale","Richter/moment magnitude scale","Kelvin scale","Mohs scale"],"correct":1},
-    {"q":"The Mohs scale measures…","options":["Earthquake power","Mineral hardness","Wind speed","Star brightness"],"correct":1},
-    {"q":"Which blood type is the 'universal donor'?","options":["AB+","O-","A+","B-"],"correct":1},
-    {"q":"How fast does Earth spin at the equator (roughly)?","options":["170 km/h","1,670 km/h","16,700 km/h","670 km/h"],"correct":1},
-    {"q":"Why don't we feel Earth spinning?","options":["It's too slow","Constant speed feels like stillness","Gravity cancels it","We do, slightly"],"correct":1},
-    {"q":"A bolt of lightning contains enough energy to toast about…","options":["1 slice of bread","100,000 slices","1,000 slices","10 slices"],"correct":1},
-    {"q":"Glass is made primarily from…","options":["Clay","Sand","Salt","Limestone"],"correct":1},
-    {"q":"Sound travels fastest through…","options":["Air","Water","Steel","A vacuum"],"correct":2},
-    {"q":"What color is sunlight, really?","options":["Yellow","White (all colors)","Orange","Colorless"],"correct":1},
-    {"q":"The sky is blue because air scatters…","options":["Red light most","Blue light most","All light equally","UV rays"],"correct":1},
-    {"q":"A rainbow always appears ___ the Sun (from your view).","options":["Next to","Opposite","Above","Around"],"correct":1},
-    {"q":"Absolute zero is approximately…","options":["-100°C","-273°C","-373°C","0°C"],"correct":1},
-    {"q":"Which of these is NOT a state of matter?","options":["Plasma","Energy","Gas","Solid"],"correct":1},
-    {"q":"Most of an atom is…","options":["Protons","Empty space","Electrons","Neutrons"],"correct":1},
-    {"q":"Octopus, humans and cats all have…","options":["Hearts... octopus has 3!","The same blood color","Backbones","Lungs"],"correct":0},
-    {"q":"Mars appears red because of…","options":["Hot lava","Iron oxide (rust)","Red clouds","Distance"],"correct":1},
-    {"q":"The James Webb telescope observes mainly in…","options":["X-rays","Infrared","Visible light","Radio"],"correct":1},
-    {"q":"Which instrument measures atmospheric pressure?","options":["Thermometer","Barometer","Hygrometer","Altimeter"],"correct":1}
+    {
+      "q": "Which element has the highest melting point of all?",
+      "options": [
+        "Tungsten",
+        "Carbon",
+        "Platinum",
+        "Osmium"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the most abundant element in the universe by mass?",
+      "options": [
+        "Oxygen",
+        "Hydrogen",
+        "Helium",
+        "Carbon"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The 'powerhouse of the cell' generates energy in the form of which molecule?",
+      "options": [
+        "DNA",
+        "ATP",
+        "RNA",
+        "Glucose"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which planet has the most moons in our solar system (as of recent counts)?",
+      "options": [
+        "Jupiter",
+        "Saturn",
+        "Uranus",
+        "Neptune"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What does a half-life measure?",
+      "options": [
+        "Time for half a radioactive sample to decay",
+        "Half the age of a star",
+        "Half a chemical reaction",
+        "Half an atom's mass"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Light from the Sun takes roughly how long to reach Earth?",
+      "options": [
+        "8 seconds",
+        "8 minutes",
+        "8 hours",
+        "80 minutes"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which scientist proposed that continents drift over time?",
+      "options": [
+        "Charles Darwin",
+        "Alfred Wegener",
+        "Isaac Newton",
+        "Carl Sagan"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the pH of a neutral solution at 25°C?",
+      "options": [
+        "0",
+        "7",
+        "10",
+        "14"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which subatomic particle was discovered last among the three classic ones?",
+      "options": [
+        "Electron",
+        "Proton",
+        "Neutron",
+        "Photon"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "The speed of light in a vacuum is approximately?",
+      "options": [
+        "300,000 km/s",
+        "3,000 km/s",
+        "30,000 km/s",
+        "3 million km/s"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which gas, despite being most abundant in our air, is largely inert to breathing?",
+      "options": [
+        "Oxygen",
+        "Nitrogen",
+        "Carbon dioxide",
+        "Argon"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the hardest known naturally occurring material?",
+      "options": [
+        "Quartz",
+        "Diamond",
+        "Corundum",
+        "Topaz"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "DNA's double helix structure was famously modelled by Watson, Crick and aided by whose X-ray work?",
+      "options": [
+        "Rosalind Franklin",
+        "Barbara McClintock",
+        "Lise Meitner",
+        "Dorothy Hodgkin"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which planet rotates on its side, with an axial tilt near 98 degrees?",
+      "options": [
+        "Saturn",
+        "Uranus",
+        "Neptune",
+        "Venus"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term for a substance that speeds up a reaction without being consumed?",
+      "options": [
+        "Reactant",
+        "Catalyst",
+        "Solvent",
+        "Substrate"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which blood type is the universal plasma donor (opposite of red-cell donor)?",
+      "options": [
+        "O negative",
+        "AB",
+        "A",
+        "B"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Doppler effect explains the change in what as a source moves?",
+      "options": [
+        "Mass",
+        "Frequency/pitch",
+        "Colour only",
+        "Temperature"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the chemical symbol for tungsten?",
+      "options": [
+        "Tu",
+        "Tn",
+        "W",
+        "Tg"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which force is responsible for holding atomic nuclei together?",
+      "options": [
+        "Gravity",
+        "Electromagnetism",
+        "The strong nuclear force",
+        "The weak nuclear force"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Absolute zero is approximately what temperature in Celsius?",
+      "options": [
+        "-100°C",
+        "-273°C",
+        "-460°C",
+        "0°C"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which planet is the densest in the solar system?",
+      "options": [
+        "Jupiter",
+        "Mercury",
+        "Earth",
+        "Saturn"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "What is the most reactive group of metals on the periodic table?",
+      "options": [
+        "Noble gases",
+        "Alkali metals",
+        "Halogens",
+        "Transition metals"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which scientist developed the laws of planetary motion?",
+      "options": [
+        "Galileo",
+        "Johannes Kepler",
+        "Tycho Brahe",
+        "Copernicus"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The largest volcano in the solar system, Olympus Mons, is on which planet?",
+      "options": [
+        "Venus",
+        "Mars",
+        "Jupiter's moon Io",
+        "Mercury"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the lightest (least dense) common metal that is also strong, used in aircraft?",
+      "options": [
+        "Aluminium",
+        "Titanium",
+        "Lithium",
+        "Magnesium"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which part of an atom occupies almost all its volume?",
+      "options": [
+        "The nucleus",
+        "The electron cloud",
+        "The protons",
+        "The neutrons"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term for an animal/cell with two complete sets of chromosomes?",
+      "options": [
+        "Haploid",
+        "Diploid",
+        "Triploid",
+        "Polyploid"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which gas law states pressure and volume are inversely related at constant temperature?",
+      "options": [
+        "Charles's law",
+        "Boyle's law",
+        "Avogadro's law",
+        "Gay-Lussac's law"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the name of the boundary around a black hole beyond which nothing escapes?",
+      "options": [
+        "The singularity",
+        "The event horizon",
+        "The photon sphere",
+        "The accretion disk"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which scientist first measured the speed of light reasonably accurately using Jupiter's moons?",
+      "options": [
+        "Ole Rømer",
+        "Isaac Newton",
+        "Edmond Halley",
+        "Christiaan Huygens"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "The element with atomic number 79 is?",
+      "options": [
+        "Silver",
+        "Gold",
+        "Mercury",
+        "Platinum"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the process by which a liquid becomes a gas below its boiling point?",
+      "options": [
+        "Condensation",
+        "Evaporation",
+        "Sublimation",
+        "Deposition"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which type of radiation is stopped by a sheet of paper?",
+      "options": [
+        "Alpha",
+        "Beta",
+        "Gamma",
+        "X-ray"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the SI unit of electric charge?",
+      "options": [
+        "Ampere",
+        "Volt",
+        "Coulomb",
+        "Ohm"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which planet has a day longer than its year?",
+      "options": [
+        "Mercury",
+        "Venus",
+        "Mars",
+        "Neptune"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The 'central dogma' of molecular biology describes information flow from DNA to RNA to what?",
+      "options": [
+        "Lipids",
+        "Protein",
+        "Carbohydrates",
+        "ATP"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the most electronegative element?",
+      "options": [
+        "Oxygen",
+        "Fluorine",
+        "Chlorine",
+        "Nitrogen"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which scientist introduced the three laws of motion?",
+      "options": [
+        "Galileo",
+        "Isaac Newton",
+        "Albert Einstein",
+        "Michael Faraday"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term for the bending of light as it passes between media?",
+      "options": [
+        "Reflection",
+        "Refraction",
+        "Diffraction",
+        "Dispersion"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which is the only metal that is liquid at room temperature?",
+      "options": [
+        "Gallium",
+        "Mercury",
+        "Caesium",
+        "Bromine"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The James Webb Space Telescope primarily observes in which part of the spectrum?",
+      "options": [
+        "Ultraviolet",
+        "Infrared",
+        "X-ray",
+        "Radio"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the chemical formula for ozone?",
+      "options": [
+        "O2",
+        "O3",
+        "CO2",
+        "H2O2"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which organ produces bile to help digest fats?",
+      "options": [
+        "Pancreas",
+        "Liver",
+        "Gallbladder",
+        "Stomach"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the name for the spontaneous emission of radiation by unstable nuclei?",
+      "options": [
+        "Fission",
+        "Radioactivity",
+        "Fusion",
+        "Ionisation"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which planet's largest moon, Titan, has lakes of liquid methane?",
+      "options": [
+        "Jupiter",
+        "Saturn",
+        "Neptune",
+        "Uranus"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the most common state of matter in the universe?",
+      "options": [
+        "Solid",
+        "Liquid",
+        "Gas",
+        "Plasma"
+      ],
+      "correct": 3
+    },
+    {
+      "q": "Which scientist formulated the theory of general relativity?",
+      "options": [
+        "Niels Bohr",
+        "Albert Einstein",
+        "Max Planck",
+        "Werner Heisenberg"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The smallest unit of an element that retains its properties is the?",
+      "options": [
+        "Molecule",
+        "Atom",
+        "Electron",
+        "Ion"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term for water moving from low to high solute concentration across a membrane?",
+      "options": [
+        "Diffusion",
+        "Osmosis",
+        "Active transport",
+        "Filtration"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which particle gives other particles mass, confirmed at CERN in 2012?",
+      "options": [
+        "Neutrino",
+        "Higgs boson",
+        "Gluon",
+        "Muon"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the chemical symbol for potassium?",
+      "options": [
+        "P",
+        "Po",
+        "K",
+        "Pt"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which layer of the atmosphere contains the ozone that blocks UV?",
+      "options": [
+        "Troposphere",
+        "Stratosphere",
+        "Mesosphere",
+        "Thermosphere"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the name for a star that suddenly brightens enormously as it explodes?",
+      "options": [
+        "Pulsar",
+        "Supernova",
+        "Quasar",
+        "Nebula"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which scientist discovered that microbes cause disease, founding germ theory work?",
+      "options": [
+        "Louis Pasteur",
+        "Robert Koch",
+        "Both Pasteur and Koch",
+        "Joseph Lister"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "What is the approximate percentage of oxygen in dry air?",
+      "options": [
+        "About 10%",
+        "About 21%",
+        "About 50%",
+        "About 78%"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which planet is famous for its Great Red Spot, a centuries-old storm?",
+      "options": [
+        "Saturn",
+        "Jupiter",
+        "Mars",
+        "Neptune"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term for a chemical reaction that releases heat?",
+      "options": [
+        "Endothermic",
+        "Exothermic",
+        "Isothermic",
+        "Adiabatic"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which scientist proposed the heliocentric model placing the Sun at the centre?",
+      "options": [
+        "Galileo",
+        "Copernicus",
+        "Kepler",
+        "Brahe"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The mitochondria is thought to have evolved from what?",
+      "options": [
+        "A virus",
+        "An engulfed bacterium",
+        "A plant cell",
+        "A fungus"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the densest naturally occurring element?",
+      "options": [
+        "Lead",
+        "Osmium",
+        "Gold",
+        "Uranium"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which unit measures the loudness of sound?",
+      "options": [
+        "Hertz",
+        "Decibel",
+        "Watt",
+        "Lumen"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term for the apparent shift in a star's position used to measure distance?",
+      "options": [
+        "Redshift",
+        "Parallax",
+        "Doppler shift",
+        "Aberration"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which element is the basis of organic chemistry, forming four bonds?",
+      "options": [
+        "Hydrogen",
+        "Carbon",
+        "Oxygen",
+        "Nitrogen"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the powerhouse organelle absent in red blood cells, which lack it to carry more oxygen?",
+      "options": [
+        "Nucleus and mitochondria",
+        "Ribosomes",
+        "Golgi",
+        "Lysosomes"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which planet would float in water given a big enough ocean, being less dense than water?",
+      "options": [
+        "Neptune",
+        "Saturn",
+        "Uranus",
+        "Jupiter"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the name of the closest galaxy on a collision course with the Milky Way?",
+      "options": [
+        "Andromeda",
+        "Triangulum",
+        "Whirlpool",
+        "Sombrero"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which acid is found in the human stomach?",
+      "options": [
+        "Sulfuric acid",
+        "Hydrochloric acid",
+        "Nitric acid",
+        "Acetic acid"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term for an element's variant with a different number of neutrons?",
+      "options": [
+        "Ion",
+        "Isotope",
+        "Isomer",
+        "Allotrope"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which scientist is credited with discovering the electron?",
+      "options": [
+        "J.J. Thomson",
+        "Ernest Rutherford",
+        "Niels Bohr",
+        "James Chadwick"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the only planet not named after a Greek or Roman deity?",
+      "options": [
+        "Mars",
+        "Earth",
+        "Venus",
+        "Mercury"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The boiling point of water decreases as you do what?",
+      "options": [
+        "Increase altitude",
+        "Add salt only",
+        "Decrease altitude",
+        "Increase pressure"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which type of bond involves sharing electron pairs between atoms?",
+      "options": [
+        "Ionic",
+        "Covalent",
+        "Metallic",
+        "Hydrogen"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the name for the rocky bodies orbiting mainly between Mars and Jupiter?",
+      "options": [
+        "Comets",
+        "Asteroids",
+        "Meteors",
+        "Kuiper objects"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which scientist discovered penicillin in 1928?",
+      "options": [
+        "Alexander Fleming",
+        "Howard Florey",
+        "Ernst Chain",
+        "Edward Jenner"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the chemical symbol for iron?",
+      "options": [
+        "Ir",
+        "In",
+        "Fe",
+        "Fr"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which fundamental force is by far the weakest yet shapes the universe at large scales?",
+      "options": [
+        "Gravity",
+        "Electromagnetism",
+        "Strong force",
+        "Weak force"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the term for the change of a gas directly into a solid?",
+      "options": [
+        "Condensation",
+        "Deposition",
+        "Sublimation",
+        "Freezing"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which planet experiences the most extreme temperature swings between day and night?",
+      "options": [
+        "Mercury",
+        "Venus",
+        "Mars",
+        "Earth"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the SI unit of frequency?",
+      "options": [
+        "Newton",
+        "Hertz",
+        "Joule",
+        "Pascal"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which scientist introduced the periodic table, predicting undiscovered elements?",
+      "options": [
+        "Antoine Lavoisier",
+        "Dmitri Mendeleev",
+        "John Dalton",
+        "Robert Boyle"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the name for a region of a magnet where the field is strongest?",
+      "options": [
+        "Core",
+        "Poles",
+        "Equator",
+        "Axis"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which gas is produced by plants during photosynthesis as a by-product?",
+      "options": [
+        "Carbon dioxide",
+        "Oxygen",
+        "Nitrogen",
+        "Methane"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What does the 'redshift' of distant galaxies tell us?",
+      "options": [
+        "The universe is contracting",
+        "The universe is expanding",
+        "Galaxies are cooling",
+        "Light is slowing"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which scientist discovered radioactivity's elements polonium and radium?",
+      "options": [
+        "Marie Curie",
+        "Henri Becquerel",
+        "Ernest Rutherford",
+        "Lise Meitner"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the chemical symbol for sodium?",
+      "options": [
+        "So",
+        "Na",
+        "Sd",
+        "S"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which planet has the fastest winds in the solar system, exceeding 2,000 km/h?",
+      "options": [
+        "Jupiter",
+        "Neptune",
+        "Saturn",
+        "Uranus"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term for cells that can develop into any cell type?",
+      "options": [
+        "Nerve cells",
+        "Stem cells",
+        "Blood cells",
+        "Skin cells"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which metal is liquid at body temperature and melts in your hand?",
+      "options": [
+        "Mercury",
+        "Gallium",
+        "Caesium",
+        "Tin"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The 'theory of evolution by natural selection' was co-developed by Darwin and whom?",
+      "options": [
+        "Gregor Mendel",
+        "Alfred Russel Wallace",
+        "Thomas Huxley",
+        "Jean-Baptiste Lamarck"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the most common gas making up the Sun?",
+      "options": [
+        "Helium",
+        "Hydrogen",
+        "Oxygen",
+        "Carbon"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which scientist formulated the uncertainty principle in quantum mechanics?",
+      "options": [
+        "Niels Bohr",
+        "Werner Heisenberg",
+        "Erwin Schrödinger",
+        "Max Born"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term for a closed path through which electric current flows?",
+      "options": [
+        "Circuit",
+        "Conductor",
+        "Resistor",
+        "Capacitor"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which planet has a tilt and seasons most similar to Earth's?",
+      "options": [
+        "Venus",
+        "Mars",
+        "Mercury",
+        "Jupiter"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the name of the force that opposes motion between surfaces in contact?",
+      "options": [
+        "Gravity",
+        "Friction",
+        "Tension",
+        "Drag"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which scientist demonstrated that lightning is electricity?",
+      "options": [
+        "Benjamin Franklin",
+        "Michael Faraday",
+        "Alessandro Volta",
+        "Nikola Tesla"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the chemical symbol for lead?",
+      "options": [
+        "Le",
+        "Ld",
+        "Pb",
+        "Pl"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which process powers the Sun, fusing hydrogen into helium?",
+      "options": [
+        "Fission",
+        "Nuclear fusion",
+        "Combustion",
+        "Radioactive decay"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the smallest planet in our solar system?",
+      "options": [
+        "Mars",
+        "Mercury",
+        "Venus",
+        "Pluto (now a dwarf planet)"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which vitamin is synthesised in skin exposed to sunlight?",
+      "options": [
+        "Vitamin A",
+        "Vitamin C",
+        "Vitamin D",
+        "Vitamin K"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "What is the term for an atom or molecule with a net electric charge?",
+      "options": [
+        "Isotope",
+        "Ion",
+        "Radical",
+        "Compound"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which planet is sometimes called Earth's 'sister' due to similar size?",
+      "options": [
+        "Mars",
+        "Venus",
+        "Mercury",
+        "Neptune"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the unit of power in the SI system?",
+      "options": [
+        "Joule",
+        "Watt",
+        "Newton",
+        "Volt"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which scientist is associated with the famous equation E=mc²?",
+      "options": [
+        "Newton",
+        "Einstein",
+        "Planck",
+        "Maxwell"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term for the dead remains of organisms preserved over millions of years?",
+      "options": [
+        "Sediment",
+        "Fossil",
+        "Mineral",
+        "Ore"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which gas is responsible for the bends (decompression sickness) in divers?",
+      "options": [
+        "Oxygen",
+        "Nitrogen",
+        "Carbon dioxide",
+        "Helium"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the name of the point in an orbit closest to the Sun?",
+      "options": [
+        "Aphelion",
+        "Perihelion",
+        "Apogee",
+        "Perigee"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which scientist mapped inheritance using pea plants, founding genetics?",
+      "options": [
+        "Charles Darwin",
+        "Gregor Mendel",
+        "Thomas Morgan",
+        "Francis Galton"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the chemical symbol for silver?",
+      "options": [
+        "Si",
+        "Sv",
+        "Ag",
+        "Au"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which type of galaxy is the Milky Way?",
+      "options": [
+        "Elliptical",
+        "Spiral (barred)",
+        "Irregular",
+        "Lenticular"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term for heat transfer through a fluid by movement of the fluid itself?",
+      "options": [
+        "Conduction",
+        "Convection",
+        "Radiation",
+        "Insulation"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which element makes up about 65% of the human body by mass?",
+      "options": [
+        "Carbon",
+        "Oxygen",
+        "Hydrogen",
+        "Nitrogen"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the approximate age of the universe?",
+      "options": [
+        "4.6 billion years",
+        "13.8 billion years",
+        "100 billion years",
+        "1 billion years"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which scientist developed the polio vaccine in the 1950s?",
+      "options": [
+        "Jonas Salk",
+        "Edward Jenner",
+        "Louis Pasteur",
+        "Robert Koch"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the term for the minimum energy needed to start a reaction?",
+      "options": [
+        "Bond energy",
+        "Activation energy",
+        "Kinetic energy",
+        "Potential energy"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which planet is the only one to rotate clockwise (retrograde) as seen from above?",
+      "options": [
+        "Mars",
+        "Venus",
+        "Uranus (rolls on its side)",
+        "Both Venus and Uranus are unusual"
+      ],
+      "correct": 3
+    },
+    {
+      "q": "What is the chemical symbol for mercury (the element)?",
+      "options": [
+        "Me",
+        "Mc",
+        "Hg",
+        "Mr"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which scientist proposed that the universe began with a 'Big Bang' singularity, supported by Lemaître?",
+      "options": [
+        "Georges Lemaître",
+        "Edwin Hubble",
+        "Fred Hoyle",
+        "Stephen Hawking"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the term for a material that resists the flow of electricity?",
+      "options": [
+        "Conductor",
+        "Insulator",
+        "Semiconductor",
+        "Superconductor"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which of the noble gases is the lightest?",
+      "options": [
+        "Neon",
+        "Helium",
+        "Argon",
+        "Krypton"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the standard term for the study of fungi?",
+      "options": [
+        "Botany",
+        "Mycology",
+        "Zoology",
+        "Virology"
+      ],
+      "correct": 1
+    }
   ]
 }

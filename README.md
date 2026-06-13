@@ -1,20 +1,63 @@
-# 🐍🪜 Quiz Snakes & Ladders
+# 🏰 Quiz Quest
 
-A live, Kahoot-style quiz played on a Snakes & Ladders board. The host shows the
-board and questions on a big screen; friends join from their phones. **The faster
-you answer correctly, the more squares you move (1–6).** Land on a 🪜 ladder to
-climb, a 🐍 snake to slide back down. First player to square **100** wins.
+A live, Kahoot-style **trivia hero race**. The host shows the board and questions on a
+big screen; friends join from their phones and pick a hero. **The faster you answer
+correctly, the further your hero runs along the path toward the castle.** Use your
+potions wisely and be one of the first to reach the castle.
 
 Supports up to **20 players**.
 
 ---
 
+## How it works
+
+- Everyone races along a **60-tile path**. Reaching tile 60 (the castle) finishes the race.
+- Each round shows one multiple-choice question. **A correct answer always moves you at
+  least one tile**; answer faster to move more:
+
+  | Answer speed | Tiles moved |
+  |---|---|
+  | 0–3 sec | 5 |
+  | 3–6 sec | 4 |
+  | 6–9 sec | 3 |
+  | 9–12 sec | 2 |
+  | 12–15 sec | 1 |
+
+- A wrong answer (or running out of time) keeps you where you are.
+- **The game ends as soon as the first three players reach the castle** (or when everyone
+  finishes, in a game of fewer than three players). The top three take the podium.
+
+## 🧪 Potions
+
+Every player starts the game holding **all four potions**. Each potion is **single-use** —
+once you use it, it disappears for the rest of the game — and you may use **one potion per
+round** (between questions). When you've used them all, the potion screen is skipped and
+you just keep racing.
+
+| Potion | Effect |
+|---|---|
+| 🛡️ **Shield** | Blocks the next bad effect. |
+| ✨ **Double** | Doubles the tiles you move if you answer correctly. |
+| 🎯 **50/50** | Removes two wrong answers from your next question. |
+| 🌫️ **Curse** | Gives a rival player only **half the time** on their next question. |
+
+## 🏆 The finish
+
+When the race ends, the host screen celebrates the **winner** with a podium and a victory
+toast — and then, for a laugh, shows the **player in last place locked out in the cold**,
+sitting outside the winner's pub. Hit **NEW GAME** on the host to instantly restart with
+the same players and PIN (positions and potions all reset).
+
+---
+
 ## What you need
-- A computer to be the **host** (runs the game + shows the board).
+
+- A computer to be the **host** (runs the game and shows the board).
 - [Node.js](https://nodejs.org) installed on that computer (v18 or newer).
 - Phones for the players, all on the **same Wi-Fi** as the host computer.
 
 ## Setup (one time)
+
 Open a terminal in this folder and run:
 
 ```bash
@@ -36,56 +79,26 @@ Players join: http://localhost:3000/
 
 1. On the host computer, open **http://localhost:3000/host** in a browser. A 4-digit
    **PIN** and a QR code appear.
-2. Players open the join URL on their phones. Two ways:
-   - Scan the QR code on the host screen (it pre-fills the PIN), **or**
-   - Go to the join URL and type the PIN + their name.
-   - On phones, use the host computer's **local IP** instead of `localhost`,
-     e.g. `http://192.168.1.42:3000`. (Find it with `ipconfig` on Windows or
-     `ifconfig`/System Settings on Mac. The terminal also reminds you.)
-3. When everyone's in, the host clicks **Start Game**.
-4. For each question: players tap an answer on their phone. The host clicks
-   **Show Results** (or the timer runs out) to reveal the correct answer and move
-   the tokens. Then **Next Question**.
-5. First to square 100 — or the highest after the last question — wins. 🏆
+2. Players open the join link on their phones — either scan the QR code (it pre-fills the
+   PIN) or go to `http://<host-computer-ip>:3000/` and type the PIN.
+3. Each player enters a name and picks a hero, then the host presses **START QUEST**.
 
-## How it plays
-- Each player picks a **hero** at the start. Heroes race along a path to the 🏰 goal.
-- Wrong answer → you don't move.
-- Correct answer → you move forward **1 to 6 tiles** based on how fast you answered
-  (timer is 15 seconds per question):
+> Players must be on the **same Wi-Fi** and use the host computer's local IP address
+> (e.g. `http://192.168.1.15:3000/`). `localhost` only works on the host machine itself.
 
-  | Answered within | Tiles moved |
-  |---|---|
-  | 0–2 sec | 6 |
-  | 2–4 sec | 5 |
-  | 4–6 sec | 4 |
-  | 6–8 sec | 3 |
-  | 8–10 sec | 2 |
-  | 10–15 sec | 1 |
+## Deploying online (optional)
 
-- Answers are colour-coded by element — 🔥 Fire, 💧 Water, 🍃 Leaf, 🪨 Earth —
-  each with a pixel-art symbol. First hero to reach the goal wins.
+The app is a standard Node + Express + Socket.IO server, so it runs on hosts like
+[Render](https://render.com):
 
-## Customising the questions
-Edit **`questions.json`**. Each question has:
+- **Build command:** `npm install`
+- **Start command:** `npm start`
+- The server listens on the `PORT` environment variable (Render sets this automatically;
+  it falls back to `3000` locally).
 
-```json
-{
-  "q": "Your question text?",
-  "options": ["Option A", "Option B", "Option C", "Option D"],
-  "correct": 1
-}
-```
+Once deployed, share `https://your-app.onrender.com/host` for the host screen and
+`https://your-app.onrender.com/` for players.
 
-`correct` is the index of the right answer (0 = first option, 1 = second, etc.).
-You can have 2, 3, or 4 options. Change `questionTime` (seconds) to give more or
-less time per question. Restart the server after editing.
+## Tech
 
-## Changing the path / heroes
-Near the top of **`server.js`**: `PATH_LENGTH` sets how many tiles long the race is
-(default 30 — longer = more questions to win). `HEROES` is the list of hero emojis
-players can pick. Restart the server after editing.
-
----
-
-Made for playing with friends — have fun!
+Node.js · Express · Socket.IO · vanilla HTML/CSS/JS (no build step).

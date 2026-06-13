@@ -2,105 +2,1135 @@
   "name": "Myths & History",
   "emoji": "🏛️",
   "questions": [
-    {"q":"In Greek mythology, who is the king of the gods?","options":["Poseidon","Zeus","Hades","Apollo"],"correct":1},
-    {"q":"Zeus's weapon of choice is the…","options":["Trident","Thunderbolt","Hammer","Bow"],"correct":1},
-    {"q":"Poseidon rules over the…","options":["Sky","Sea","Underworld","Forests"],"correct":1},
-    {"q":"The Greek goddess of wisdom is…","options":["Hera","Athena","Aphrodite","Artemis"],"correct":1},
-    {"q":"Athens is named after which goddess?","options":["Hera","Athena","Demeter","Nike"],"correct":1},
-    {"q":"In Norse mythology, Thor's hammer is named…","options":["Gungnir","Mjölnir","Skofnung","Gram"],"correct":1},
-    {"q":"Odin sacrificed what to gain wisdom?","options":["His hand","An eye","His voice","His son"],"correct":1},
-    {"q":"Loki, the Norse trickster, is the father of a giant…","options":["Eagle","Wolf (Fenrir)","Bear","Dragon"],"correct":1},
-    {"q":"Norse warriors hoped to feast after death in…","options":["Asgard's gardens","Valhalla","Helheim","Midgard"],"correct":1},
-    {"q":"Ragnarök in Norse myth is…","options":["A wedding feast","The end of the world","A sacred tree","Odin's ship"],"correct":1},
-    {"q":"The days Thursday and Friday are named after which gods?","options":["Greek gods","Norse gods","Roman emperors","Saints"],"correct":1},
-    {"q":"The Egyptian god with a falcon head is…","options":["Anubis","Horus","Ra... also falcon!","Both Horus and Ra"],"correct":3},
-    {"q":"Anubis, guide of the Egyptian dead, has the head of a…","options":["Crocodile","Jackal","Cat","Ibis"],"correct":1},
-    {"q":"Egyptians weighed a dead person's heart against a…","options":["Gold coin","Feather","Stone","Scarab"],"correct":1},
-    {"q":"The Great Pyramid of Giza was built for pharaoh…","options":["Tutankhamun","Khufu","Ramses II","Cleopatra"],"correct":1},
-    {"q":"Cleopatra was actually of which descent?","options":["Egyptian","Greek (Macedonian)","Roman","Persian"],"correct":1},
-    {"q":"Cleopatra lived closer in time to the Moon landing than to…","options":["Julius Caesar","The building of the Great Pyramid","Alexander the Great","The Roman Empire"],"correct":1},
-    {"q":"The Trojan War was won using a giant wooden…","options":["Catapult","Horse","Tower","Ship"],"correct":1},
-    {"q":"Achilles was invulnerable except for his…","options":["Wrist","Heel","Neck","Knee"],"correct":1},
-    {"q":"Odysseus took how many years to get home from Troy?","options":["5","10","20","3"],"correct":1},
-    {"q":"The Minotaur — half man, half bull — lived in a labyrinth on…","options":["Rhodes","Crete","Cyprus","Sicily"],"correct":1},
-    {"q":"Medusa's gaze would turn you to…","options":["Ash","Stone","Gold","Ice"],"correct":1},
-    {"q":"Who slew Medusa using a mirrored shield?","options":["Hercules","Perseus","Theseus","Jason"],"correct":1},
-    {"q":"Hercules had to complete how many labors?","options":["7","12","10","9"],"correct":1},
-    {"q":"Pandora famously opened a…","options":["Door","Box (jar)","Tomb","Book"],"correct":1},
-    {"q":"Prometheus was punished for giving humans…","options":["Wisdom","Fire","Writing","Music"],"correct":1},
-    {"q":"King Midas's touch turned everything to…","options":["Stone","Gold","Dust","Silver"],"correct":1},
-    {"q":"Icarus fell because he flew too close to the…","options":["Sea","Sun","Clouds","Mountain"],"correct":1},
-    {"q":"In Japanese folklore, kitsune are magical…","options":["Cats","Foxes","Cranes","Dragons"],"correct":1},
-    {"q":"Japanese yokai are…","options":["Samurai swords","Supernatural spirits/monsters","Tea ceremonies","War drums"],"correct":1},
-    {"q":"The Chinese zodiac cycles through how many animals?","options":["10","12","8","13"],"correct":1},
-    {"q":"Which animal won the mythical Chinese zodiac race?","options":["Dragon","Rat","Ox","Tiger"],"correct":1},
-    {"q":"Chinese dragons traditionally symbolize…","options":["Evil and chaos","Luck and power","Death","Winter"],"correct":1},
-    {"q":"The Monkey King, Sun Wukong, stars in which classic tale?","options":["Romance of the Three Kingdoms","Journey to the West","Water Margin","The Art of War"],"correct":1},
-    {"q":"In Hindu mythology, Ganesha has the head of an…","options":["Eagle","Elephant","Ox","Lion"],"correct":1},
-    {"q":"The Hindu god Hanuman is a divine…","options":["Snake","Monkey","Tiger","Eagle"],"correct":1},
-    {"q":"The Aztec feathered serpent god is…","options":["Tlaloc","Quetzalcoatl","Huitzilopochtli","Tezcatlipoca"],"correct":1},
-    {"q":"The Maya are famous for their advanced…","options":["Iron weapons","Calendar and astronomy","Sailing ships","Cavalry"],"correct":1},
-    {"q":"El Dorado was a legendary city of…","options":["Silver","Gold","Emeralds","Salt"],"correct":1},
-    {"q":"The Inca Empire's capital was…","options":["Machu Picchu","Cusco","Lima","Quito"],"correct":1},
-    {"q":"Anansi, the trickster spider, comes from the folklore of…","options":["Egypt","West Africa","Madagascar","Ethiopia"],"correct":1},
-    {"q":"The phoenix is a mythical bird that…","options":["Never lands","Rises from its own ashes","Sings once a century","Carries souls"],"correct":1},
-    {"q":"A kraken in sailors' legends is a giant…","options":["Whale","Squid/octopus monster","Shark","Sea serpent"],"correct":1},
-    {"q":"The Loch Ness Monster is said to live in…","options":["Ireland","Scotland","Norway","Iceland"],"correct":1},
-    {"q":"Which empire was ruled by Julius Caesar's heirs?","options":["Greek","Roman","Persian","Ottoman"],"correct":1},
-    {"q":"Julius Caesar was assassinated on the…","options":["Ides of March","First of April","Midsummer","New Year"],"correct":0},
-    {"q":"Rome, according to legend, was founded by twins raised by a…","options":["Bear","She-wolf","Eagle","Lioness"],"correct":1},
-    {"q":"Roman gladiators mostly fought in the…","options":["Forum","Colosseum","Circus Maximus","Pantheon"],"correct":1},
-    {"q":"Which volcano buried Pompeii in 79 AD?","options":["Etna","Vesuvius","Stromboli","Santorini"],"correct":1},
-    {"q":"The Vikings reached North America around the year…","options":["800","1000","1300","1492"],"correct":1},
-    {"q":"Viking helmets, despite the movies, did NOT have…","options":["Metal","Horns","Nose guards","Leather"],"correct":1},
-    {"q":"Genghis Khan founded which empire?","options":["Ottoman","Mongol","Persian","Mughal"],"correct":1},
-    {"q":"The Mongol Empire became history's largest…","options":["Sea empire","Contiguous land empire","Trading league","Island nation"],"correct":1},
-    {"q":"The Silk Road connected China with…","options":["Japan","Europe and the Middle East","Australia","The Americas"],"correct":1},
-    {"q":"Marco Polo traveled from Venice to the court of…","options":["Genghis Khan","Kublai Khan","The Shogun","The Sultan"],"correct":1},
-    {"q":"The Ottoman Empire's capital, Constantinople, became…","options":["Ankara","Istanbul","Athens","Sofia"],"correct":1},
-    {"q":"Constantinople fell to the Ottomans in…","options":["1353","1453","1553","1253"],"correct":1},
-    {"q":"The samurai code of honor is called…","options":["Kendo","Bushido","Ronin","Seppuku"],"correct":1},
-    {"q":"A masterless samurai was called a…","options":["Shogun","Ronin","Daimyo","Ninja"],"correct":1},
-    {"q":"The Great Wall of China is roughly how long (all sections)?","options":["2,000 km","9,000 km","21,000 km","5,000 km"],"correct":2},
-    {"q":"China's Terracotta Army was built to guard…","options":["A city","An emperor's tomb","A temple","A treasury"],"correct":1},
-    {"q":"Which queen ruled Egypt alongside Julius Caesar and Mark Antony?","options":["Nefertiti","Cleopatra","Hatshepsut","Isis"],"correct":1},
-    {"q":"The Rosetta Stone unlocked the secrets of…","options":["Greek philosophy","Egyptian hieroglyphs","Roman law","Persian poetry"],"correct":1},
-    {"q":"Which wonder of the ancient world still stands?","options":["Colossus of Rhodes","Great Pyramid of Giza","Hanging Gardens","Lighthouse of Alexandria"],"correct":1},
-    {"q":"The Hanging Gardens — if they existed — were in…","options":["Egypt","Babylon","Persia","Assyria"],"correct":1},
-    {"q":"Alexander the Great was tutored by…","options":["Socrates","Aristotle","Plato","Homer"],"correct":1},
-    {"q":"Alexander the Great died at age…","options":["32","45","60","25"],"correct":0},
-    {"q":"Which civilization invented writing first?","options":["Egypt","Sumer (Mesopotamia)","China","Greece"],"correct":1},
-    {"q":"Mesopotamia lay between which two rivers?","options":["Nile and Jordan","Tigris and Euphrates","Indus and Ganges","Don and Volga"],"correct":1},
-    {"q":"The first Olympic games were held in honor of…","options":["Apollo","Zeus","Ares","Hermes"],"correct":1},
-    {"q":"Spartan boys began military training at age…","options":["7","12","15","18"],"correct":0},
-    {"q":"The 300 Spartans made their stand at…","options":["Marathon","Thermopylae","Salamis","Plataea"],"correct":1},
-    {"q":"Which plague wiped out a third of Europe in the 1300s?","options":["Smallpox","The Black Death","Cholera","Typhus"],"correct":1},
-    {"q":"Joan of Arc led armies in which country?","options":["England","France","Spain","Italy"],"correct":1},
-    {"q":"Which explorer completed the first circumnavigation expedition (though he died en route)?","options":["Columbus","Magellan","Da Gama","Drake"],"correct":1},
-    {"q":"Machu Picchu was 'rediscovered' by outsiders in…","options":["1811","1911","1851","1951"],"correct":1},
-    {"q":"The Renaissance began in which country?","options":["France","Italy","Spain","Greece"],"correct":1},
-    {"q":"Leonardo da Vinci wrote his notes…","options":["In code","In mirror writing","In Latin only","Backwards Latin"],"correct":1},
-    {"q":"Which ship sank in 1912 after hitting an iceberg?","options":["Lusitania","Titanic","Britannic","Olympic"],"correct":1},
-    {"q":"The shortest war in history, Britain vs Zanzibar, lasted about…","options":["38 minutes","4 hours","2 days","1 week"],"correct":0},
-    {"q":"Napoleon was exiled finally to which island?","options":["Elba","Saint Helena","Corsica","Malta"],"correct":1},
-    {"q":"Napoleon was actually of ___ average height for his time.","options":["Below","About","Far below","Twice"],"correct":1},
-    {"q":"The Berlin Wall fell in…","options":["1979","1989","1991","1985"],"correct":1},
-    {"q":"The first man on the Moon was…","options":["Buzz Aldrin","Neil Armstrong","Yuri Gagarin","Michael Collins"],"correct":1},
-    {"q":"The first human in space was…","options":["Neil Armstrong","Yuri Gagarin","Alan Shepard","John Glenn"],"correct":1},
-    {"q":"The ancient library that burned, losing countless texts, was in…","options":["Athens","Alexandria","Rome","Babylon"],"correct":1},
-    {"q":"Stonehenge is located in…","options":["Scotland","England","Ireland","Wales"],"correct":1},
-    {"q":"The Easter Island statues are called…","options":["Tikis","Moai","Kahuna","Rapa"],"correct":1},
-    {"q":"Which 'lost city' is said to have sunk beneath the sea, per Plato?","options":["El Dorado","Atlantis","Shangri-La","Avalon"],"correct":1},
-    {"q":"King Arthur's legendary sword is…","options":["Durandal","Excalibur","Joyeuse","Curtana"],"correct":1},
-    {"q":"Robin Hood's home forest is…","options":["Epping","Sherwood","Dean","New Forest"],"correct":1},
-    {"q":"Dracula is linked to which historical region?","options":["Bohemia","Transylvania","Bavaria","Silesia"],"correct":1},
-    {"q":"The Maori are the indigenous people of…","options":["Australia","New Zealand","Fiji","Hawaii"],"correct":1},
-    {"q":"The boomerang was developed by…","options":["Maori","Aboriginal Australians","Pacific Islanders","Zulu"],"correct":1},
-    {"q":"Which African kingdom's ruler Mansa Musa may have been history's richest man?","options":["Egypt","Mali","Ethiopia","Zimbabwe"],"correct":1},
-    {"q":"Which civilization built Great Zimbabwe?","options":["Egyptians","The Shona","Phoenicians","Romans"],"correct":1},
-    {"q":"Which goddess gave Nike shoes their name?","options":["Greek goddess of victory","Roman goddess of speed","Norse goddess of war","Egyptian sky goddess"],"correct":0},
-    {"q":"Which civilization invented the concept of zero as a number (in its mature form)?","options":["Greeks","Indians","Romans","Egyptians"],"correct":1},
-    {"q":"Which legendary creature is Scotland's official national animal?","options":["Dragon","Unicorn","Griffin","Kelpie"],"correct":1},
-    {"q":"Which winged horse sprang from Medusa's blood in Greek myth?","options":["Sleipnir","Pegasus","Arion","Hippogriff"],"correct":1}
+    {
+      "q": "In Greek mythology, who was forced to roll a boulder uphill for eternity?",
+      "options": [
+        "Tantalus",
+        "Sisyphus",
+        "Prometheus",
+        "Atlas"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which Roman general famously crossed the Rubicon in 49 BC?",
+      "options": [
+        "Pompey",
+        "Julius Caesar",
+        "Mark Antony",
+        "Scipio"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Norse mythology, what is the name of the serpent encircling the world?",
+      "options": [
+        "Fenrir",
+        "Jörmungandr",
+        "Nidhogg",
+        "Sleipnir"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which ancient civilisation developed cuneiform, one of the earliest writing systems?",
+      "options": [
+        "Egyptians",
+        "Sumerians",
+        "Greeks",
+        "Phoenicians"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who was the Greek Titan condemned to hold up the sky?",
+      "options": [
+        "Prometheus",
+        "Atlas",
+        "Cronus",
+        "Hyperion"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Battle of Thermopylae (480 BC) famously featured how many Spartans (in legend)?",
+      "options": [
+        "100",
+        "300",
+        "500",
+        "1,000"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Egyptian mythology, who was the jackal-headed god of mummification?",
+      "options": [
+        "Horus",
+        "Anubis",
+        "Set",
+        "Thoth"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which empire did Hannibal famously fight by crossing the Alps with elephants?",
+      "options": [
+        "Greece",
+        "Rome",
+        "Egypt",
+        "Persia"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who was the Greek hero with a single vulnerable point at his heel?",
+      "options": [
+        "Hector",
+        "Achilles",
+        "Ajax",
+        "Odysseus"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Code of Hammurabi, one of the earliest legal codes, came from which civilisation?",
+      "options": [
+        "Egyptian",
+        "Babylonian",
+        "Greek",
+        "Hittite"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Greek mythology, who opened a jar (or box) releasing evils into the world?",
+      "options": [
+        "Persephone",
+        "Pandora",
+        "Helen",
+        "Medea"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which Roman emperor was the first, ruling from 27 BC?",
+      "options": [
+        "Julius Caesar",
+        "Augustus",
+        "Nero",
+        "Tiberius"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Norse mythology, what is the prophesied end-of-the-world battle called?",
+      "options": [
+        "Armageddon",
+        "Ragnarök",
+        "Götterdämmerung",
+        "Valhalla"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which ancient wonder stood in the harbour of Rhodes?",
+      "options": [
+        "The Lighthouse",
+        "The Colossus",
+        "The Mausoleum",
+        "The Hanging Gardens"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who was the Greek goddess of wisdom and strategic warfare?",
+      "options": [
+        "Hera",
+        "Athena",
+        "Artemis",
+        "Demeter"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Rosetta Stone was key to deciphering which ancient script?",
+      "options": [
+        "Cuneiform",
+        "Egyptian hieroglyphs",
+        "Linear B",
+        "Sanskrit"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which empire was ruled by Cyrus the Great and later Darius I?",
+      "options": [
+        "Babylonian",
+        "Persian (Achaemenid)",
+        "Assyrian",
+        "Macedonian"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Greek mythology, who killed the Gorgon Medusa?",
+      "options": [
+        "Heracles",
+        "Perseus",
+        "Theseus",
+        "Jason"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which Egyptian queen allied with both Julius Caesar and Mark Antony?",
+      "options": [
+        "Nefertiti",
+        "Cleopatra VII",
+        "Hatshepsut",
+        "Nefertari"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the name of the three-headed dog guarding the Greek underworld?",
+      "options": [
+        "Orthrus",
+        "Cerberus",
+        "Ladon",
+        "Argos"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which civilisation built Machu Picchu in the Andes?",
+      "options": [
+        "Aztec",
+        "Inca",
+        "Maya",
+        "Olmec"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Norse mythology, what is the name of Odin's eight-legged horse?",
+      "options": [
+        "Sleipnir",
+        "Grani",
+        "Svadilfari",
+        "Hófvarpnir"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Who was the Greek hero that completed Twelve Labours?",
+      "options": [
+        "Theseus",
+        "Heracles (Hercules)",
+        "Perseus",
+        "Bellerophon"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Hagia Sophia was originally built as a cathedral under which empire?",
+      "options": [
+        "Roman",
+        "Byzantine",
+        "Ottoman",
+        "Persian"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Greek mythology, whose abduction by Hades caused the seasons?",
+      "options": [
+        "Persephone",
+        "Europa",
+        "Io",
+        "Daphne"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which ancient Greek city-state was renowned for its militaristic society?",
+      "options": [
+        "Athens",
+        "Sparta",
+        "Corinth",
+        "Thebes"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who was the messenger of the Greek gods, with winged sandals?",
+      "options": [
+        "Apollo",
+        "Hermes",
+        "Iris",
+        "Pan"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Terracotta Army was buried to guard the tomb of which Chinese emperor?",
+      "options": [
+        "Kublai Khan",
+        "Qin Shi Huang",
+        "Emperor Wu",
+        "Sun Tzu"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Egyptian mythology, who was the falcon-headed sky god?",
+      "options": [
+        "Ra",
+        "Horus",
+        "Set",
+        "Osiris"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which battle in 1066 led to the Norman conquest of England?",
+      "options": [
+        "Battle of Agincourt",
+        "Battle of Hastings",
+        "Battle of Bosworth",
+        "Battle of Stamford Bridge"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Greek mythology, who flew too close to the Sun on wax wings?",
+      "options": [
+        "Daedalus",
+        "Icarus",
+        "Bellerophon",
+        "Phaethon"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which Mesopotamian epic features a king's quest for immortality and a great flood?",
+      "options": [
+        "The Iliad",
+        "The Epic of Gilgamesh",
+        "The Aeneid",
+        "The Mahabharata"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who was the chief god of the Norse pantheon?",
+      "options": [
+        "Thor",
+        "Odin",
+        "Loki",
+        "Freyr"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which ancient civilisation created the Nazca Lines in present-day Peru?",
+      "options": [
+        "Inca",
+        "Nazca",
+        "Maya",
+        "Moche"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Greek mythology, who was the sea god who could change shape and tell the future?",
+      "options": [
+        "Poseidon",
+        "Proteus",
+        "Triton",
+        "Nereus"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Library of Alexandria was located in which ancient country?",
+      "options": [
+        "Greece",
+        "Egypt",
+        "Mesopotamia",
+        "Persia"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which Roman emperor legalised Christianity with the Edict of Milan (313 AD)?",
+      "options": [
+        "Nero",
+        "Constantine the Great",
+        "Diocletian",
+        "Theodosius"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Greek mythology, who was the king whose touch turned everything to gold?",
+      "options": [
+        "Croesus",
+        "Midas",
+        "Minos",
+        "Tantalus"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which civilisation built the city of Tenochtitlan, now Mexico City?",
+      "options": [
+        "Maya",
+        "Aztec",
+        "Inca",
+        "Toltec"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who was the Greek god of the underworld?",
+      "options": [
+        "Zeus",
+        "Hades",
+        "Poseidon",
+        "Hermes"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Antikythera mechanism, an ancient analog computer, came from which culture?",
+      "options": [
+        "Roman",
+        "Ancient Greek",
+        "Egyptian",
+        "Babylonian"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Norse mythology, what bridge connects Midgard to Asgard?",
+      "options": [
+        "Bifröst",
+        "Gjallarbrú",
+        "Mánabrú",
+        "Valgrind"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which leader unified much of Greece and conquered the Persian Empire?",
+      "options": [
+        "Pericles",
+        "Alexander the Great",
+        "Philip II",
+        "Leonidas"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Egyptian mythology, who was the god of the dead and ruler of the underworld?",
+      "options": [
+        "Ra",
+        "Osiris",
+        "Anubis",
+        "Horus"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which wall was built by a Roman emperor across northern Britain?",
+      "options": [
+        "Antonine Wall",
+        "Hadrian's Wall",
+        "Offa's Dyke",
+        "The Great Wall"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Greek mythology, who was the goddess of love and beauty?",
+      "options": [
+        "Hera",
+        "Aphrodite",
+        "Artemis",
+        "Hestia"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which ancient script used by the Mycenaeans was deciphered by Michael Ventris?",
+      "options": [
+        "Linear A",
+        "Linear B",
+        "Cuneiform",
+        "Hieroglyphs"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who was the legendary founder of Rome, raised with his brother by a she-wolf?",
+      "options": [
+        "Aeneas",
+        "Romulus",
+        "Numa",
+        "Tarquin"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which Norse trickster god fathered the wolf Fenrir and the serpent Jörmungandr?",
+      "options": [
+        "Thor",
+        "Loki",
+        "Baldr",
+        "Heimdall"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Hanging Gardens were said to be in which ancient city?",
+      "options": [
+        "Nineveh",
+        "Babylon",
+        "Ur",
+        "Persepolis"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Greek mythology, who solved the riddle of the Sphinx?",
+      "options": [
+        "Oedipus",
+        "Theseus",
+        "Perseus",
+        "Cadmus"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which empire was founded by Genghis Khan in the early 13th century?",
+      "options": [
+        "Ottoman",
+        "Mongol",
+        "Persian",
+        "Mughal"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Greek mythology, what was the name of Achilles' close companion killed by Hector?",
+      "options": [
+        "Ajax",
+        "Patroclus",
+        "Odysseus",
+        "Diomedes"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which ancient people are credited with the first known alphabet, spreading it via trade?",
+      "options": [
+        "Greeks",
+        "Phoenicians",
+        "Egyptians",
+        "Sumerians"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who was the Roman goddess equivalent to the Greek Aphrodite?",
+      "options": [
+        "Juno",
+        "Venus",
+        "Minerva",
+        "Diana"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Minoan civilisation was centred on which island?",
+      "options": [
+        "Cyprus",
+        "Crete",
+        "Rhodes",
+        "Sicily"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Greek mythology, who led the Argonauts in search of the Golden Fleece?",
+      "options": [
+        "Heracles",
+        "Jason",
+        "Theseus",
+        "Orpheus"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which ruler built a vast road network and a famous postal system in the Persian Empire?",
+      "options": [
+        "Cyrus",
+        "Darius I",
+        "Xerxes",
+        "Cambyses"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Norse mythology, where do warriors slain in battle feast in the afterlife?",
+      "options": [
+        "Helheim",
+        "Valhalla",
+        "Niflheim",
+        "Midgard"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which Greek philosopher was sentenced to death by drinking hemlock?",
+      "options": [
+        "Plato",
+        "Socrates",
+        "Aristotle",
+        "Diogenes"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Egyptian mythology, who was the goddess of magic and protector of the dead, wife of Osiris?",
+      "options": [
+        "Hathor",
+        "Isis",
+        "Bastet",
+        "Nut"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which battle marked the decisive defeat of the Spanish Armada in 1588 against whom?",
+      "options": [
+        "France",
+        "England",
+        "The Netherlands",
+        "Portugal"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Greek mythology, who was the god of wine, theatre and ecstasy?",
+      "options": [
+        "Apollo",
+        "Dionysus",
+        "Pan",
+        "Hermes"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The 'Ides of March' is famous for the assassination of whom in 44 BC?",
+      "options": [
+        "Augustus",
+        "Julius Caesar",
+        "Pompey",
+        "Brutus"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which civilisation invented the concept of zero independently in the Americas?",
+      "options": [
+        "Inca",
+        "Maya",
+        "Aztec",
+        "Olmec"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Greek mythology, who was the primordial goddess personifying the Earth?",
+      "options": [
+        "Rhea",
+        "Gaia",
+        "Demeter",
+        "Hera"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Black Death (mid-1300s) was a pandemic caused by which disease?",
+      "options": [
+        "Smallpox",
+        "Bubonic plague",
+        "Cholera",
+        "Typhus"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who was the winged horse born from Medusa's blood in Greek myth?",
+      "options": [
+        "Pegasus",
+        "Chrysaor",
+        "Hippocampus",
+        "Arion"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which empire's capital was Constantinople until it fell in 1453?",
+      "options": [
+        "Roman",
+        "Byzantine",
+        "Ottoman (which conquered it)",
+        "Persian"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Greek mythology, who ferried souls across the river Styx?",
+      "options": [
+        "Hermes",
+        "Charon",
+        "Hades",
+        "Thanatos"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which Chinese military strategist wrote 'The Art of War'?",
+      "options": [
+        "Confucius",
+        "Sun Tzu",
+        "Laozi",
+        "Mencius"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Norse mythology, what is the world tree at the centre of the cosmos called?",
+      "options": [
+        "Bifröst",
+        "Yggdrasil",
+        "Gungnir",
+        "Mjölnir"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which ancient city was destroyed by the eruption of Mount Vesuvius in 79 AD?",
+      "options": [
+        "Ostia",
+        "Pompeii",
+        "Carthage",
+        "Ephesus"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who was the Greek goddess of the hunt and the moon?",
+      "options": [
+        "Hera",
+        "Artemis",
+        "Athena",
+        "Selene"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Magna Carta was signed by which English king in 1215?",
+      "options": [
+        "Henry II",
+        "King John",
+        "Richard I",
+        "Edward I"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Greek mythology, who was the half-bull, half-man creature in the Labyrinth?",
+      "options": [
+        "Cyclops",
+        "Minotaur",
+        "Centaur",
+        "Satyr"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which ancient empire built an extensive network of roads centred on Cusco?",
+      "options": [
+        "Aztec",
+        "Inca",
+        "Maya",
+        "Chimú"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who was the Roman god of war?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Mercury",
+        "Vulcan"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Sumerian and Akkadian peoples lived in which region between two rivers?",
+      "options": [
+        "The Nile Valley",
+        "Mesopotamia",
+        "The Indus Valley",
+        "Anatolia"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Greek mythology, who were the female creatures whose song lured sailors to their deaths?",
+      "options": [
+        "Harpies",
+        "Sirens",
+        "Gorgons",
+        "Furies"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which European Renaissance figure painted the Sistine Chapel ceiling?",
+      "options": [
+        "Leonardo da Vinci",
+        "Michelangelo",
+        "Raphael",
+        "Donatello"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who was the Norse god of thunder, wielding the hammer Mjölnir?",
+      "options": [
+        "Odin",
+        "Thor",
+        "Tyr",
+        "Baldr"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which ancient civilisation is associated with the pyramids at Giza?",
+      "options": [
+        "Sumerians",
+        "Egyptians",
+        "Nubians",
+        "Babylonians"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Greek mythology, who was punished with eternal hunger and thirst in the underworld?",
+      "options": [
+        "Sisyphus",
+        "Tantalus",
+        "Ixion",
+        "Prometheus"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which queen of Egypt ruled as pharaoh and was often depicted with a false beard?",
+      "options": [
+        "Cleopatra",
+        "Hatshepsut",
+        "Nefertiti",
+        "Nefertari"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Peloponnesian War was fought between Athens and which rival?",
+      "options": [
+        "Persia",
+        "Sparta",
+        "Thebes",
+        "Macedon"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Norse mythology, who guards the Bifröst bridge and will sound a horn at Ragnarök?",
+      "options": [
+        "Tyr",
+        "Heimdall",
+        "Baldr",
+        "Vidar"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which ancient city was the centre of the Maya and famous for its step pyramid 'El Castillo'?",
+      "options": [
+        "Tikal",
+        "Chichen Itza",
+        "Palenque",
+        "Copán"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who was the Greek god of the sky and king of the gods?",
+      "options": [
+        "Poseidon",
+        "Zeus",
+        "Hades",
+        "Apollo"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which document, written in 1776, declared the independence of the American colonies?",
+      "options": [
+        "The Constitution",
+        "The Declaration of Independence",
+        "The Bill of Rights",
+        "The Federalist Papers"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Greek mythology, who was the goddess of discord whose golden apple sparked the Trojan War?",
+      "options": [
+        "Nemesis",
+        "Eris",
+        "Hecate",
+        "Tyche"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which empire reached its height under Suleiman the Magnificent in the 16th century?",
+      "options": [
+        "Mughal",
+        "Ottoman",
+        "Safavid",
+        "Byzantine"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Egyptian mythology, who was the sun god often considered the king of the gods?",
+      "options": [
+        "Osiris",
+        "Ra",
+        "Anubis",
+        "Set"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which Greek physician is often called the 'father of medicine'?",
+      "options": [
+        "Galen",
+        "Hippocrates",
+        "Asclepius",
+        "Herophilos"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Rosetta Stone is inscribed in hieroglyphics, Demotic and which third script?",
+      "options": [
+        "Latin",
+        "Ancient Greek",
+        "Coptic",
+        "Phoenician"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Greek mythology, who was the goddess of agriculture and the harvest?",
+      "options": [
+        "Hestia",
+        "Demeter",
+        "Hera",
+        "Persephone"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which 1453 event is often used to mark the end of the Middle Ages in Europe?",
+      "options": [
+        "The fall of Rome",
+        "The fall of Constantinople",
+        "The Black Death",
+        "The discovery of America"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Norse mythology, what weapon does Odin wield?",
+      "options": [
+        "Mjölnir",
+        "Gungnir (a spear)",
+        "Gram",
+        "Excalibur"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which civilisation produced the famous colossal stone heads in present-day Mexico?",
+      "options": [
+        "Maya",
+        "Olmec",
+        "Aztec",
+        "Zapotec"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who was the Roman goddess of wisdom, equivalent to Athena?",
+      "options": [
+        "Juno",
+        "Minerva",
+        "Venus",
+        "Vesta"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which Greek hero was famed for his cunning and the wooden horse stratagem?",
+      "options": [
+        "Achilles",
+        "Odysseus",
+        "Ajax",
+        "Diomedes"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Indus Valley cities of Harappa and Mohenjo-daro were in present-day where?",
+      "options": [
+        "India and Pakistan",
+        "Iran",
+        "Iraq",
+        "Afghanistan"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "In Greek mythology, who was the Titan who gave fire to humanity?",
+      "options": [
+        "Atlas",
+        "Prometheus",
+        "Cronus",
+        "Epimetheus"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which ancient structure in Rome hosted gladiatorial games?",
+      "options": [
+        "The Pantheon",
+        "The Colosseum",
+        "Circus Maximus",
+        "The Forum"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who was the Norse goddess associated with love, fertility and the afterlife field Fólkvangr?",
+      "options": [
+        "Frigg",
+        "Freyja",
+        "Sif",
+        "Idun"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which empire built the road and aqueduct systems still visible across Europe?",
+      "options": [
+        "Greek",
+        "Roman",
+        "Carthaginian",
+        "Byzantine"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Greek mythology, who was the god of fire and metalworking?",
+      "options": [
+        "Ares",
+        "Hephaestus",
+        "Apollo",
+        "Hermes"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which ancient city, capital of the Assyrian Empire, had a famous library of Ashurbanipal?",
+      "options": [
+        "Babylon",
+        "Nineveh",
+        "Ur",
+        "Susa"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Who was the legendary king said to have pulled a sword from a stone in British legend?",
+      "options": [
+        "Beowulf",
+        "King Arthur",
+        "Charlemagne",
+        "Alfred"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Egyptian belief, what was weighed against a feather to judge the dead's heart?",
+      "options": [
+        "Gold",
+        "The heart itself",
+        "A scarab",
+        "A jar"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which Greek goddess was born fully grown and armoured from Zeus's head?",
+      "options": [
+        "Aphrodite",
+        "Athena",
+        "Artemis",
+        "Hebe"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Renaissance, a rebirth of art and learning, began in which country?",
+      "options": [
+        "France",
+        "Italy",
+        "Spain",
+        "Germany"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Norse mythology, what will the wolf Fenrir do at Ragnarök?",
+      "options": [
+        "Devour the Sun and kill Odin",
+        "Save the gods",
+        "Sleep through it",
+        "Become a god"
+      ],
+      "correct": 0
+    }
   ]
 }

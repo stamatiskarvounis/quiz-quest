@@ -2,105 +2,1155 @@
   "name": "Football & World Sports",
   "emoji": "⚽",
   "questions": [
-    {"q":"How many players does a football (soccer) team field at once?","options":["10","11","12","9"],"correct":1},
-    {"q":"How often is the FIFA World Cup held?","options":["Every 2 years","Every 4 years","Every 3 years","Every year"],"correct":1},
-    {"q":"Which country has won the most FIFA World Cups?","options":["Germany","Brazil","Italy","Argentina"],"correct":1},
-    {"q":"Pelé won the World Cup how many times?","options":["2","3","1","4"],"correct":1},
-    {"q":"Diego Maradona's infamous 1986 goal is known as…","options":["The Miracle Goal","The Hand of God","The Golden Fist","The Devil's Touch"],"correct":1},
-    {"q":"Lionel Messi finally won the World Cup in 2022 with…","options":["Brazil","Argentina","Spain","Portugal"],"correct":1},
-    {"q":"The 2022 World Cup was hosted by…","options":["Russia","Qatar","UAE","Morocco"],"correct":1},
-    {"q":"A football match lasts (before added time)…","options":["80 minutes","90 minutes","100 minutes","60 minutes"],"correct":1},
-    {"q":"A red card means…","options":["A warning","Sent off","Penalty kick","Substitution"],"correct":1},
-    {"q":"Which club is nicknamed 'Los Blancos'?","options":["Barcelona","Real Madrid","Atlético Madrid","Valencia"],"correct":1},
-    {"q":"The Olympic flag has how many rings?","options":["4","5","6","7"],"correct":1},
-    {"q":"The Olympic rings represent…","options":["Five sports","Five continents","Five oceans","Five values"],"correct":1},
-    {"q":"The ancient Olympic Games were held in…","options":["Rome","Olympia, Greece","Athens","Sparta"],"correct":1},
-    {"q":"The marathon distance is roughly…","options":["32 km","42 km","50 km","26 km"],"correct":1},
-    {"q":"The marathon is named after a battle in which country?","options":["Italy","Greece","Turkey","Egypt"],"correct":1},
-    {"q":"Usain Bolt's nickname is…","options":["The Rocket","Lightning Bolt","The Flash","Thunder"],"correct":1},
-    {"q":"Usain Bolt is from…","options":["Trinidad","Jamaica","Bahamas","Barbados"],"correct":1},
-    {"q":"In which sport would you perform a 'slam dunk'?","options":["Volleyball","Basketball","Handball","Netball"],"correct":1},
-    {"q":"A basketball team has how many players on court?","options":["4","5","6","7"],"correct":1},
-    {"q":"Which country invented basketball's inventor's sport... wait — who invented basketball?","options":["An American coach","A Canadian PE teacher","A French doctor","A British sailor"],"correct":1},
-    {"q":"In tennis, a score of zero is called…","options":["Nil","Love","Zero","Duck"],"correct":1},
-    {"q":"Wimbledon is played on which surface?","options":["Clay","Grass","Hard court","Carpet"],"correct":1},
-    {"q":"The French Open is played on…","options":["Grass","Clay","Hard court","Sand"],"correct":1},
-    {"q":"How many Grand Slam tournaments are there in tennis per year?","options":["3","4","5","6"],"correct":1},
-    {"q":"Which sport uses the terms 'birdie' and 'eagle'?","options":["Badminton","Golf","Archery","Cricket"],"correct":1},
-    {"q":"A golf 'hole-in-one' means…","options":["One putt","Ball in hole with one stroke","Winning one hole","Losing a ball"],"correct":1},
-    {"q":"Which sport is played at Le Mans for 24 hours straight?","options":["Cycling","Motor racing","Sailing","Running"],"correct":1},
-    {"q":"Formula 1 champions Ayrton Senna was from…","options":["Argentina","Brazil","Portugal","Mexico"],"correct":1},
-    {"q":"Which flag is waved when a Formula 1 race ends?","options":["Red","Checkered","White","Green"],"correct":1},
-    {"q":"The Tour de France is a race for…","options":["Cars","Bicycles","Motorcycles","Runners"],"correct":1},
-    {"q":"The Tour de France leader wears which color jersey?","options":["Green","Yellow","White","Polka dot"],"correct":1},
-    {"q":"Which martial art means 'gentle way' in Japanese?","options":["Karate","Judo","Aikido","Sumo"],"correct":1},
-    {"q":"Karate originated on which Japanese island chain?","options":["Hokkaido","Okinawa","Kyushu","Honshu"],"correct":1},
-    {"q":"Taekwondo comes from…","options":["Japan","South Korea","China","Thailand"],"correct":1},
-    {"q":"Muay Thai is known as the art of…","options":["Four limbs","Eight limbs","Two fists","Six strikes"],"correct":1},
-    {"q":"Sumo wrestling is the national sport of…","options":["China","Japan","Mongolia","Korea"],"correct":1},
-    {"q":"In sumo, you lose if you…","options":["Fall asleep","Step out of the ring or touch ground","Shout","Drop your belt"],"correct":1},
-    {"q":"Which sport do the All Blacks play?","options":["Cricket","Rugby","Football","Field hockey"],"correct":1},
-    {"q":"The All Blacks perform which pre-match ritual?","options":["A war dance (haka)","A prayer circle","A team song","Fire jumping"],"correct":0},
-    {"q":"Cricket matches can famously last…","options":["Up to 5 days","Up to 12 hours","Up to 2 days","90 minutes"],"correct":0},
-    {"q":"Which country invented cricket?","options":["India","England","Australia","South Africa"],"correct":1},
-    {"q":"Ice hockey's championship trophy in North America is the…","options":["Super Bowl","Stanley Cup","World Series","Grey Cup"],"correct":1},
-    {"q":"A hockey puck is made of…","options":["Wood","Rubber","Plastic","Metal"],"correct":1},
-    {"q":"Which country wins the most medals in table tennis?","options":["Japan","China","South Korea","Germany"],"correct":1},
-    {"q":"Badminton's projectile is called a…","options":["Birdie ball","Shuttlecock","Feather puck","Flick"],"correct":1},
-    {"q":"A shuttlecock is traditionally made with feathers from a…","options":["Chicken","Goose or duck","Swan","Pigeon"],"correct":1},
-    {"q":"Which sport features a 'scrum'?","options":["American football","Rugby","Wrestling","Water polo"],"correct":1},
-    {"q":"How long is an Olympic swimming pool?","options":["25 m","50 m","100 m","75 m"],"correct":1},
-    {"q":"Michael Phelps holds the record for most Olympic gold medals with…","options":["18","23","28","20"],"correct":1},
-    {"q":"In which sport can you score a '147 break'?","options":["Darts","Snooker","Bowling","Billiards"],"correct":1},
-    {"q":"A perfect score in ten-pin bowling is…","options":["200","300","100","500"],"correct":1},
-    {"q":"In darts, the highest single throw scores…","options":["50","60","100","180"],"correct":1},
-    {"q":"Chess originated in which country?","options":["Persia","India","China","Egypt"],"correct":1},
-    {"q":"Which chess piece can only move diagonally?","options":["Rook","Bishop","Knight","Queen"],"correct":1},
-    {"q":"The Maracanã, one of football's most famous stadiums, is in…","options":["Buenos Aires","Rio de Janeiro","Mexico City","Montevideo"],"correct":1},
-    {"q":"Which country hosted the first World Cup in 1930 — and won it?","options":["Brazil","Uruguay","Argentina","Italy"],"correct":1},
-    {"q":"The UEFA Champions League final trophy is nicknamed…","options":["Old Big Ears","The Silver Lady","The Crown","The Eurocup"],"correct":0},
-    {"q":"Which goalkeeper position rule was changed in 1992?","options":["No gloves","No picking up back-passes","No leaving the box","No penalties"],"correct":1},
-    {"q":"'Tiki-taka' passing football is associated with…","options":["Italy","Spain","Brazil","Germany"],"correct":1},
-    {"q":"Which African nation first reached a World Cup quarter-final (1990)?","options":["Nigeria","Cameroon","Ghana","Senegal"],"correct":1},
-    {"q":"Which country has won the most Olympic gold medals in history?","options":["Russia","USA","China","Germany"],"correct":1},
-    {"q":"The Winter and Summer Olympics alternate every…","options":["Year","2 years","4 years","3 years"],"correct":1},
-    {"q":"Which sport combines skiing and rifle shooting?","options":["Nordic combined","Biathlon","Ski cross","Slalom"],"correct":1},
-    {"q":"Curling players use brooms to…","options":["Clean the ice","Control the stone's path","Signal teammates","Mark the target"],"correct":1},
-    {"q":"Which country dominates long-distance running, especially the marathon?","options":["Jamaica","Kenya and Ethiopia","USA","Morocco"],"correct":1},
-    {"q":"In volleyball, how many touches may a team take before returning the ball?","options":["2","3","4","5"],"correct":1},
-    {"q":"Beach volleyball teams have how many players?","options":["2","3","4","6"],"correct":0},
-    {"q":"Which sport's championship is the 'World Series'?","options":["Basketball","Baseball","American football","Ice hockey"],"correct":1},
-    {"q":"A baseball game has how many innings (standard)?","options":["7","9","10","12"],"correct":1},
-    {"q":"Which sport awards belts like 'WBC' and 'WBA'?","options":["Wrestling","Boxing","Judo","MMA"],"correct":1},
-    {"q":"Muhammad Ali famously said he could 'float like a butterfly, sting like a…'","options":["Wasp","Bee","Scorpion","Hornet"],"correct":1},
-    {"q":"Which country invented golf?","options":["England","Scotland","Ireland","USA"],"correct":1},
-    {"q":"The Ryder Cup pits the USA against…","options":["The UK","Europe","The World","Asia"],"correct":1},
-    {"q":"Which Grand Slam is played in Melbourne?","options":["US Open","Australian Open","French Open","Wimbledon"],"correct":1},
-    {"q":"Rafael Nadal is famously dominant on which surface?","options":["Grass","Clay","Hard court","Indoor"],"correct":1},
-    {"q":"Which sport uses an 'épée'?","options":["Archery","Fencing","Polo","Rowing"],"correct":1},
-    {"q":"Which equestrian sport involves hitting a ball with mallets?","options":["Dressage","Polo","Show jumping","Eventing"],"correct":1},
-    {"q":"Which sport is nicknamed 'the beautiful game'?","options":["Tennis","Football","Basketball","Cricket"],"correct":1},
-    {"q":"Sepak takraw, popular in Southeast Asia, is like volleyball played with…","options":["Hands only","Feet and head","Rackets","Sticks"],"correct":1},
-    {"q":"Kabaddi, a team contact sport, is hugely popular in…","options":["Brazil","India","Russia","Nigeria"],"correct":1},
-    {"q":"Hurling, one of the world's fastest field sports, comes from…","options":["Scotland","Ireland","Wales","Iceland"],"correct":1},
-    {"q":"Pelota and jai alai trace back to which region?","options":["Basque Country","Catalonia","Sicily","Crete"],"correct":0},
-    {"q":"Which nation invented table tennis?","options":["China","England","Japan","Hungary"],"correct":1},
-    {"q":"The FIFA Women's World Cup record holder for titles is…","options":["Germany","USA","Norway","Japan"],"correct":1},
-    {"q":"An own goal in football counts for…","options":["Nothing","The opposing team","A replay","Minus one"],"correct":1},
-    {"q":"How many points is a try worth in rugby union?","options":["3","5","6","7"],"correct":1},
-    {"q":"Which sport has positions called 'hooker' and 'fly-half'?","options":["Cricket","Rugby","Lacrosse","Hockey"],"correct":1},
-    {"q":"Which winter sport features 'salchows' and 'lutzes'?","options":["Ski jumping","Figure skating","Bobsled","Luge"],"correct":1},
-    {"q":"Which country started ski jumping?","options":["Austria","Norway","Switzerland","Finland"],"correct":1},
-    {"q":"Jamaica famously entered which unlikely Winter Olympic event in 1988?","options":["Ice hockey","Bobsled","Curling","Ski jumping"],"correct":1},
-    {"q":"In which sport might you 'catch a wave'?","options":["Sailing","Surfing","Rowing","Windsurfing"],"correct":1},
-    {"q":"Surfing became an Olympic sport at which Games?","options":["Rio 2016","Tokyo 2020","London 2012","Paris 2024"],"correct":1},
-    {"q":"What does a boxing referee count to for a knockout?","options":["5","8","10","12"],"correct":2},
-    {"q":"Which sport's top division in Japan is called 'Makuuchi'?","options":["Karate","Sumo","Judo","Kendo"],"correct":1},
-    {"q":"How many holes does a full round of golf have?","options":["9","18","21","16"],"correct":1},
-    {"q":"Which trophy do tennis players bite for photos... wait, which medal do athletes traditionally bite?","options":["Silver","Gold","Bronze","Any"],"correct":1},
-    {"q":"The penalty spot is how far from the goal line?","options":["9 m","11 m","13 m","15 m"],"correct":1},
-    {"q":"Which legendary footballer was nicknamed 'O Rei' (The King)?","options":["Maradona","Pelé","Zidane","Ronaldo"],"correct":1},
-    {"q":"Esports tournaments fill entire stadiums. The biggest prize pools have come from…","options":["FIFA","Dota 2","Tetris","Pac-Man"],"correct":1},
-    {"q":"A 'hat-trick' in football means one player scores how many goals?","options":["2","3","4","5"],"correct":1}
+    {
+      "q": "Which country has won the most FIFA World Cups (men's)?",
+      "options": [
+        "Germany",
+        "Brazil",
+        "Italy",
+        "Argentina"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In golf, what is the term for three under par on a single hole?",
+      "options": [
+        "Eagle",
+        "Albatross",
+        "Birdie",
+        "Condor"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The 'Fosbury Flop' revolutionised which athletics event?",
+      "options": [
+        "Long jump",
+        "High jump",
+        "Pole vault",
+        "Triple jump"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "How many players from one team are on a rugby union pitch at kickoff?",
+      "options": [
+        "13",
+        "15",
+        "11",
+        "18"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which Grand Slam tennis tournament is played on clay?",
+      "options": [
+        "Wimbledon",
+        "US Open",
+        "French Open",
+        "Australian Open"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "In cricket, what is the term for a bowler taking three wickets with consecutive balls?",
+      "options": [
+        "A maiden",
+        "A hat-trick",
+        "A duck",
+        "A googly"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The maximum break in a single visit in snooker (no fouls) is?",
+      "options": [
+        "100",
+        "147",
+        "155",
+        "180"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which boxer was known as 'The Greatest' and lit the 1996 Olympic flame?",
+      "options": [
+        "Mike Tyson",
+        "Muhammad Ali",
+        "Joe Frazier",
+        "Sugar Ray Leonard"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Formula 1, what does a black-and-white diagonal flag warn a driver about?",
+      "options": [
+        "Disqualification",
+        "Unsportsmanlike conduct",
+        "Mechanical failure",
+        "Race end"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "How many points is a try worth in rugby union?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "7"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which country invented the modern game of basketball?",
+      "options": [
+        "Canada (by James Naismith in the USA)",
+        "United States",
+        "England",
+        "France"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In tennis, a score of 40-40 is called what?",
+      "options": [
+        "Match point",
+        "Deuce",
+        "Advantage",
+        "Break"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Tour de France leader wears which coloured jersey?",
+      "options": [
+        "Green",
+        "Yellow",
+        "Polka dot",
+        "White"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which sport features the positions 'silly mid-on' and 'gully'?",
+      "options": [
+        "Baseball",
+        "Cricket",
+        "Hockey",
+        "Lacrosse"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "How long is an Olympic swimming pool?",
+      "options": [
+        "25 m",
+        "50 m",
+        "100 m",
+        "33 m"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In American football, how many points is a safety worth?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "6"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which athlete holds the men's 100m world record set in 2009?",
+      "options": [
+        "Carl Lewis",
+        "Usain Bolt",
+        "Yohan Blake",
+        "Tyson Gay"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The 'Ashes' is a Test cricket series between England and which country?",
+      "options": [
+        "India",
+        "Australia",
+        "South Africa",
+        "New Zealand"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In golf, the four 'majors' include the Masters, the Open, the US Open and which other?",
+      "options": [
+        "The Players",
+        "The PGA Championship",
+        "The Ryder Cup",
+        "The FedEx Cup"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which martial art means 'the gentle way' and is an Olympic sport from Japan?",
+      "options": [
+        "Karate",
+        "Judo",
+        "Taekwondo",
+        "Aikido"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "How many rings are on the Olympic flag?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In which sport would you perform a 'maximum' of 180?",
+      "options": [
+        "Snooker",
+        "Darts",
+        "Bowling",
+        "Archery"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which football club is nicknamed 'The Red Devils'?",
+      "options": [
+        "Liverpool",
+        "Manchester United",
+        "Arsenal",
+        "Chelsea"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The decathlon consists of how many track-and-field events?",
+      "options": [
+        "7",
+        "8",
+        "10",
+        "12"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "In which sport is the Davis Cup awarded?",
+      "options": [
+        "Golf",
+        "Tennis",
+        "Rowing",
+        "Cycling"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the maximum number of clubs a golfer may carry in their bag?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "18"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country hosts the Monaco Grand Prix's famous street circuit?",
+      "options": [
+        "France",
+        "Monaco",
+        "Italy",
+        "Spain"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In boxing, a fight ending because one boxer cannot continue is called?",
+      "options": [
+        "TKO (technical knockout)",
+        "KO",
+        "Decision",
+        "Draw"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which sport's Hall of Fame is in Cooperstown, New York?",
+      "options": [
+        "Basketball",
+        "Baseball",
+        "Ice hockey",
+        "American football"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "How many players are on a water polo team in the pool, including the goalkeeper?",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "11"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The 'Green Jacket' is awarded to the winner of which golf tournament?",
+      "options": [
+        "The Open",
+        "The Masters",
+        "US Open",
+        "PGA Championship"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In athletics, which throwing event uses a 7.26 kg metal ball for men?",
+      "options": [
+        "Discus",
+        "Shot put",
+        "Hammer",
+        "Javelin"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which nation has won the most Olympic medals in total all-time?",
+      "options": [
+        "Soviet Union",
+        "United States",
+        "Germany",
+        "China"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In tennis, what is it called when a server wins a point without the returner touching the ball?",
+      "options": [
+        "Let",
+        "Ace",
+        "Fault",
+        "Rally"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "How many points does a team need to win a standard set in volleyball (must win by two)?",
+      "options": [
+        "15",
+        "21",
+        "25",
+        "30"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which Formula 1 team is the oldest and most successful constructor?",
+      "options": [
+        "McLaren",
+        "Ferrari",
+        "Williams",
+        "Mercedes"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In cricket, a delivery that bounces twice before reaching the batsman is illegal and called?",
+      "options": [
+        "A no-ball",
+        "A wide",
+        "A bye",
+        "A bouncer"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which famous race is held annually at the Indianapolis Motor Speedway?",
+      "options": [
+        "Daytona 500",
+        "Indianapolis 500",
+        "Le Mans",
+        "Monaco GP"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term for completing a marathon, then a separate swim and cycle—combined into one race?",
+      "options": [
+        "Pentathlon",
+        "Triathlon",
+        "Duathlon",
+        "Heptathlon"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In ice hockey, what is the term for one player scoring three goals in a game?",
+      "options": [
+        "Treble",
+        "Hat-trick",
+        "Triple play",
+        "Trifecta"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which Grand Slam is the only one played on grass?",
+      "options": [
+        "French Open",
+        "Wimbledon",
+        "US Open",
+        "Australian Open"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "How many holes are played in a standard round of golf?",
+      "options": [
+        "9",
+        "18",
+        "27",
+        "36"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In sumo wrestling, a wrestler loses if he does what?",
+      "options": [
+        "Touches the ground with anything but his feet, or leaves the ring",
+        "Is pinned",
+        "Submits",
+        "Runs out of time"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which English football competition is the oldest national football competition in the world?",
+      "options": [
+        "The Premier League",
+        "The FA Cup",
+        "The League Cup",
+        "The Community Shield"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In athletics, the steeplechase includes barriers and what other obstacle?",
+      "options": [
+        "A sand pit",
+        "A water jump",
+        "A wall",
+        "A hurdle only"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which sport uses terms like 'love', 'deuce' and 'break point'?",
+      "options": [
+        "Squash",
+        "Tennis",
+        "Badminton",
+        "Table tennis"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "How many players are on a netball team on court?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "9"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "The Heisman Trophy is awarded in which sport?",
+      "options": [
+        "Basketball",
+        "College American football",
+        "Baseball",
+        "Ice hockey"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country originated the sport of curling?",
+      "options": [
+        "Canada",
+        "Scotland",
+        "Sweden",
+        "Norway"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In cycling's Grand Tours, which is held in Italy?",
+      "options": [
+        "Vuelta a España",
+        "Giro d'Italia",
+        "Tour de France",
+        "Paris-Roubaix"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the diameter of a basketball hoop in inches?",
+      "options": [
+        "16",
+        "18",
+        "20",
+        "24"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which boxing weight class is the heaviest?",
+      "options": [
+        "Heavyweight",
+        "Cruiserweight",
+        "Light heavyweight",
+        "Middleweight"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "In which sport is the term 'birdie' used alongside 'bogey'?",
+      "options": [
+        "Badminton",
+        "Golf",
+        "Cricket",
+        "Tennis"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which event is known as 'the greatest two minutes in sports', a horse race?",
+      "options": [
+        "The Grand National",
+        "The Kentucky Derby",
+        "Royal Ascot",
+        "The Melbourne Cup"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "How many players are on the field per team in Australian Rules football?",
+      "options": [
+        "15",
+        "18",
+        "20",
+        "13"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In tennis, which surface generally produces the fastest play?",
+      "options": [
+        "Clay",
+        "Grass",
+        "Hard court",
+        "All the same"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which sport contests the Stanley Cup?",
+      "options": [
+        "Basketball",
+        "Ice hockey",
+        "Baseball",
+        "Lacrosse"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The 'Pacific' and 'Atlantic' Leagues are part of which sport in Japan?",
+      "options": [
+        "Football",
+        "Baseball",
+        "Basketball",
+        "Sumo"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term in cricket for a batsman dismissed without scoring?",
+      "options": [
+        "A blob",
+        "A duck",
+        "A nought",
+        "A zero"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which discipline of gymnastics features the pommel horse and rings (men's)?",
+      "options": [
+        "Rhythmic",
+        "Artistic",
+        "Trampoline",
+        "Acrobatic"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "How many minutes is a standard professional boxing round?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country won the first ever FIFA World Cup in 1930?",
+      "options": [
+        "Brazil",
+        "Uruguay",
+        "Argentina",
+        "Italy"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In rugby, what is the act of restarting play with a contested throw-in called?",
+      "options": [
+        "Scrum",
+        "Lineout",
+        "Ruck",
+        "Maul"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which Formula 1 circuit features the famous Eau Rouge corner?",
+      "options": [
+        "Monza",
+        "Spa-Francorchamps",
+        "Silverstone",
+        "Suzuka"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is a 'perfect game' score in ten-pin bowling?",
+      "options": [
+        "250",
+        "280",
+        "300",
+        "350"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "In which sport would an athlete use a 'foil', 'épée' or 'sabre'?",
+      "options": [
+        "Archery",
+        "Fencing",
+        "Shooting",
+        "Modern pentathlon"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "How many players are on a standard ice hockey team on the ice (incl. goalie)?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "11"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which jersey is worn by the best young rider in the Tour de France?",
+      "options": [
+        "Green",
+        "Polka dot",
+        "White",
+        "Yellow"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which sport features the 'butterfly', 'backstroke' and 'freestyle'?",
+      "options": [
+        "Diving",
+        "Swimming",
+        "Rowing",
+        "Sailing"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In football, the offside rule involves a player's position relative to which line?",
+      "options": [
+        "The halfway line",
+        "The second-last defender",
+        "The goal line",
+        "The penalty arc"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which athletics event combines five disciplines for women historically before the heptathlon?",
+      "options": [
+        "Pentathlon",
+        "Decathlon",
+        "Triathlon",
+        "Octathlon"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the term for a left-handed stance in boxing?",
+      "options": [
+        "Orthodox",
+        "Southpaw",
+        "Switch",
+        "Counter"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country is most associated with the sport of cricket's invention?",
+      "options": [
+        "Australia",
+        "England",
+        "India",
+        "South Africa"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In which sport do competitors aim for a target called the 'bullseye'?",
+      "options": [
+        "Archery and darts both use a bullseye",
+        "Only darts",
+        "Only archery",
+        "Curling"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "How many Grand Slam singles titles define the men's 'career Grand Slam' minimum (winning all four)?",
+      "options": [
+        "1 of each (4 total minimum)",
+        "10",
+        "20",
+        "2 of each"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which sport's playing area is called the 'gridiron'?",
+      "options": [
+        "Rugby",
+        "American football",
+        "Field hockey",
+        "Lacrosse"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In golf, the lowest score format counting strokes is called?",
+      "options": [
+        "Match play",
+        "Stroke (medal) play",
+        "Stableford",
+        "Foursomes"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which Olympic sport involves sliding stones toward a target on ice while teammates sweep?",
+      "options": [
+        "Bobsleigh",
+        "Curling",
+        "Luge",
+        "Skeleton"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the standard distance of a marathon?",
+      "options": [
+        "26.2 miles (42.195 km)",
+        "20 miles",
+        "30 km",
+        "50 km"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "In tennis, a 'tie-break' is typically first to how many points (win by two)?",
+      "options": [
+        "5",
+        "7",
+        "10",
+        "6"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which sport features a 'scrum-half' and 'fly-half'?",
+      "options": [
+        "Football",
+        "Rugby",
+        "Hockey",
+        "Lacrosse"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the maximum score from a single dart on a standard board?",
+      "options": [
+        "50",
+        "57",
+        "60",
+        "20"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "Which country has won the most men's Olympic football gold medals historically (powerhouse before pros)?",
+      "options": [
+        "Brazil",
+        "Hungary",
+        "Great Britain",
+        "Argentina"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In baseball, how many strikes result in a strikeout?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which famous stadium is known as the 'Home of Cricket'?",
+      "options": [
+        "The Oval",
+        "Lord's",
+        "Eden Gardens",
+        "MCG"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "How many players are on a handball team on court (incl. goalkeeper)?",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "11"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In Formula 1, what device on modern cars boosts overtaking by reducing drag?",
+      "options": [
+        "KERS",
+        "DRS",
+        "ERS",
+        "TC"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which competition pits Europe against the USA in golf?",
+      "options": [
+        "Presidents Cup",
+        "Ryder Cup",
+        "Solheim Cup",
+        "Walker Cup"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term for the start of play in basketball, with the ball tossed up?",
+      "options": [
+        "Kick-off",
+        "Tip-off",
+        "Face-off",
+        "Bully-off"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which sport's positions include 'point guard', 'shooting guard' and 'center'?",
+      "options": [
+        "Netball",
+        "Basketball",
+        "Volleyball",
+        "Handball"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In cricket, how many balls are in a standard over?",
+      "options": [
+        "4",
+        "6",
+        "8",
+        "10"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which is the only nation to have played in every football World Cup finals tournament?",
+      "options": [
+        "Germany",
+        "Brazil",
+        "Italy",
+        "Argentina"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term for advancing the ball by bouncing it in basketball?",
+      "options": [
+        "Passing",
+        "Dribbling",
+        "Travelling",
+        "Shooting"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which Olympic discipline is contested with a horse over a set course of jumps against the clock?",
+      "options": [
+        "Dressage",
+        "Show jumping",
+        "Eventing",
+        "Vaulting"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In rugby league, how many players are on the field per team?",
+      "options": [
+        "13",
+        "15",
+        "11",
+        "9"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is a score of one under par on a hole called in golf?",
+      "options": [
+        "Eagle",
+        "Birdie",
+        "Bogey",
+        "Par"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which tennis player is famously associated with eight Wimbledon men's singles titles, a record?",
+      "options": [
+        "Rafael Nadal",
+        "Roger Federer",
+        "Novak Djokovic",
+        "Pete Sampras"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term for hitting the ball over the boundary on the full for six runs in cricket?",
+      "options": [
+        "A four",
+        "A six",
+        "A maximum (six)",
+        "Both six and maximum"
+      ],
+      "correct": 3
+    },
+    {
+      "q": "Which Grand Slam is played first in the calendar year?",
+      "options": [
+        "French Open",
+        "Australian Open",
+        "Wimbledon",
+        "US Open"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In which sport is the 'Vince Lombardi Trophy' awarded?",
+      "options": [
+        "Baseball",
+        "American football (Super Bowl)",
+        "Basketball",
+        "Ice hockey"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "How many players are on a beach volleyball team per side?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "6"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which famous cycling race is nicknamed 'The Hell of the North' for its cobblestones?",
+      "options": [
+        "Tour de France",
+        "Paris-Roubaix",
+        "Giro d'Italia",
+        "Milan-San Remo"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the maximum number of substitutions typically allowed per team in a modern football match?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "Unlimited"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which combat sport features 'ippon', 'waza-ari' and throws?",
+      "options": [
+        "Karate",
+        "Judo",
+        "Boxing",
+        "Wrestling"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In athletics, which event has competitors clearing a horizontal bar using a long flexible pole?",
+      "options": [
+        "High jump",
+        "Pole vault",
+        "Long jump",
+        "Triple jump"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country dominates the sport of table tennis at the Olympic level?",
+      "options": [
+        "Japan",
+        "China",
+        "South Korea",
+        "Germany"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term for a goalless football draw?",
+      "options": [
+        "Nil-nil",
+        "Love-all",
+        "Blank",
+        "Even"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which sport is played at 'Flushing Meadows'?",
+      "options": [
+        "Golf",
+        "Tennis (US Open)",
+        "Baseball",
+        "Athletics"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "In rugby, how many points is a successful penalty kick worth?",
+      "options": [
+        "2",
+        "3",
+        "5",
+        "7"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which famous boxing match was billed as the 'Rumble in the Jungle' in 1974?",
+      "options": [
+        "Ali vs Frazier",
+        "Ali vs Foreman",
+        "Tyson vs Holyfield",
+        "Leonard vs Hagler"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the home straight in horse racing or athletics commonly called?",
+      "options": [
+        "The back stretch",
+        "The home stretch",
+        "The chicane",
+        "The infield"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which winter sport sends a single athlete head-first down an ice track on a small sled?",
+      "options": [
+        "Luge",
+        "Bobsleigh",
+        "Skeleton",
+        "Curling"
+      ],
+      "correct": 2
+    },
+    {
+      "q": "In football, which trophy is contested by Europe's top club teams?",
+      "options": [
+        "Europa League",
+        "UEFA Champions League",
+        "UEFA Super Cup",
+        "Club World Cup"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the term for the area a server must hit into in tennis?",
+      "options": [
+        "Baseline",
+        "Service box",
+        "Tramlines",
+        "No-man's-land"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which is the only sport to have been played on the Moon (a golf shot by Alan Shepard)?",
+      "options": [
+        "Baseball",
+        "Golf",
+        "Tennis",
+        "Frisbee"
+      ],
+      "correct": 1
+    }
   ]
 }

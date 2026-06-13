@@ -2,105 +2,1205 @@
   "name": "World Food & Drink",
   "emoji": "🍜",
   "questions": [
-    { "q": "Which country gave the world sushi?", "options": ["China", "Japan", "Thailand", "Korea"], "correct": 1 },
-    { "q": "Paella is a famous rice dish from which country?", "options": ["Italy", "Portugal", "Spain", "Mexico"], "correct": 2 },
-    { "q": "In which country was the croissant actually invented?", "options": ["France", "Austria", "Belgium", "Switzerland"], "correct": 1 },
-    { "q": "Pizza Margherita was named after a…", "options": ["Chef", "Queen", "City", "Flower"], "correct": 1 },
-    { "q": "Hummus is mainly made from which ingredient?", "options": ["Lentils", "Chickpeas", "White beans", "Sesame only"], "correct": 1 },
-    { "q": "Kimchi, Korea's national dish, is mostly…", "options": ["Fermented cabbage", "Raw fish", "Spicy noodles", "Pickled eggs"], "correct": 0 },
-    { "q": "Traditional mozzarella di bufala is made from the milk of a…", "options": ["Cow", "Goat", "Water buffalo", "Sheep"], "correct": 2 },
-    { "q": "True Champagne can only come from…", "options": ["Anywhere in France", "The Champagne region", "Paris", "Any sparkling winery"], "correct": 1 },
-    { "q": "Tofu is made from…", "options": ["Rice", "Wheat", "Soybeans", "Potatoes"], "correct": 2 },
-    { "q": "Pho is a noodle soup from which country?", "options": ["Thailand", "Vietnam", "Laos", "Cambodia"], "correct": 1 },
-    { "q": "Goulash is the signature stew of…", "options": ["Poland", "Hungary", "Austria", "Czechia"], "correct": 1 },
-    { "q": "Feta cheese has protected status in which country?", "options": ["Italy", "Turkey", "Greece", "Bulgaria"], "correct": 2 },
-    { "q": "Wasabi actually comes from which part of the plant?", "options": ["The leaves", "The stem/root", "The seeds", "The flowers"], "correct": 1 },
-    { "q": "Nori, the wrap around sushi rolls, is…", "options": ["Rice paper", "Seaweed", "Pressed tofu", "Thin pasta"], "correct": 1 },
-    { "q": "Tequila is distilled from which plant?", "options": ["Cactus", "Agave", "Sugarcane", "Corn"], "correct": 1 },
-    { "q": "Sake is a Japanese alcoholic drink made from…", "options": ["Plums", "Rice", "Barley", "Sweet potatoes"], "correct": 1 },
-    { "q": "Ouzo, the anise-flavoured spirit, comes from…", "options": ["Turkey", "Italy", "Greece", "Lebanon"], "correct": 2 },
-    { "q": "Ramen noodles became famous in Japan, but originally came from…", "options": ["Korea", "China", "Thailand", "Japan itself"], "correct": 1 },
-    { "q": "Ceviche — raw fish cured in citrus — is the national dish of…", "options": ["Mexico", "Peru", "Brazil", "Cuba"], "correct": 1 },
-    { "q": "Pierogi dumplings are a classic of which cuisine?", "options": ["Russian", "Polish", "German", "Romanian"], "correct": 1 },
-    { "q": "Borscht gets its deep red colour from…", "options": ["Tomatoes", "Red peppers", "Beetroot", "Red cabbage"], "correct": 2 },
-    { "q": "Tiramisu is flavoured with which drink?", "options": ["Tea", "Coffee", "Hot chocolate", "Red wine"], "correct": 1 },
-    { "q": "Poutine — fries, gravy and cheese curds — was born in…", "options": ["USA", "Canada", "Belgium", "UK"], "correct": 1 },
-    { "q": "Escargot is a French delicacy of cooked…", "options": ["Frog legs", "Snails", "Eels", "Oysters"], "correct": 1 },
-    { "q": "Pesto alla genovese is based on which herb?", "options": ["Parsley", "Oregano", "Basil", "Mint"], "correct": 2 },
-    { "q": "Which pastry is soaked in syrup and layered with nuts?", "options": ["Baklava", "Croissant", "Strudel", "Scone"], "correct": 0 },
-    { "q": "Tempura frying was introduced to Japan by missionaries from…", "options": ["Spain", "Portugal", "Netherlands", "France"], "correct": 1 },
-    { "q": "The Caesar salad was invented in which country?", "options": ["Italy", "USA", "Mexico", "France"], "correct": 2 },
-    { "q": "Fortune cookies were invented in…", "options": ["China", "The USA", "Hong Kong", "Taiwan"], "correct": 1 },
-    { "q": "Before reaching Italy, tomatoes originally came from…", "options": ["The Americas", "India", "Egypt", "China"], "correct": 0 },
-    { "q": "Potatoes were first cultivated in…", "options": ["Ireland", "The Andes", "Germany", "China"], "correct": 1 },
-    { "q": "Chocolate was first consumed as a drink by the…", "options": ["Romans", "Egyptians", "Maya and Aztecs", "Vikings"], "correct": 2 },
-    { "q": "Saffron, the world's priciest spice, is harvested from a…", "options": ["Tree bark", "Crocus flower", "Root", "Seed pod"], "correct": 1 },
-    { "q": "Which food can stay edible for thousands of years?", "options": ["Honey", "Salted fish", "Hard cheese", "Olive oil"], "correct": 0 },
-    { "q": "Durian fruit is banned on public transport in Singapore because of its…", "options": ["Spikes", "Smell", "Weight", "Sticky juice"], "correct": 1 },
-    { "q": "Kiwifruit was originally known as the…", "options": ["Chinese gooseberry", "Maori melon", "Furry fig", "Green plum"], "correct": 0 },
-    { "q": "Cashew nuts grow…", "options": ["Underground", "Inside pine cones", "Attached to a fruit (cashew apple)", "On vines"], "correct": 2 },
-    { "q": "Botanically speaking, which of these is a berry?", "options": ["Strawberry", "Banana", "Raspberry", "Cherry"], "correct": 1 },
-    { "q": "Peanuts are actually…", "options": ["Tree nuts", "Legumes", "Seeds of a fruit", "Roots"], "correct": 1 },
-    { "q": "White chocolate contains no…", "options": ["Sugar", "Milk", "Cocoa solids", "Fat"], "correct": 2 },
-    { "q": "Before the 17th century, most carrots were…", "options": ["Purple", "Red", "White", "Black"], "correct": 0 },
-    { "q": "Hawaiian pizza was invented in…", "options": ["Hawaii", "Italy", "Canada", "Australia"], "correct": 2 },
-    { "q": "Chicken tikka masala was most likely invented in…", "options": ["India", "Pakistan", "Britain", "Bangladesh"], "correct": 2 },
-    { "q": "The word 'ketchup' likely comes from a fermented fish sauce from…", "options": ["Mexico", "Asia", "Greece", "Turkey"], "correct": 1 },
-    { "q": "After water, the most consumed drink on Earth is…", "options": ["Coffee", "Beer", "Tea", "Cola"], "correct": 2 },
-    { "q": "Wagyu, the famously marbled beef, comes from…", "options": ["Korea", "Japan", "Argentina", "USA"], "correct": 1 },
-    { "q": "Gazpacho is a Spanish soup served…", "options": ["Flaming", "Cold", "In bread", "For breakfast"], "correct": 1 },
-    { "q": "Bibimbap — rice with vegetables and egg — is from…", "options": ["Japan", "China", "Korea", "Vietnam"], "correct": 2 },
-    { "q": "Injera, a spongy sourdough flatbread, is the staple of…", "options": ["Morocco", "Ethiopia", "Egypt", "Kenya"], "correct": 1 },
-    { "q": "A tagine is both a stew and a…", "options": ["Dance", "Cone-lidded clay pot", "Spice mix", "Bread"], "correct": 1 },
-    { "q": "Jollof rice sparks a famous (friendly) rivalry between Nigeria and…", "options": ["Ghana", "Kenya", "Egypt", "South Africa"], "correct": 0 },
-    { "q": "The pavlova dessert is named after a famous…", "options": ["Queen", "Ballerina", "Opera singer", "Painter"], "correct": 1 },
-    { "q": "Stroopwafels — thin waffles with caramel — come from…", "options": ["Belgium", "Denmark", "Netherlands", "Germany"], "correct": 2 },
-    { "q": "Cheese fondue is the national dish of…", "options": ["France", "Switzerland", "Austria", "Italy"], "correct": 1 },
-    { "q": "Quinoa was a staple food of which ancient civilization?", "options": ["The Inca", "The Maya", "Ancient Egypt", "Ancient Greece"], "correct": 0 },
-    { "q": "Mole poblano, a rich Mexican sauce, surprisingly contains…", "options": ["Chocolate", "Coffee", "Peanut butter", "Honey"], "correct": 0 },
-    { "q": "Sriracha sauce is named after a town in…", "options": ["Vietnam", "Thailand", "Mexico", "China"], "correct": 1 },
-    { "q": "Caviar is the salted eggs of which fish?", "options": ["Salmon", "Tuna", "Sturgeon", "Cod"], "correct": 2 },
-    { "q": "Calamari is fried…", "options": ["Octopus", "Squid", "Cuttlefish", "Eel"], "correct": 1 },
-    { "q": "Takoyaki, a Japanese street snack, contains pieces of…", "options": ["Chicken", "Octopus", "Pork", "Shrimp"], "correct": 1 },
-    { "q": "Mochi is a chewy Japanese sweet made of pounded…", "options": ["Wheat", "Rice", "Beans", "Corn"], "correct": 1 },
-    { "q": "Panettone is a sweet bread eaten in Italy at…", "options": ["Easter", "Christmas", "Weddings", "New Year only"], "correct": 1 },
-    { "q": "Turkish delight is dusted with…", "options": ["Cocoa", "Icing sugar", "Flour", "Cinnamon only"], "correct": 1 },
-    { "q": "Cheddar cheese is named after a village in…", "options": ["Scotland", "England", "Ireland", "Wales"], "correct": 1 },
-    { "q": "Gouda cheese comes from…", "options": ["Belgium", "Netherlands", "Denmark", "Germany"], "correct": 1 },
-    { "q": "Roquefort blue cheese is made from the milk of…", "options": ["Cows", "Goats", "Sheep", "Buffalo"], "correct": 2 },
-    { "q": "Halloumi, the squeaky grilling cheese, comes from…", "options": ["Greece", "Cyprus", "Turkey", "Lebanon"], "correct": 1 },
-    { "q": "Which cheese is the classic choice for tiramisu?", "options": ["Ricotta", "Mascarpone", "Cream cheese", "Burrata"], "correct": 1 },
-    { "q": "The pretzel's twisted shape is traditionally linked to…", "options": ["Sailors' knots", "Praying arms", "Olympic rings", "A bishop's hat"], "correct": 1 },
-    { "q": "Which country eats the most chocolate per person?", "options": ["USA", "Belgium", "Switzerland", "France"], "correct": 2 },
-    { "q": "Marzipan is a sweet paste made mainly of…", "options": ["Peanuts", "Almonds", "Cashews", "Walnuts"], "correct": 1 },
-    { "q": "A 'bento' in Japan is a…", "options": ["Soup", "Boxed meal", "Tea ceremony", "Rice cooker"], "correct": 1 },
-    { "q": "Dulce de leche is made by slowly heating…", "options": ["Chocolate", "Sweetened milk", "Honey", "Fruit juice"], "correct": 1 },
-    { "q": "Which fruit has its seeds on the outside?", "options": ["Strawberry", "Raspberry", "Fig", "Pomegranate"], "correct": 0 },
-    { "q": "Pad thai is traditionally wrapped or served with…", "options": ["A fried egg", "Lime and peanuts", "Yogurt", "Cheese"], "correct": 1 },
-    { "q": "Couscous is made from…", "options": ["Rice", "Semolina wheat", "Corn", "Quinoa"], "correct": 1 },
-    { "q": "Falafel is made from ground…", "options": ["Lamb", "Chickpeas or fava beans", "Rice and herbs", "Lentils only"], "correct": 1 },
-    { "q": "Biryani is best described as…", "options": ["A flatbread", "A spiced rice dish", "A yogurt drink", "A lentil soup"], "correct": 1 },
-    { "q": "Naan bread is traditionally baked…", "options": ["On a grill", "In a tandoor oven", "Under hot stones", "In a steamer"], "correct": 1 },
-    { "q": "Matcha is a powdered form of…", "options": ["Black tea", "Green tea", "Herbal tea", "Coffee"], "correct": 1 },
-    { "q": "Gyoza dumplings are the Japanese version of dumplings from…", "options": ["Korea", "China", "Mongolia", "Vietnam"], "correct": 1 },
-    { "q": "Vindaloo curry has roots in which colonial influence on Goa?", "options": ["British", "Dutch", "Portuguese", "French"], "correct": 2 },
-    { "q": "Nutella was invented in which country?", "options": ["France", "Switzerland", "Italy", "Belgium"], "correct": 2 },
-    { "q": "Doner kebab in its modern street-food form was popularized in…", "options": ["Istanbul", "Berlin", "Athens", "Cairo"], "correct": 1 },
-    { "q": "Haggis is the national dish of…", "options": ["Ireland", "Scotland", "Wales", "Iceland"], "correct": 1 },
-    { "q": "Churros are traditionally dipped in…", "options": ["Coffee", "Thick hot chocolate", "Honey", "Caramel"], "correct": 1 },
-    { "q": "A macaron and a macaroon are…", "options": ["The same thing", "Two different sweets", "Both bread types", "Both chocolates"], "correct": 1 },
-    { "q": "Prosciutto is Italian…", "options": ["Cured ham", "Hard cheese", "Olive bread", "Smoked fish"], "correct": 0 },
-    { "q": "Miso paste is made by fermenting…", "options": ["Rice only", "Soybeans", "Fish", "Seaweed"], "correct": 1 },
-    { "q": "Vanilla flavouring comes from the pod of a…", "options": ["Tree", "Orchid", "Cactus", "Shrub"], "correct": 1 },
-    { "q": "Pineapples grow…", "options": ["On tall trees", "On a plant near the ground", "Underground", "On vines"], "correct": 1 },
-    { "q": "In Italy, ordering a 'latte' will get you…", "options": ["Espresso", "Milk coffee", "Just milk", "Iced coffee"], "correct": 2 },
-    { "q": "Smørrebrød — artistic open sandwiches — come from…", "options": ["Norway", "Denmark", "Sweden", "Finland"], "correct": 1 },
-    { "q": "The hottest part of a chili pepper is…", "options": ["The seeds", "The white inner membrane", "The tip", "The skin"], "correct": 1 },
-    { "q": "Scoville units measure…", "options": ["Sweetness", "Chili heat", "Saltiness", "Caffeine"], "correct": 1 },
-    { "q": "Kopi luwak, one of the priciest coffees, is processed by…", "options": ["Volcanic heat", "A civet's digestion", "Deep-sea aging", "Smoking"], "correct": 1 },
-    { "q": "Which country invented the deep-fried Mars bar?", "options": ["USA", "Scotland", "Australia", "Canada"], "correct": 1 },
-    { "q": "Lokum, baklava and meze are all associated with cuisine from…", "options": ["Spain", "The eastern Mediterranean", "Scandinavia", "The Caribbean"], "correct": 1 },
-    { "q": "An 'al dente' pasta is cooked…", "options": ["Very soft", "Firm to the bite", "Crunchy raw", "Twice"], "correct": 1 },
-    { "q": "Which nation drinks the most coffee per person?", "options": ["Italy", "USA", "Finland", "Brazil"], "correct": 2 }
+    {
+      "q": "Which spice is derived from the dried stigmas of a crocus flower, making it the world's priciest?",
+      "options": [
+        "Turmeric",
+        "Saffron",
+        "Cardamom",
+        "Vanilla"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Authentic Neapolitan pizza is traditionally protected and must be cooked how?",
+      "options": [
+        "In a wood-fired oven",
+        "On a grill",
+        "Deep-fried",
+        "In a microwave"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which part of the cocoa process gives dark chocolate its bitterness?",
+      "options": [
+        "The sugar",
+        "The cocoa solids",
+        "The milk",
+        "The lecithin"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Prosciutto di Parma is a cured product from which animal?",
+      "options": [
+        "Beef",
+        "Pork",
+        "Lamb",
+        "Duck"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The Maillard reaction is responsible for what in cooking?",
+      "options": [
+        "Browning and savoury flavour",
+        "Sourness",
+        "Fizziness",
+        "Gelling"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which fermented soybean paste is fundamental to Japanese soup?",
+      "options": [
+        "Gochujang",
+        "Miso",
+        "Doubanjiang",
+        "Natto"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Champagne can only legally be called that if made in which region?",
+      "options": [
+        "Bordeaux",
+        "Champagne, France",
+        "Tuscany",
+        "Rioja"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What gives traditional pesto alla genovese its green colour and aroma?",
+      "options": [
+        "Spinach",
+        "Basil",
+        "Parsley",
+        "Mint"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which cut of beef is used for a classic Italian bistecca alla Fiorentina?",
+      "options": [
+        "Brisket",
+        "T-bone/Porterhouse",
+        "Flank",
+        "Chuck"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Sushi rice is seasoned with a mix of vinegar, sugar and what?",
+      "options": [
+        "Soy sauce",
+        "Salt",
+        "Mirin only",
+        "Fish sauce"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which nut forms the base of traditional marzipan?",
+      "options": [
+        "Walnut",
+        "Almond",
+        "Hazelnut",
+        "Cashew"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The 'holy trinity' of Cajun cooking is onion, celery and what?",
+      "options": [
+        "Carrot",
+        "Bell pepper",
+        "Garlic",
+        "Tomato"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which cheese is traditionally used on a true Greek salad?",
+      "options": [
+        "Mozzarella",
+        "Feta",
+        "Halloumi",
+        "Manouri"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Tempering is a technique used to stabilise which ingredient?",
+      "options": [
+        "Eggs",
+        "Chocolate",
+        "Sugar",
+        "Flour"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which alcoholic spirit is the base of a classic Negroni?",
+      "options": [
+        "Vodka",
+        "Gin",
+        "Rum",
+        "Whiskey"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the Japanese term for the savoury 'fifth taste'?",
+      "options": [
+        "Umami",
+        "Kokumi",
+        "Dashi",
+        "Yakimi"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which rice variety is essential for a creamy risotto?",
+      "options": [
+        "Basmati",
+        "Arborio",
+        "Jasmine",
+        "Long-grain"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Roquefort, a famous blue cheese, is made from which animal's milk?",
+      "options": [
+        "Cow",
+        "Sheep",
+        "Goat",
+        "Buffalo"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which leavening agent gives sourdough bread its rise and tang?",
+      "options": [
+        "Baking soda",
+        "Wild yeast and lactic bacteria",
+        "Commercial yeast only",
+        "Baking powder"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The dish 'ceviche' 'cooks' raw fish using what?",
+      "options": [
+        "Heat",
+        "Citrus acid",
+        "Salt brine",
+        "Smoke"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Balsamic vinegar traditionally comes from which Italian city?",
+      "options": [
+        "Parma",
+        "Modena",
+        "Naples",
+        "Bologna"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which spice comes from the bark of a tropical tree?",
+      "options": [
+        "Nutmeg",
+        "Cinnamon",
+        "Clove",
+        "Ginger"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the key flavour ingredient in a traditional mole poblano?",
+      "options": [
+        "Chilli and chocolate",
+        "Tomato",
+        "Cream",
+        "Peanut only"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which wine grape is the main one in classic Chablis?",
+      "options": [
+        "Pinot Noir",
+        "Chardonnay",
+        "Sauvignon Blanc",
+        "Riesling"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Kimchi is traditionally fermented in vessels buried in the ground in which country?",
+      "options": [
+        "Japan",
+        "Korea",
+        "China",
+        "Vietnam"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which French sauce is one of the five 'mother sauces' and is white, made from milk?",
+      "options": [
+        "Hollandaise",
+        "Béchamel",
+        "Espagnole",
+        "Velouté"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Tofu is coagulated from soy milk using a substance often called what in Japan?",
+      "options": [
+        "Nigari",
+        "Rennet",
+        "Agar",
+        "Pectin"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which herb is essential to a classic Vietnamese pho garnish?",
+      "options": [
+        "Thai basil",
+        "Rosemary",
+        "Dill",
+        "Sage"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the primary grain in traditional Scotch whisky?",
+      "options": [
+        "Corn",
+        "Barley",
+        "Rye",
+        "Wheat"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Gruyère and Emmental are most associated with which dish?",
+      "options": [
+        "Risotto",
+        "Fondue",
+        "Paella",
+        "Gnocchi"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which fruit is technically required to make authentic Worcestershire sauce's tang along with tamarind?",
+      "options": [
+        "Apple",
+        "Tamarind and anchovy base",
+        "Lemon",
+        "Lime"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The 'al dente' texture refers to pasta cooked how?",
+      "options": [
+        "Very soft",
+        "Firm to the bite",
+        "Raw",
+        "Overcooked"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which spice blend is central to Indian cooking and literally means 'hot mix'?",
+      "options": [
+        "Garam masala",
+        "Tandoori masala",
+        "Chaat masala",
+        "Sambar powder"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the main ingredient in traditional Japanese dashi stock?",
+      "options": [
+        "Pork bones",
+        "Kombu and bonito flakes",
+        "Chicken",
+        "Beef"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which French pastry is made from layered, butter-laminated dough?",
+      "options": [
+        "Brioche",
+        "Croissant",
+        "Baguette",
+        "Éclair"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Tahini, used in hummus, is a paste made from what?",
+      "options": [
+        "Chickpeas",
+        "Sesame seeds",
+        "Sunflower seeds",
+        "Pine nuts"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which country is the origin of the spirit tequila?",
+      "options": [
+        "Spain",
+        "Mexico",
+        "Peru",
+        "Cuba"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What gives the cocktail a 'dirty' martini its name?",
+      "options": [
+        "Olive brine",
+        "Extra vermouth",
+        "Tabasco",
+        "Soy sauce"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Parmigiano-Reggiano must be aged a minimum of roughly how long?",
+      "options": [
+        "1 month",
+        "12 months",
+        "5 years",
+        "10 years"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which leaf is used to wrap a traditional Greek dolma?",
+      "options": [
+        "Cabbage",
+        "Grape (vine) leaf",
+        "Banana leaf",
+        "Lettuce"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Sake is brewed from which grain?",
+      "options": [
+        "Barley",
+        "Rice",
+        "Wheat",
+        "Millet"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which acid gives lemons and limes their sour taste?",
+      "options": [
+        "Acetic acid",
+        "Citric acid",
+        "Lactic acid",
+        "Malic acid"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the key thickening method in a classic gumbo, made from flour and fat?",
+      "options": [
+        "Roux",
+        "Slurry",
+        "Reduction",
+        "Gelatin"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which mushroom is the most expensive, often shaved over dishes and 'hunted' with dogs/pigs?",
+      "options": [
+        "Porcini",
+        "Truffle",
+        "Shiitake",
+        "Morel"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Traditional Belgian fries are ideally fried how many times?",
+      "options": [
+        "Once",
+        "Twice",
+        "Three times",
+        "Not fried, baked"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which fruit's unripe pods give us the spice 'capers'? (Trick: capers are buds, not a fruit; from which plant?)",
+      "options": [
+        "Caper bush",
+        "Olive tree",
+        "Grape vine",
+        "Caper is a fish, not a plant"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the main flavouring in the liqueur Cointreau?",
+      "options": [
+        "Cherry",
+        "Orange",
+        "Mint",
+        "Coffee"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which Italian rice dish from Milan gets its golden colour from saffron?",
+      "options": [
+        "Risotto alla Milanese",
+        "Carbonara",
+        "Osso buco",
+        "Polenta"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "The 'umami' bomb ingredient anchovies are commonly dissolved into which classic dressing?",
+      "options": [
+        "Ranch",
+        "Caesar",
+        "Thousand Island",
+        "Vinaigrette"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which spice is the dried flower bud used in baking and mulled wine?",
+      "options": [
+        "Clove",
+        "Mace",
+        "Allspice",
+        "Star anise"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the main ingredient in the Spanish cold soup gazpacho?",
+      "options": [
+        "Pumpkin",
+        "Tomato",
+        "Cucumber only",
+        "Pepper only"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which cooking technique cooks food slowly in fat at a low temperature?",
+      "options": [
+        "Confit",
+        "Braising",
+        "Poaching",
+        "Blanching"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Manchego cheese comes from which country?",
+      "options": [
+        "Italy",
+        "Spain",
+        "Portugal",
+        "France"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which fruit is the key flavour in traditional Bakewell tart?",
+      "options": [
+        "Apple",
+        "Cherry (and almond)",
+        "Pear",
+        "Plum"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the spirit base of a classic mojito?",
+      "options": [
+        "Vodka",
+        "White rum",
+        "Gin",
+        "Tequila"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which leaf is essential to authentic Thai green curry's aroma?",
+      "options": [
+        "Bay leaf",
+        "Kaffir lime leaf",
+        "Curry leaf",
+        "Pandan"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Burrata is a cheese with a creamy centre of cream and what?",
+      "options": [
+        "Ricotta",
+        "Stracciatella (curd shreds)",
+        "Mascarpone",
+        "Cottage curds"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which Japanese dish features battered, deep-fried seafood and vegetables?",
+      "options": [
+        "Tempura",
+        "Teriyaki",
+        "Sukiyaki",
+        "Yakitori"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "The 'first press' of olives produces which grade of oil?",
+      "options": [
+        "Light olive oil",
+        "Extra virgin olive oil",
+        "Pomace oil",
+        "Refined oil"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which classic French dish is a slow-cooked stew of chicken in red wine?",
+      "options": [
+        "Cassoulet",
+        "Coq au vin",
+        "Bouillabaisse",
+        "Ratatouille"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What gives blue cheese its blue veins?",
+      "options": [
+        "Bacteria",
+        "Penicillium mould",
+        "Yeast",
+        "Dye"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which is the main grain in traditional Mexican tortillas?",
+      "options": [
+        "Wheat only",
+        "Corn (masa)",
+        "Rice",
+        "Barley"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which spice is known as the 'queen of spices' and is used in Scandinavian baking and chai?",
+      "options": [
+        "Cinnamon",
+        "Cardamom",
+        "Nutmeg",
+        "Anise"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the base spirit of a Daiquiri?",
+      "options": [
+        "Rum",
+        "Vodka",
+        "Gin",
+        "Brandy"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which dish is made by slowly cooking arborio rice while stirring in stock?",
+      "options": [
+        "Paella",
+        "Risotto",
+        "Pilaf",
+        "Jambalaya"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Wasabi served in most restaurants is often actually a paste of what?",
+      "options": [
+        "Horseradish and mustard",
+        "Green chilli",
+        "Avocado",
+        "Spinach"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which fortified wine comes from the Douro region of Portugal?",
+      "options": [
+        "Sherry",
+        "Port",
+        "Madeira",
+        "Marsala"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the main ingredient in classic French ratatouille?",
+      "options": [
+        "Meat",
+        "Summer vegetables",
+        "Fish",
+        "Cheese"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "The sweet, sticky reduction drizzled on dishes called 'balsamic glaze' is made by reducing what?",
+      "options": [
+        "Wine",
+        "Balsamic vinegar",
+        "Soy sauce",
+        "Honey"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which curing method uses smoke to flavour and preserve fish like salmon?",
+      "options": [
+        "Pickling",
+        "Cold/hot smoking",
+        "Brining only",
+        "Sous vide"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the primary ingredient of the Indian bread 'naan'?",
+      "options": [
+        "Rice flour",
+        "Wheat flour",
+        "Chickpea flour",
+        "Cornmeal"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which classic dessert is made of espresso-soaked ladyfingers and mascarpone?",
+      "options": [
+        "Panna cotta",
+        "Tiramisu",
+        "Cannoli",
+        "Affogato"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which acidic ingredient is traditionally used to curdle milk into paneer?",
+      "options": [
+        "Rennet",
+        "Lemon juice or vinegar",
+        "Wine",
+        "Baking soda"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the main protein in traditional Peking duck's prized element?",
+      "options": [
+        "The crispy skin",
+        "The breast",
+        "The legs",
+        "The liver"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which spice gives curry powder and mustard their yellow hue?",
+      "options": [
+        "Paprika",
+        "Turmeric",
+        "Saffron",
+        "Annatto"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "A 'flat white' coffee originated in which region?",
+      "options": [
+        "Italy",
+        "Australia/New Zealand",
+        "USA",
+        "France"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which fish is traditionally used in a Niçoise salad?",
+      "options": [
+        "Salmon",
+        "Tuna",
+        "Cod",
+        "Mackerel"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the main ingredient in classic Japanese miso besides soybeans?",
+      "options": [
+        "Rice or barley koji",
+        "Wheat gluten",
+        "Seaweed",
+        "Fish"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which French term describes vegetables cut into thin matchsticks?",
+      "options": [
+        "Brunoise",
+        "Julienne",
+        "Chiffonade",
+        "Macédoine"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Mozzarella di bufala is traditionally made from which animal's milk?",
+      "options": [
+        "Cow",
+        "Water buffalo",
+        "Sheep",
+        "Goat"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which classic cocktail mixes whiskey, sugar, water and bitters?",
+      "options": [
+        "Manhattan",
+        "Old Fashioned",
+        "Sazerac",
+        "Whiskey Sour"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the key spice in a traditional Hungarian goulash?",
+      "options": [
+        "Cumin",
+        "Paprika",
+        "Coriander",
+        "Turmeric"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which sea vegetable is used to wrap maki sushi rolls?",
+      "options": [
+        "Wakame",
+        "Nori",
+        "Kombu",
+        "Dulse"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the main ingredient in baba ganoush?",
+      "options": [
+        "Chickpeas",
+        "Aubergine/eggplant",
+        "Zucchini",
+        "Pumpkin"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which type of pepper is the basis of authentic Hungarian and Spanish smoked versions?",
+      "options": [
+        "Cayenne",
+        "Paprika",
+        "Habanero",
+        "Bird's eye"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which dish, a Spanish staple, layers rice with saffron, seafood and/or meat?",
+      "options": [
+        "Risotto",
+        "Paella",
+        "Jambalaya",
+        "Biryani"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Crème brûlée is finished by doing what to the sugar on top?",
+      "options": [
+        "Whipping",
+        "Caramelising with heat",
+        "Freezing",
+        "Soaking"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which grain is traditionally used to make Italian polenta?",
+      "options": [
+        "Wheat",
+        "Cornmeal",
+        "Rice",
+        "Barley"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the spirit base of a classic Margarita?",
+      "options": [
+        "Rum",
+        "Tequila",
+        "Vodka",
+        "Gin"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which mushroom is prized in French cuisine and resembles a honeycomb cap?",
+      "options": [
+        "Morel",
+        "Button",
+        "Oyster",
+        "Enoki"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the main flavour of the Italian liqueur limoncello?",
+      "options": [
+        "Almond",
+        "Lemon",
+        "Cherry",
+        "Coffee"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which Indian flatbread is unleavened and cooked on a flat griddle?",
+      "options": [
+        "Naan",
+        "Roti/chapati",
+        "Kulcha",
+        "Bhatura"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the key ingredient in a traditional French quiche besides eggs?",
+      "options": [
+        "Cream and a pastry crust",
+        "Rice",
+        "Potato",
+        "Bread"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which cured Spanish ham comes from acorn-fed black Iberian pigs?",
+      "options": [
+        "Prosciutto",
+        "Jamón ibérico",
+        "Speck",
+        "Pancetta"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the primary ingredient in the Korean dish bibimbap besides rice?",
+      "options": [
+        "Mixed vegetables and egg",
+        "Noodles",
+        "Bread",
+        "Cheese"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which spice is sometimes called 'the spice that launched the Age of Exploration'?",
+      "options": [
+        "Saffron",
+        "Black pepper",
+        "Cinnamon",
+        "Vanilla"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the main ingredient in traditional gnocchi?",
+      "options": [
+        "Rice",
+        "Potato (and flour)",
+        "Cornmeal",
+        "Semolina only"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which traditional Japanese alcoholic drink is sometimes mistakenly called 'rice wine' but is brewed like beer?",
+      "options": [
+        "Shochu",
+        "Sake",
+        "Umeshu",
+        "Mirin"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the main ingredient in a traditional French bouillabaisse?",
+      "options": [
+        "Beef",
+        "Fish/seafood",
+        "Chicken",
+        "Lamb"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which cheese is stretched and pulled, giving mozzarella its name (from 'mozzare')?",
+      "options": [
+        "To cut/tear off",
+        "To stretch",
+        "To melt",
+        "To salt"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the base of a classic hollandaise sauce?",
+      "options": [
+        "Egg yolk and butter",
+        "Milk and flour",
+        "Tomato",
+        "Stock"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which nut is used in traditional baklava along with honey and filo?",
+      "options": [
+        "Almond or pistachio/walnut",
+        "Peanut",
+        "Cashew",
+        "Macadamia"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the main ingredient in classic falafel?",
+      "options": [
+        "Lentils",
+        "Chickpeas or fava beans",
+        "Rice",
+        "Potato"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which sauce, one of the French mother sauces, is brown and based on stock and roux?",
+      "options": [
+        "Béchamel",
+        "Espagnole",
+        "Hollandaise",
+        "Velouté"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Aged Gouda develops crunchy crystals made of what?",
+      "options": [
+        "Sugar",
+        "Tyrosine (amino acid)",
+        "Salt",
+        "Calcium only"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the chief flavouring in the Greek spirit ouzo?",
+      "options": [
+        "Mint",
+        "Anise",
+        "Lemon",
+        "Fennel only"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which technique seals meat quickly at high heat to build flavour?",
+      "options": [
+        "Searing",
+        "Poaching",
+        "Steaming",
+        "Braising"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the traditional base spirit of a Piña Colada?",
+      "options": [
+        "Rum",
+        "Vodka",
+        "Gin",
+        "Tequila"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which leafy herb is the dominant flavour in chimichurri sauce?",
+      "options": [
+        "Basil",
+        "Parsley",
+        "Mint",
+        "Dill"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What gives risotto its signature creaminess without cream?",
+      "options": [
+        "Butter only",
+        "Starch released by stirring the rice",
+        "Flour",
+        "Egg"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which is the main ingredient in the Indian dish dal?",
+      "options": [
+        "Lentils",
+        "Rice",
+        "Wheat",
+        "Potato"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the primary ingredient in classic Swiss raclette?",
+      "options": [
+        "Melted cheese",
+        "Chocolate",
+        "Potato only",
+        "Bread"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which fruit, often mistaken for a vegetable, is the world's most-grown crop sometimes called a berry?",
+      "options": [
+        "Banana",
+        "Tomato",
+        "Avocado",
+        "Pumpkin"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the main ingredient in a classic Caprese salad's cheese?",
+      "options": [
+        "Feta",
+        "Fresh mozzarella",
+        "Burrata",
+        "Ricotta"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which sweetener is made by bees and never truly spoils?",
+      "options": [
+        "Maple syrup",
+        "Honey",
+        "Agave",
+        "Molasses"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "What is the dominant flavour in the Italian aperitif Aperol?",
+      "options": [
+        "Bitter orange and rhubarb",
+        "Cherry",
+        "Coffee",
+        "Mint"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "Which dish is a French casserole of white beans and meats?",
+      "options": [
+        "Cassoulet",
+        "Ratatouille",
+        "Bouillabaisse",
+        "Pot-au-feu"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the traditional grain in Ethiopian injera flatbread?",
+      "options": [
+        "Wheat",
+        "Teff",
+        "Millet",
+        "Sorghum"
+      ],
+      "correct": 1
+    },
+    {
+      "q": "Which cooking method uses precise low-temperature water baths and vacuum bags?",
+      "options": [
+        "Sous vide",
+        "Braising",
+        "Confit",
+        "Poaching"
+      ],
+      "correct": 0
+    },
+    {
+      "q": "What is the main flavour of the Mexican drink horchata (the classic version)?",
+      "options": [
+        "Coffee",
+        "Rice and cinnamon",
+        "Tamarind",
+        "Hibiscus"
+      ],
+      "correct": 1
+    }
   ]
 }
