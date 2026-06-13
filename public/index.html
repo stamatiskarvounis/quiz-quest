@@ -27,11 +27,14 @@
   .btn:disabled{opacity:.4;}
   .err{color:#ff8a8a; margin-top:8px; min-height:22px; font-size:20px;}
   .badge{padding:6px 14px; border:3px solid #000; font-family:'Press Start 2P',monospace; font-size:11px; display:inline-block; margin-bottom:12px; color:#000;}
-  .heroes{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; width:100%; max-width:360px; margin-bottom:16px;}
-  .hero{display:flex; align-items:center; gap:8px; padding:6px 10px; background:#15203b; border:4px solid var(--gold); cursor:pointer;}
-  .hero:active{transform:scale(.97);}
-  .hero.sel{background:var(--gold); color:#000;}
-  .hero .nm{font-size:19px;}
+  .langs{display:flex; gap:8px; width:100%; max-width:320px; margin-bottom:14px;}
+  .lang{flex:1; padding:10px 4px; font-size:17px; border:3px solid var(--gold); background:#0e1730; color:var(--cream); cursor:pointer; text-align:center;}
+  .lang.sel{background:var(--gold); color:#000; font-weight:bold;}
+  .heroes{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; width:100%; max-width:330px; margin-bottom:16px;}
+  .hero{display:flex; align-items:center; justify-content:center; padding:5px; background:#15203b; border:3px solid #2b3a5e; cursor:pointer; aspect-ratio:1;}
+  .hero:active{transform:scale(.94);}
+  .hero.sel{background:var(--gold); border-color:var(--gold); box-shadow:0 0 0 3px var(--ink);}
+  .hero img{width:100%; height:100%; object-fit:contain; image-rendering:pixelated;}
   .full{position:fixed; inset:0; display:flex; flex-direction:column;}
   .hdr{padding:10px 14px; display:flex; justify-content:space-between; align-items:center; font-family:'Press Start 2P',monospace; font-size:11px; color:var(--gold); border-bottom:3px solid var(--gold);}
   .qphone{padding:14px; font-size:26px; line-height:1.2; text-align:center; background:#0e1730; border-bottom:4px solid var(--gold);}
@@ -55,6 +58,18 @@
   .resCard .big{font-size:15px;}
   .resCard .sub{font-size:18px;}
   .maplabel{font-family:'Press Start 2P',monospace; font-size:10px; color:var(--gold); margin-top:14px;}
+  #modBanner{padding:10px 12px; font-size:21px; text-align:center; font-weight:bold; line-height:1.25; border-bottom:4px solid #000;}
+  #modBanner.good{background:#16402a; color:#9effc4;} #modBanner.bad{background:#3a1630; color:#ff9ad1;}
+  .nextmod{margin-top:10px; padding:8px 12px; font-size:20px; border:3px solid var(--gold);}
+  .nextmod.good{background:#16402a; color:#9effc4;} .nextmod.bad{background:#3a1630; color:#ff9ad1;}
+  .coinbal{font-family:'Press Start 2P',monospace; font-size:18px; color:var(--gold); margin-bottom:10px;}
+  .shopgrid{display:grid; grid-template-columns:repeat(2,1fr); gap:8px; width:100%; max-width:340px;}
+  .pot{padding:8px 6px; border:3px solid var(--gold); background:#15203b; color:var(--cream); cursor:pointer; text-align:center; line-height:1.2;}
+  .pot:active{transform:scale(.96);} .pot.dis{opacity:.4;}
+  .pot .pi{font-size:26px;} .pot .pn{font-size:17px;} .pot .pp{font-size:15px; color:var(--gold);}
+  .targetpick{display:flex; flex-direction:column; gap:6px; width:100%; max-width:340px; margin-top:10px;}
+  .tgt{padding:8px; border:3px solid #ff5fa2; background:#2a1430; color:#fff; font-size:18px; cursor:pointer; display:flex; align-items:center; gap:8px; justify-content:center;}
+  .armed{margin-top:10px; padding:8px 12px; border:3px solid var(--gold); background:#16402a; color:#9effc4; font-size:19px;}
 </style>
 </head>
 <body>
@@ -85,6 +100,7 @@
 
 <div class="full hidden" id="answering">
   <div class="hdr"><span id="qInfo"></span><span id="timeLeft"></span></div>
+  <div id="modBanner" class="hidden"></div>
   <div class="qphone" id="qPhone"></div>
   <div class="answers" id="answers"></div>
 </div>
@@ -93,6 +109,22 @@
   <div class="result-emoji">⏳</div>
   <div class="big">ANSWER LOCKED IN</div>
   <div class="sub">Waiting for others…</div>
+</div>
+
+<div class="screen hidden" id="announce">
+  <div id="blockNote" class="hidden" style="margin-bottom:6px;">
+    <div class="result-emoji" id="anIcon">⚡</div>
+    <div class="big" id="anTitle"></div>
+    <div class="sub" id="anDesc" style="max-width:340px;"></div>
+  </div>
+  <div class="shopwrap">
+    <div class="coinbal" id="potHeader">⚗️ USE A POTION</div>
+    <div class="shopgrid" id="shopGrid"></div>
+    <div class="targetpick hidden" id="targetPick"></div>
+    <div class="armed hidden" id="armedNote"></div>
+  </div>
+  <button class="btn" id="ackBtn" style="margin-top:14px;">READY!</button>
+  <div class="sub hidden" id="anWait" style="margin-top:14px;">Waiting for the next question…</div>
 </div>
 
 <div class="full hidden" id="result">
@@ -116,14 +148,16 @@
 <script>
 const socket=io();
 let PIN=null, MYHERO=null, MYID=null, timerInt=null;
-let LAST_BOARD={players:[]};
+let LAST_BOARD={players:[]}, lastOptions=null, myChoice=null;
+let POTIONS=[], INVENTORY=[], myOthers=[], usedThisRound=false;
+let prepTimer=null, phase='lobby';   // phase guards against lag/out-of-order events
 function renderMaps(animate){ renderBoardAnimated('mapWait', LAST_BOARD.players, {layout:'phone'});
   renderBoardAnimated('mapResult', LAST_BOARD.players, {layout:'phone', animate:animate, fit:'contain'}); }
 
 const params=new URLSearchParams(location.search);
 if(params.get('pin')) document.getElementById('pinInput').value=params.get('pin');
 const $=id=>document.getElementById(id);
-function show(id){ ['join','pick','wait','answering','submitted','result','gover'].forEach(x=>$(x).classList.add('hidden')); $(id).classList.remove('hidden'); }
+function show(id){ ['join','pick','wait','answering','submitted','result','announce','gover'].forEach(x=>$(x).classList.add('hidden')); $(id).classList.remove('hidden'); }
 
 $('joinBtn').onclick=()=>{ const pin=$('pinInput').value.trim(), name=$('nameInput').value.trim();
   if(pin.length<4){ $('err').textContent='Enter the 4-digit PIN'; return; }
@@ -135,9 +169,11 @@ socket.on('board', d=>{ LAST_BOARD={players:d.players}; renderMaps(!!d.animate);
 
 socket.on('joined', d=>{
   PIN=d.pin; MYID=d.id; $('myname').textContent=d.name;
+  POTIONS=d.potions||[]; INVENTORY=d.inventory||[];
+  if(typeof setMapSpecials==='function') setMapSpecials(d.specials||[]);
   const grid=$('heroes'); grid.innerHTML='';
   d.heroes.forEach(h=>{ const b=document.createElement('div'); b.className='hero';
-    b.innerHTML=avatarSVG(h,34)+'<span class="nm">'+(RACE[h]?RACE[h].name:h)+'</span>';
+    b.innerHTML=avatarSVG(h,56);
     b.onclick=()=>{ MYHERO=h; document.querySelectorAll('.hero').forEach(x=>x.classList.remove('sel'));
       b.classList.add('sel'); $('confirmBtn').disabled=false; }; grid.appendChild(b); });
   show('pick');
@@ -147,46 +183,135 @@ $('confirmBtn').onclick=()=>{ if(MYHERO) socket.emit('chooseHero',{pin:PIN,hero:
 socket.on('heroConfirmed', d=>{ MYHERO=d.hero; $('waitHero').innerHTML=avatarSVG(d.hero,64); show('wait'); });
 
 socket.on('answerNow', d=>{
+  // a new question is authoritative: cancel any pending result/shop transition
+  // and any stale timer so lag can never strand a player on the wrong screen.
+  if(prepTimer){ clearTimeout(prepTimer); prepTimer=null; }
+  stopTimer(); phase='question';
   show('answering'); $('qInfo').textContent='Q'+(d.index+1)+(d.cat?' · '+d.cat:''); $('qPhone').textContent=d.q;
+  lastOptions=d.options; myChoice=null;
+  const mb=$('modBanner'); const eff=d.effects||[];
+  if(eff.length){ const bad=eff.some(e=>!e.good); mb.className=bad?'bad':'good';
+    mb.innerHTML=eff.map(e=>e.icon+' '+e.label+' — '+e.desc).join('<br>'); }
+  else { mb.className='hidden'; mb.innerHTML=''; }
+  const hide=d.hide||[];
   const grid=$('answers'); grid.innerHTML='';
-  d.options.forEach((o,i)=>{ const b=document.createElement('button'); b.className='ans a'+i;
+  d.options.forEach((o,i)=>{ if(hide.indexOf(i)>=0) return;   // 50/50 removed option
+    const b=document.createElement('button'); b.className='ans a'+i;
     b.innerHTML='<span>'+iconSVG(ELEMS[i],36)+'</span><span>'+o+'</span>';
-    b.onclick=()=>socket.emit('submitAnswer',{pin:PIN,choice:i}); grid.appendChild(b); });
+    b.onclick=()=>{ myChoice=i; socket.emit('submitAnswer',{pin:PIN,choice:i}); }; grid.appendChild(b); });
   startTimer(d.time);
 });
 
-socket.on('answerReceived', ()=>{ stopTimer(); show('submitted'); });
+socket.on('answerReceived', ()=>{ if(phase!=='question') return; stopTimer(); show('submitted'); });
 
 socket.on('yourResult', d=>{
-  stopTimer(); show('result');
+  if(prepTimer){ clearTimeout(prepTimer); prepTimer=null; }
+  stopTimer(); phase='result'; show('result');
   const plen=d.pathLength||60;
+  const correctText = (lastOptions && d.correctIndex!=null) ? lastOptions[d.correctIndex] : '';
+  const answerLine = correctText ? ('Correct answer: '+correctText) : '';
   if(d.finishRank){
     const medals=['🥇','🥈','🥉'];
     $('rEmoji').textContent=medals[d.finishRank-1]||'🏰';
     $('rText').textContent='YOU FINISHED #'+d.finishRank+'!';
-    $('rDetail').textContent=d.moved?'You reached the castle!':'Enjoy the view from the castle…';
+    $('rDetail').innerHTML=(d.moved?'You reached the castle!':'Enjoy the view from the castle…')
+      + (answerLine?'<br>'+answerLine:'');
   } else if(d.correct){
     $('rEmoji').textContent='✅';
     $('rText').textContent='CORRECT! +'+d.moved;
-    $('rDetail').textContent='Tile '+d.after+' / '+plen;
+    $('rDetail').innerHTML='Tile '+d.after+' / '+plen + (answerLine?'<br>'+answerLine:'');
+  } else if(d.usedModifier && d.usedModifier.type==='trap' && d.moved<0){
+    $('rEmoji').textContent='🧙'; $('rText').textContent='TRAPPED! '+d.moved;
+    $('rDetail').innerHTML='The wizard sent you back!<br>'+(answerLine||'')+'<br>Now on tile '+d.after+' / '+plen;
   } else {
     $('rEmoji').textContent='❌'; $('rText').textContent='WRONG';
-    $('rDetail').textContent='Still on tile '+d.after+' / '+plen;
+    $('rDetail').innerHTML=(answerLine||'No move')+'<br>Still on tile '+d.after+' / '+plen;
   }
+  // after showing the result, open the potion screen — but ONLY if the player
+  // still owns potions and is still racing. If they have none left, we skip the
+  // screen entirely and just follow the game (nothing to get stuck on).
+  myOthers = d.others||[];
+  if(Array.isArray(d.inventory)) INVENTORY=d.inventory;
+  usedThisRound=false;
+  const nm=d.nextModifier;
+  const showShop = INVENTORY.length>0 && !d.finishRank;
+  prepTimer=setTimeout(()=>{
+    prepTimer=null;
+    if(phase!=='result') return;        // a new question already arrived — do nothing
+    if(!showShop) return;               // no potions: just stay on the map and follow the game
+    const bn=$('blockNote');
+    if(nm){ bn.classList.remove('hidden');
+      $('anIcon').textContent=nm.icon; $('anTitle').textContent=nm.label+'!';
+      $('anTitle').style.color = nm.good ? '#9effc4' : '#ff9ad1'; $('anDesc').textContent=nm.desc;
+    } else bn.classList.add('hidden');
+    $('ackBtn').classList.remove('hidden'); $('anWait').classList.add('hidden');
+    $('targetPick').classList.add('hidden'); $('armedNote').classList.add('hidden');
+    renderShop();
+    show('announce');
+  }, d.reachedGoal?3000:2000);
+});
+$('ackBtn').onclick=()=>{ $('ackBtn').classList.add('hidden'); $('anWait').classList.remove('hidden'); $('shopGrid').innerHTML=''; $('targetPick').classList.add('hidden'); };
+
+function renderShop(){
+  $('potHeader').innerHTML='⚗️ USE A POTION <span style="color:#9effc4;font-size:13px;">('+INVENTORY.length+' left · one per round)</span>';
+  const g=$('shopGrid'); g.innerHTML='';
+  if(INVENTORY.length<=0){ g.innerHTML='<div class="sub" style="grid-column:1/3;">No potions left.</div>'; return; }
+  // show only the potions the player still owns
+  POTIONS.filter(p=>INVENTORY.indexOf(p.key)>=0).forEach(p=>{
+    const usable = !usedThisRound;
+    const b=document.createElement('div'); b.className='pot'+(usable?'':' dis');
+    b.innerHTML='<div class="pi">'+p.icon+'</div><div class="pn">'+p.name+'</div><div class="pp" style="font-size:13px;">'+p.desc+'</div>';
+    b.onclick=()=>{ if(!usable) return;
+      if(p.key==='curse') showTargets(); else use(p.key,null); };
+    g.appendChild(b);
+  });
+}
+function showTargets(){
+  const tp=$('targetPick'); tp.innerHTML=''; tp.classList.remove('hidden');
+  if(!myOthers.length){ tp.innerHTML='<div class="sub">No rivals to curse.</div>'; return; }
+  const lbl=document.createElement('div'); lbl.className='sub'; lbl.textContent='Curse who?'; tp.appendChild(lbl);
+  myOthers.forEach(o=>{ const b=document.createElement('div'); b.className='tgt';
+    b.innerHTML=avatarSVG(o.hero,28)+'<span>'+o.name+'</span>';
+    b.onclick=()=>use('curse',o.id); tp.appendChild(b); });
+}
+function use(potion,targetId){ socket.emit('usePotion',{pin:PIN,potion,targetId}); }
+socket.on('potionUsed', d=>{
+  if(Array.isArray(d.inventory)) INVENTORY=d.inventory;   // the used potion is now gone
+  usedThisRound=true;
+  $('targetPick').classList.add('hidden');
+  const an=$('armedNote'); an.classList.remove('hidden');
+  const meta=POTIONS.find(p=>p.key===d.armed);
+  an.textContent='Used: '+(meta?meta.icon+' '+meta.name:d.armed)+(d.targetName?(' → '+d.targetName):'')+'!';
+  renderShop();
 });
 
-socket.on('gameOver', d=>{ show('gover');
+socket.on('gameOver', d=>{
+  if(prepTimer){ clearTimeout(prepTimer); prepTimer=null; }
+  stopTimer(); phase='over'; show('gover');
   const st=d.standings||[]; const rank=st.findIndex(p=>p.id===MYID)+1;
   $('goHero').innerHTML=d.winner?avatarSVG(d.winner.hero,64):'🏁';
   const win=d.winner?('★ '+d.winner.name+' WINS! ★'):'GAME OVER';
   const place=rank>0?('<div style="font-family:VT323,monospace;font-size:26px;color:#fff;margin-top:6px;">You finished #'+rank+' of '+st.length+'</div>'):'';
   $('goText').innerHTML=win+place; });
+socket.on('gameReset', d=>{
+  if(prepTimer){ clearTimeout(prepTimer); prepTimer=null; }
+  INVENTORY=d.inventory||[]; usedThisRound=false; myChoice=null; lastOptions=null; stopTimer(); phase='lobby';
+  if(typeof setMapSpecials==='function') setMapSpecials(d.specials||[]);
+  if(MYHERO){ $('waitHero').innerHTML=avatarSVG(MYHERO,64); show('wait'); }
+  else show('pick');
+});
 socket.on('hostLeft', ()=>{ show('join'); $('err').textContent='Host ended the game.'; });
 
 function startTimer(ms){ stopTimer(); const end=Date.now()+ms;
-  const tick=()=>{ const s=Math.max(0,Math.ceil((end-Date.now())/1000)); $('timeLeft').textContent=s+'s'; if(s<=0) stopTimer(); };
+  const tick=()=>{ const s=Math.max(0,Math.ceil((end-Date.now())/1000)); $('timeLeft').textContent=s+'s';
+    if(s<=0){ stopTimer(); lockAnswers(); } };
   tick(); timerInt=setInterval(tick,250); }
 function stopTimer(){ if(timerInt){clearInterval(timerInt); timerInt=null;} }
+function lockAnswers(){ // time ran out (e.g. half-time block) — disable answering
+  if(myChoice!=null) return;
+  document.querySelectorAll('#answers .ans').forEach(b=>{ b.disabled=true; b.style.opacity=.4; });
+  $('timeLeft').textContent="Time's up!";
+}
 </script>
 </body>
 </html>

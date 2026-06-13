@@ -33,6 +33,12 @@
   .cat.on{background:var(--gold); color:#000; opacity:1;}
   .cat .cnt{font-size:14px; opacity:.75; margin-left:4px;}
   .catnote{font-size:16px; opacity:.75; margin-top:8px;}
+  #qmods{display:flex; flex-direction:column; gap:5px; margin:0 0 10px;}
+  .modrow{display:flex; align-items:center; gap:8px; font-size:18px; padding:5px 9px; border:3px solid #000;}
+  .modrow.good{background:#16402a; color:#9effc4;} .modrow.bad{background:#3a1630; color:#ff9ad1;}
+  .modrow .ic{font-size:22px;} .modrow b{color:#fff;}
+  .landbanner{margin-top:12px; background:rgba(11,15,26,.9); border:3px solid var(--gold); padding:8px 12px;}
+  .landbanner .lr{display:flex; align-items:center; gap:8px; font-size:18px; margin:3px 0;}
   button{font-family:'Press Start 2P',monospace; cursor:pointer; color:var(--ink);}
   .btn-primary{background:var(--gold); font-size:16px; padding:16px; width:100%; border:4px solid var(--ink); box-shadow:0 6px 0 var(--gold-d); margin-top:4px;}
   .btn-primary:active{transform:translateY(4px); box-shadow:0 2px 0 var(--gold-d);}
@@ -88,6 +94,48 @@
   .cheers-text{font-size:26px; color:var(--cream); margin-bottom:14px; text-shadow:2px 2px 0 #000;}
   #sndBtn{position:fixed; top:12px; right:14px; z-index:99; font-size:14px; padding:10px 12px;
           background:var(--gold); border:3px solid var(--ink); box-shadow:0 4px 0 var(--gold-d); cursor:pointer;}
+  /* 'see last place' button on the celebration */
+  #loserBtn{display:none; max-width:360px; margin:14px auto 0; background:#2a3566; color:var(--cream);
+            border:4px solid var(--ink); box-shadow:0 6px 0 #141a33; font-size:13px; padding:14px;}
+  /* loser 'out in the cold' scene */
+  #loserscene{position:fixed; inset:0; z-index:61; overflow:hidden;
+              background:linear-gradient(#070b1c 0%, #101941 55%, #1b2550 100%);}
+  .loser-inner{position:relative; width:100%; height:100%;}
+  .loser-title{position:absolute; top:20px; left:0; right:0; text-align:center; font-family:'Press Start 2P',monospace;
+               font-size:24px; color:#9fb3ff; text-shadow:3px 3px 0 #000; z-index:6;}
+  .moon{position:absolute; top:60px; left:8%; width:64px; height:64px; border-radius:50%;
+        background:#f4f1de; box-shadow:0 0 34px #f4f1de77;}
+  .ground{position:absolute; left:0; right:0; bottom:0; height:120px; background:#22182c; border-top:6px solid #0b0f1a;}
+  /* the pub on the right, warm and inviting */
+  .pub{position:absolute; right:7%; bottom:120px; width:300px; height:240px; background:#4a3422;
+       border:6px solid #1a120a; box-shadow:0 0 0 6px #0b0f1a, 10px 10px 0 rgba(0,0,0,.55);}
+  .pub-roof{position:absolute; right:calc(7% - 18px); bottom:354px; width:0; height:0;
+            border-left:174px solid transparent; border-right:174px solid transparent; border-bottom:66px solid #6a4427;}
+  .pub-sign{position:absolute; top:8px; left:50%; transform:translateX(-50%); white-space:nowrap;
+            background:var(--gold); color:#000; font-family:'Press Start 2P',monospace; font-size:13px;
+            padding:8px 14px; border:4px solid #1a120a;}
+  .pwin{position:absolute; width:64px; height:74px; background:#ffd23f; border:5px solid #1a120a;
+        box-shadow:0 0 26px #ffd23faa; animation:flick 2.6s infinite;}
+  .pdoor{position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:70px; height:104px;
+         background:#2a1a0c; border:5px solid #1a120a; box-shadow:0 0 18px #ffd23f55 inset;}
+  .notes{position:absolute; right:5%; bottom:300px; font-size:26px; color:#ffe9a8; opacity:.85; animation:rise 3s ease-in infinite;}
+  /* the locked-out loser on the left */
+  .loser-hero{position:absolute; left:12%; bottom:150px; width:118px; image-rendering:pixelated;
+              filter:grayscale(.55) brightness(.8) drop-shadow(3px 5px 0 rgba(0,0,0,.5));
+              transform:scaleX(-1) rotate(3deg);}
+  .box{position:absolute; left:11%; bottom:118px; width:150px; height:42px; background:#7a5230;
+       border:5px solid #3a2412; box-shadow:inset 0 0 0 3px #5a3a1e;}
+  .cup{position:absolute; left:calc(12% + 120px); bottom:120px; width:22px; height:24px; background:#9aa0ad; border:4px solid #3a3f4a;}
+  .sign{position:absolute; left:calc(12% + 140px); bottom:200px; background:#c9a06a; color:#2a1a08;
+        border:4px solid #2a1a08; font-family:'Press Start 2P',monospace; font-size:11px; line-height:1.5;
+        padding:9px 11px; transform:rotate(-7deg); box-shadow:4px 4px 0 rgba(0,0,0,.4);}
+  .loser-cap{position:absolute; left:0; right:0; bottom:150px; text-align:center; font-size:24px;
+             color:var(--cream); text-shadow:2px 2px 0 #000; padding:0 24px; z-index:6;}
+  #loserNewGame{position:absolute; left:50%; bottom:40px; transform:translateX(-50%); max-width:340px; width:90%; z-index:6;}
+  .drop{position:absolute; top:-30px; width:2px; height:18px; background:#9fb3ff; opacity:.45; animation:raindrop linear infinite;}
+  @keyframes raindrop{to{transform:translateY(120vh);}}
+  @keyframes flick{0%,100%{opacity:1}47%{opacity:.85}50%{opacity:.55}53%{opacity:.9}}
+  @keyframes rise{0%{opacity:0; transform:translateY(0)}30%{opacity:.85}100%{opacity:0; transform:translateY(-40px)}}
 </style>
 </head>
 <body>
@@ -116,6 +164,7 @@
     <div id="play" class="hidden">
       <div class="card">
         <div class="meta pixel"><span id="qnum"></span><span id="answered"></span></div>
+        <div id="qmods"></div>
         <div class="qbox" id="qtext"></div>
         <div class="timer" id="timer"></div>
         <div class="opts" id="opts"></div>
@@ -174,7 +223,30 @@
       <div class="pod pod3"><div class="pod-hero" id="p3hero"></div><div class="pod-name" id="p3name"></div><div class="pod-bar">3rd</div></div>
     </div>
     <div class="cel-standings" id="celStandings"></div>
+    <button class="btn-primary" id="loserBtn">🚪 …AND IN LAST PLACE? 🚪</button>
     <button class="btn-primary" id="newGameBtn" style="max-width:340px;margin:22px auto 0;">NEW GAME</button>
+  </div>
+</div>
+
+<div id="loserscene" class="hidden">
+  <div class="loser-inner">
+    <div class="loser-title">🚪 LOCKED OUT IN THE COLD 🚪</div>
+    <div class="moon"></div>
+    <div class="rainbox"></div>
+    <div class="pub-roof"></div>
+    <div class="pub">
+      <div class="pub-sign" id="pubSign">🍺 THE PUB</div>
+      <div class="pwin" style="left:24px; top:64px;"></div>
+      <div class="pwin" style="right:24px; top:64px;"></div>
+      <div class="pdoor"></div>
+    </div>
+    <div class="notes">♪ ♫</div>
+    <img id="loserHero" class="loser-hero" alt="">
+    <div class="box"></div>
+    <div class="cup"></div>
+    <div class="sign" id="loserSign">LAST<br>PLACE</div>
+    <div class="loser-cap" id="loserCap"></div>
+    <button class="btn-primary" id="loserNewGame">NEW GAME</button>
   </div>
 </div>
 
@@ -183,7 +255,7 @@
 <script>
 const socket = io();
 let PIN=null, timerInt=null, state='lobby', lastOptions=[], lastResults=null;
-let CATS=[], selCats=new Set(), playerCount=0;
+let CATS=[], selCats=new Set(), playerCount=0, LAST_PLAYERS=[];
 
 /* ================= sound engine (WebAudio, no files) ================= */
 let AC=null, soundOn=true, musicTimer=null, musicMode=null;
@@ -215,7 +287,11 @@ const TUNES={
   lobby:{bpm:112, bass:[131,131,98,98,110,110,87,98],
          lead:[523,659,784,659,392,523,659,523,440,554,659,554,349,440,523,440]},
   celebrate:{bpm:138, bass:[131,165,196,165],
-         lead:[784,988,1175,988,1047,1318,1047,784]}
+         lead:[784,988,1175,988,1047,1318,1047,784]},
+  /* "question" = gentle, warm thinking-music loop (soft, low volume) */
+  question:{bpm:96, soft:true,
+         bass:[131,165,196,165,147,175,220,175],
+         lead:[523,659,587,784,659,523,587,494]}
 };
 function music(mode){
   musicMode=mode;
@@ -224,8 +300,9 @@ function music(mode){
   const s=TUNES[mode]; let i=0; const beat=60/s.bpm/2;
   musicTimer=setInterval(()=>{
     if(!soundOn) return;
-    if(i%2===0) tone(s.bass[(i>>1)%s.bass.length],beat*1.8,'triangle',0.06);
-    tone(s.lead[i%s.lead.length],beat*0.9,'square',0.04);
+    const bf=s.bass[(i>>1)%s.bass.length], lf=s.lead[i%s.lead.length];
+    if(i%2===0 && bf>0) tone(bf, beat*1.9, 'sine', s.soft?0.05:0.06);
+    if(lf>0) tone(lf, beat*0.85, s.soft?'triangle':'square', s.soft?0.035:0.04);
     i++;
   }, beat*1000);
 }
@@ -250,6 +327,7 @@ socket.on('roomCreated', d => {
   CATS=d.categories||[];
   selCats=new Set(CATS.map(c=>c.key));
   renderCats();
+  if(typeof setMapSpecials==='function') setMapSpecials(d.specials||[]);
   renderBoardAnimated('track', [], {layout:'host'});
 });
 
@@ -273,6 +351,7 @@ function updateStart(){
 }
 
 socket.on('board', d => {
+  LAST_PLAYERS = d.players;   // remember current positions so the side map can refresh
   if(d.animate){
     show('mapphase');
     whoosh();
@@ -301,16 +380,21 @@ document.getElementById('nextBtn').onclick=()=>{ document.getElementById('nextBt
 
 socket.on('showQuestion', d => {
   state='question'; show('play'); lastOptions=d.options;
+  renderBoardAnimated('track', LAST_PLAYERS, {focus:false}); // refresh side map to current positions
   document.getElementById('qnum').textContent='QUESTION '+(d.index+1)+(d.cat?'  ·  '+d.cat.toUpperCase():'');
+  const qm=document.getElementById('qmods'); qm.innerHTML='';
+  (d.modifiers||[]).forEach(m=>{ const r=document.createElement('div'); r.className='modrow '+(m.good?'good':'bad');
+    r.innerHTML='<span class="ic">'+m.icon+'</span><b>'+m.name+'</b> — '+m.desc; qm.appendChild(r); });
   document.getElementById('answered').textContent='0 ANSWERED';
   document.getElementById('qtext').textContent=d.q;
   const opts=document.getElementById('opts'); opts.innerHTML='';
   d.options.forEach((o,i)=>{ const el=document.createElement('div'); el.className='opt o'+i;
     el.innerHTML='<span class="el">'+iconSVG(ELEMS[i],34)+'</span><span class="txt">'+o+'</span>'; opts.appendChild(el); });
+  ac(); music('question');   // NBA-style tension groove while the timer runs
   startTimer(d.time);
 });
 socket.on('answerCount', d => { document.getElementById('answered').textContent=d.answered+'/'+d.total+' ANSWERED'; });
-socket.on('questionResults', d => { state='results'; stopTimer(); lastResults=d; });
+socket.on('questionResults', d => { state='results'; stopTimer(); music(null); buzzer(); lastResults=d; });
 
 function populatePhase(){
   if(!lastResults) return;
@@ -321,8 +405,12 @@ function populatePhase(){
   const rows=lastResults.results.map(r=>({
     color:r.color,
     text: r.name+'  '+(r.finishRank ? ((medals[r.finishRank-1]||'🏰')+' #'+r.finishRank)
-                      : (r.correct ? ('+'+r.moved) : 'wrong'))
+                      : (r.correct ? ('+'+r.moved) : (r.moved<0 ? (r.moved+' (trap!)') : 'wrong')))
   }));
+  // announce who landed on a special block → effect on the NEXT question
+  (lastResults.landed||[]).forEach(l=>{
+    rows.push({ color:(l.good?'#5ae6a0':'#c882ff'), text: l.icon+' '+l.name+' → '+l.label+' next!' });
+  });
   drawOverlay('mapBig', {title:title, rows:rows});
 }
 
@@ -357,21 +445,64 @@ socket.on('gameOver', d => {
     row.innerHTML='<b>'+(i+1)+'.</b>'+avatarSVG(p.hero,20)+'<span class="nm">'+p.name+'</span><span class="mv">'+where+'</span>';
     cs.appendChild(row); });
   fireConfetti();
+  // prep the 'last place' scene (only if there's a distinct loser)
+  LOSER = (d.loser && (!d.winner || d.loser.id !== d.winner.id)) ? d.loser : null;
+  WINNERNAME = d.winner ? d.winner.name : '';
+  document.getElementById('loserBtn').style.display = LOSER ? 'block' : 'none';
 });
-document.getElementById('newGameBtn').onclick=()=>location.reload();
+let LOSER=null, WINNERNAME='';
+function showLoser(){
+  if(!LOSER) return;
+  document.getElementById('loserHero').src = avatarURL(LOSER.hero);
+  document.getElementById('pubSign').textContent = '🍺 ' + (WINNERNAME ? WINNERNAME+"'S PUB" : 'THE PUB');
+  document.getElementById('loserCap').textContent =
+    LOSER.name + ' came in last — and got left out in the cold while the winners party inside. Better luck next quest! ❄️';
+  show('loserscene'); makeRain();
+  ac(); music(null);
+}
+function makeRain(){
+  const box=document.querySelector('#loserscene .rainbox'); if(!box) return;
+  box.querySelectorAll('.drop').forEach(x=>x.remove());
+  for(let i=0;i<70;i++){ const d=document.createElement('div'); d.className='drop';
+    d.style.left=(Math.random()*100)+'%';
+    d.style.animationDelay=(Math.random()*1.6)+'s';
+    d.style.animationDuration=(0.5+Math.random()*0.6)+'s';
+    box.appendChild(d); }
+}
+document.getElementById('loserBtn').onclick=showLoser;
+document.getElementById('newGameBtn').onclick=()=>{ music(null); socket.emit('restartGame',{pin:PIN}); };
+document.getElementById('loserNewGame').onclick=()=>{ music(null); socket.emit('restartGame',{pin:PIN}); };
+socket.on('gameReset', d => {
+  state='lobby'; stopTimer();
+  lastResults=null; LAST_PLAYERS=[];
+  if(d.categories){ CATS=d.categories; selCats=new Set(CATS.map(c=>c.key)); renderCats(); }
+  if(typeof setMapSpecials==='function') setMapSpecials(d.specials||[]);
+  show('lobby');
+  renderBoardAnimated('track', [], {layout:'host'});
+  updateStart();
+  ac(); music('lobby');
+});
 
 function show(id){
-  const full = (id==='mapphase'||id==='celebrate');
+  const full = (id==='mapphase'||id==='celebrate'||id==='loserscene');
   document.getElementById('mainwrap').style.display = full?'none':'flex';
   document.getElementById('mapphase').classList.toggle('hidden', id!=='mapphase');
   document.getElementById('celebrate').classList.toggle('hidden', id!=='celebrate');
+  document.getElementById('loserscene').classList.toggle('hidden', id!=='loserscene');
   ['lobby','play','over'].forEach(x=>document.getElementById(x).classList.toggle('hidden', x!==id));
 }
-function startTimer(ms){ stopTimer(); let end=Date.now()+ms; const t=document.getElementById('timer');
+function buzzer(){ if(!soundOn||!AC) return; tone(180,0.5,'square',0.16,0); tone(120,0.55,'sawtooth',0.12,0); }
+let lastTickSec=-1;
+function startTimer(ms){ stopTimer(); let end=Date.now()+ms; const t=document.getElementById('timer'); lastTickSec=-1;
   const tick=()=>{ const s=Math.max(0,Math.ceil((end-Date.now())/1000)); t.textContent=s;
+    if(s!==lastTickSec){ lastTickSec=s;
+      t.style.color = s<=3 ? '#ff4d2e' : 'var(--gold)';
+      if(s<=3 && s>0) tone(660+(3-s)*70,0.1,'sine',0.08); /* soft final ticks */
+    }
     if(s<=0){ stopTimer(); if(state==='question') socket.emit('endQuestion',{pin:PIN}); } };
   tick(); timerInt=setInterval(tick,250); }
-function stopTimer(){ if(timerInt){clearInterval(timerInt); timerInt=null;} }
+function stopTimer(){ if(timerInt){clearInterval(timerInt); timerInt=null;}
+  document.getElementById('timer').style.color='var(--gold)'; }
 socket.on('hostLeft', ()=>{});
 </script>
 </body>

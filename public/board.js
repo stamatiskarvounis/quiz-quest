@@ -25,19 +25,22 @@ function iconSVG(key,px){ const ic=ICONS[key],cell=px/8;
   return '<svg width="'+px+'" height="'+px+'" viewBox="0 0 '+px+' '+px+'" shape-rendering="crispEdges">'+pixels(ic.g,ic.pal,cell,0,0)+'</svg>'; }
 
 /* ================= avatars -> Tiny Swords units =================
-   10 avatars: 5 colors x (male = Warrior, female = Archer).
-   Portrait PNGs are the identity (lobby/phone/podium); units walk the map. */
-const RACE={
-  m_blue:{name:'Blue Knight',scale:0.95},   f_blue:{name:'Blue Ranger',scale:0.95},
-  m_red:{name:'Red Knight',scale:0.95},     f_red:{name:'Red Ranger',scale:0.95},
-  m_yellow:{name:'Gold Knight',scale:0.95}, f_yellow:{name:'Gold Ranger',scale:0.95},
-  m_purple:{name:'Purple Knight',scale:0.95}, f_purple:{name:'Purple Ranger',scale:0.95},
-  m_black:{name:'Shadow Knight',scale:0.95}, f_black:{name:'Shadow Ranger',scale:0.95}
-};
-const UNITS=RACE;
+   20 avatars: 4 distinct designs x 5 colours. Three male designs
+   (warrior=helmet, pawn=coif, monk=bearded) and one female design (archer),
+   each recoloured. Portrait PNGs are the identity (lobby/phone/podium); the
+   matching unit sprite walks the map. ORDER drives the selection grid. */
+const AVATAR_ORDER=[];
+const UNITS={};
+['warrior','pawn','monk','archer'].forEach(d=>{
+  const sc = d==='pawn'?1.05 : d==='monk'?1.0 : 0.95;
+  ['blue','red','yellow','purple','black'].forEach(c=>{
+    const key=d+'_'+c; UNITS[key]={scale:sc}; AVATAR_ORDER.push(key);
+  });
+});
+const RACE=UNITS;
 const FRAME=192, FEET_Y=0.72, TAGOFF=104;
 
-function raceKey(r){ return UNITS[r]?r:'m_blue'; }
+function raceKey(r){ return UNITS[r]?r:'warrior_blue'; }
 function avatarURL(race){ return '/assets/avatars/'+raceKey(race)+'.png'; }
 function avatarSVG(race,px){
   return '<img src="'+avatarURL(race)+'" width="'+px+'" height="'+px+'" style="image-rendering:pixelated;vertical-align:middle;" alt="">'; }
@@ -128,6 +131,49 @@ function getVignetteTex(){ if(VIGNETTE_TEX) return VIGNETTE_TEX;
   ctx.fillStyle=g; ctx.fillRect(0,0,512,288);
   VIGNETTE_TEX=PIXI.Texture.from(cv); return VIGNETTE_TEX; }
 
+/* ---- special-block markers: a glowing fairy (good) or wizard (bad) ---- */
+let SPECIALS=[];               // [{tile,type,good,icon,label,desc}]
+const MARKER_TEX={};
+function getMarkerTex(good){     // just the figure, soft drop-shadow (no glow circle)
+  const key=good?'good':'bad';
+  if(MARKER_TEX[key]) return MARKER_TEX[key];
+  const S=96, cv=document.createElement('canvas'); cv.width=S; cv.height=S;
+  const ctx=cv.getContext('2d');
+  ctx.font='58px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif';
+  ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.shadowColor='rgba(0,0,0,0.5)'; ctx.shadowBlur=6; ctx.shadowOffsetY=3;
+  ctx.fillText(good?'🧚':'🧙', S/2, S/2+2);
+  MARKER_TEX[key]=PIXI.Texture.from(cv); return MARKER_TEX[key];
+}
+function getBlockTex(good){      // painted tile patch: translucent green (good) / red (bad)
+  const key='tile_'+(good?'g':'b');
+  if(MARKER_TEX[key]) return MARKER_TEX[key];
+  const S=84, cv=document.createElement('canvas'); cv.width=S; cv.height=S;
+  const ctx=cv.getContext('2d');
+  const fill = good?'rgba(60,210,110,0.55)':'rgba(230,70,70,0.55)';
+  const edge = good?'rgba(180,255,210,0.95)':'rgba(255,170,170,0.95)';
+  const r=14, m=8, w=S-2*m, h=S-2*m;
+  ctx.beginPath();
+  ctx.moveTo(m+r,m); ctx.arcTo(m+w,m,m+w,m+h,r); ctx.arcTo(m+w,m+h,m,m+h,r);
+  ctx.arcTo(m,m+h,m,m,r); ctx.arcTo(m,m,m+w,m,r); ctx.closePath();
+  ctx.fillStyle=fill; ctx.fill(); ctx.lineWidth=4; ctx.strokeStyle=edge; ctx.stroke();
+  MARKER_TEX[key]=PIXI.Texture.from(cv); return MARKER_TEX[key];
+}
+function applyMarkers(S){
+  if(!S||!S.markerLayer) return;
+  S.markerLayer.removeChildren().forEach(c=>{ try{ c.destroy({children:true}); }catch(e){} });
+  S.markers=[];
+  SPECIALS.forEach((sp,i)=>{
+    const p=ptOf(sp.tile);
+    const tile=new PIXI.Sprite(getBlockTex(sp.good)); tile.anchor.set(0.5); tile.position.set(p[0],p[1]); tile.scale.set(1,0.62);
+    const fig=new PIXI.Sprite(getMarkerTex(sp.good)); fig.anchor.set(0.5,0.95); fig.scale.set(0.8);
+    const c=new PIXI.Container(); c.position.set(p[0],p[1]-22); c.addChild(fig);
+    S.markerLayer.addChild(tile); S.markerLayer.addChild(c);
+    S.markers.push({c:c, baseY:p[1]-22, ph:i*1.1});
+  });
+}
+function setMapSpecials(arr){ SPECIALS=arr||[]; Object.values(APPS).forEach(S=>{ if(S&&!S.fallback) applyMarkers(S); }); }
+
 function ensureScene(id){
   const el=document.getElementById(id); if(!el) return null;
   let S=APPS[id];
@@ -160,11 +206,12 @@ function ensureScene(id){
   });
   /* island map */
   const mapSpr=new PIXI.Sprite(PIXI.Texture.EMPTY);
+  const markerLayer=new PIXI.Container();   // special-block fairies/wizards (under heroes)
   const dustLayer=new PIXI.Container();
   const tokLayer=new PIXI.Container(); tokLayer.sortableChildren=true;
   const tagLayer=new PIXI.Container();
   const cloudLayer=new PIXI.Container();
-  root.addChild(water,foamLayer,mapSpr,dustLayer,tokLayer,tagLayer,cloudLayer);
+  root.addChild(water,foamLayer,mapSpr,markerLayer,dustLayer,tokLayer,tagLayer,cloudLayer);
   app.stage.addChild(root);
   /* swaying trees live with tokens so heroes sort around them */
   const treeSprites=[];
@@ -191,13 +238,14 @@ function ensureScene(id){
   overlay.className='overlay';
   overlay.style.cssText='position:absolute;inset:0;pointer-events:none;font-family:Verdana,Arial,sans-serif;';
   wrap.appendChild(overlay);
-  S={app:app,root:root,mapSpr:mapSpr,dustLayer:dustLayer,tokLayer:tokLayer,tagLayer:tagLayer,
+  S={app:app,root:root,mapSpr:mapSpr,markerLayer:markerLayer,dustLayer:dustLayer,tokLayer:tokLayer,tagLayer:tagLayer,
      foamSprites:foamSprites,treeSprites:treeSprites,clouds:clouds,cloudLayer:cloudLayer,vig:vig,
-     wrap:wrap,el:el,overlayDiv:overlay,toks:[],dust:[],anim:null,lastVB:null,cw:0,ch:0,phone:false,lastT:0};
+     wrap:wrap,el:el,overlayDiv:overlay,toks:[],dust:[],markers:[],anim:null,lastVB:null,cw:0,ch:0,phone:false,lastT:0};
   APPS[id]=S;
   const tex=PIXI.Texture.from(MAPDATA.img);
   const fit=()=>{ mapSpr.texture=tex; mapSpr.width=MAPDATA.w; mapSpr.height=MAPDATA.h; };
   if(tex.baseTexture.valid) fit(); else tex.baseTexture.once('loaded',fit);
+  applyMarkers(S);   // draw any known special-block markers
   app.ticker.add(()=>tick(S));
   return S;
 }
@@ -272,15 +320,18 @@ function updateTokens(S,now){
   S.toks.forEach((o,idx)=>{
     let x,y,hop=0,walking=false;
     const steps=o.toT-o.fromT;
-    if(animating&&steps>0){
-      const dur=steps*PER_TILE, t=Math.min(el2,dur);
-      const fp=(o.fromT-1)+t/PER_TILE, i0=Math.floor(fp), f=fp-i0;
+    if(animating&&steps!==0){
+      const dir=steps>0?1:-1, dist=Math.abs(steps);
+      const dur=dist*PER_TILE, t=Math.min(el2,dur);
+      const fp=(o.fromT-1)+dir*(t/PER_TILE);          // fractional 0-based tile, forward OR backward
+      const i0=Math.floor(fp), f=fp-i0;
       const a=ptOf(i0+1), b=ptOf(Math.min(i0+2,LEN));
       x=a[0]+(b[0]-a[0])*f+o.off; y=a[1]+(b[1]-a[1])*f;
       hop=Math.sin(Math.PI*f)*HOP;
       if(t<dur){
         walking=true;
-        if((b[0]-a[0])!==0) o.face=(b[0]-a[0])>=0?1:-1;
+        // face the direction of travel (backwards = look toward lower tiles)
+        const seg=(b[0]-a[0]); if(seg!==0) o.face=(dir>0?(seg>=0?1:-1):(seg>=0?-1:1));
         if(o.lastTile!==i0){
           if(o.lastTile!=null){ spawnDust(S,x,y,3); o.squashT=now; sfx('step'); }
           o.lastTile=i0;
@@ -345,6 +396,7 @@ function tick(S){
     const fi=S.phone?0:((now/150+tr.ph*37)|0)%arr.length;
     if(tr.fi!==fi){ tr.fi=fi; tr.sp.texture=arr[fi]; }
   });
+  if(S.markers) S.markers.forEach(mk=>{ mk.c.y = mk.baseY + Math.sin(now/600+mk.ph)*4; });
   if(!S.phone){
     S.clouds.forEach(c=>{
       c.sp.x+=c.vx*dt/1000;
@@ -388,7 +440,7 @@ function renderBoardAnimated(containerId,players,opts){
     return;
   }
   applyVB(S,fromVB);
-  const maxDur=Math.max(1,...S.toks.map(o=>Math.max(0,o.toT-o.fromT)*PER_TILE));
+  const maxDur=Math.max(1,...S.toks.map(o=>Math.abs(o.toT-o.fromT)*PER_TILE));
   S.anim={start:performance.now(),animate:true,maxDur:maxDur,total:maxDur+ZOOMOUT,
           fromVB:fromVB,toVB:toVB,fullVB:FULL,onDone:opts.onDone||null};
 }
