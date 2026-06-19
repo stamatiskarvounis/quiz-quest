@@ -104,7 +104,7 @@ const QUESTION_TIME_SEC = 15;
 function loadCategories() {
   const dir = path.join(__dirname, 'questions');
   const cats = {};
-  fs.readdirSync(dir).filter(f => f.endsWith('.json')).forEach(f => {
+  fs.readdirSync(dir).filter(f => f.endsWith('.json') && f !== 'dragon.json').forEach(f => {
     const d = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
     cats[f.replace('.json', '')] = { name: d.name, emoji: d.emoji || '', questions: d.questions, tr: {}, nameTr: {} };
   });
@@ -124,6 +124,28 @@ function loadCategories() {
     });
   }
   return cats;
+}
+
+// ---- Dragon boss: extra-hard questions keyed by category (questions/dragon.json) ----
+let DRAGON = {};
+try { DRAGON = JSON.parse(fs.readFileSync(path.join(__dirname, 'questions', 'dragon.json'), 'utf8')); }
+catch (e) { console.error('Could not load dragon questions:', e.message); }
+const DRAGON_CATS = Object.keys(DRAGON).filter(k => Array.isArray(DRAGON[k]) && DRAGON[k].length);
+
+// The category a player did WORST in (lowest accuracy), restricted to categories that
+// actually have dragon questions. Falls back to a random dragon category if no data.
+function weakestCategory(p, inPlay) {
+  const stats = p.catStats || {};
+  const pool = DRAGON_CATS.filter(k => !inPlay || inPlay.indexOf(k) >= 0);
+  const cats = pool.length ? pool : DRAGON_CATS;
+  let worst = null, worstAcc = 2, worstTotal = -1;
+  cats.forEach(k => {
+    const s = stats[k];
+    if (!s || !s.total) return;
+    const acc = s.correct / s.total;
+    if (acc < worstAcc || (acc === worstAcc && s.total > worstTotal)) { worst = k; worstAcc = acc; worstTotal = s.total; }
+  });
+  return worst || cats[Math.floor(Math.random() * cats.length)];
 }
 
 // Build the question payload in a given language (falls back to English per-question).
@@ -261,11 +283,13 @@ io.on('connection', (socket) => {
     room.state = 'lobby'; room.answers = {}; room.questionStart = 0;
     room.finishedCount = 0;
     room.specials = genSpecials();
+    room.dragon = null;
     Object.values(room.players).forEach(p => {
       p.position = 0; p.score = 0; p.finishRank = null;
       p.pending = null; p.active = null; p.potionActive = null; p.armedPotion = null;
       p.cursed = false; p.shieldUsed = false; p.hide = null;
       p.incomingCurse = false; p.usedThisRound = false; p.potions = freshPotions();
+      p.streak = 0; p.catStats = {};
       p.effectiveTotal = room.questionTime;
     });
     // tell host + players to return to the lobby with fresh data
@@ -298,7 +322,8 @@ io.on('connection', (socket) => {
       color: COLORS[idx % COLORS.length],
       hero: HEROES[idx % HEROES.length], connected: true, lang: langCode,
       pending: null, active: null, effectiveTotal: room.questionTime,
-      armedPotion: null, incomingCurse: false, usedThisRound: false, potions: freshPotions()
+      armedPotion: null, incomingCurse: false, usedThisRound: false, potions: freshPotions(),
+      streak: 0, catStats: {}
     };
     socket.join(pin);
     socket.data.pin = pin;
@@ -464,9 +489,24 @@ io.on('connection', (socket) => {
           moved = -Math.min(TRAP_BACK, p.position - 1);
           p.position = Math.max(1, p.position - TRAP_BACK);
         }
+        // correct-answer streak (resets on a wrong/missed answer)
+        p.streak = correct ? (p.streak || 0) + 1 : 0;
+        // per-category record (used to pick the dragon's question later)
+        const ck = room.currentSrc && room.currentSrc.catKey;
+        if (ck) {
+          p.catStats = p.catStats || {};
+          const cs = p.catStats[ck] = p.catStats[ck] || { correct: 0, total: 0 };
+          cs.total++; if (correct) cs.correct++;
+        }
       }
       results.push({ p, ans, correct, moved, before, usedMod: mod });
     });
+
+    // live ranking (place of N) by finish order, then tile, then score
+    const ranking = publicPlayers(room).sort((a, b) =>
+      (a.finishRank || 99) - (b.finishRank || 99) || b.position - a.position || b.score - a.score)
+      .map(o => o.id);
+    const totalPlayers = ranking.length;
 
     // same-round arrivals at the castle: faster answer takes the higher rank
     newFinishers.sort((a, b) => a.elapsed - b.elapsed)
@@ -488,7 +528,8 @@ io.on('connection', (socket) => {
         pathLength: PATH_LENGTH, correctIndex: q.correct, score: p.score,
         usedModifier: modInfo(usedMod),     // what affected this answer
         nextModifier: modInfo(p.pending),   // what awaits next question (landed on a block)
-        others, inventory: remainingPotions(p)   // for the potion screen
+        others, inventory: remainingPotions(p),   // for the potion screen
+        rank: ranking.indexOf(p.id) + 1, totalPlayers, streak: p.streak || 0   // player metrics
       });
       return {
         id: p.id, name: p.name, color: p.color, hero: p.hero,
@@ -539,6 +580,79 @@ io.on('connection', (socket) => {
       io.to(pin).emit('gameOver', { winner: standings[0] || null, loser, standings });
     }, delayMs || 0);
   }
+
+  // ===== Dragon boss fight (only the 1st-place champion faces it) =====
+  socket.on('startDragon', ({ pin }) => {
+    const room = rooms[pin];
+    if (!room || room.hostId !== socket.id) return;
+    if (room.state !== 'over' || room.dragon) return;     // only once, after the race ends
+    const standings = sortedStandings(room);
+    const champ = standings[0];
+    const champPlayer = champ && room.players[champ.id];
+    if (!champPlayer) return;
+    const inPlay = (room.selected && room.selected.length) ? room.selected : Object.keys(room.cats);
+    const cat = weakestCategory(champPlayer, inPlay);
+    const pool = DRAGON[cat] || [];
+    if (!pool.length) return;
+    const src = pool[Math.floor(Math.random() * pool.length)];
+    const perm = shuffled(4);
+    const options = perm.map(i => src.options[i]);
+    const catLabel = (room.cats[cat] && room.cats[cat].name) || cat;
+    room.dragon = {
+      championId: champ.id, championName: champPlayer.name, championHero: champPlayer.hero,
+      cat, catLabel, q: src.q, options, correctIndex: perm.indexOf(src.correct),
+      helpUsed: false, votes: {}, answered: false
+    };
+    const others = Object.keys(room.players).length - 1;
+    io.to(room.hostId).emit('dragonStart', { role: 'host',
+      champion: { name: champPlayer.name, hero: champPlayer.hero }, cat: catLabel, q: src.q, options });
+    Object.values(room.players).forEach(p => {
+      if (p.id === champ.id) {
+        io.to(p.id).emit('dragonStart', { role: 'champion', cat: catLabel, q: src.q, options, canHelp: others > 0 });
+      } else {
+        io.to(p.id).emit('dragonStart', { role: 'watch',
+          champion: { name: champPlayer.name, hero: champPlayer.hero }, cat: catLabel });
+      }
+    });
+  });
+
+  // champion uses the single lifeline → open voting for the other players
+  socket.on('dragonAskHelp', ({ pin }) => {
+    const room = rooms[pin]; const d = room && room.dragon;
+    if (!d || d.answered || socket.id !== d.championId || d.helpUsed) return;
+    d.helpUsed = true;
+    Object.values(room.players).forEach(p => {
+      if (p.id !== d.championId) io.to(p.id).emit('dragonVoteOpen', { q: d.q, options: d.options });
+    });
+    io.to(room.hostId).emit('dragonHelpOpen', {});
+    io.to(d.championId).emit('dragonHelpOpen', {});
+  });
+
+  // a non-champion casts a vote (advisory)
+  socket.on('dragonVote', ({ pin, choice }) => {
+    const room = rooms[pin]; const d = room && room.dragon;
+    if (!d || !d.helpUsed || d.answered) return;
+    if (socket.id === d.championId || !room.players[socket.id]) return;
+    if (typeof choice !== 'number' || choice < 0 || choice > 3) return;
+    d.votes[socket.id] = choice;
+    const counts = [0, 0, 0, 0];
+    Object.values(d.votes).forEach(c => { counts[c]++; });
+    const tally = { counts, total: Object.keys(d.votes).length, voters: Object.keys(room.players).length - 1 };
+    io.to(room.hostId).emit('dragonTally', tally);
+    io.to(d.championId).emit('dragonTally', tally);
+  });
+
+  // champion commits to a final answer (untimed)
+  socket.on('dragonAnswer', ({ pin, choice }) => {
+    const room = rooms[pin]; const d = room && room.dragon;
+    if (!d || d.answered || socket.id !== d.championId) return;
+    if (typeof choice !== 'number') return;
+    d.answered = true;
+    io.to(pin).emit('dragonResult', {
+      correct: choice === d.correctIndex, correctIndex: d.correctIndex, chosen: choice,
+      champion: { name: d.championName, hero: d.championHero }, cat: d.catLabel
+    });
+  });
 
   socket.on('disconnect', () => {
     const pin = socket.data.pin;

@@ -1,0 +1,83 @@
+{
+  "_note": "Extra-hard boss questions drawn by the dragon, keyed by category. Not loaded as a normal category.",
+  "animals": [
+    {"q":"Which is the only venomous primate, delivering toxin from a gland on its arm?","options":["Aye-aye","Slow loris","Tarsier","Lemur"],"correct":1},
+    {"q":"A 'zorse' is the hybrid offspring of a zebra and which animal?","options":["Donkey","Horse","Pony","Mule"],"correct":1},
+    {"q":"What is the only mammal with four knees... trick: elephants are often cited, but which animal actually has four functioning knee-like joints?","options":["Elephant","Hippo","Rhino","No mammal does; all have two knees and two elbows"],"correct":3},
+    {"q":"The 'Methuselah' of animals, the ocean quahog, is a type of what?","options":["Coral","Clam","Sponge","Sea snail"],"correct":1},
+    {"q":"Which bird has the largest vocabulary ever recorded, with over 1,700 words?","options":["African grey parrot","Common raven","Budgerigar","Mynah"],"correct":2},
+    {"q":"What is the term for the dominant female in a spotted hyena clan, which outranks all males?","options":["The queen","The matriarch","The alpha","The regent"],"correct":1},
+    {"q":"Which animal's heart rate can drop to around 4 beats per minute during hibernation?","options":["Ground squirrel","Brown bat","Hedgehog","All of these slow dramatically; the ground squirrel is famous for it"],"correct":3},
+    {"q":"The 'pangolin' is the world's most trafficked mammal and the only mammal covered in what?","options":["Feathers","Keratin scales","Bony plates","Spines"],"correct":1}
+  ],
+  "food": [
+    {"q":"Which mother sauce is the base for both hollandaise and béarnaise?","options":["They share an emulsion technique but béarnaise derives from hollandaise","Béchamel","Velouté","Espagnole"],"correct":0},
+    {"q":"The Scoville scale measures the concentration of which compound?","options":["Capsaicin","Allicin","Piperine","Myrosinase"],"correct":0},
+    {"q":"Authentic Parmigiano-Reggiano gets its name protected to a few Italian provinces; which is NOT one of them?","options":["Parma","Reggio Emilia","Modena","Naples"],"correct":3},
+    {"q":"Which spice is the dried aril (lacy covering) of the nutmeg seed?","options":["Mace","Cardamom","Star anise","Sumac"],"correct":0},
+    {"q":"In classical French cuisine, a 'brunoise' cut produces what?","options":["Thin ribbons","Tiny uniform dice (about 3mm)","Matchsticks","Large chunks"],"correct":1},
+    {"q":"Real wasabi comes from a plant in which family?","options":["Nightshade","Brassica (mustard/cabbage)","Ginger","Pepper"],"correct":1},
+    {"q":"The fortified wine Marsala originates from which island?","options":["Sardinia","Sicily","Corsica","Crete"],"correct":1},
+    {"q":"Which leavening process gives genuine Belgian Liège waffles their pockets of crunch?","options":["Baking powder","Pearl sugar that caramelises","Whipped egg whites","Yeast only"],"correct":1}
+  ],
+  "geo": [
+    {"q":"Which country has the most UNESCO World Heritage Sites (historically vying for first with China)?","options":["France","Italy","Spain","India"],"correct":1},
+    {"q":"The deepest point on land (lowest exposed bedrock, beneath a glacier) is in which region?","options":["Dead Sea shore","Denman Glacier, Antarctica","Death Valley","Turfan Depression"],"correct":1},
+    {"q":"Which is the only country to lie in all four hemispheres?","options":["Indonesia","Kiribati","Brazil","Ecuador"],"correct":1},
+    {"q":"The Caspian Sea borders five nations. Which is landlocked otherwise and NOT a Caspian state?","options":["Turkmenistan","Azerbaijan","Uzbekistan","Kazakhstan"],"correct":2},
+    {"q":"What is the capital of Myanmar (Burma) since 2006?","options":["Yangon","Naypyidaw","Mandalay","Bago"],"correct":1},
+    {"q":"Which African nation is the only one whose name in English begins and ends with the same two letters and was founded by freed slaves?","options":["Liberia","Eritrea","Namibia","Eswatini"],"correct":0},
+    {"q":"Mount Chimborazo's summit is the farthest point from Earth's centre. In which country is it?","options":["Peru","Ecuador","Bolivia","Colombia"],"correct":1},
+    {"q":"Which strait, not the Bosphorus, also connects to the Black Sea via the Sea of Azov?","options":["Kerch Strait","Dardanelles","Strait of Otranto","Strait of Messina"],"correct":0}
+  ],
+  "movies": [
+    {"q":"Who is the only person to win an Academy Award for playing the same character in two different films?","options":["Al Pacino","Robert De Niro (Vito Corleone)","Marlon Brando","Anthony Hopkins"],"correct":1},
+    {"q":"Which film was the first sequel to win the Academy Award for Best Picture?","options":["The Godfather Part II","Aliens","Toy Story 2","The Empire Strikes Back"],"correct":0},
+    {"q":"What was the first feature film to be entirely computer-animated, released in 1995?","options":["Antz","Toy Story","Shrek","A Bug's Life"],"correct":1},
+    {"q":"Which director has won the Best Director Oscar the most times (four)?","options":["Steven Spielberg","John Ford","William Wyler","Frank Capra"],"correct":1},
+    {"q":"In which language is the Oscar-winning film 'Parasite' performed?","options":["Japanese","Korean","Mandarin","Cantonese"],"correct":1},
+    {"q":"Who composed the scores for both 'Jaws' and 'Schindler's List'?","options":["Ennio Morricone","John Williams","Hans Zimmer","Jerry Goldsmith"],"correct":1},
+    {"q":"Which 1927 film is widely regarded as the first feature-length film with synchronised sound?","options":["Metropolis","The Jazz Singer","Sunrise","Nosferatu"],"correct":1},
+    {"q":"'Rosebud', the dying word in 'Citizen Kane', is finally revealed to be what?","options":["A childhood sled","A racehorse","A lost love","A garden"],"correct":0}
+  ],
+  "myths": [
+    {"q":"In Greek myth, who was condemned to eternal hunger and thirst, with fruit and water always just out of reach?","options":["Sisyphus","Tantalus","Ixion","Prometheus"],"correct":1},
+    {"q":"Which Mesopotamian goddess descended into the underworld in one of the earliest recorded myths?","options":["Ishtar/Inanna","Tiamat","Ninhursag","Gula"],"correct":0},
+    {"q":"In Norse myth, which god is destined to slay the wolf Fenrir at Ragnarök, avenging Odin?","options":["Thor","Vidar","Tyr","Heimdall"],"correct":1},
+    {"q":"The 'Antikythera mechanism' is an ancient Greek device used to predict what?","options":["Tides","Astronomical positions and eclipses","Earthquakes","Harvests"],"correct":1},
+    {"q":"Which pharaoh's name means 'living image of Aten' and reverted Egypt to monotheism for a time?","options":["Tutankhamun","Akhenaten","Ramesses II","Thutmose III"],"correct":1},
+    {"q":"In Egyptian belief, the heart of the dead was weighed against the feather of which goddess?","options":["Isis","Ma'at","Nut","Bastet"],"correct":1},
+    {"q":"The Battle of Cannae (216 BC), a masterpiece of encirclement, was won by which commander?","options":["Scipio Africanus","Hannibal","Julius Caesar","Alexander"],"correct":1},
+    {"q":"Which Greek muse presided over epic poetry?","options":["Calliope","Clio","Erato","Thalia"],"correct":0}
+  ],
+  "science": [
+    {"q":"Which element has the highest electrical conductivity of all metals?","options":["Copper","Silver","Gold","Aluminium"],"correct":1},
+    {"q":"What is the name of the only known particle that is its own antiparticle and gives mass to others... trick: which of these is its own antiparticle?","options":["Electron","Photon","Proton","Neutron"],"correct":1},
+    {"q":"The Chandrasekhar limit (~1.4 solar masses) determines the fate of which kind of star?","options":["A red giant","A white dwarf","A neutron star","A protostar"],"correct":1},
+    {"q":"Which scientist first determined the charge of a single electron via the oil-drop experiment?","options":["J.J. Thomson","Robert Millikan","Ernest Rutherford","Niels Bohr"],"correct":1},
+    {"q":"What is the most abundant protein in the human body?","options":["Haemoglobin","Collagen","Keratin","Albumin"],"correct":1},
+    {"q":"Absolute zero corresponds to what value on the Kelvin scale?","options":["0 K","-273 K","273 K","1 K"],"correct":0},
+    {"q":"Which subatomic particle was predicted by Pauli and detected decades later, barely interacting with matter?","options":["Muon","Neutrino","Positron","Gluon"],"correct":1},
+    {"q":"The enzyme that unwinds the DNA double helix during replication is called?","options":["Polymerase","Helicase","Ligase","Primase"],"correct":1}
+  ],
+  "sport": [
+    {"q":"In golf, a score of four under par on a single hole (extremely rare) is called what?","options":["Albatross","Condor","Ostrich","Double eagle"],"correct":1},
+    {"q":"Which country has won the most Olympic gold medals in field hockey (men's)?","options":["Pakistan","India","Netherlands","Germany"],"correct":1},
+    {"q":"In Formula 1, who holds the record for most career race wins (surpassing Schumacher)?","options":["Sebastian Vettel","Lewis Hamilton","Ayrton Senna","Alain Prost"],"correct":1},
+    {"q":"What is the maximum possible score from a single visit (three darts) in darts?","options":["150","180","171","174"],"correct":1},
+    {"q":"In cricket, what is the term for dismissing three batsmen with three consecutive deliveries spanning two overs or innings?","options":["A hat-trick still counts across overs","A double","A triple-strike","Only counts within one over"],"correct":0},
+    {"q":"Which tennis player completed the 'Golden Slam' (all four majors plus Olympic gold in one year) in 1988?","options":["Martina Navratilova","Steffi Graf","Serena Williams","Monica Seles"],"correct":1},
+    {"q":"In rugby union, how many points is a drop goal worth?","options":["2","3","4","5"],"correct":1},
+    {"q":"The 'Fosbury Flop' debuted at which Olympic Games?","options":["1964 Tokyo","1968 Mexico City","1972 Munich","1976 Montreal"],"correct":1}
+  ],
+  "weird": [
+    {"q":"What is the formal name for the '#' symbol?","options":["Octothorpe","Pilcrow","Interrobang","Asterism"],"correct":0},
+    {"q":"A 'murder' is a group of crows; what is the collective noun for a group of jellyfish that is NOT 'bloom'?","options":["A smack","A clutch","A pod","A raft"],"correct":0},
+    {"q":"Which is the only English word commonly cited to contain all five vowels in order?","options":["Sequoia","Facetious","Abstemious","Education"],"correct":2},
+    {"q":"The fear of the number 666 has a tongue-twisting name. What is it?","options":["Triskaidekaphobia","Hexakosioihexekontahexaphobia","Arithmophobia","Numerophobia"],"correct":1},
+    {"q":"What is the small plastic or metal tube at the end of a shoelace called?","options":["Aglet","Ferrule","Grommet","Chape"],"correct":0},
+    {"q":"Honey never spoils largely because of its low water activity and which other property?","options":["High acidity (low pH)","High salt","Antibiotics","Alcohol content"],"correct":0},
+    {"q":"The study of flags is known as what?","options":["Vexillology","Heraldry","Cartophily","Notaphily"],"correct":0},
+    {"q":"Which planet's day (one rotation) is longer than its entire year?","options":["Mercury","Venus","Mars","Neptune"],"correct":1}
+  ]
+}

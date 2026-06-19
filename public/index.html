@@ -70,6 +70,8 @@
   .targetpick{display:flex; flex-direction:column; gap:6px; width:100%; max-width:340px; margin-top:10px;}
   .tgt{padding:8px; border:3px solid #ff5fa2; background:#2a1430; color:#fff; font-size:18px; cursor:pointer; display:flex; align-items:center; gap:8px; justify-content:center;}
   .armed{margin-top:10px; padding:8px 12px; border:3px solid var(--gold); background:#16402a; color:#9effc4; font-size:19px;}
+  .metrics{margin-top:4px; font-family:'Press Start 2P',monospace; font-size:10px; line-height:1.7; color:var(--gold);}
+  #anAnswer{margin-bottom:10px; padding:8px 12px; border:3px solid #9effc4; background:#16402a; color:#dffff0; font-size:19px; max-width:340px;}
 </style>
 </head>
 <body>
@@ -118,6 +120,7 @@
     <div class="sub" id="anDesc" style="max-width:340px;"></div>
   </div>
   <div class="shopwrap">
+    <div id="anAnswer" class="hidden"></div>
     <div class="coinbal" id="potHeader">⚗️ USE A POTION</div>
     <div class="shopgrid" id="shopGrid"></div>
     <div class="targetpick hidden" id="targetPick"></div>
@@ -134,6 +137,7 @@
     <div>
       <div class="big" id="rText" style="margin:0;"></div>
       <div class="sub" id="rDetail" style="margin:0;opacity:.85;"></div>
+      <div class="metrics" id="rMetrics"></div>
     </div>
   </div>
 </div>
@@ -141,6 +145,21 @@
 <div class="screen hidden" id="gover">
   <div id="goHero" style="margin-bottom:10px;"></div>
   <div class="big" id="goText"></div>
+</div>
+
+<div class="full hidden" id="dragon">
+  <div class="hdr"><span id="dTitle">🐉 THE DRAGON</span><span id="dCat"></span></div>
+  <div class="qphone" id="dQ"></div>
+  <div class="answers" id="dAnswers"></div>
+  <div style="padding:12px; text-align:center;">
+    <button class="btn hidden" id="dHelpBtn" style="margin:0 auto 10px;">🙋 ASK THE KNIGHTS</button>
+    <div class="sub" id="dStatus" style="font-size:19px;"></div>
+  </div>
+</div>
+
+<div class="screen hidden" id="dresult">
+  <div class="result-emoji" id="drEmoji"></div>
+  <div class="big" id="drText"></div>
 </div>
 
 <script src="/mapdata.js"></script>
@@ -157,7 +176,8 @@ function renderMaps(animate){ renderBoardAnimated('mapWait', LAST_BOARD.players,
 const params=new URLSearchParams(location.search);
 if(params.get('pin')) document.getElementById('pinInput').value=params.get('pin');
 const $=id=>document.getElementById(id);
-function show(id){ ['join','pick','wait','answering','submitted','result','announce','gover'].forEach(x=>$(x).classList.add('hidden')); $(id).classList.remove('hidden'); }
+function show(id){ ['join','pick','wait','answering','submitted','result','announce','gover','dragon','dresult'].forEach(x=>$(x).classList.add('hidden')); $(id).classList.remove('hidden'); }
+let dragonRole=null, dragonOpts=[], dragonVoted=false, dragonAnswered=false;
 
 $('joinBtn').onclick=()=>{ const pin=$('pinInput').value.trim(), name=$('nameInput').value.trim();
   if(pin.length<4){ $('err').textContent='Enter the 4-digit PIN'; return; }
@@ -227,6 +247,7 @@ socket.on('yourResult', d=>{
     $('rEmoji').textContent='❌'; $('rText').textContent='WRONG';
     $('rDetail').innerHTML=(answerLine||'No move')+'<br>Still on tile '+d.after+' / '+plen;
   }
+  $('rMetrics').innerHTML=metricsLine(d, plen);
   // after showing the result, open the potion screen — but ONLY if the player
   // still owns potions and is still racing. If they have none left, we skip the
   // screen entirely and just follow the game (nothing to get stuck on).
@@ -244,11 +265,15 @@ socket.on('yourResult', d=>{
       $('anIcon').textContent=nm.icon; $('anTitle').textContent=nm.label+'!';
       $('anTitle').style.color = nm.good ? '#9effc4' : '#ff9ad1'; $('anDesc').textContent=nm.desc;
     } else bn.classList.add('hidden');
+    // keep the correct answer visible on this screen too, until the next question
+    const aa=$('anAnswer');
+    if(answerLine){ aa.classList.remove('hidden'); aa.innerHTML='✅ '+answerLine; }
+    else aa.classList.add('hidden');
     $('ackBtn').classList.remove('hidden'); $('anWait').classList.add('hidden');
     $('targetPick').classList.add('hidden'); $('armedNote').classList.add('hidden');
     renderShop();
     show('announce');
-  }, d.reachedGoal?3000:2000);
+  }, d.reachedGoal?5000:4000);   // longer: keep the result + correct answer on screen
 });
 $('ackBtn').onclick=()=>{ $('ackBtn').classList.add('hidden'); $('anWait').classList.remove('hidden'); $('shopGrid').innerHTML=''; $('targetPick').classList.add('hidden'); };
 
@@ -302,6 +327,82 @@ socket.on('gameReset', d=>{
 });
 socket.on('hostLeft', ()=>{ show('join'); $('err').textContent='Host ended the game.'; });
 
+// ===== Dragon boss (champion answers / others may vote to help) =====
+function renderDragonAnswers(opts, isChampion){
+  const grid=$('dAnswers'); grid.innerHTML='';
+  opts.forEach((o,i)=>{ const b=document.createElement('button'); b.className='ans a'+i;
+    b.innerHTML='<span>'+iconSVG(ELEMS[i],36)+'</span><span>'+o+'</span>';
+    b.onclick=()=>{
+      if(isChampion){
+        if(dragonAnswered) return; dragonAnswered=true;
+        document.querySelectorAll('#dAnswers .ans').forEach(x=>{ x.disabled=true; x.style.opacity=.4; });
+        b.style.opacity=1; b.style.outline='4px solid #fff';
+        $('dHelpBtn').classList.add('hidden');
+        $('dStatus').textContent='Answer locked! Watch the big screen…';
+        socket.emit('dragonAnswer',{pin:PIN,choice:i});
+      } else {
+        if(dragonVoted) return; dragonVoted=true;
+        document.querySelectorAll('#dAnswers .ans').forEach(x=>{ x.disabled=true; x.style.opacity=.4; });
+        b.style.opacity=1; b.style.outline='4px solid #fff';
+        $('dStatus').textContent='Vote cast! 🗳️ Thanks, knight.';
+        socket.emit('dragonVote',{pin:PIN,choice:i});
+      }
+    };
+    grid.appendChild(b);
+  });
+}
+$('dHelpBtn').onclick=()=>{ socket.emit('dragonAskHelp',{pin:PIN}); $('dHelpBtn').classList.add('hidden');
+  $('dStatus').textContent='You called the knights! Their votes will appear here…'; };
+
+socket.on('dragonStart', d=>{
+  if(prepTimer){ clearTimeout(prepTimer); prepTimer=null; } stopTimer(); phase='dragon';
+  dragonRole=d.role; dragonOpts=d.options||[]; dragonVoted=false; dragonAnswered=false;
+  if(d.role==='champion'){
+    $('dTitle').textContent='🐉 FACE THE DRAGON';
+    $('dCat').textContent=d.cat||'';
+    $('dQ').textContent=d.q||'';
+    renderDragonAnswers(dragonOpts, true);
+    $('dHelpBtn').classList.toggle('hidden', !d.canHelp);
+    $('dStatus').textContent='No timer — take your time. Answer, or ask the knights for one hint.';
+  } else {
+    $('dTitle').textContent='🐉 THE DRAGON';
+    $('dCat').textContent='';
+    $('dQ').textContent=(d.champion?d.champion.name:'The champion')+' is facing the dragon!';
+    $('dAnswers').innerHTML='';
+    $('dHelpBtn').classList.add('hidden');
+    $('dStatus').textContent='Watch the big screen… you may be asked to help!';
+  }
+  show('dragon');
+});
+socket.on('dragonVoteOpen', d=>{
+  if(dragonRole==='champion') return;     // champion never votes
+  dragonRole='voter'; dragonVoted=false;
+  $('dTitle').textContent='🙋 HELP THE CHAMPION';
+  $('dCat').textContent='';
+  $('dQ').textContent=d.q||'';
+  renderDragonAnswers(d.options||[], false);
+  $('dStatus').textContent='Tap the answer you think is correct!';
+  show('dragon');
+});
+socket.on('dragonTally', d=>{
+  if(dragonRole!=='champion') return;
+  const L=['A','B','C','D'], counts=d.counts||[0,0,0,0], total=d.total||0;
+  const parts=counts.map((c,i)=>L[i]+' '+(total?Math.round(c/total*100):0)+'%');
+  $('dStatus').innerHTML='🗳️ '+parts.join('  ·  ')+'<br>'+total+'/'+(d.voters||0)+' voted — your call.';
+});
+socket.on('dragonResult', d=>{
+  phase='over';
+  const amChamp=(dragonRole==='champion');
+  $('drEmoji').textContent=d.correct?'🐉⚔️':'🐉🔥';
+  if(d.correct){
+    $('drText').innerHTML=(amChamp?'YOU SLEW THE DRAGON!':((d.champion?d.champion.name:'The champion')+' SLEW THE DRAGON!'))+'<br>🥛 Cheers!';
+  } else {
+    $('drText').innerHTML=(amChamp?'🐉 The dragon drinks YOUR oat milk<br>and laughs at you! 🥛'
+      :('🐉 The dragon beat '+(d.champion?d.champion.name:'the champion')+'<br>and swiped the oat milk! 🥛'));
+  }
+  show('dresult');
+});
+
 function startTimer(ms){ stopTimer(); const end=Date.now()+ms;
   const tick=()=>{ const s=Math.max(0,Math.ceil((end-Date.now())/1000)); $('timeLeft').textContent=s+'s';
     if(s<=0){ stopTimer(); lockAnswers(); } };
@@ -311,6 +412,15 @@ function lockAnswers(){ // time ran out (e.g. half-time block) — disable answe
   if(myChoice!=null) return;
   document.querySelectorAll('#answers .ans').forEach(b=>{ b.disabled=true; b.style.opacity=.4; });
   $('timeLeft').textContent="Time's up!";
+}
+function ordinal(n){ const s=['th','st','nd','rd'], v=n%100; return n+(s[(v-20)%10]||s[v]||s[0]); }
+function metricsLine(d, plen){
+  const parts=[];
+  if(d.rank) parts.push('🏅 '+ordinal(d.rank)+(d.totalPlayers?(' / '+d.totalPlayers):''));
+  parts.push('📍 '+d.after+'/'+plen);
+  if(d.streak>1) parts.push('🔥 '+d.streak+' in a row');
+  if(d.score!=null) parts.push('⭐ '+d.score);
+  return parts.join('  ·  ');
 }
 </script>
 </body>

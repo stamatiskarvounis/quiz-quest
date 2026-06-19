@@ -132,6 +132,58 @@
   .loser-cap{position:absolute; left:0; right:0; bottom:150px; text-align:center; font-size:24px;
              color:var(--cream); text-shadow:2px 2px 0 #000; padding:0 24px; z-index:6;}
   #loserNewGame{position:absolute; left:50%; bottom:40px; transform:translateX(-50%); max-width:340px; width:90%; z-index:6;}
+  /* ===== Story intro ===== */
+  #intro{position:fixed; inset:0; z-index:70; overflow:auto; display:flex; align-items:center; justify-content:center;
+         background:radial-gradient(circle at 50% 20%, #2a2350, #0b0f1a 75%);}
+  .intro-inner{max-width:760px; padding:32px; text-align:center;}
+  .intro-inner h1{font-size:30px; margin-bottom:8px;}
+  .intro-emojis{font-size:48px; margin:10px 0 18px; letter-spacing:6px;}
+  .intro-story{font-size:24px; line-height:1.6; color:var(--cream); text-shadow:2px 2px 0 #000; margin-bottom:26px;}
+  .intro-story b{color:var(--gold);}
+  /* ===== King knights the champion ===== */
+  #kingscene, #dragonscene, #dragonwin, #dragonlose{position:fixed; inset:0; z-index:62; overflow:auto;
+         display:flex; align-items:center; justify-content:center; text-align:center;}
+  #kingscene{background:radial-gradient(circle at 50% 25%, #3a2f12, #0b0f1a 72%);}
+  .scene-inner{width:100%; max-width:860px; padding:26px;}
+  .scene-title{font-family:'Press Start 2P',monospace; font-size:26px; color:var(--gold); text-shadow:3px 3px 0 #000; line-height:1.5; margin-bottom:20px;}
+  .king-row{display:flex; align-items:flex-end; justify-content:center; gap:10px; margin-bottom:14px;}
+  .king-row .king{font-size:120px; line-height:1;}
+  .king-row img{width:120px; height:120px; image-rendering:pixelated; filter:drop-shadow(4px 6px 0 rgba(0,0,0,.45));}
+  .king-row .milk{font-size:64px;}
+  .scene-sub{font-size:24px; color:var(--cream); text-shadow:2px 2px 0 #000; margin-bottom:22px;}
+  /* ===== Dragon question ===== */
+  #dragonscene{background:radial-gradient(circle at 50% 30%, #3a1020, #0b0f1a 78%);}
+  .dragon-big{font-size:120px; line-height:1; margin-bottom:6px; animation:dsway 2.4s ease-in-out infinite;}
+  @keyframes dsway{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-8px) rotate(2deg)}}
+  .dragon-cat{font-family:'Press Start 2P',monospace; font-size:13px; color:#ff9ad1; margin-bottom:8px;}
+  .dragon-q{font-size:28px; line-height:1.3; color:var(--cream); text-shadow:2px 2px 0 #000; margin:6px auto 16px; max-width:760px;}
+  .dopts{display:grid; grid-template-columns:1fr 1fr; gap:10px; max-width:760px; margin:0 auto;}
+  .dopt{position:relative; border:4px solid #000; box-shadow:4px 4px 0 rgba(0,0,0,.5); color:#fff; padding:14px 12px;
+        font-size:22px; display:flex; align-items:center; gap:10px; text-align:left; overflow:hidden;}
+  .dopt.o0{background:var(--fire);} .dopt.o1{background:var(--water);} .dopt.o2{background:var(--leaf);} .dopt.o3{background:var(--earth);}
+  .dopt.correct{outline:5px solid var(--gold); outline-offset:3px;}
+  .dopt.dim{opacity:.35;}
+  .dopt .votebar{position:absolute; left:0; top:0; bottom:0; background:rgba(255,255,255,.30); width:0; transition:width .3s;}
+  .dopt .lbl, .dopt .vct{position:relative; z-index:1;}
+  .dopt .vct{margin-left:auto; font-family:'Press Start 2P',monospace; font-size:12px;}
+  .dragon-status{font-size:23px; color:var(--gold); text-shadow:2px 2px 0 #000; margin-top:18px; min-height:30px;}
+  /* ===== Dragon win / lose ===== */
+  #dragonwin{background:radial-gradient(circle at 50% 30%, #14402a, #0b0f1a 76%);}
+  #dragonlose{background:radial-gradient(circle at 50% 30%, #4a0f12, #0b0f1a 78%);}
+  .slain{position:relative; width:280px; height:210px; margin:0 auto 12px;}
+  .slain .dead-dragon{position:absolute; left:50%; bottom:0; transform:translateX(-50%) rotate(8deg); font-size:120px; filter:grayscale(.4) brightness(.8);}
+  .slain .champ{position:absolute; left:50%; bottom:70px; transform:translateX(-50%); width:110px; height:110px; image-rendering:pixelated; filter:drop-shadow(3px 5px 0 rgba(0,0,0,.5));}
+  .slain .sword{position:absolute; font-size:34px; bottom:30px;}
+  .slain .milk{position:absolute; left:50%; bottom:150px; transform:translateX(-110px); font-size:44px;}
+  .lose-stage{position:relative; display:inline-block; margin:0 auto 10px;}
+  .dlose-dragon{font-size:150px; line-height:1; animation:dsway 2s ease-in-out infinite; margin-bottom:6px;}
+  .lose-milk{position:absolute; right:-4px; bottom:38px; font-size:64px; transform-origin:50% 100%; animation:glug 1.7s ease-in-out infinite;}
+  @keyframes glug{0%,100%{transform:rotate(0)} 50%{transform:rotate(-32deg) translate(-6px,-4px)}}
+  .taunt{max-width:560px; margin:0 auto 4px; background:#fff; color:#171717; border:4px solid #000; border-radius:16px;
+         padding:14px 18px; font-size:23px; line-height:1.35; position:relative; box-shadow:5px 5px 0 rgba(0,0,0,.5);}
+  .taunt:after{content:''; position:absolute; bottom:-17px; left:50%; transform:translateX(-50%);
+         border-left:15px solid transparent; border-right:15px solid transparent; border-top:18px solid #000;}
+  .sceneBtn{max-width:340px; width:90%; margin:24px auto 0;}
   .drop{position:absolute; top:-30px; width:2px; height:18px; background:#9fb3ff; opacity:.45; animation:raindrop linear infinite;}
   @keyframes raindrop{to{transform:translateY(120vh);}}
   @keyframes flick{0%,100%{opacity:1}47%{opacity:.85}50%{opacity:.55}53%{opacity:.9}}
@@ -200,10 +252,10 @@
       <div class="mug">
         <svg viewBox="0 0 32 36" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg">
           <rect x="4" y="8" width="20" height="26" fill="#2a1a08"/>
-          <rect x="5" y="9" width="18" height="24" fill="#f0a93a"/>
-          <rect x="5" y="9" width="18" height="5" fill="#ffd23f"/>
-          <rect x="7" y="11" width="3" height="20" fill="#ffe9a8" opacity="0.75"/>
-          <rect x="18" y="11" width="2" height="20" fill="#c77f1f"/>
+          <rect x="5" y="9" width="18" height="24" fill="#ece3cf"/>
+          <rect x="5" y="9" width="18" height="5" fill="#fbf6ea"/>
+          <rect x="7" y="11" width="3" height="20" fill="#fffdf7" opacity="0.75"/>
+          <rect x="18" y="11" width="2" height="20" fill="#cabfa3"/>
           <rect x="23" y="12" width="3" height="3" fill="#2a1a08"/><rect x="23" y="25" width="3" height="3" fill="#2a1a08"/>
           <rect x="26" y="12" width="3" height="16" fill="#2a1a08"/>
           <rect x="27" y="14" width="1" height="12" fill="#e8e2d0"/>
@@ -223,6 +275,7 @@
       <div class="pod pod3"><div class="pod-hero" id="p3hero"></div><div class="pod-name" id="p3name"></div><div class="pod-bar">3rd</div></div>
     </div>
     <div class="cel-standings" id="celStandings"></div>
+    <button class="btn-primary" id="dragonBtn" style="display:none;max-width:360px;margin:14px auto 0;background:#c0392b;color:#fff;box-shadow:0 6px 0 #7a1f15;">🐉 FACE THE DRAGON ⚔️</button>
     <button class="btn-primary" id="loserBtn">🚪 …AND IN LAST PLACE? 🚪</button>
     <button class="btn-primary" id="newGameBtn" style="max-width:340px;margin:22px auto 0;">NEW GAME</button>
   </div>
@@ -235,7 +288,7 @@
     <div class="rainbox"></div>
     <div class="pub-roof"></div>
     <div class="pub">
-      <div class="pub-sign" id="pubSign">🍺 THE PUB</div>
+      <div class="pub-sign" id="pubSign">🥛 THE OAT BAR</div>
       <div class="pwin" style="left:24px; top:64px;"></div>
       <div class="pwin" style="right:24px; top:64px;"></div>
       <div class="pdoor"></div>
@@ -247,6 +300,72 @@
     <div class="sign" id="loserSign">LAST<br>PLACE</div>
     <div class="loser-cap" id="loserCap"></div>
     <button class="btn-primary" id="loserNewGame">NEW GAME</button>
+  </div>
+</div>
+
+<div id="intro" class="hidden">
+  <div class="intro-inner">
+    <h1 class="pixel">QUIZ QUEST</h1>
+    <div class="intro-emojis">🛡️ ⚔️ 🏰 🐉</div>
+    <div class="intro-story">
+      Knights, your quest begins! Race along the road to the <b>King's castle</b>,
+      dodging <b>traps</b> and tricky magic on the way. Answer questions
+      <b>fast and correctly</b> to move ahead. The <b>first knights to reach the castle</b>
+      are honoured by the King — and the champion must then <b>battle the great dragon</b>.
+      Think fast, and good luck!
+    </div>
+    <button class="btn-primary" id="introBtn" style="max-width:360px;margin:0 auto;">⚔️ GATHER THE KNIGHTS</button>
+  </div>
+</div>
+
+<div id="kingscene" class="hidden">
+  <div class="scene-inner">
+    <div class="scene-title" id="kingTitle">👑 KNIGHTED BY THE KING! 👑</div>
+    <div class="king-row">
+      <span class="king">🤴</span>
+      <img id="kingChampHero" alt="">
+      <span class="milk">🥛</span>
+    </div>
+    <div class="scene-sub" id="kingSub"></div>
+    <button class="btn-primary sceneBtn" id="approachBtn" style="background:#c0392b;color:#fff;box-shadow:0 6px 0 #7a1f15;">🐉 APPROACH THE DRAGON ⚔️</button>
+  </div>
+</div>
+
+<div id="dragonscene" class="hidden">
+  <div class="scene-inner">
+    <div class="dragon-big">🐉</div>
+    <div class="dragon-cat" id="dragonCat"></div>
+    <div class="dragon-q" id="dragonQ"></div>
+    <div class="dopts" id="dragonOpts"></div>
+    <div class="dragon-status" id="dragonStatus"></div>
+  </div>
+</div>
+
+<div id="dragonwin" class="hidden">
+  <div class="scene-inner">
+    <div class="scene-title">⚔️ THE DRAGON IS SLAIN! ⚔️</div>
+    <div class="slain">
+      <span class="dead-dragon">🐉</span>
+      <img id="winChampHero" class="champ" alt="">
+      <span class="sword" style="left:38%">🗡️</span>
+      <span class="sword" style="left:56%">🗡️</span>
+      <span class="milk">🥛</span>
+    </div>
+    <div class="scene-sub" id="winSub"></div>
+    <button class="btn-primary sceneBtn" id="winNewGame">NEW GAME</button>
+  </div>
+</div>
+
+<div id="dragonlose" class="hidden">
+  <div class="scene-inner">
+    <div class="taunt" id="dragonTaunt"></div>
+    <div class="lose-stage">
+      <span class="dlose-dragon">🐉</span>
+      <span class="lose-milk">🥛</span>
+    </div>
+    <div class="scene-title" style="color:#ff6a6a;">THE DRAGON PREVAILS…</div>
+    <div class="scene-sub" id="loseSub"></div>
+    <button class="btn-primary sceneBtn" id="loseNewGame">NEW GAME</button>
   </div>
 </div>
 
@@ -317,6 +436,7 @@ document.getElementById('sndBtn').onclick=(e)=>{
 };
 
 socket.emit('createRoom');
+show('intro');   // story splash first; the lobby loads behind it
 socket.on('roomCreated', d => {
   PIN=d.pin;
   document.getElementById('pin').textContent=d.pin;
@@ -433,7 +553,7 @@ socket.on('gameOver', d => {
   victoryJingle(); setTimeout(()=>music('celebrate'), 1400);
   if(d.winner){
     document.getElementById('cheersAvatar').src=avatarURL(d.winner.hero);
-    document.getElementById('cheersText').textContent=d.winner.name+' celebrates with a giant mug of beer! 🍻';
+    document.getElementById('cheersText').textContent=d.winner.name+' celebrates with a tall glass of oat milk! 🥛';
   }
   const st=d.standings||[];
   setPod('p1', st[0], true); setPod('p2', st[1], false); setPod('p3', st[2], false);
@@ -448,13 +568,15 @@ socket.on('gameOver', d => {
   // prep the 'last place' scene (only if there's a distinct loser)
   LOSER = (d.loser && (!d.winner || d.loser.id !== d.winner.id)) ? d.loser : null;
   WINNERNAME = d.winner ? d.winner.name : '';
+  CHAMP = d.winner || null;
   document.getElementById('loserBtn').style.display = LOSER ? 'block' : 'none';
+  document.getElementById('dragonBtn').style.display = CHAMP ? 'block' : 'none';
 });
-let LOSER=null, WINNERNAME='';
+let LOSER=null, WINNERNAME='', CHAMP=null, DOPTS=[];
 function showLoser(){
   if(!LOSER) return;
   document.getElementById('loserHero').src = avatarURL(LOSER.hero);
-  document.getElementById('pubSign').textContent = '🍺 ' + (WINNERNAME ? WINNERNAME+"'S PUB" : 'THE PUB');
+  document.getElementById('pubSign').textContent = '🥛 ' + (WINNERNAME ? WINNERNAME+"'S OAT BAR" : 'THE OAT BAR');
   document.getElementById('loserCap').textContent =
     LOSER.name + ' came in last — and got left out in the cold while the winners party inside. Better luck next quest! ❄️';
   show('loserscene'); makeRain();
@@ -472,6 +594,66 @@ function makeRain(){
 document.getElementById('loserBtn').onclick=showLoser;
 document.getElementById('newGameBtn').onclick=()=>{ music(null); socket.emit('restartGame',{pin:PIN}); };
 document.getElementById('loserNewGame').onclick=()=>{ music(null); socket.emit('restartGame',{pin:PIN}); };
+
+// ---- story intro ----
+document.getElementById('introBtn').onclick=()=>{ ac(); music('lobby'); show('lobby'); };
+
+// ---- dragon boss fight ----
+document.getElementById('dragonBtn').onclick=()=>{
+  if(!CHAMP) return;
+  document.getElementById('kingChampHero').src=avatarURL(CHAMP.hero);
+  document.getElementById('kingSub').textContent='The King embraces '+CHAMP.name+' and raises a glass of oat milk in their honour. Now '+CHAMP.name+' must face the dragon!';
+  music(null); show('kingscene');
+};
+document.getElementById('approachBtn').onclick=()=>{ socket.emit('startDragon',{pin:PIN}); };
+function renderDragonOpts(opts, correctIndex){
+  const g=document.getElementById('dragonOpts'); g.innerHTML=''; const L=['A','B','C','D'];
+  opts.forEach((o,i)=>{ const el=document.createElement('div');
+    el.className='dopt o'+i+(correctIndex!=null?(i===correctIndex?' correct':' dim'):'');
+    el.innerHTML='<span class="votebar" id="vb'+i+'"></span><span class="lbl">'+L[i]+'. '+o+'</span><span class="vct" id="vc'+i+'"></span>';
+    g.appendChild(el); });
+}
+socket.on('dragonStart', d=>{          // host view of the boss question
+  DOPTS=d.options||[];
+  document.getElementById('dragonCat').textContent='⚔️ A hard question on: '+String(d.cat||'').toUpperCase();
+  document.getElementById('dragonQ').textContent=d.q||'';
+  renderDragonOpts(DOPTS, null);
+  document.getElementById('dragonStatus').textContent=(d.champion?d.champion.name:'The champion')+' faces the dragon — no time limit.';
+  ac(); music('question'); show('dragonscene');
+});
+socket.on('dragonHelpOpen', ()=>{
+  document.getElementById('dragonStatus').innerHTML='🙋 '+(CHAMP?CHAMP.name:'The champion')+' called on the knights! Vote on your phones…';
+});
+socket.on('dragonTally', d=>{
+  const counts=d.counts||[0,0,0,0], total=d.total||0;
+  for(let i=0;i<4;i++){ const pct=total?Math.round(counts[i]/total*100):0;
+    const vb=document.getElementById('vb'+i), vc=document.getElementById('vc'+i);
+    if(vb) vb.style.width=pct+'%'; if(vc) vc.textContent=counts[i]?(counts[i]+'  '+pct+'%'):''; }
+  document.getElementById('dragonStatus').innerHTML='🗳️ '+total+'/'+(d.voters||0)+' knights voted — the champion decides.';
+});
+socket.on('dragonResult', d=>{
+  renderDragonOpts(DOPTS, d.correctIndex); stopTimer(); music(null);
+  setTimeout(()=>{
+    if(d.correct){
+      document.getElementById('winChampHero').src=avatarURL(d.champion.hero);
+      document.getElementById('winSub').textContent=d.champion.name+' answered true, slew the dragon, and toasts the victory with oat milk! 🥛';
+      victoryJingle(); show('dragonwin'); setTimeout(()=>music('celebrate'),900);
+    } else {
+      const n=d.champion?d.champion.name:'your champion';
+      const taunts=[
+        'Mwahaha! '+n+', your FINEST knight? I’ve met braver field mice. This oat milk is MINE now! *glug glug* 🥛',
+        'Is THAT your champion?! '+n+' raced all that way just to lose to me. Cheers, knights — every last drop is mine! 🥛',
+        'Pathetic! '+n+' finished first and STILL couldn’t best a dragon. Crawl home, little knights. *slurp* 🥛',
+        n+' led the pack and crumbled at the final test. The rest of you? Don’t make me laugh. More oat milk for ME! 🥛'
+      ];
+      document.getElementById('dragonTaunt').textContent=taunts[Math.floor(Math.random()*taunts.length)];
+      document.getElementById('loseSub').textContent='🥛 The dragon kicks back and savours the champion’s oat milk.';
+      buzzer(); show('dragonlose');
+    }
+  }, 1700);
+});
+document.getElementById('winNewGame').onclick=()=>{ music(null); socket.emit('restartGame',{pin:PIN}); };
+document.getElementById('loseNewGame').onclick=()=>{ music(null); socket.emit('restartGame',{pin:PIN}); };
 socket.on('gameReset', d => {
   state='lobby'; stopTimer();
   lastResults=null; LAST_PLAYERS=[];
@@ -484,11 +666,10 @@ socket.on('gameReset', d => {
 });
 
 function show(id){
-  const full = (id==='mapphase'||id==='celebrate'||id==='loserscene');
+  const overlays=['mapphase','celebrate','loserscene','intro','kingscene','dragonscene','dragonwin','dragonlose'];
+  const full = overlays.indexOf(id)>=0;
   document.getElementById('mainwrap').style.display = full?'none':'flex';
-  document.getElementById('mapphase').classList.toggle('hidden', id!=='mapphase');
-  document.getElementById('celebrate').classList.toggle('hidden', id!=='celebrate');
-  document.getElementById('loserscene').classList.toggle('hidden', id!=='loserscene');
+  overlays.forEach(o=>{ const el=document.getElementById(o); if(el) el.classList.toggle('hidden', o!==id); });
   ['lobby','play','over'].forEach(x=>document.getElementById(x).classList.toggle('hidden', x!==id));
 }
 function buzzer(){ if(!soundOn||!AC) return; tone(180,0.5,'square',0.16,0); tone(120,0.55,'sawtooth',0.12,0); }
