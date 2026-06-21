@@ -193,7 +193,7 @@
   .cine-enter{animation:cineEnter .7s cubic-bezier(.2,.9,.25,1) both;}
   @keyframes cineEnter{0%{opacity:0; transform:scale(1.08)}100%{opacity:1; transform:scale(1)}}
   /* SVG stages */
-  .stage{position:relative; width:100%; max-width:900px; margin:0 auto; aspect-ratio:16/9;}
+  .stage{position:relative; width:100%; max-width:900px; max-height:52vh; aspect-ratio:16/9; margin:0 auto;}
   .stage svg{position:absolute; inset:0; width:100%; height:100%; overflow:visible;}
   .vignette{position:absolute; inset:0; pointer-events:none; box-shadow:inset 0 0 200px 60px rgba(0,0,0,.65); z-index:3;}
   /* dramatic text reveals */
@@ -206,8 +206,9 @@
   @keyframes glowPulse{0%,100%{text-shadow:4px 4px 0 #000,0 0 14px rgba(255,210,63,.4)}50%{text-shadow:4px 4px 0 #000,0 0 30px rgba(255,210,63,.95)}}
   .shake{animation:shakeit .5s ease-in-out;}
   @keyframes shakeit{0%,100%{transform:translateX(0)}20%{transform:translateX(-7px)}40%{transform:translateX(7px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}
-  .popDelay{opacity:0;}
-  .popDelay.in{animation:slam .5s cubic-bezier(.2,1.4,.3,1) both;}
+  .popDelay{opacity:0; animation:popSafety .01s 2.6s forwards;}
+  @keyframes popSafety{to{opacity:1}}
+  .popDelay.in{opacity:1; animation:slam .5s cubic-bezier(.2,1.4,.3,1) both;}
   /* particle engine */
   .pfx{position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:4;}
   .ember{position:absolute; bottom:-12px; width:6px; height:6px; border-radius:50%;
@@ -230,6 +231,11 @@
   @keyframes flameFlick{0%{transform:scaleY(.9) scaleX(1)}100%{transform:scaleY(1.15) scaleX(.94)}}
   .blink-eye{animation:blinkEye 3.5s steps(1) infinite;}
   @keyframes blinkEye{0%,94%,100%{opacity:1}96%,98%{opacity:0}}
+  .clinkL{transform-box:fill-box; transform-origin:center; animation:clinkL 2.6s ease-in-out infinite;}
+  .clinkR{transform-box:fill-box; transform-origin:center; animation:clinkR 2.6s ease-in-out infinite;}
+  @keyframes clinkL{0%,28%,100%{transform:translateX(0) rotate(0)}48%,58%{transform:translateX(30px) rotate(6deg)}}
+  @keyframes clinkR{0%,28%,100%{transform:translateX(0) rotate(0)}48%,58%{transform:translateX(-30px) rotate(-6deg)}}
+  .kcrown{transform-box:fill-box; transform-origin:bottom center; animation:floaty 3s ease-in-out infinite;}
   .drop{position:absolute; top:-30px; width:2px; height:18px; background:#9fb3ff; opacity:.45; animation:raindrop linear infinite;}
   @keyframes raindrop{to{transform:translateY(120vh);}}
   @keyframes flick{0%,100%{opacity:1}47%{opacity:.85}50%{opacity:.55}53%{opacity:.9}}
@@ -379,15 +385,28 @@
         <rect x="0" y="380" width="960" height="160" fill="#3a2f4a"/>
         <polygon points="360,540 600,540 540,392 420,392" fill="#9e2b25"/>
         <rect x="300" y="392" width="360" height="16" fill="#6a5a3a"/>
-        <ellipse cx="600" cy="360" rx="150" ry="150" fill="url(#kHalo)" class="floaty"/>
-        <use href="#symKing" x="150" y="200" width="160" height="280"/>
-        <image id="kingChampImg" x="520" y="250" width="170" height="170" href=""/>
-        <g transform="translate(720,360)">
-          <rect x="-4" y="40" width="40" height="10" rx="3" fill="#a87a1c"/>
-          <path d="M0 0 H32 L28 26 H4 Z" fill="#ffd23f" stroke="#a87a1c" stroke-width="2"/>
-          <rect x="4" y="2" width="24" height="9" fill="#f4f1de"/>
-          <rect x="12" y="24" width="8" height="20" fill="#a87a1c"/>
+        <ellipse cx="250" cy="350" rx="140" ry="140" fill="url(#kHalo)" opacity="0.6"/>
+        <ellipse cx="612" cy="350" rx="140" ry="140" fill="url(#kHalo)" class="floaty"/>
+        <g>
+          <path d="M250 300 L312 470 L188 470 Z" fill="#7a1d5c"/>
+          <image href="/assets/avatars/monk_purple.png" x="166" y="238" width="168" height="168"/>
+          <g transform="translate(250,256)" class="kcrown">
+            <path d="M-36 12 L-27 -16 L-12 7 L0 -24 L12 7 L27 -16 L36 12 Z" fill="#ffd23f" stroke="#a87a1c" stroke-width="2"/>
+            <rect x="-36" y="9" width="72" height="12" rx="2" fill="#ffd23f" stroke="#a87a1c" stroke-width="2"/>
+            <circle cx="-25" cy="-12" r="3" fill="#ff4d2e"/><circle cx="0" cy="-19" r="3.6" fill="#9c4dff"/><circle cx="25" cy="-12" r="3" fill="#1ea7ff"/>
+          </g>
         </g>
+        <image id="kingChampImg" x="530" y="244" width="168" height="168" href="" class="floaty"/>
+        <g transform="translate(432,366)"><g class="clinkL">
+          <rect x="0" y="2" width="34" height="46" rx="3" fill="#d7dbe2" stroke="#8a8f99" stroke-width="2"/>
+          <rect x="0" y="2" width="34" height="12" fill="#f4f1de"/>
+          <rect x="32" y="12" width="11" height="24" rx="6" fill="none" stroke="#8a8f99" stroke-width="4"/>
+        </g></g>
+        <g transform="translate(496,366)"><g class="clinkR">
+          <rect x="0" y="2" width="34" height="46" rx="3" fill="#d7dbe2" stroke="#8a8f99" stroke-width="2"/>
+          <rect x="0" y="2" width="34" height="12" fill="#f4f1de"/>
+          <rect x="-9" y="12" width="11" height="24" rx="6" fill="none" stroke="#8a8f99" stroke-width="4"/>
+        </g></g>
       </svg>
       <div class="pfx"></div>
       <div class="vignette"></div>
@@ -509,26 +528,26 @@
   </symbol>
   <symbol id="symDragon" viewBox="0 0 420 300" overflow="visible">
     <defs>
-      <linearGradient id="dBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4caa4f"/><stop offset="1" stop-color="#2c6b3a"/></linearGradient>
-      <linearGradient id="dWing" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7b3fb0"/><stop offset="1" stop-color="#4a2370"/></linearGradient>
+      <linearGradient id="dBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d44324"/><stop offset="1" stop-color="#7a1d16"/></linearGradient>
+      <linearGradient id="dWing" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9e2b2b"/><stop offset="1" stop-color="#561414"/></linearGradient>
     </defs>
     <path d="M80 225 Q10 215 34 158 Q44 205 96 198 Z" fill="url(#dBody)"/>
     <path d="M210 125 Q150 30 120 152 Q172 122 212 152 Z" fill="url(#dWing)" stroke="#3a1d5c" stroke-width="3"/>
     <ellipse cx="200" cy="200" rx="120" ry="70" fill="url(#dBody)"/>
-    <path d="M120 235 Q200 290 290 235 Q200 268 120 235Z" fill="#cfe8a8"/>
-    <g stroke="#9fcf78" stroke-width="3"><line x1="155" y1="248" x2="163" y2="262"/><line x1="200" y1="256" x2="200" y2="272"/><line x1="245" y1="248" x2="237" y2="262"/></g>
-    <rect x="150" y="248" width="26" height="42" rx="10" fill="#2c6b3a"/><rect x="232" y="248" width="26" height="42" rx="10" fill="#2c6b3a"/>
+    <path d="M120 235 Q200 290 290 235 Q200 268 120 235Z" fill="#e7d2a4"/>
+    <g stroke="#c9a86a" stroke-width="3"><line x1="155" y1="248" x2="163" y2="262"/><line x1="200" y1="256" x2="200" y2="272"/><line x1="245" y1="248" x2="237" y2="262"/></g>
+    <rect x="150" y="248" width="26" height="42" rx="10" fill="#7a1d16"/><rect x="232" y="248" width="26" height="42" rx="10" fill="#7a1d16"/>
     <g fill="#e8e2d0"><polygon points="146,288 150,298 156,288"/><polygon points="160,290 164,300 170,290"/><polygon points="228,288 232,298 238,288"/><polygon points="242,290 246,300 252,290"/></g>
     <path d="M210 132 Q284 40 322 162 Q262 130 210 168 Z" fill="url(#dWing)" stroke="#3a1d5c" stroke-width="3"/>
     <path d="M280 200 Q332 150 322 110 L352 110 Q362 162 320 212 Z" fill="url(#dBody)"/>
     <g id="dHeadG">
       <ellipse cx="352" cy="95" rx="46" ry="34" fill="url(#dBody)"/>
-      <path d="M388 90 Q414 92 412 112 L372 114 Z" fill="#3a8a48"/>
-      <circle cx="402" cy="101" r="3" fill="#16331d"/>
+      <path d="M388 90 Q414 92 412 112 L372 114 Z" fill="#a8331f"/>
+      <circle cx="402" cy="101" r="3" fill="#3a0d0a"/>
       <path d="M330 64 L322 38 L344 60 Z" fill="#e8e2d0"/><path d="M354 60 L358 34 L370 58 Z" fill="#e8e2d0"/>
-      <g class="blink-eye"><ellipse cx="346" cy="86" rx="9" ry="11" fill="#fff"/><circle cx="348" cy="88" r="5" fill="#111"/></g>
-      <path d="M333 71 L357 80" stroke="#16331d" stroke-width="4" stroke-linecap="round"/>
-      <path d="M372 114 L412 112 L406 126 L374 126 Z" fill="#2c6b3a"/>
+      <g class="blink-eye"><ellipse cx="346" cy="86" rx="9" ry="11" fill="#ffce4a"/><circle cx="348" cy="88" r="5" fill="#1a0a06"/></g>
+      <path d="M333 71 L357 80" stroke="#3a0d0a" stroke-width="4" stroke-linecap="round"/>
+      <path d="M372 114 L412 112 L406 126 L374 126 Z" fill="#7a1d16"/>
       <g fill="#fff"><polygon points="378,114 381,124 384,114"/><polygon points="390,114 393,124 396,114"/><polygon points="402,114 405,124 408,114"/></g>
     </g>
   </symbol>
