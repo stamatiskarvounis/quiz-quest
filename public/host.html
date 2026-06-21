@@ -184,6 +184,52 @@
   .taunt:after{content:''; position:absolute; bottom:-17px; left:50%; transform:translateX(-50%);
          border-left:15px solid transparent; border-right:15px solid transparent; border-top:18px solid #000;}
   .sceneBtn{max-width:340px; width:90%; margin:24px auto 0;}
+
+  /* ============ CINEMATIC LAYER ============ */
+  /* scene entrance + transition flash */
+  #cineFlash{position:fixed; inset:0; z-index:200; background:#fff; opacity:0; pointer-events:none;}
+  #cineFlash.go{animation:cineflash .55s ease-out;}
+  @keyframes cineflash{0%{opacity:0}12%{opacity:.95}100%{opacity:0}}
+  .cine-enter{animation:cineEnter .7s cubic-bezier(.2,.9,.25,1) both;}
+  @keyframes cineEnter{0%{opacity:0; transform:scale(1.08)}100%{opacity:1; transform:scale(1)}}
+  /* SVG stages */
+  .stage{position:relative; width:100%; max-width:900px; margin:0 auto; aspect-ratio:16/9;}
+  .stage svg{position:absolute; inset:0; width:100%; height:100%; overflow:visible;}
+  .vignette{position:absolute; inset:0; pointer-events:none; box-shadow:inset 0 0 200px 60px rgba(0,0,0,.65); z-index:3;}
+  /* dramatic text reveals */
+  .cine-title{font-family:'Press Start 2P',monospace; color:var(--gold); text-shadow:4px 4px 0 #000, 0 0 22px rgba(255,210,63,.5);}
+  .slam{animation:slam .5s cubic-bezier(.2,1.4,.3,1) both;}
+  @keyframes slam{0%{opacity:0; transform:scale(2.6); filter:blur(6px)}70%{opacity:1; transform:scale(.92)}100%{transform:scale(1); filter:blur(0)}}
+  .riseIn{animation:riseIn .6s ease-out both;}
+  @keyframes riseIn{0%{opacity:0; transform:translateY(26px)}100%{opacity:1; transform:translateY(0)}}
+  .glowPulse{animation:glowPulse 1.8s ease-in-out infinite;}
+  @keyframes glowPulse{0%,100%{text-shadow:4px 4px 0 #000,0 0 14px rgba(255,210,63,.4)}50%{text-shadow:4px 4px 0 #000,0 0 30px rgba(255,210,63,.95)}}
+  .shake{animation:shakeit .5s ease-in-out;}
+  @keyframes shakeit{0%,100%{transform:translateX(0)}20%{transform:translateX(-7px)}40%{transform:translateX(7px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}
+  .popDelay{opacity:0;}
+  .popDelay.in{animation:slam .5s cubic-bezier(.2,1.4,.3,1) both;}
+  /* particle engine */
+  .pfx{position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:4;}
+  .ember{position:absolute; bottom:-12px; width:6px; height:6px; border-radius:50%;
+         background:radial-gradient(circle,#ffd98a,#ff7a18); box-shadow:0 0 8px #ff7a18; animation:emberUp linear forwards;}
+  @keyframes emberUp{0%{opacity:0; transform:translateY(0) scale(.6)}10%{opacity:1}100%{opacity:0; transform:translateY(-78vh) translateX(var(--dx,0)) scale(1.1)}}
+  .spark{position:absolute; width:8px; height:8px; background:#fff; clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);
+         opacity:0; animation:sparkLife 1.1s ease-out forwards; filter:drop-shadow(0 0 6px #ffe9a8);}
+  @keyframes sparkLife{0%{opacity:0; transform:scale(0) rotate(0)}30%{opacity:1; transform:scale(1.2) rotate(40deg)}100%{opacity:0; transform:scale(.4) rotate(120deg)}}
+  .smoke{position:absolute; bottom:-20px; width:60px; height:60px; border-radius:50%; background:rgba(120,120,130,.35);
+         filter:blur(8px); animation:smokeUp linear forwards;}
+  @keyframes smokeUp{0%{opacity:0; transform:translateY(0) scale(.5)}20%{opacity:.5}100%{opacity:0; transform:translateY(-60vh) scale(2.2)}}
+  /* gentle idle motions for SVG groups */
+  .breathe{transform-box:fill-box; transform-origin:center; animation:breathe 3.2s ease-in-out infinite;}
+  @keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+  .floaty{transform-box:fill-box; transform-origin:center; animation:floaty 3.6s ease-in-out infinite;}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .swingArm{transform-box:fill-box; transform-origin:top center; animation:swingArm 2.4s ease-in-out infinite;}
+  @keyframes swingArm{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(10deg)}}
+  .flameFlick{transform-box:fill-box; transform-origin:bottom center; animation:flameFlick .5s ease-in-out infinite alternate;}
+  @keyframes flameFlick{0%{transform:scaleY(.9) scaleX(1)}100%{transform:scaleY(1.15) scaleX(.94)}}
+  .blink-eye{animation:blinkEye 3.5s steps(1) infinite;}
+  @keyframes blinkEye{0%,94%,100%{opacity:1}96%,98%{opacity:0}}
   .drop{position:absolute; top:-30px; width:2px; height:18px; background:#9fb3ff; opacity:.45; animation:raindrop linear infinite;}
   @keyframes raindrop{to{transform:translateY(120vh);}}
   @keyframes flick{0%,100%{opacity:1}47%{opacity:.85}50%{opacity:.55}53%{opacity:.9}}
@@ -319,15 +365,35 @@
 </div>
 
 <div id="kingscene" class="hidden">
-  <div class="scene-inner">
-    <div class="scene-title" id="kingTitle">👑 KNIGHTED BY THE KING! 👑</div>
-    <div class="king-row">
-      <span class="king">🤴</span>
-      <img id="kingChampHero" alt="">
-      <span class="milk">🥛</span>
+  <div class="scene-inner" style="max-width:980px;">
+    <div class="cine-title" style="font-size:24px;line-height:1.5;margin-bottom:12px;"><span class="popDelay" id="kingTitle">⚔️ KNIGHTED BY THE KING! ⚔️</span></div>
+    <div class="stage" id="kingStage">
+      <svg viewBox="0 0 960 540" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <linearGradient id="kSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b2350"/><stop offset="0.62" stop-color="#5b3f86"/><stop offset="1" stop-color="#f0a93a"/></linearGradient>
+          <radialGradient id="kHalo" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffe9a8" stop-opacity="0.9"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect width="960" height="540" fill="url(#kSky)"/>
+        <g fill="#fff" opacity="0.85"><circle cx="120" cy="70" r="2"/><circle cx="300" cy="48" r="1.5"/><circle cx="520" cy="80" r="2"/><circle cx="770" cy="58" r="1.6"/><circle cx="860" cy="120" r="2"/></g>
+        <use href="#symCastle" x="280" y="58" width="400" height="260"/>
+        <rect x="0" y="380" width="960" height="160" fill="#3a2f4a"/>
+        <polygon points="360,540 600,540 540,392 420,392" fill="#9e2b25"/>
+        <rect x="300" y="392" width="360" height="16" fill="#6a5a3a"/>
+        <ellipse cx="600" cy="360" rx="150" ry="150" fill="url(#kHalo)" class="floaty"/>
+        <use href="#symKing" x="150" y="200" width="160" height="280"/>
+        <image id="kingChampImg" x="520" y="250" width="170" height="170" href=""/>
+        <g transform="translate(720,360)">
+          <rect x="-4" y="40" width="40" height="10" rx="3" fill="#a87a1c"/>
+          <path d="M0 0 H32 L28 26 H4 Z" fill="#ffd23f" stroke="#a87a1c" stroke-width="2"/>
+          <rect x="4" y="2" width="24" height="9" fill="#f4f1de"/>
+          <rect x="12" y="24" width="8" height="20" fill="#a87a1c"/>
+        </g>
+      </svg>
+      <div class="pfx"></div>
+      <div class="vignette"></div>
     </div>
-    <div class="scene-sub" id="kingSub"></div>
-    <button class="btn-primary sceneBtn" id="approachBtn" style="background:#c0392b;color:#fff;box-shadow:0 6px 0 #7a1f15;">🐉 APPROACH THE DRAGON ⚔️</button>
+    <div class="scene-sub popDelay" id="kingSub" style="margin-top:14px;"></div>
+    <button class="btn-primary sceneBtn popDelay" id="approachBtn" style="background:#c0392b;color:#fff;box-shadow:0 6px 0 #7a1f15;">🐉 APPROACH THE DRAGON ⚔️</button>
   </div>
 </div>
 
@@ -342,32 +408,131 @@
 </div>
 
 <div id="dragonwin" class="hidden">
-  <div class="scene-inner">
-    <div class="scene-title">⚔️ THE DRAGON IS SLAIN! ⚔️</div>
-    <div class="slain">
-      <span class="dead-dragon">🐉</span>
-      <img id="winChampHero" class="champ" alt="">
-      <span class="sword" style="left:38%">🗡️</span>
-      <span class="sword" style="left:56%">🗡️</span>
-      <span class="milk">🥛</span>
+  <div class="scene-inner" style="max-width:980px;">
+    <div class="cine-title" style="font-size:25px;margin-bottom:12px;"><span class="popDelay glowPulse">⚔️ THE DRAGON IS SLAIN! ⚔️</span></div>
+    <div class="stage" id="winStage">
+      <svg viewBox="0 0 960 540" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <linearGradient id="wSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16402a"/><stop offset="0.7" stop-color="#1f7a4d"/><stop offset="1" stop-color="#f0c879"/></linearGradient>
+          <radialGradient id="wRays" cx="0.5" cy="0.38" r="0.62"><stop offset="0" stop-color="#fffbe8" stop-opacity="0.5"/><stop offset="1" stop-color="#fffbe8" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect width="960" height="540" fill="url(#wSky)"/>
+        <rect width="960" height="540" fill="url(#wRays)"/>
+        <use href="#symCastle" x="330" y="64" width="300" height="200" opacity="0.55"/>
+        <rect x="0" y="408" width="960" height="132" fill="#123019"/>
+        <g transform="translate(250,232) rotate(6)" style="filter:grayscale(.55) brightness(.82)">
+          <use href="#symDragon" x="0" y="0" width="430" height="300"/>
+        </g>
+        <g transform="translate(560,250)"><text font-size="34" fill="#ffe9a8">💫</text></g>
+        <image id="winChampImg" x="408" y="150" width="168" height="168" href="" class="floaty"/>
+        <g transform="translate(560,150)" class="floaty">
+          <polygon points="4,-22 8,-6 0,-6" fill="#fff"/>
+          <rect x="0" y="-8" width="9" height="92" rx="3" fill="#dfe6f2"/><rect x="-11" y="80" width="31" height="9" rx="2" fill="#a87a1c"/><rect x="0" y="88" width="9" height="18" fill="#7a5512"/>
+        </g>
+        <g transform="translate(648,360)">
+          <rect x="-3" y="40" width="38" height="9" rx="3" fill="#a87a1c"/>
+          <path d="M0 0 H32 L28 26 H4 Z" fill="#ffd23f" stroke="#a87a1c" stroke-width="2"/>
+          <rect x="4" y="2" width="24" height="9" fill="#f4f1de"/>
+        </g>
+      </svg>
+      <div class="pfx"></div>
+      <div class="vignette"></div>
     </div>
-    <div class="scene-sub" id="winSub"></div>
-    <button class="btn-primary sceneBtn" id="winNewGame">NEW GAME</button>
+    <div class="scene-sub popDelay" id="winSub"></div>
+    <button class="btn-primary sceneBtn popDelay" id="winNewGame">NEW GAME</button>
   </div>
 </div>
 
 <div id="dragonlose" class="hidden">
-  <div class="scene-inner">
-    <div class="taunt" id="dragonTaunt"></div>
-    <div class="lose-stage">
-      <span class="dlose-dragon">🐉</span>
-      <span class="lose-milk">🥛</span>
+  <div class="scene-inner" style="max-width:980px;">
+    <div class="taunt popDelay" id="dragonTaunt"></div>
+    <div class="stage" id="loseStage">
+      <svg viewBox="0 0 960 540" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <linearGradient id="lSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a0a10"/><stop offset="0.6" stop-color="#5a0f16"/><stop offset="1" stop-color="#1a0407"/></linearGradient>
+          <radialGradient id="lGlow" cx="0.5" cy="0.78" r="0.6"><stop offset="0" stop-color="#ff7a18" stop-opacity="0.55"/><stop offset="1" stop-color="#ff7a18" stop-opacity="0"/></radialGradient>
+          <linearGradient id="lFlame" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffe08a"/><stop offset="0.5" stop-color="#ff7a18"/><stop offset="1" stop-color="#ff2d2d"/></linearGradient>
+        </defs>
+        <rect width="960" height="540" fill="url(#lSky)"/>
+        <ellipse cx="480" cy="500" rx="440" ry="130" fill="url(#lGlow)"/>
+        <rect x="0" y="430" width="960" height="110" fill="#1a0407"/>
+        <g transform="translate(150,150)"><use href="#symDragon" x="0" y="0" width="440" height="320"/></g>
+        <g class="flameFlick" transform="translate(548,238)">
+          <polygon points="0,0 130,-24 96,2 140,20 72,30 108,46 0,42" fill="url(#lFlame)"/>
+          <polygon points="14,8 96,-6 70,8 100,20 52,28 6,30" fill="#ffe08a"/>
+        </g>
+        <image id="loseChampImg" x="700" y="332" width="120" height="120" href="" transform="rotate(20 760 392)" style="filter:grayscale(.45) brightness(.78)"/>
+        <g transform="translate(180,352)">
+          <rect x="-3" y="40" width="40" height="9" rx="3" fill="#a87a1c"/>
+          <path d="M0 0 H34 L30 28 H4 Z" fill="#ffd23f" stroke="#a87a1c" stroke-width="2"/>
+          <rect x="4" y="2" width="26" height="9" fill="#f4f1de"/>
+        </g>
+      </svg>
+      <div class="pfx"></div>
+      <div class="vignette"></div>
     </div>
-    <div class="scene-title" style="color:#ff6a6a;">THE DRAGON PREVAILS…</div>
-    <div class="scene-sub" id="loseSub"></div>
-    <button class="btn-primary sceneBtn" id="loseNewGame">NEW GAME</button>
+    <div class="cine-title" style="font-size:23px;color:#ff6a6a;text-shadow:3px 3px 0 #000;margin-top:10px;"><span class="popDelay" id="loseTitleSpan">THE DRAGON PREVAILS…</span></div>
+    <div class="scene-sub popDelay" id="loseSub"></div>
+    <button class="btn-primary sceneBtn popDelay" id="loseNewGame">NEW GAME</button>
   </div>
 </div>
+
+<div id="cineFlash"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="symCastle" viewBox="0 0 400 260" overflow="visible">
+    <g fill="#6e7796" stroke="#2a2f47" stroke-width="3">
+      <rect x="150" y="70" width="100" height="190"/><rect x="70" y="110" width="70" height="150"/><rect x="260" y="110" width="70" height="150"/>
+    </g>
+    <g fill="#6e7796" stroke="#2a2f47" stroke-width="2"><rect x="150" y="60" width="14" height="14"/><rect x="178" y="60" width="14" height="14"/><rect x="206" y="60" width="14" height="14"/><rect x="234" y="60" width="14" height="14"/></g>
+    <polygon points="70,110 105,58 140,110" fill="#9c4dff"/><polygon points="260,110 295,58 330,110" fill="#9c4dff"/>
+    <g stroke="#2a2f47" stroke-width="2"><line x1="105" y1="58" x2="105" y2="34"/><line x1="295" y1="58" x2="295" y2="34"/></g>
+    <polygon points="105,34 130,42 105,50" fill="#ff4d2e"/><polygon points="295,34 320,42 295,50" fill="#ff4d2e"/>
+    <path d="M178 260 L178 200 Q200 178 222 200 L222 260 Z" fill="#2a1a0c"/>
+    <g fill="#ffd23f"><rect x="185" y="120" width="30" height="40" rx="6"/><rect x="92" y="150" width="26" height="34" rx="5"/><rect x="282" y="150" width="26" height="34" rx="5"/></g>
+  </symbol>
+  <symbol id="symKing" viewBox="0 0 160 280" overflow="visible">
+    <path d="M30 150 Q80 130 130 150 L150 270 L10 270 Z" fill="#b8312f"/>
+    <path d="M30 150 Q80 130 130 150 L138 198 Q80 184 22 198 Z" fill="#d24b46"/>
+    <rect x="10" y="256" width="140" height="16" fill="#f4f1de"/>
+    <path d="M34 158 Q10 196 26 230" stroke="#b8312f" stroke-width="20" fill="none" stroke-linecap="round"/>
+    <circle cx="26" cy="232" r="9" fill="#f0c89a"/>
+    <g id="kingArmG" class="swingArm">
+      <path d="M126 158 Q162 150 172 108" stroke="#b8312f" stroke-width="20" fill="none" stroke-linecap="round"/>
+      <rect x="166" y="36" width="8" height="80" rx="3" fill="#cfd6e6"/><rect x="156" y="112" width="26" height="8" rx="2" fill="#a87a1c"/><rect x="166" y="116" width="8" height="16" fill="#7a5512"/>
+    </g>
+    <circle cx="80" cy="110" r="30" fill="#f0c89a"/>
+    <path d="M54 116 Q80 176 106 116 Q80 140 54 116Z" fill="#eef0e6"/>
+    <circle cx="70" cy="106" r="3.5" fill="#2a2a2a"/><circle cx="90" cy="106" r="3.5" fill="#2a2a2a"/>
+    <path d="M50 86 L58 60 L70 82 L80 54 L90 82 L102 60 L110 86 Z" fill="#ffd23f" stroke="#a87a1c" stroke-width="2"/>
+    <rect x="50" y="84" width="60" height="10" fill="#ffd23f" stroke="#a87a1c" stroke-width="2"/>
+    <circle cx="58" cy="63" r="3" fill="#ff4d2e"/><circle cx="80" cy="57" r="3" fill="#1ea7ff"/><circle cx="102" cy="63" r="3" fill="#38c93f"/>
+  </symbol>
+  <symbol id="symDragon" viewBox="0 0 420 300" overflow="visible">
+    <defs>
+      <linearGradient id="dBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4caa4f"/><stop offset="1" stop-color="#2c6b3a"/></linearGradient>
+      <linearGradient id="dWing" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7b3fb0"/><stop offset="1" stop-color="#4a2370"/></linearGradient>
+    </defs>
+    <path d="M80 225 Q10 215 34 158 Q44 205 96 198 Z" fill="url(#dBody)"/>
+    <path d="M210 125 Q150 30 120 152 Q172 122 212 152 Z" fill="url(#dWing)" stroke="#3a1d5c" stroke-width="3"/>
+    <ellipse cx="200" cy="200" rx="120" ry="70" fill="url(#dBody)"/>
+    <path d="M120 235 Q200 290 290 235 Q200 268 120 235Z" fill="#cfe8a8"/>
+    <g stroke="#9fcf78" stroke-width="3"><line x1="155" y1="248" x2="163" y2="262"/><line x1="200" y1="256" x2="200" y2="272"/><line x1="245" y1="248" x2="237" y2="262"/></g>
+    <rect x="150" y="248" width="26" height="42" rx="10" fill="#2c6b3a"/><rect x="232" y="248" width="26" height="42" rx="10" fill="#2c6b3a"/>
+    <g fill="#e8e2d0"><polygon points="146,288 150,298 156,288"/><polygon points="160,290 164,300 170,290"/><polygon points="228,288 232,298 238,288"/><polygon points="242,290 246,300 252,290"/></g>
+    <path d="M210 132 Q284 40 322 162 Q262 130 210 168 Z" fill="url(#dWing)" stroke="#3a1d5c" stroke-width="3"/>
+    <path d="M280 200 Q332 150 322 110 L352 110 Q362 162 320 212 Z" fill="url(#dBody)"/>
+    <g id="dHeadG">
+      <ellipse cx="352" cy="95" rx="46" ry="34" fill="url(#dBody)"/>
+      <path d="M388 90 Q414 92 412 112 L372 114 Z" fill="#3a8a48"/>
+      <circle cx="402" cy="101" r="3" fill="#16331d"/>
+      <path d="M330 64 L322 38 L344 60 Z" fill="#e8e2d0"/><path d="M354 60 L358 34 L370 58 Z" fill="#e8e2d0"/>
+      <g class="blink-eye"><ellipse cx="346" cy="86" rx="9" ry="11" fill="#fff"/><circle cx="348" cy="88" r="5" fill="#111"/></g>
+      <path d="M333 71 L357 80" stroke="#16331d" stroke-width="4" stroke-linecap="round"/>
+      <path d="M372 114 L412 112 L406 126 L374 126 Z" fill="#2c6b3a"/>
+      <g fill="#fff"><polygon points="378,114 381,124 384,114"/><polygon points="390,114 393,124 396,114"/><polygon points="402,114 405,124 408,114"/></g>
+    </g>
+  </symbol>
+</defs></svg>
 
 <script src="/mapdata.js"></script>
 <script src="/board.js"></script>
@@ -402,6 +567,20 @@ function castleFanfare(){ [523,659,784,1047].forEach((f,i)=>tone(f,0.16,'square'
 function victoryJingle(){ [523,659,784,1047,784,1318].forEach((f,i)=>tone(f,0.2,'square',0.15,i*0.14));
   tone(131,1.4,'triangle',0.1,0); tone(196,1.4,'triangle',0.08,0.42); }
 function whoosh(){ tone(160,0.4,'sawtooth',0.05,0,640); }
+/* ---- cinematic SFX ---- */
+function noiseBurst(dur,vol,cut){ if(!soundOn||!AC) return;
+  const b=AC.createBuffer(1,Math.max(1,AC.sampleRate*dur),AC.sampleRate), d=b.getChannelData(0);
+  for(let i=0;i<d.length;i++) d[i]=(Math.random()*2-1)*(1-i/d.length);
+  const s=AC.createBufferSource(); s.buffer=b; const g=AC.createGain(); g.gain.value=vol||0.18;
+  const f=AC.createBiquadFilter(); f.type='lowpass'; f.frequency.value=cut||900;
+  s.connect(f); f.connect(g); g.connect(AC.destination); s.start(); }
+function dragonRoar(){ if(!soundOn||!AC) return; tone(150,0.75,'sawtooth',0.2,0,52); tone(92,0.85,'square',0.12,0.05,38); noiseBurst(0.7,0.16,700); }
+function fireBreath(){ noiseBurst(0.6,0.14,1600); tone(220,0.5,'sawtooth',0.06,0,120); }
+function swordClash(){ tone(1900,0.08,'square',0.12,0); tone(2500,0.07,'square',0.1,0.03); tone(1200,0.14,'triangle',0.08,0.05,520); }
+function bigFanfare(){ [392,523,659,784,1047,1318].forEach((f,i)=>tone(f,0.22,'square',0.16,i*0.13)); tone(196,1.8,'triangle',0.1,0); tone(262,1.8,'triangle',0.08,0.4); }
+function tensionSting(){ tone(110,1.0,'sawtooth',0.12,0); tone(117,1.0,'sawtooth',0.1,0); noiseBurst(0.2,0.05,400); }
+function sparkle(){ [1568,2093,2637].forEach((f,i)=>tone(f,0.12,'sine',0.08,i*0.05)); }
+function milkPour(){ tone(440,0.5,'sine',0.05,0,260); noiseBurst(0.45,0.04,1200); }
 const TUNES={
   lobby:{bpm:112, bass:[131,131,98,98,110,110,87,98],
          lead:[523,659,784,659,392,523,659,523,440,554,659,554,349,440,523,440]},
@@ -410,7 +589,12 @@ const TUNES={
   /* "question" = gentle, warm thinking-music loop (soft, low volume) */
   question:{bpm:96, soft:true,
          bass:[131,165,196,165,147,175,220,175],
-         lead:[523,659,587,784,659,523,587,494]}
+         lead:[523,659,587,784,659,523,587,494]},
+  /* "epic" = triumphant swell for victory cutscenes */
+  epic:{bpm:128, bass:[65,65,49,49,55,55,44,49],
+         lead:[392,494,587,494,523,659,587,784,659,523,494,587,523,392,440,494]},
+  /* "tension" = low ominous bed for the dragon stare-down */
+  tension:{bpm:76, soft:true, bass:[55,58,55,52], lead:[233,247,220,247,233,220,196,220]}
 };
 function music(mode){
   musicMode=mode;
@@ -549,8 +733,8 @@ function fireConfetti(){
     c.appendChild(d); }
 }
 socket.on('gameOver', d => {
-  stopTimer(); show('celebrate');
-  victoryJingle(); setTimeout(()=>music('celebrate'), 1400);
+  stopTimer(); cineShow('celebrate');
+  ac(); victoryJingle(); cineAt(320,bigFanfare); setTimeout(()=>music('celebrate'), 1400);
   if(d.winner){
     document.getElementById('cheersAvatar').src=avatarURL(d.winner.hero);
     document.getElementById('cheersText').textContent=d.winner.name+' celebrates with a tall glass of oat milk! 🥛';
@@ -579,8 +763,8 @@ function showLoser(){
   document.getElementById('pubSign').textContent = '🥛 ' + (WINNERNAME ? WINNERNAME+"'S OAT BAR" : 'THE OAT BAR');
   document.getElementById('loserCap').textContent =
     LOSER.name + ' came in last — and got left out in the cold while the winners party inside. Better luck next quest! ❄️';
-  show('loserscene'); makeRain();
-  ac(); music(null);
+  cineShow('loserscene'); makeRain();
+  ac(); if(typeof tensionSting==='function') tensionSting(); music(null);
 }
 function makeRain(){
   const box=document.querySelector('#loserscene .rainbox'); if(!box) return;
@@ -601,11 +785,15 @@ document.getElementById('introBtn').onclick=()=>{ ac(); music('lobby'); show('lo
 // ---- dragon boss fight ----
 document.getElementById('dragonBtn').onclick=()=>{
   if(!CHAMP) return;
-  document.getElementById('kingChampHero').src=avatarURL(CHAMP.hero);
-  document.getElementById('kingSub').textContent='The King embraces '+CHAMP.name+' and raises a glass of oat milk in their honour. Now '+CHAMP.name+' must face the dragon!';
-  music(null); show('kingscene');
+  setSvgImg('kingChampImg', avatarURL(CHAMP.hero));
+  document.getElementById('kingSub').textContent='The King knights '+CHAMP.name+' and raises a glass of oat milk in their honour. Now '+CHAMP.name+' must face the dragon!';
+  music(null); cineShow('kingscene'); revealSeq('kingscene',460);
+  // knighting beats: sword-tap, sparkle shower, fanfare swell
+  ac(); cineAt(700,()=>{ swordClash(); sparkBurst('kingscene',22); });
+  cineAt(1100,()=>{ castleFanfare(); });
+  cineAt(1500,()=>music('epic'));
 };
-document.getElementById('approachBtn').onclick=()=>{ socket.emit('startDragon',{pin:PIN}); };
+document.getElementById('approachBtn').onclick=()=>{ if(typeof tensionSting==='function') tensionSting(); socket.emit('startDragon',{pin:PIN}); };
 function renderDragonOpts(opts, correctIndex){
   const g=document.getElementById('dragonOpts'); g.innerHTML=''; const L=['A','B','C','D'];
   opts.forEach((o,i)=>{ const el=document.createElement('div');
@@ -619,10 +807,11 @@ socket.on('dragonStart', d=>{          // host view of the boss question
   document.getElementById('dragonQ').textContent=d.q||'';
   renderDragonOpts(DOPTS, null);
   document.getElementById('dragonStatus').textContent=(d.champion?d.champion.name:'The champion')+' faces the dragon — no time limit.';
-  ac(); music('question'); show('dragonscene');
+  ac(); cineShow('dragonscene'); dragonRoar(); cineAt(750,()=>music('tension'));
 });
 socket.on('dragonHelpOpen', ()=>{
   document.getElementById('dragonStatus').innerHTML='🙋 '+(CHAMP?CHAMP.name:'The champion')+' called on the knights! Vote on your phones…';
+  if(typeof tensionSting==='function') tensionSting();
 });
 socket.on('dragonTally', d=>{
   const counts=d.counts||[0,0,0,0], total=d.total||0;
@@ -633,11 +822,16 @@ socket.on('dragonTally', d=>{
 });
 socket.on('dragonResult', d=>{
   renderDragonOpts(DOPTS, d.correctIndex); stopTimer(); music(null);
-  setTimeout(()=>{
+  if(d.correct){ ac(); swordClash(); } else { ac(); buzzer(); }
+  // reveal the correct answer briefly, then cut to the cinematic
+  cineAt(1700,()=>{
     if(d.correct){
-      document.getElementById('winChampHero').src=avatarURL(d.champion.hero);
-      document.getElementById('winSub').textContent=d.champion.name+' answered true, slew the dragon, and toasts the victory with oat milk! 🥛';
-      victoryJingle(); show('dragonwin'); setTimeout(()=>music('celebrate'),900);
+      setSvgImg('winChampImg', avatarURL(d.champion.hero));
+      document.getElementById('winSub').textContent=d.champion.name+' answered true and slew the mighty dragon! 🥛 A toast to the champion!';
+      cineShow('dragonwin'); revealSeq('dragonwin',420);
+      ac(); swordClash(); cineAt(320,bigFanfare);
+      confettiInto('dragonwin'); emberBurst('dragonwin',24,3); sparkBurst('dragonwin',22);
+      cineAt(1300,()=>music('epic'));
     } else {
       const n=d.champion?d.champion.name:'your champion';
       const taunts=[
@@ -646,11 +840,15 @@ socket.on('dragonResult', d=>{
         'Pathetic! '+n+' finished first and STILL couldn’t best a dragon. Crawl home, little knights. *slurp* 🥛',
         n+' led the pack and crumbled at the final test. The rest of you? Don’t make me laugh. More oat milk for ME! 🥛'
       ];
+      setSvgImg('loseChampImg', avatarURL(d.champion.hero));
       document.getElementById('dragonTaunt').textContent=taunts[Math.floor(Math.random()*taunts.length)];
       document.getElementById('loseSub').textContent='🥛 The dragon kicks back and savours the champion’s oat milk.';
-      buzzer(); show('dragonlose');
+      cineShow('dragonlose'); revealSeq('dragonlose',430);
+      ac(); dragonRoar(); cineAt(360,fireBreath); cineAt(760,tensionSting);
+      emberBurst('dragonlose',32,2.6); smokeBurst('dragonlose',8);
+      cineAt(1500,()=>music('tension'));
     }
-  }, 1700);
+  });
 });
 document.getElementById('winNewGame').onclick=()=>{ music(null); socket.emit('restartGame',{pin:PIN}); };
 document.getElementById('loseNewGame').onclick=()=>{ music(null); socket.emit('restartGame',{pin:PIN}); };
@@ -672,6 +870,37 @@ function show(id){
   overlays.forEach(o=>{ const el=document.getElementById(o); if(el) el.classList.toggle('hidden', o!==id); });
   ['lobby','play','over'].forEach(x=>document.getElementById(x).classList.toggle('hidden', x!==id));
 }
+/* ===== cinematic engine ===== */
+let cineTimers=[];
+function clearCine(){ cineTimers.forEach(t=>clearTimeout(t)); cineTimers=[]; }
+function cineAt(ms,fn){ cineTimers.push(setTimeout(fn,ms)); }
+function cineFlashFx(){ const f=document.getElementById('cineFlash'); if(!f) return; f.classList.remove('go'); void f.offsetWidth; f.classList.add('go'); }
+function cineShow(id){ clearCine(); cineFlashFx(); show(id);
+  const el=document.getElementById(id);
+  if(el){ el.classList.remove('cine-enter'); void el.offsetWidth; el.classList.add('cine-enter'); const pf=el.querySelector('.pfx'); if(pf) pf.innerHTML=''; } }
+function revealSeq(sceneId, gap){ document.querySelectorAll('#'+sceneId+' .popDelay')
+  .forEach((e,i)=>{ e.classList.remove('in'); cineAt(250+i*(gap||320),()=>e.classList.add('in')); }); }
+function pfxOf(id){ const el=document.getElementById(id); return el?el.querySelector('.pfx'):null; }
+function emberBurst(id,n,dur){ const box=pfxOf(id); if(!box) return;
+  for(let i=0;i<(n||30);i++){ const e=document.createElement('div'); e.className='ember';
+    e.style.left=(8+Math.random()*84)+'%'; e.style.setProperty('--dx',(Math.random()*70-35)+'px');
+    e.style.animationDuration=((dur||3)+Math.random()*2.5)+'s'; e.style.animationDelay=(Math.random()*1.8)+'s';
+    box.appendChild(e); cineAt(((dur||3)+4.5)*1000,()=>e.remove()); } }
+function sparkBurst(id,n){ const box=pfxOf(id); if(!box) return;
+  for(let i=0;i<(n||18);i++){ const s=document.createElement('div'); s.className='spark';
+    s.style.left=(12+Math.random()*76)+'%'; s.style.top=(12+Math.random()*60)+'%'; s.style.animationDelay=(Math.random()*0.9)+'s';
+    box.appendChild(s); cineAt(2300,()=>s.remove()); } }
+function smokeBurst(id,n){ const box=pfxOf(id); if(!box) return;
+  for(let i=0;i<(n||9);i++){ const s=document.createElement('div'); s.className='smoke';
+    s.style.left=(10+Math.random()*80)+'%'; s.style.animationDuration=(4+Math.random()*3)+'s'; s.style.animationDelay=(Math.random()*1.6)+'s';
+    box.appendChild(s); cineAt(9000,()=>s.remove()); } }
+function confettiInto(id){ const box=pfxOf(id); if(!box) return;
+  const cols=['#ff4d2e','#1ea7ff','#38c93f','#f0a93a','#ffd23f','#9c4dff','#ff5fa2'];
+  for(let i=0;i<70;i++){ const d=document.createElement('div'); d.className='confetti';
+    d.style.left=(Math.random()*100)+'%'; d.style.background=cols[i%cols.length];
+    d.style.animationDelay=(Math.random()*2.2)+'s'; d.style.animationDuration=(2.4+Math.random()*2.2)+'s';
+    box.appendChild(d); } }
+function setSvgImg(id,url){ const el=document.getElementById(id); if(el){ el.setAttribute('href',url); el.setAttributeNS('http://www.w3.org/1999/xlink','xlink:href',url); } }
 function buzzer(){ if(!soundOn||!AC) return; tone(180,0.5,'square',0.16,0); tone(120,0.55,'sawtooth',0.12,0); }
 let lastTickSec=-1;
 function startTimer(ms){ stopTimer(); let end=Date.now()+ms; const t=document.getElementById('timer'); lastTickSec=-1;

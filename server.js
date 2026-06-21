@@ -15,8 +15,23 @@ const io = new Server(server);
 
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.get('/host', (req, res) => res.sendFile(path.join(__dirname, 'public', 'host.html')));
+// Never let phones/browsers cache the HTML or game scripts — otherwise after an
+// update a device keeps running the old version (e.g. missing the dragon screen).
+// Images/assets can still cache normally.
+app.use(express.static(path.join(__dirname, 'public'), {
+  etag: false,
+  setHeaders: (res, filePath) => {
+    if (/\.(html|js)$/i.test(filePath)) {
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+      res.setHeader('Pragma', 'no-cache');
+      res.setHeader('Expires', '0');
+    }
+  }
+}));
+app.get('/host', (req, res) => {
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  res.sendFile(path.join(__dirname, 'public', 'host.html'));
+});
 
 // ---- Race track ----
 const PATH_LENGTH = 60;     // blocks 1..60 (your hand-picked spots); reaching 60 = dragon boss. Game ends only when a hero gets here.
@@ -557,12 +572,8 @@ io.on('connection', (socket) => {
     });
     broadcastBoard(pin, fromMap); // animate heroes walking from old to new tile
 
-    // The game ends as soon as the first 3 players reach the castle.
-    // (With fewer than 3 players, it ends when everyone has finished.)
-    const total = Object.keys(room.players).length;
-    const spots = Math.min(3, total);
-    const finished = room.finishedCount;
-    if (finished >= spots) {
+    // The game ends the instant the FIRST player reaches the castle.
+    if (room.finishedCount >= 1) {
       // let the final walk animation play out on the host before the celebration
       const maxMoved = Math.max(0, ...out.map(r => r.moved));
       endGame(pin, Math.min(7000, maxMoved * 560 + 2200));
